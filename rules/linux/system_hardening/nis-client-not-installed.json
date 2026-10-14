@@ -1,0 +1,64 @@
+{
+  "name": "NIS Client Not Installed",
+  "description": "Ensures the NIS client tools is not installed (/usr/bin/ypcat, /usr/bin/ypwhich, /usr/sbin/ypbind absent). Removing unused clear-text or legacy tools reduces the attack surface and the risk of credentials being sent unencrypted.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls -l /usr/bin/ypcat /usr/bin/ypwhich /usr/sbin/ypbind 2>&1",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?m)^[-l][rwxsStT-]{9}"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.6",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-8",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.21",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:NIS2:Art21.2(e)",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

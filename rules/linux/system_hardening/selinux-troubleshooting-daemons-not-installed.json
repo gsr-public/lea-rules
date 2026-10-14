@@ -1,0 +1,54 @@
+{
+  "name": "SELinux Troubleshooting Daemons Not Installed",
+  "description": "Ensures setroubleshoot and mcstrans, which are not needed on servers and run with elevated privileges, is not installed (/usr/sbin/setroubleshootd, /usr/sbin/mcstransd absent).",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls -l /usr/sbin/setroubleshootd /usr/sbin/mcstransd 2>&1",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?m)^[-l][rwxsStT-]{9}"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

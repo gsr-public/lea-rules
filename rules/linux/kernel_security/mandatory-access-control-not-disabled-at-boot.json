@@ -1,0 +1,57 @@
+{
+  "name": "Mandatory Access Control Not Disabled at Boot",
+  "description": "Ensures the kernel command line does not disable SELinux or AppArmor (selinux=0, enforcing=0, apparmor=0, security=none), which would silently remove mandatory access control at the next boot.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/cmdline",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?:^|\\s)(?:selinux=0|enforcing=0|apparmor=0|security=none)(?=\\s|$)"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:AC-3",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

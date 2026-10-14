@@ -1,0 +1,53 @@
+{
+  "name": "Log Files Not Accessible by Other Users",
+  "description": "Ensures files under /var/log are not writable by others and not readable by others, except the login accounting files lastlog, wtmp and btmp (and their rotations). Without root, unreadable directories are skipped.",
+  "active": true,
+  "category": "audit",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "find /var/log -type f \\( -perm -o+w -o \\( -perm -o+r ! -name 'lastlog*' ! -name 'wtmp*' ! -name 'btmp*' ! -name README \\) \\) 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "."
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:CIS_Controls_v8:8.2",
+    "std:NIST_800-53:AU-9",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:CMMC:AU.L2-3.3.9",
+    "std:PCI_DSS_4:10.3.1",
+    "std:PCI_DSS_4:10.3.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

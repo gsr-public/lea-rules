@@ -1,0 +1,104 @@
+{
+  "name": "Unapproved Remote Access and Tunneling Tools Not Running",
+  "description": "Ensures no common remote monitoring and management or tunneling tool is running (TeamViewer, AnyDesk, ScreenConnect, RustDesk, Splashtop, LogMeIn, Atera, Ammyy, RemotePC, Zoho Assist, GoTo, TightVNC/UltraVNC, ngrok, chisel, frp). Attackers frequently install these tools for persistent access. Exclude hosts where one of them is a sanctioned support tool.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ps -axco command",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "tasklist",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:2.3",
+    "std:NIST_800-53:AC-17",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SI-4",
+    "std:ISO27001:A.8.19",
+    "std:SOC2:CC6.8",
+    "std:CMMC:AC.L2-3.1.12",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:CMMC:SI.L2-3.14.7",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.308(a)(1)(ii)(D)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:HIPAA:164.312(b)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:DE.CM-01",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:access_control",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

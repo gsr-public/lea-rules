@@ -1,6 +1,6 @@
 {
   "name": "Linux Log Martian Packets All Interfaces",
-  "description": "Ensures net.ipv4.conf.all.log_martians is set to 1 to log packets with impossible or unroutable source addresses, aiding in detection of spoofed or misrouted traffic.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password:\nlea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.all.log_martians=1",
+  "description": "Ensures net.ipv4.conf.all.log_martians is set to 1 to log packets with impossible or unroutable source addresses, aiding in detection of spoofed or misrouted traffic.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.all.log_martians=1",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -49,10 +49,12 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
     "cat:network_security",
     "env:linux",
     "env:host_level",
-    "risk:low",
-    "priv:required"
+    "risk:low"
   ]
 }

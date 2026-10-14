@@ -1,0 +1,50 @@
+{
+  "name": "User Dot Files Not Group or World Writable",
+  "description": "Ensures no hidden file in a home directory (for example .bashrc, .profile, .ssh/authorized_keys parent files) is writable by the group or others, which would let another user run commands as that user. Without root, unreadable home directories are skipped.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "find /home /root -maxdepth 2 -name '.*' -type f -perm /022 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "."
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:NIST_800-53:AC-3",
+    "std:ISO27001:A.8.3",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:access_control",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

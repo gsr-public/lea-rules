@@ -1,0 +1,70 @@
+{
+  "name": "AppArmor Has No Profiles in Complain Mode",
+  "description": "Ensures every loaded AppArmor profile is in enforce mode, not complain mode (which only logs violations).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /sys/kernel/security/apparmor/profiles",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /sys/kernel/security/apparmor/profiles",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux",
+          "SLES",
+          "openSUSE Leap",
+          "openSUSE Tumbleweed"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux",
+          "SLES",
+          "openSUSE Leap",
+          "openSUSE Tumbleweed"
+        ],
+        "re": {
+          "stdout": "\\(enforce\\)"
+        },
+        "not_re": {
+          "stdout": "\\(complain\\)"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:AC-3",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

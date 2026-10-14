@@ -1,0 +1,69 @@
+{
+  "name": "File Access Policy Daemon (fapolicyd) Running",
+  "description": "Ensures fapolicyd, the RHEL application allow-listing daemon, is running so only trusted binaries and scripts can execute.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?m)^(?:fapolicyd)$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:2.5",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:CM-14",
+    "std:ISO27001:A.8.19",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:PR.PS-05",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

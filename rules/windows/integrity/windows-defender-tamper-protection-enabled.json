@@ -40,6 +40,8 @@
     "std:PCI_DSS_4:5.2.1",
     "std:NIS2:Art21.2(g)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(5)(ii)(B)",
+    "std:NIST_CSF_2:DE.CM-09",
     "cat:integrity",
     "env:windows",
     "env:host_level",

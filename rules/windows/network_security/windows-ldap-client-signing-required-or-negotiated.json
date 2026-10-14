@@ -1,0 +1,54 @@
+{
+  "name": "Windows LDAP Client Signing Required or Negotiated",
+  "description": "Ensures the LDAP client negotiates or requires signing (LDAPClientIntegrity 1 or 2), protecting directory queries against tampering.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\LDAP\" /v LDAPClientIntegrity",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+LDAPClientIntegrity[ \\t]+REG_DWORD[ \\t]+0x(?:1|2)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-23",
+    "std:ISO27001:A.8.21",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.15",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-02",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

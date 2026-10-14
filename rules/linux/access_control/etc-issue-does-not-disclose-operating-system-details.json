@@ -1,0 +1,45 @@
+{
+  "name": "/etc/issue Does Not Disclose Operating System Details",
+  "description": "Ensures the local login banner (/etc/issue) does not reveal the operating system or kernel version through getty escape sequences (\\m, \\r, \\s, \\v) or distribution names, which helps attackers choose exploits. Passes when the file is absent or empty.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/issue 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?i)\\\\[mrsv]|\\b(?:ubuntu|debian|red hat|centos|rocky|almalinux|fedora|suse|oracle linux|amazon linux|kernel)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.5.10",
+    "std:CMMC:AC.L2-3.1.9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:access_control",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

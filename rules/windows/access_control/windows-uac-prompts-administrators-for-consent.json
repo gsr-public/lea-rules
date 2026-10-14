@@ -39,6 +39,8 @@
     "std:CMMC:AC.L2-3.1.7",
     "std:NIS2:Art21.2(i)",
     "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
     "cat:access_control",
     "env:windows",
     "env:host_level",

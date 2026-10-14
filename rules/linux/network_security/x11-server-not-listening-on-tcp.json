@@ -1,0 +1,64 @@
+{
+  "name": "X11 Server Not Listening on TCP",
+  "description": "Ensures nothing listens for an X11 display server on TCP ports 6000-6063; X11 over TCP is unauthenticated or uses weak cookies. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/net/tcp /proc/net/tcp6",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\bsl\\b"
+        },
+        "not_re": {
+          "stdout": "(?m)^\\s*\\d+:\\s+[0-9A-F]{8}(?:[0-9A-F]{24})?:(?:1770|1771|1772|1773|1774|1775|1776|1777|1778|1779|177A|177B|177C|177D|177E|177F|1780|1781|1782|1783|1784|1785|1786|1787|1788|1789|178A|178B|178C|178D|178E|178F|1790|1791|1792|1793|1794|1795|1796|1797|1798|1799|179A|179B|179C|179D|179E|179F|17A0|17A1|17A2|17A3|17A4|17A5|17A6|17A7|17A8|17A9|17AA|17AB|17AC|17AD|17AE|17AF)\\s+[0-9A-F]+:[0-9A-F]{4}\\s+0A\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.6",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-8",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.21",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:NIS2:Art21.2(e)",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

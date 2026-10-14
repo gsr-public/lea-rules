@@ -1,0 +1,54 @@
+{
+  "name": "Linux UEFI Secure Boot Enabled",
+  "description": "Ensures the host booted with UEFI Secure Boot enabled by reading the SecureBoot EFI variable (last byte 01). Secure Boot restricts boot loaders and kernels to signed images and, on most distributions, enables kernel lockdown. Hosts booted in legacy BIOS mode, or VMs without a virtual TPM/UEFI, have no such variable and fail.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "od -An -tx1 /sys/firmware/efi/efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A\\s*(?:[0-9a-f]{2}\\s+){4}01\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

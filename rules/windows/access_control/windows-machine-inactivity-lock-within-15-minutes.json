@@ -42,6 +42,8 @@
     "std:PCI_DSS_4:8.2.8",
     "std:NIS2:Art21.2(i)",
     "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(iii)",
+    "std:NIST_CSF_2:PR.AA-03",
     "cat:access_control",
     "env:windows",
     "env:host_level",

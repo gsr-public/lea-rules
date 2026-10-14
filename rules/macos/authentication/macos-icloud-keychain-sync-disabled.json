@@ -1,0 +1,52 @@
+{
+  "name": "macOS iCloud Keychain Sync Disabled",
+  "description": "Ensures iCloud Keychain synchronization is disabled by profile (allowCloudKeychainSync = false), so corporate credentials are not synced to personal devices. Reads the effective value of allowCloudKeychainSync in the com.apple.applicationaccess domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/bin/osascript -l JavaScript -e '$.NSUserDefaults.alloc.initWithSuiteName(\"com.apple.applicationaccess\").objectForKey(\"allowCloudKeychainSync\").js'",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A\\s*(?:false|0)\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.5.34",
+    "std:ISO27001:A.8.12",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.308(a)(5)(ii)(D)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:authentication",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

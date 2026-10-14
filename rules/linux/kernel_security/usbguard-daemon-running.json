@@ -1,0 +1,49 @@
+{
+  "name": "USBGuard Daemon Running",
+  "description": "Ensures the USBGuard daemon is running, so only authorized USB devices are accepted by the kernel.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^(?:usbguard\\-daemon)$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.3",
+    "std:NIST_800-53:MP-7",
+    "std:ISO27001:A.7.10",
+    "std:SOC2:CC6.8",
+    "std:CMMC:MP.L2-3.8.7",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.310(d)(1)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

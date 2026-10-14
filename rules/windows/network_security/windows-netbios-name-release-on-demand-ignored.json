@@ -1,0 +1,59 @@
+{
+  "name": "Windows NetBIOS Name Release on Demand Ignored",
+  "description": "Ensures the computer ignores NetBIOS name release requests except from WINS servers (NoNameReleaseOnDemand = 1).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NoNameReleaseOnDemand (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NoNameReleaseOnDemand",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+NoNameReleaseOnDemand[ \\t]+REG_DWORD[ \\t]+0x(?:1)\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NoNameReleaseOnDemand /t REG_DWORD /d 1 /f | Out-Null; reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NoNameReleaseOnDemand",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

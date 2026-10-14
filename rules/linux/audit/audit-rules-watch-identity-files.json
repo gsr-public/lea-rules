@@ -71,6 +71,8 @@
     "std:PCI_DSS_4:10.2.2",
     "std:NIS2:Art21.2(b)",
     "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
     "cat:audit",
     "env:linux",
     "env:host_level",

@@ -1,0 +1,49 @@
+{
+  "name": "File Integrity Checks Scheduled (AIDE)",
+  "description": "Ensures AIDE integrity checks run periodically: a cron entry that runs aide, the Debian /etc/cron.daily/aide job, or an enabled aidecheck/dailyaidecheck systemd timer.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /etc/cron.daily /etc/systemd/system/timers.target.wants /etc/systemd/system/multi-user.target.wants 2>/dev/null; cat /etc/crontab /etc/cron.d/* 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^(?:aide|dailyaidecheck\\.timer|aidecheck\\.timer)$|^[^#\\n]*\\baide\\b[^\\n]*--check\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.16",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.6",
+    "std:PCI_DSS_4:11.5.2",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

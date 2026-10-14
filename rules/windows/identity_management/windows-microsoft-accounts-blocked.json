@@ -1,0 +1,50 @@
+{
+  "name": "Windows Microsoft Accounts Blocked",
+  "description": "Ensures users cannot add or log on with Microsoft consumer accounts (NoConnectedUser = 3).",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\" /v NoConnectedUser",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+NoConnectedUser[ \\t]+REG_DWORD[ \\t]+0x(?:3)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:identity_management",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

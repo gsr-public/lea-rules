@@ -1,0 +1,76 @@
+{
+  "name": "SSH Strict Modes Enabled",
+  "description": "Ensures sshd checks the ownership and permissions of users' key files before accepting a login (StrictModes not set to no). The OpenSSH default is yes.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^sshd$'; then cat /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf 2>/dev/null; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "cat /etc/ssh/sshd_config /etc/ssh/sshd_config.d/* 2>/dev/null",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*StrictModes[ \\t]+no\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*StrictModes[ \\t]+no\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:NIST_800-53:AC-3",
+    "std:NIST_800-53:AC-17",
+    "std:ISO27001:A.8.3",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.IR-01",
+    "cat:access_control",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

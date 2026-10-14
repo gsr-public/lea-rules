@@ -1,13 +1,13 @@
 # LEA Open Rules
 
-An open library of 244 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
+An open library of 769 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
 
 - Website: https://gsr-lea.com
-- Repository (intended URL): https://github.com/gsr-it/lea-open-rules
+- Repository: https://github.com/gsr-public/lea-rules
 
 ## About the LEA Platform
 
-LEA is a self-hosted compliance monitoring platform by GSR. Lightweight agents on each host run read-only commands and send the raw output (file contents, `/proc` values, registry queries) to the LEA server. The agents do not decide whether a host is compliant; the server validates the raw output against each rule, so detection logic can be changed centrally without touching endpoints. Results are stored as HMAC-signed evidence records mapped to frameworks such as CIS Controls, ISO/IEC 27001, SOC 2 and CMMC, and are summarised in PDF reports for auditors and other stakeholders.
+LEA is a self-hosted compliance monitoring platform by GSR. Lightweight agents on each host run read-only commands and send the raw output (file contents, `/proc` values, registry queries) to the LEA server. The agents do not decide whether a host is compliant; the server validates the raw output against each rule, so detection logic can be changed centrally without touching endpoints. Results are stored as HMAC-signed evidence records mapped to frameworks such as CIS Controls, ISO/IEC 27001, SOC 2, CMMC, PCI DSS, HIPAA and NIST CSF, and are summarised in PDF reports for auditors and other stakeholders.
 
 ## What this repository contains
 
@@ -102,7 +102,7 @@ The LEA compliance snapshot service selects rules for a framework report by tag 
 | SOC 2 | `std:SOC2` | `std:SOC2:CC6.1` |
 | CMMC | `std:CMMC` | `std:CMMC:AC.L2-3.1.1` |
 
-Because `std:CIS_Controls_v8:...` does not start with `std:CIS:`, the generic `std:CIS` tag is what includes a rule in the CIS report; the safeguard tag documents the mapping. NIST SP 800-53, PCI DSS 4.0, NIS2, DORA and post-quantum tags are informative and are not used by the current evidence reports.
+Because `std:CIS_Controls_v8:...` does not start with `std:CIS:`, the generic `std:CIS` tag is what includes a rule in the CIS report; the safeguard tag documents the mapping. NIST SP 800-53, PCI DSS 4.0, NIS2, DORA, HIPAA, NIST CSF 2.0, ASD Essential Eight and post-quantum tags are informative and are not used by the current evidence reports.
 
 ## Coverage
 
@@ -112,59 +112,62 @@ Rules by platform folder:
 
 | Platform | Rules |
 |---|---|
-| linux | 129 |
-| macos | 25 |
-| windows | 60 |
-| multi | 30 |
-| **Total** | **244** |
+| linux | 347 |
+| macos | 78 |
+| windows | 299 |
+| multi | 45 |
+| **Total** | **769** |
 
-Rules that run on each operating system (multi-platform rules counted once per system): Linux 158, macOS 51, Windows 67.
+Rules that run on each operating system (multi-platform rules counted once per system): Linux 391, macOS 119, Windows 308.
 
 Rules by category:
 
 | Category | linux | macos | windows | multi | Total |
 |---|---|---|---|---|---|
-| access_control | 4 | 4 | 10 | 8 | 26 |
-| audit | 13 | 1 | 9 | 0 | 23 |
-| authentication | 3 | 1 | 6 | 6 | 16 |
-| container_security | 2 | 0 | 0 | 0 | 2 |
-| identity_management | 5 | 1 | 0 | 0 | 6 |
-| integrity | 3 | 3 | 5 | 2 | 13 |
-| kernel_security | 22 | 0 | 1 | 0 | 23 |
-| network_security | 38 | 10 | 20 | 7 | 75 |
-| password_policy | 6 | 1 | 1 | 4 | 12 |
-| system_hardening | 33 | 4 | 8 | 3 | 48 |
-| **Total** | **129** | **25** | **60** | **30** | **244** |
+| access_control | 23 | 14 | 69 | 15 | 121 |
+| audit | 54 | 5 | 49 | 2 | 110 |
+| authentication | 6 | 6 | 27 | 10 | 49 |
+| container_security | 15 | 0 | 0 | 0 | 15 |
+| identity_management | 16 | 5 | 3 | 0 | 24 |
+| integrity | 8 | 7 | 39 | 3 | 57 |
+| kernel_security | 48 | 1 | 6 | 0 | 55 |
+| network_security | 87 | 22 | 54 | 8 | 171 |
+| password_policy | 17 | 5 | 7 | 4 | 33 |
+| system_hardening | 73 | 13 | 45 | 3 | 134 |
+| **Total** | **347** | **78** | **299** | **45** | **769** |
 
 Rules by framework (a rule is counted once per framework, however many controls it maps to):
 
 | Framework | Tag prefix | Rules | Distinct controls |
 |---|---|---|---|
-| CIS Controls v8 | `std:CIS_Controls_v8:` | 205 | 27 safeguards |
-| CIS (product report tag) | `std:CIS` | 210 | - |
-| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 244 | 38 |
-| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 242 | 18 (2022 IDs) |
-| SOC 2 | `std:SOC2:` | 242 | 10 |
-| CMMC 2.0 Level 2 | `std:CMMC:` | 237 | 31 |
-| PCI DSS 4.0 | `std:PCI_DSS_4:` | 222 | 29 |
-| NIS2 Art. 21(2) | `std:NIS2:` | 234 | 6 |
-| DORA | `std:DORA:` | 237 | 2 |
-| Post-quantum readiness | `std:NIST_PQC:` | 23 | - |
+| CIS Controls v8 | `std:CIS_Controls_v8:` | 688 | 35 safeguards |
+| CIS (product report tag) | `std:CIS` | 693 | - |
+| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 769 | 46 |
+| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 767 | 22 (2022 IDs) |
+| SOC 2 | `std:SOC2:` | 759 | 10 |
+| CMMC 2.0 Level 2 | `std:CMMC:` | 755 | 39 |
+| PCI DSS 4.0 | `std:PCI_DSS_4:` | 721 | 39 |
+| NIS2 Art. 21(2) | `std:NIS2:` | 749 | 7 |
+| DORA | `std:DORA:` | 752 | 2 |
+| HIPAA Security Rule | `std:HIPAA:` | 763 | 16 |
+| NIST CSF 2.0 | `std:NIST_CSF_2:` | 763 | 16 |
+| ASD Essential Eight | `std:ASD_E8:` | 58 | 6 |
+| Post-quantum readiness | `std:NIST_PQC:` | 31 | - |
 
-Other facts: 52 rules include a remedy (34 Linux, 6 macOS, 12 Windows); 67 rules are tagged `priv:required`.
+Other facts: 104 rules include a remedy (47 Linux, 6 macOS, 51 Windows); 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated).
 
 See [MAPPINGS.md](MAPPINGS.md) for the full control-to-rule mapping.
 
 ## Post-quantum readiness pack
 
-23 rules, tagged `std:NIST_PQC:`, check the cryptographic baseline that a migration to post-quantum and hybrid key exchange depends on: retiring legacy protocols and weak algorithms (which are exposed to harvest-now-decrypt-later collection), and confirming that the installed software can negotiate hybrid post-quantum key exchange.
+31 rules, tagged `std:NIST_PQC:`, check the cryptographic baseline that a migration to post-quantum and hybrid key exchange depends on: retiring legacy protocols and weak algorithms (which are exposed to harvest-now-decrypt-later collection), and confirming that the installed software can negotiate hybrid post-quantum key exchange.
 
 | Area | Rules |
 |---|---|
 | Post-quantum capability | OpenSSH Version Supports Post-Quantum Key Exchange; SSH Server Post-Quantum Key Exchange Not Removed; OpenSSL Provides Native ML-KEM (OpenSSL 3.5+); OpenSSL 1.1.1 or 3.x Crypto Baseline |
 | System crypto policy | System Crypto Policy FUTURE or FIPS; System Crypto Policy Not LEGACY; Windows FIPS-Compliant Algorithms Enforced |
-| Protocol baseline | OpenSSL System Minimum Protocol TLS 1.2 or Higher; GnuTLS Legacy Protocols Disabled; Java TLS Legacy Protocols and Weak Algorithms Disabled; Windows Legacy SSL/TLS Server Protocols Not Enabled; Windows TLS 1.0 Server Protocol Disabled; Windows TLS 1.1 Server Protocol Disabled; Windows TLS 1.2 Server Protocol Not Disabled; .NET Framework Strong Cryptography Enabled (64-bit); .NET Framework Strong Cryptography Enabled (32-bit) |
-| Algorithms and key sizes | SSH Legacy Algorithms Disabled; SSH Host RSA Key At Least 3072 Bits; OpenSSL Default Cipher List Excludes Weak Ciphers; Java JAR Weak Signature Algorithms Disabled; Windows SChannel RC4 Ciphers Not Enabled; Windows SChannel Triple-DES Cipher Disabled; Windows Diffie-Hellman Server Minimum Key Size 2048 Bits |
+| Protocol baseline | OpenSSL System Minimum Protocol TLS 1.2 or Higher; GnuTLS Legacy Protocols Disabled; Java TLS Legacy Protocols and Weak Algorithms Disabled; Windows Legacy SSL/TLS Server Protocols Not Enabled; Windows TLS 1.0 Server Protocol Disabled; Windows TLS 1.1 Server Protocol Disabled; Windows TLS 1.2 Server Protocol Not Disabled; .NET Framework Strong Cryptography Enabled (64-bit); .NET Framework Strong Cryptography Enabled (32-bit); Windows .NET Framework Uses System Default TLS Versions (32-bit); Windows .NET Framework Uses System Default TLS Versions (64-bit); Windows SSL 2.0 Server Protocol Disabled; Windows SSL 3.0 Client Protocol Disabled; Windows SSL 3.0 Server Protocol Disabled; Windows TLS 1.0 Client Protocol Disabled; Windows TLS 1.1 Client Protocol Disabled |
+| Algorithms and key sizes | SSH Legacy Algorithms Disabled; SSH Host RSA Key At Least 3072 Bits; OpenSSL Default Cipher List Excludes Weak Ciphers; Java JAR Weak Signature Algorithms Disabled; Windows SChannel RC4 Ciphers Not Enabled; Windows SChannel Triple-DES Cipher Disabled; Windows Diffie-Hellman Server Minimum Key Size 2048 Bits; Windows SChannel NULL, DES and RC2 Ciphers Not Enabled |
 
 These rules indicate readiness; they do not test that post-quantum algorithms are negotiated in production traffic.
 

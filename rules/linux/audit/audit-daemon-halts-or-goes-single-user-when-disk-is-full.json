@@ -1,0 +1,66 @@
+{
+  "name": "Audit Daemon Halts or Goes Single-User When Disk Is Full",
+  "description": "Ensures disk_full_action is halt or single and disk_error_action is syslog, single or halt, so audit failures are never silently ignored.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/audit/auditd.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*disk_full_action[ \\t]*=[ \\t]*(?:halt|single)\\b"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*disk_error_action[ \\t]*=[ \\t]*(?:syslog|single|halt)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

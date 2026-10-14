@@ -1,0 +1,65 @@
+{
+  "name": "Windows NetBIOS Node Type P-node",
+  "description": "Ensures NetBIOS name resolution uses only WINS (P-node, NodeType = 2), so NetBIOS broadcasts cannot be spoofed to capture credentials.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NodeType (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NodeType",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+NodeType[ \\t]+REG_DWORD[ \\t]+0x(?:2)\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NodeType /t REG_DWORD /d 2 /f | Out-Null; reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\NetBT\\Parameters\" /v NodeType",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:1.3.1",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

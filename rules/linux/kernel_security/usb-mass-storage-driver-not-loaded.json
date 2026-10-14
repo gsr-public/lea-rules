@@ -25,7 +25,7 @@
           "stdout": "\\S"
         },
         "not_re": {
-          "stdout": "\\busb_storage\\b"
+          "stdout": "(?m)^usb_storage[ \\t]"
         }
       }
     ],
@@ -47,6 +47,10 @@
     "std:PCI_DSS_4:2.2.4",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.310(d)(1)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:kernel_security",
     "env:linux",
     "env:host_level",

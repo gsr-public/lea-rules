@@ -1,0 +1,55 @@
+{
+  "name": "No Duplicate GIDs",
+  "description": "Ensures no two groups in /etc/group share a GID.",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/group",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^root:"
+        },
+        "not_re": {
+          "stdout": "(?m)^[^:\\n]+:[^:\\n]*:(\\d+):[\\s\\S]*?^[^:\\n]+:[^:\\n]*:\\1:"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.1",
+    "std:NIST_800-53:AC-2",
+    "std:ISO27001:A.5.16",
+    "std:SOC2:CC6.2",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:8.2.1",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(4)(ii)(C)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-01",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:identity_management",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "macOS App Store Apps Updated Automatically",
+  "description": "Ensures App Store applications update automatically (com.apple.commerce AutoUpdate = true). Reads the effective value of AutoUpdate in the com.apple.commerce domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/bin/osascript -l JavaScript -e '$.NSUserDefaults.alloc.initWithSuiteName(\"com.apple.commerce\").objectForKey(\"AutoUpdate\").js'",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A\\s*(?:true|1)\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:7.3",
+    "std:CIS_Controls_v8:7.4",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.1",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "std:ASD_E8:patch_applications",
+    "cat:system_hardening",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -22,7 +22,7 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "SMB1\\s+REG_DWORD\\s+0x0"
+          "stdout": "SMB1\\s+REG_DWORD\\s+0x0\\b"
         }
       }
     ],
@@ -50,6 +50,12 @@
     "std:NIS2:Art21.2(e)",
     "std:NIS2:Art21.2(h)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:network_security",
     "env:windows",
     "env:host_level",

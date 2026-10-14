@@ -1,0 +1,56 @@
+{
+  "name": "Windows SSL 3.0 Client Protocol Disabled",
+  "description": "Ensures SSL 3.0 is explicitly disabled for SCHANNEL client connections (Enabled = 0). Older Windows versions enable it when the key is absent, so an explicit setting is required.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\SSL 3.0\\Client\" /v Enabled",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+Enabled[ \\t]+REG_DWORD[ \\t]+0x(?:0)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(iv)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_PQC:transition",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

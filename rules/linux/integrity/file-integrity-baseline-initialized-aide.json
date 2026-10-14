@@ -1,0 +1,50 @@
+{
+  "name": "File Integrity Baseline Initialized (AIDE)",
+  "description": "Ensures an AIDE baseline database exists (/var/lib/aide/aide.db or aide.db.gz), so integrity checks have something to compare against.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/ls /var/lib/aide",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /var/lib/aide 2>&1",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^aide\\.db(?:\\.gz)?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.16",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.6",
+    "std:PCI_DSS_4:11.5.2",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

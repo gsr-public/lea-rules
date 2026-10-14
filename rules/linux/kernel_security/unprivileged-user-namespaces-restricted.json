@@ -1,0 +1,52 @@
+{
+  "name": "Unprivileged User Namespaces Restricted",
+  "description": "Ensures unprivileged users cannot freely create user namespaces, which expose large amounts of kernel attack surface (netfilter, mounts) to unprivileged code. Passes when any of the following holds: kernel.unprivileged_userns_clone = 0 (Debian kernels), kernel.apparmor_restrict_unprivileged_userns = 1 (Ubuntu 23.10+), or user.max_user_namespaces = 0. Rootless containers and browser sandboxes need user namespaces; exclude hosts that run them.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "for f in /proc/sys/kernel/unprivileged_userns_clone /proc/sys/kernel/apparmor_restrict_unprivileged_userns /proc/sys/user/max_user_namespaces; do printf '%s=' \"$f\"; cat \"$f\" 2>/dev/null || echo absent; done",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^(?:/proc/sys/kernel/unprivileged_userns_clone=0|/proc/sys/kernel/apparmor_restrict_unprivileged_userns=1|/proc/sys/user/max_user_namespaces=0)\\s*$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

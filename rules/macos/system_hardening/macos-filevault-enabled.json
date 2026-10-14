@@ -42,6 +42,8 @@
     "std:PCI_DSS_4:3.5.1",
     "std:NIS2:Art21.2(h)",
     "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(iv)",
+    "std:NIST_CSF_2:PR.DS-01",
     "cat:system_hardening",
     "env:macos",
     "env:host_level",

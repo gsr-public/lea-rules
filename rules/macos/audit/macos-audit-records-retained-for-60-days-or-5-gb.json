@@ -1,0 +1,58 @@
+{
+  "name": "macOS Audit Records Retained for 60 Days or 5 GB",
+  "description": "Ensures audit records are retained until they are at least 60 days old or total 5 GB (expire-after in /etc/security/audit_control).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/security/audit_control",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/security/audit_control",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^expire-after:[ \\t]*(?:(?:[6-9]\\d|[1-9]\\d{2,})d|(?:[5-9]|[1-9]\\d{1,})G)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:NIST_800-53:AU-11",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:macos",
+    "env:host_level",
+    "risk:low",
+    "priv:required"
+  ]
+}

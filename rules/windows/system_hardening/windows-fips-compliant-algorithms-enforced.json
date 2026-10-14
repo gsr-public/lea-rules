@@ -22,7 +22,7 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "Enabled\\s+REG_DWORD\\s+0x1"
+          "stdout": "Enabled\\s+REG_DWORD\\s+0x1\\b"
         }
       }
     ],
@@ -40,11 +40,14 @@
     "std:PCI_DSS_4:12.3.3",
     "std:NIS2:Art21.2(h)",
     "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(iv)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.DS-02",
     "std:NIST_PQC:transition",
     "cat:system_hardening",
     "env:windows",
     "env:host_level",
-    "risk:high",
-    "priv:required"
+    "risk:high"
   ]
 }

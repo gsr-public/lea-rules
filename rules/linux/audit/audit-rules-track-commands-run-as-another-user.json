@@ -1,0 +1,61 @@
+{
+  "name": "Audit Rules Track Commands Run as Another User",
+  "description": "Ensures the audit rules record every execve where the effective UID differs from the real UID (-C euid!=uid), capturing actions performed through sudo, su and set-UID programs.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*(?:-a[ \\t]+(?:always,exit|exit,always)[^\\n]*-C[ \\t]*(?:euid!=uid|uid!=euid)[^\\n]*-S[ \\t]*execve\\b|-a[ \\t]+(?:always,exit|exit,always)[^\\n]*-S[ \\t]*execve\\b[^\\n]*-C[ \\t]*(?:euid!=uid|uid!=euid))"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.5",
+    "std:CIS_Controls_v8:8.8",
+    "std:NIST_800-53:AC-6",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.2",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.2.1.2",
+    "std:PCI_DSS_4:10.2.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(a)(1)",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

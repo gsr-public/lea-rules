@@ -1,0 +1,57 @@
+{
+  "name": "macOS Screen Sharing Disabled",
+  "description": "Ensures Screen Sharing (VNC) is disabled. Passes when launchd lists \"com.apple.screensharing\" as disabled in the system domain.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/launchctl print-disabled system",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "launchctl print-disabled system",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\"com\\.apple\\.screensharing\"[ \\t]*=>[ \\t]*(?:disabled|true)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:AC-17",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:macos",
+    "env:host_level",
+    "risk:high",
+    "priv:required"
+  ]
+}

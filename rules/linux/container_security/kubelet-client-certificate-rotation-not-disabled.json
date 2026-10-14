@@ -1,0 +1,60 @@
+{
+  "name": "Kubelet Client Certificate Rotation Not Disabled",
+  "description": "Ensures rotateCertificates is not set to false, so the kubelet renews its client certificate before it expires. Reads /var/lib/kubelet/config.yaml; passes with LEA_RULE_no_service when no kubelet is running.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /var/lib/kubelet/config.yaml",
+  "active": true,
+  "category": "container_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^kubelet$'; then cat /var/lib/kubelet/config.yaml 2>/dev/null; echo LEA_KUBELET; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "LEA_KUBELET|LEA_RULE_no_service"
+        },
+        "not_re": {
+          "stdout": "(?m)^rotateCertificates:[ \\t]*false\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-39",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(a)(2)(iv)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:container_security",
+    "env:linux",
+    "env:host_level",
+    "risk:low",
+    "priv:required"
+  ]
+}

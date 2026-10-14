@@ -1,7 +1,7 @@
 {
   "name": "Windows TCP SYN Attack Protection Enabled",
-  "description": "Ensures Windows SynAttackProtect is enabled (1), improving resilience against SYN flood attacks. Required Windows permission: LEA agent account must be allowed to run only: reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v SynAttackProtect via delegated run-as permission, Scheduled Task, or service configuration.",
-  "active": true,
+  "description": "Deprecated: SynAttackProtect is ignored by the TCP/IP stack since Windows Vista and Windows Server 2008, where SYN attack protection is always on. The rule is kept inactive for compatibility with existing imports and will be removed in a future release. Ensures Windows SynAttackProtect is enabled (1), improving resilience against SYN flood attacks.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v SynAttackProtect (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": false,
   "category": "network_security",
   "cycle": 3600,
   "cmd_info_key": null,
@@ -22,7 +22,7 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "SynAttackProtect\\s+REG_DWORD\\s+0x1"
+          "stdout": "SynAttackProtect\\s+REG_DWORD\\s+0x1\\b"
         }
       }
     ],
@@ -49,10 +49,13 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.IR-04",
     "cat:network_security",
     "env:windows",
     "env:host_level",
-    "risk:high",
-    "priv:required"
+    "risk:high"
   ]
 }

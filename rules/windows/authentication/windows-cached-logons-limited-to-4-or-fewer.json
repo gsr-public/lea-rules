@@ -1,0 +1,55 @@
+{
+  "name": "Windows Cached Logons Limited to 4 or Fewer",
+  "description": "Ensures no more than 4 domain logons are cached (CachedLogonsCount), limiting cached credential hashes an attacker can extract and crack offline.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\" /v CachedLogonsCount",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+CachedLogonsCount[ \\t]+REG_(?:EXPAND_)?SZ[ \\t]+[0-4][ \\t]*\\r?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:IA-5",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.5.17",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.10",
+    "std:PCI_DSS_4:8.3.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.308(a)(5)(ii)(D)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Windows AutoPlay Disabled for Non-Volume Devices",
+  "description": "Ensures AutoPlay is disabled for non-volume devices such as MTP cameras and phones (NoAutoplayfornonVolume = 1).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v NoAutoplayfornonVolume (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v NoAutoplayfornonVolume",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+NoAutoplayfornonVolume[ \\t]+REG_DWORD[ \\t]+0x(?:1)\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v NoAutoplayfornonVolume /t REG_DWORD /d 1 /f | Out-Null; reg query \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\" /v NoAutoplayfornonVolume",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.3",
+    "std:NIST_800-53:MP-7",
+    "std:ISO27001:A.7.10",
+    "std:SOC2:CC6.8",
+    "std:CMMC:MP.L2-3.8.7",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.310(d)(1)",
+    "std:NIST_CSF_2:PR.DS-01",
+    "cat:system_hardening",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

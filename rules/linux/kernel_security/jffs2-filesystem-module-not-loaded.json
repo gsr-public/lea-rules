@@ -25,7 +25,7 @@
           "stdout": "\\S"
         },
         "not_re": {
-          "stdout": "\\bjffs2\\b"
+          "stdout": "(?m)^jffs2[ \\t]"
         }
       }
     ],
@@ -52,6 +52,8 @@
     "std:PCI_DSS_4:2.2.4",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:kernel_security",
     "env:linux",
     "env:host_level",

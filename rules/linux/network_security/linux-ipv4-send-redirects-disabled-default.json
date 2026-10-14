@@ -1,6 +1,6 @@
 {
   "name": "Linux IPv4 Send Redirects Disabled (Default)",
-  "description": "Ensures net.ipv4.conf.default.send_redirects is set to 0 so newly created interfaces do not send ICMP redirects by default.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password:\nlea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.default.send_redirects=0",
+  "description": "Ensures net.ipv4.conf.default.send_redirects is set to 0 so newly created interfaces do not send ICMP redirects by default.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.default.send_redirects=0",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -48,10 +48,12 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
     "cat:network_security",
     "env:linux",
     "env:host_level",
-    "risk:medium",
-    "priv:required"
+    "risk:medium"
   ]
 }

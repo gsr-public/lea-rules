@@ -1,0 +1,62 @@
+{
+  "name": "Windows Audit Subcategory Settings Override Category Settings",
+  "description": "Ensures advanced audit policy subcategory settings override legacy category settings (SCENoApplyLegacyAuditPolicy = 1), otherwise the subcategory audit rules may not be applied.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\" /v SCENoApplyLegacyAuditPolicy (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\" /v SCENoApplyLegacyAuditPolicy",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+SCENoApplyLegacyAuditPolicy[ \\t]+REG_DWORD[ \\t]+0x(?:1)\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\" /v SCENoApplyLegacyAuditPolicy /t REG_DWORD /d 1 /f | Out-Null; reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\" /v SCENoApplyLegacyAuditPolicy",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.5",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.2",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.2.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "GDM Last User List Disabled",
+  "description": "Ensures the GNOME login screen does not list user accounts (disable-user-list=true), so account names are not disclosed. Passes with LEA_RULE_no_service when GDM is not installed.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if [ -d /etc/gdm3 ] || [ -d /etc/gdm ]; then cat /etc/dconf/db/gdm.d/* /etc/dconf/db/local.d/* /etc/gdm3/custom.conf /etc/gdm/custom.conf 2>/dev/null; echo 'LEA_GDM'; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*disable-user-list[ \\t]*=[ \\t]*true\\b|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-8",
+    "std:NIST_800-53:IA-2",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:PCI_DSS_4:8.3.1",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(i)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:access_control",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

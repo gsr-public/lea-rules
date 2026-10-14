@@ -1,0 +1,50 @@
+{
+  "name": "Journald Log Compression Not Disabled",
+  "description": "Ensures systemd-journald compression is not turned off (Compress=no), so large journal entries are compressed and more history fits in the configured space. Compression is on by default.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/systemd/journald.conf /etc/systemd/journald.conf.d/*.conf /usr/lib/systemd/journald.conf.d/*.conf 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*Compress[ \\t]*=[ \\t]*(?:no|false|0)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-11",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.6",
+    "std:SOC2:A1.1",
+    "std:NIS2:Art21.2(c)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

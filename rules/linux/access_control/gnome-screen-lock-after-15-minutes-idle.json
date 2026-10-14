@@ -1,0 +1,55 @@
+{
+  "name": "GNOME Screen Lock After 15 Minutes Idle",
+  "description": "Ensures GNOME locks the screen after at most 900 seconds idle (idle-delay=uint32 1-900 and lock-enabled not false). Passes with LEA_RULE_no_service when GDM is not installed.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if [ -d /etc/gdm3 ] || [ -d /etc/gdm ]; then cat /etc/dconf/db/gdm.d/* /etc/dconf/db/local.d/* /etc/gdm3/custom.conf /etc/gdm/custom.conf 2>/dev/null; echo 'LEA_GDM'; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*idle-delay[ \\t]*=[ \\t]*(?:uint32[ \\t]+)?(?:[1-9]|[1-9]\\d|[1-8]\\d{2}|900)\\b|LEA_RULE_no_service"
+        },
+        "not_re": {
+          "stdout": "(?m)^[ \\t]*lock-enabled[ \\t]*=[ \\t]*false\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.3",
+    "std:NIST_800-53:AC-11",
+    "std:NIST_800-53:AC-12",
+    "std:ISO27001:A.8.1",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.10",
+    "std:CMMC:AC.L2-3.1.11",
+    "std:PCI_DSS_4:8.2.8",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(iii)",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:access_control",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

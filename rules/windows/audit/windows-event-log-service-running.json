@@ -1,0 +1,56 @@
+{
+  "name": "Windows Event Log Service Running",
+  "description": "Ensures the Windows Event Log service (EventLog) is running, without which no security events are recorded.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "sc.exe query EventLog",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\s*STATE\\s*:\\s*4\\s+RUNNING\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

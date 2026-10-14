@@ -47,6 +47,8 @@
     "std:CMMC:MP.L2-3.8.7",
     "std:NIS2:Art21.2(g)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:system_hardening",
     "env:windows",
     "env:host_level",

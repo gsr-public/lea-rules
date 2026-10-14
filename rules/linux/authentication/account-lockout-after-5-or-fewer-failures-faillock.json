@@ -1,6 +1,6 @@
 {
   "name": "Account Lockout After 5 or Fewer Failures (faillock)",
-  "description": "Ensures pam_faillock locks an account after at most 5 consecutive failed logins (deny in /etc/security/faillock.conf). Pair with 'Account Lockout Enforced After Failed Logins', which checks that pam_faillock is in the PAM stack.",
+  "description": "Ensures pam_faillock locks an account after at most 5 consecutive failed logins, set either in /etc/security/faillock.conf (deny) or as a deny= argument on the pam_faillock lines of the PAM stack, and that no file sets a higher or zero value. Pair with 'Account Lockout Enforced After Failed Logins', which checks that pam_faillock is in the PAM stack.",
   "active": true,
   "category": "authentication",
   "cycle": 3600,
@@ -8,7 +8,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/security/faillock.conf",
+        "command": "cat /etc/security/faillock.conf /etc/pam.d/system-auth /etc/pam.d/password-auth /etc/pam.d/common-auth 2>/dev/null",
         "system": [
           "Linux"
         ],
@@ -22,7 +22,10 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "(?m)^[ \\t]*deny[ \\t]*=[ \\t]*[1-5]\\b"
+          "stdout": "(?m)^(?:[ \\t]*deny[ \\t]*=[ \\t]*|[ \\t]*auth\\b[^#\\n]*\\bpam_faillock\\.so\\b[^#\\n]*\\bdeny=)[1-5]\\b"
+        },
+        "not_re": {
+          "stdout": "(?m)^(?:[ \\t]*deny[ \\t]*=[ \\t]*|[ \\t]*auth\\b[^#\\n]*\\bpam_faillock\\.so\\b[^#\\n]*\\bdeny=)(?:0|[6-9]|[1-9]\\d+)\\b"
         }
       }
     ],
@@ -38,6 +41,9 @@
     "std:PCI_DSS_4:8.3.4",
     "std:NIS2:Art21.2(i)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(5)(ii)(C)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-03",
     "cat:authentication",
     "env:linux",
     "env:host_level",

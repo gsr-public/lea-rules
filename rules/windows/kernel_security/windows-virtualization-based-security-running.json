@@ -1,0 +1,51 @@
+{
+  "name": "Windows Virtualization-Based Security Running",
+  "description": "Ensures virtualization-based security is enabled and running (Win32_DeviceGuard VirtualizationBasedSecurityStatus = 2), the foundation for Credential Guard and memory integrity.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "Get-CimInstance -ClassName Win32_DeviceGuard -Namespace root\\Microsoft\\Windows\\DeviceGuard | Format-List -Property VirtualizationBasedSecurityStatus,SecurityServicesRunning",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^VirtualizationBasedSecurityStatus[ \\t]*:[ \\t]*2[ \\t]*\\r?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

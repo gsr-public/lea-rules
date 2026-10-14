@@ -1,0 +1,54 @@
+{
+  "name": "Windows ASR Rule: Block All Office Applications from Creating Child Processes",
+  "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block All Office Applications from Creating Child Processes\" (d4f940ab-401b-4efc-aadc-ad5f3c50688a) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "$p = Get-MpPreference; for ($i = 0; $i -lt $p.AttackSurfaceReductionRules_Ids.Count; $i++) { '{0}={1}' -f $p.AttackSurfaceReductionRules_Ids[$i], $p.AttackSurfaceReductionRules_Actions[$i] }",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^d4f940ab\\-401b\\-4efc\\-aadc\\-ad5f3c50688a=1[ \\t]*\\r?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:SI-3",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:SI.L2-3.14.2",
+    "std:PCI_DSS_4:5.2.1",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.308(a)(5)(ii)(B)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:ASD_E8:office_macros",
+    "cat:integrity",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

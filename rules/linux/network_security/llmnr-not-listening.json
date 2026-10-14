@@ -1,0 +1,60 @@
+{
+  "name": "LLMNR Not Listening",
+  "description": "Ensures nothing listens for LLMNR on UDP port 5355; LLMNR responses are easily spoofed to capture credentials. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/net/udp /proc/net/udp6",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\bsl\\b"
+        },
+        "not_re": {
+          "stdout": "(?m)^\\s*\\d+:\\s+[0-9A-F]{8}(?:[0-9A-F]{24})?:(?:14EB)\\s+[0-9A-F]+:[0-9A-F]{4}\\s+07\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:1.3.1",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

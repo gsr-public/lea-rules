@@ -1,0 +1,69 @@
+{
+  "name": "dnf-automatic Timer Enabled",
+  "description": "Ensures dnf-automatic is scheduled (dnf-automatic.timer or dnf-automatic-install.timer enabled), so updates are downloaded and, with apply_updates, installed automatically.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /etc/systemd/system/timers.target.wants 2>&1",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?m)^dnf-automatic(?:-install)?\\.timer$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:7.3",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.1",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

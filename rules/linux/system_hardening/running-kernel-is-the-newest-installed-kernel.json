@@ -1,0 +1,51 @@
+{
+  "name": "Running Kernel Is the Newest Installed Kernel",
+  "description": "Ensures the running kernel (uname -r) is the newest kernel image installed in /boot, so kernel security updates that were installed have actually taken effect after a reboot.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "uname -r; ls -1v /boot/vmlinuz-*",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(\\S+)\\n[\\s\\S]*/boot/vmlinuz-\\1\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:7.3",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.1",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

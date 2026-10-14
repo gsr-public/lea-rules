@@ -1,0 +1,51 @@
+{
+  "name": "macOS Root Account Disabled",
+  "description": "Ensures the root account has no authentication authority (directory services report no AuthenticationAuthority for root), so nobody can log in as root.",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "dscl . -read /Users/root AuthenticationAuthority 2>&1",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "No such key:\\s*AuthenticationAuthority"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.4",
+    "std:NIST_800-53:AC-6",
+    "std:ISO27001:A.8.2",
+    "std:SOC2:CC6.3",
+    "std:CMMC:AC.L2-3.1.5",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:PCI_DSS_4:7.2.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:identity_management",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

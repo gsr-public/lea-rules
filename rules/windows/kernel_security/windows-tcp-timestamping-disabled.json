@@ -1,6 +1,6 @@
 {
   "name": "Windows TCP Timestamping Disabled",
-  "description": "Ensures TCP timestamps are disabled (Tcp1323Opts = 0), reducing exposure to timestamp-based fingerprinting and uptime disclosure. Note that this value also disables TCP window scaling; review throughput impact before enforcing.\nRequired Windows permission: LEA agent account must be allowed to run only: reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v Tcp1323Opts.",
+  "description": "Ensures TCP timestamps are disabled (Tcp1323Opts = 0), reducing exposure to timestamp-based fingerprinting and uptime disclosure. Note that this value also disables TCP window scaling; review throughput impact before enforcing.",
   "active": true,
   "category": "kernel_security",
   "cycle": 3600,
@@ -22,7 +22,7 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "Tcp1323Opts\\s+REG_DWORD\\s+0x0"
+          "stdout": "Tcp1323Opts\\s+REG_DWORD\\s+0x0\\b"
         }
       }
     ],
@@ -41,10 +41,13 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:kernel_security",
     "env:windows",
     "env:host_level",
-    "risk:medium",
-    "priv:required"
+    "risk:medium"
   ]
 }

@@ -1,0 +1,53 @@
+{
+  "name": "Windows PowerShell 2.0 Engine Disabled",
+  "description": "Ensures the Windows PowerShell 2.0 engine is not enabled. PowerShell 2.0 lacks script block logging and AMSI and is used to downgrade attacks. Passes when the feature is disabled or not present (Windows 11 24H2 and later).\nRequired Windows permission: the LEA agent account must be allowed to run Get-WindowsOptionalFeature -Online (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "Get-WindowsOptionalFeature -Online -FeatureName MicrosoftWindowsPowerShellV2Root | Format-List -Property FeatureName,State",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?m)^State[ \\t]*:[ \\t]*Enable"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:ASD_E8:user_application_hardening",
+    "cat:system_hardening",
+    "env:windows",
+    "env:host_level",
+    "risk:high",
+    "priv:required"
+  ]
+}

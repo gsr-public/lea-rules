@@ -1,0 +1,56 @@
+{
+  "name": "Windows PowerShell Operational Event Log Size At Least 64 MB",
+  "description": "Ensures the Microsoft-Windows-PowerShell/Operational log, which receives script block logging, can grow to at least 65,536 KB.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "wevtutil gl Microsoft-Windows-PowerShell/Operational",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^maxSize:\\s*(?:6710886[4-9]|671088[7-9]\\d|671089\\d{2}|67109\\d{3}|671[1-9]\\d{4}|67[2-9]\\d{5}|6[89]\\d{6}|[7-9]\\d{7}|[1-9]\\d{8,})\\s*\\r?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

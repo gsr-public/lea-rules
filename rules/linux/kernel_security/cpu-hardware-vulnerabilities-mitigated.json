@@ -1,0 +1,57 @@
+{
+  "name": "CPU Hardware Vulnerabilities Mitigated",
+  "description": "Ensures the kernel reports no CPU hardware vulnerability as \"Vulnerable\" in /sys/devices/system/cpu/vulnerabilities (Spectre, Meltdown, MDS, L1TF, Retbleed, GDS and others). A vulnerable state usually means missing CPU microcode, an outdated kernel or a hypervisor that does not pass mitigations through to the VM.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /sys/devices/system/cpu/vulnerabilities/*",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?m)^Vulnerable\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-2",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

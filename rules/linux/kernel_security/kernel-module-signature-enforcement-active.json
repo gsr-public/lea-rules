@@ -1,0 +1,54 @@
+{
+  "name": "Kernel Module Signature Enforcement Active",
+  "description": "Ensures the kernel refuses unsigned kernel modules: either module.sig_enforce is Y or kernel lockdown (which enforces module signatures) is in integrity or confidentiality mode.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /sys/module/module/parameters/sig_enforce /sys/kernel/security/lockdown 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\AY\\b|\\[(?:integrity|confidentiality)\\]"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

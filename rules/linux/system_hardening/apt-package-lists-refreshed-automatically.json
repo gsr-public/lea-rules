@@ -1,0 +1,57 @@
+{
+  "name": "APT Package Lists Refreshed Automatically",
+  "description": "Ensures APT refreshes package lists daily (APT::Periodic::Update-Package-Lists \"1\"), so security updates are discovered promptly.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/apt/apt.conf.d/* 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ],
+        "re": {
+          "stdout": "(?m)^[ \\t]*APT::Periodic::Update-Package-Lists[ \\t]+\"?[1-9]"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:7.3",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.1",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

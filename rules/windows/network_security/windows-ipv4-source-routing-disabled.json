@@ -1,6 +1,6 @@
 {
   "name": "Windows IPv4 Source Routing Disabled",
-  "description": "Ensures Windows does not allow processing of IPv4 source-routed packets by verifying DisableIPSourceRouting is configured to a secure value (2). Required Windows permission: LEA agent account must be allowed to run only: reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v DisableIPSourceRouting via delegated run-as permission, Scheduled Task, or service configuration.",
+  "description": "Ensures Windows does not allow processing of IPv4 source-routed packets by verifying DisableIPSourceRouting is configured to a secure value (2).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v DisableIPSourceRouting (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -22,7 +22,7 @@
         ],
         "distribution": [],
         "re": {
-          "stdout": "DisableIPSourceRouting\\s+REG_DWORD\\s+0x2"
+          "stdout": "DisableIPSourceRouting\\s+REG_DWORD\\s+0x2\\b"
         }
       }
     ],
@@ -49,10 +49,12 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
     "cat:network_security",
     "env:windows",
     "env:host_level",
-    "risk:medium",
-    "priv:required"
+    "risk:medium"
   ]
 }

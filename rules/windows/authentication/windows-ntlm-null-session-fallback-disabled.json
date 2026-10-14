@@ -1,0 +1,49 @@
+{
+  "name": "Windows NTLM Null Session Fallback Disabled",
+  "description": "Ensures NTLM does not fall back to null sessions (allownullsessionfallback = 0).",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\" /v allownullsessionfallback",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]+allownullsessionfallback[ \\t]+REG_DWORD[ \\t]+(?!0x(?:0)\\b)0x[0-9a-f]+"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-2",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:PCI_DSS_4:8.3.1",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(i)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

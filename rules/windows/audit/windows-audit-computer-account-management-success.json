@@ -1,0 +1,63 @@
+{
+  "name": "Windows Audit Computer Account Management (Success)",
+  "description": "Ensures the advanced audit policy subcategory 'Computer Account Management' records success events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "auditpol /get /category:*",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]+Computer\\ Account\\ Management[ \\t]+Success(?: and Failure)?[ \\t]*\\r?$"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "auditpol /set /subcategory:\"Computer Account Management\" /success:enable | Out-Null; auditpol /get /category:*",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.5",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.2",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.2.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

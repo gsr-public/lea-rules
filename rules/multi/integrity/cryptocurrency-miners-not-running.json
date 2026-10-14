@@ -1,0 +1,100 @@
+{
+  "name": "Cryptocurrency Miners Not Running",
+  "description": "Ensures no known cryptocurrency mining software or cryptojacking malware is running (XMRig, cpuminer, ethminer, T-Rex, NBMiner, lolMiner, PhoenixMiner, TeamRedMiner, SRBMiner, Kinsing and kdevtmpfsi, among others). Process names are read from /proc/*/comm on Linux, ps -axco command on macOS and tasklist on Windows.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ps -axco command",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "tasklist",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:2.3",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SI-3",
+    "std:NIST_800-53:SI-4",
+    "std:ISO27001:A.8.19",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:CMMC:SI.L2-3.14.7",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.308(a)(1)(ii)(D)",
+    "std:HIPAA:164.308(a)(5)(ii)(B)",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:DE.CM-01",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:integrity",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

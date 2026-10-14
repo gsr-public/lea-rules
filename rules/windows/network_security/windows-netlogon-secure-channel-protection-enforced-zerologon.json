@@ -1,0 +1,52 @@
+{
+  "name": "Windows Netlogon Secure Channel Protection Enforced (Zerologon)",
+  "description": "Ensures Netlogon secure RPC enforcement is not disabled (FullSecureChannelProtection not 0), mitigating Zerologon (CVE-2020-1472). Enforcement is on by default since February 2021, so an absent value passes. Relevant on domain controllers.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Netlogon\\Parameters\" /v FullSecureChannelProtection",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]+FullSecureChannelProtection[ \\t]+REG_DWORD[ \\t]+(?!0x(?:1)\\b)0x[0-9a-f]+"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:7.3",
+    "std:NIST_800-53:SC-23",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:SI.L2-3.14.1",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:ID.RA-01",
+    "std:NIST_CSF_2:PR.PS-02",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

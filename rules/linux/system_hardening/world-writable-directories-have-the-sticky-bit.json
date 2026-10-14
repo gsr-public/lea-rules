@@ -1,0 +1,50 @@
+{
+  "name": "World-Writable Directories Have the Sticky Bit",
+  "description": "Ensures every world-writable directory on local filesystems has the sticky bit set, so users cannot delete or rename other users' files in shared directories such as /tmp. Without root, unreadable directories are skipped.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "find / -xdev -type d -perm -0002 ! -perm -1000 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "."
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:NIST_800-53:AC-3",
+    "std:ISO27001:A.8.3",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

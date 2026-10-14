@@ -1,0 +1,52 @@
+{
+  "name": "No .rhosts, .shosts, .netrc or .forward Files in Home Directories",
+  "description": "Ensures no home directory contains .rhosts or .shosts (host-based trust), .netrc (clear-text credentials for FTP and other clients) or .forward (mail forwarding that can execute commands). Without root, unreadable home directories are skipped.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "find /home /root -maxdepth 2 \\( -name .rhosts -o -name .shosts -o -name .netrc -o -name .forward \\) 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "."
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-2",
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:PCI_DSS_4:8.3.1",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(5)(ii)(D)",
+    "std:HIPAA:164.312(a)(2)(i)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-01",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:authentication",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

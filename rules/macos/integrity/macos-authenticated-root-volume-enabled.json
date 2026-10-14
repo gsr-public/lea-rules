@@ -1,0 +1,54 @@
+{
+  "name": "macOS Authenticated Root Volume Enabled",
+  "description": "Ensures the sealed system volume is cryptographically verified at boot (csrutil authenticated-root status reports enabled), so modifications to the operating system are detected.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "csrutil authenticated-root status",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Authenticated Root status:[ \\t]*enabled\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:integrity",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

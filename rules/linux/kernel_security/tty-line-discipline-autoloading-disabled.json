@@ -1,0 +1,59 @@
+{
+  "name": "TTY Line Discipline Autoloading Disabled",
+  "description": "Ensures dev.tty.ldisc_autoload is 0, so unprivileged users cannot trigger loading of rarely used TTY line discipline modules, a recurring source of kernel privilege-escalation bugs. Kernels older than 5.1 do not provide the setting and fail.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w dev.tty.ldisc_autoload=0",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/dev/tty/ldisc_autoload",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(?:0)\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "sysctl -w dev.tty.ldisc_autoload=0 >/dev/null && cat /proc/sys/dev/tty/ldisc_autoload",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

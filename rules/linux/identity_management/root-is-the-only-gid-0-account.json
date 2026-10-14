@@ -1,0 +1,54 @@
+{
+  "name": "Root Is the Only GID 0 Account",
+  "description": "Ensures no account other than root (and the legacy sync, shutdown, halt and operator accounts) has GID 0 as its primary group, which grants access to files owned by group root.",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/passwd",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^root:[^:\\n]*:0:0:"
+        },
+        "not_re": {
+          "stdout": "(?m)^(?!(?:root|sync|shutdown|halt|operator):)[^:\\n]+:[^:\\n]*:\\d+:0:"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.4",
+    "std:NIST_800-53:AC-6",
+    "std:ISO27001:A.8.2",
+    "std:SOC2:CC6.3",
+    "std:CMMC:AC.L2-3.1.5",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:PCI_DSS_4:7.2.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:identity_management",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

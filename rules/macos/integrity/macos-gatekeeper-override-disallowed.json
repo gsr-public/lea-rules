@@ -1,0 +1,52 @@
+{
+  "name": "macOS Gatekeeper Override Disallowed",
+  "description": "Ensures users cannot bypass Gatekeeper for unsigned or unnotarized apps (com.apple.systempolicy.managed DisableOverride = true). Reads the effective value of DisableOverride in the com.apple.systempolicy.managed domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/bin/osascript -l JavaScript -e '$.NSUserDefaults.alloc.initWithSuiteName(\"com.apple.systempolicy.managed\").objectForKey(\"DisableOverride\").js'",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A\\s*(?:true|1)\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:2.5",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:CM-14",
+    "std:ISO27001:A.8.19",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:PR.PS-05",
+    "std:ASD_E8:application_control",
+    "cat:integrity",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

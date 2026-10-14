@@ -1,0 +1,49 @@
+{
+  "name": "Windows Convenience PIN Sign-in Disabled",
+  "description": "Ensures domain users cannot sign in with a convenience PIN (AllowDomainPINLogon = 0); use Windows Hello for Business instead.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v AllowDomainPINLogon",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+AllowDomainPINLogon[ \\t]+REG_DWORD[ \\t]+0x(?:0)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-2",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:PCI_DSS_4:8.3.1",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(2)(i)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

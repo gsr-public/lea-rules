@@ -1,0 +1,51 @@
+{
+  "name": "Windows Print Spooler Disabled on Servers",
+  "description": "Ensures the Print Spooler service is disabled on domain controllers and servers that do not print, removing PrintNightmare-class attack surface. Passes when the service is set to Disabled (Start = 4) or is not installed.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Spooler /v Start",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]+Start[ \\t]+REG_DWORD[ \\t]+0x[0-3]\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

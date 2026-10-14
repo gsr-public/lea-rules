@@ -1,6 +1,6 @@
 {
   "name": "Linux Bogus ICMP Error Responses Ignored",
-  "description": "Ensures net.ipv4.icmp_ignore_bogus_error_responses is set to 1 so that bogus ICMP error responses are ignored, reducing noise and potential misuse for reconnaissance.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password:\nlea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1",
+  "description": "Ensures net.ipv4.icmp_ignore_bogus_error_responses is set to 1 so that bogus ICMP error responses are ignored, reducing noise and potential misuse for reconnaissance.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -49,10 +49,13 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.IR-04",
     "cat:network_security",
     "env:linux",
     "env:host_level",
-    "risk:low",
-    "priv:required"
+    "risk:low"
   ]
 }

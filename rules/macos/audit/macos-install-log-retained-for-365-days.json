@@ -1,0 +1,60 @@
+{
+  "name": "macOS Install Log Retained for 365 Days",
+  "description": "Ensures the install log (/etc/asl/com.apple.install) is retained for at least 365 days (ttl=365 or more) and not capped by size (no all_max).",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/asl/com.apple.install",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\bttl=(?:36[5-9]|3[7-9]\\d|[4-9]\\d{2}|[1-9]\\d{3,})\\b"
+        },
+        "not_re": {
+          "stdout": "\\ball_max="
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:NIST_800-53:AU-11",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:macos",
+    "env:host_level",
+    "risk:low"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Windows Setup Event Log Size At Least 32 MB",
+  "description": "Ensures the Setup event log can grow to at least 32,768 KB, so events are not overwritten before collection.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "wevtutil gl Setup",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^maxSize:\\s*(?:3355443[2-9]|335544[4-9]\\d|33554[5-9]\\d{2}|3355[5-9]\\d{3}|335[6-9]\\d{4}|33[6-9]\\d{5}|3[4-9]\\d{6}|[4-9]\\d{7}|[1-9]\\d{8,})\\s*\\r?$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-5",
+    "std:NIST_800-53:AU-9",
+    "std:NIST_800-53:AU-11",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.4",
+    "std:CMMC:AU.L2-3.3.8",
+    "std:PCI_DSS_4:10.3.2",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

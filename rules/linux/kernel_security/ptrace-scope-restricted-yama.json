@@ -50,10 +50,14 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(c)(1)",
+    "std:NIST_CSF_2:DE.CM-09",
+    "std:NIST_CSF_2:PR.DS-01",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:kernel_security",
     "env:linux",
     "env:host_level",
-    "risk:high",
-    "priv:required"
+    "risk:high"
   ]
 }

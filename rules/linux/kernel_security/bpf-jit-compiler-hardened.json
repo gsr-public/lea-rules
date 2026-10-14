@@ -1,0 +1,59 @@
+{
+  "name": "BPF JIT Compiler Hardened",
+  "description": "Ensures net.core.bpf_jit_harden is 2, so the BPF JIT compiler blinds constants for all users and JIT spraying attacks are mitigated. Passes with LEA_RULE_no_service when the kernel has no BPF JIT.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.core.bpf_jit_harden=2",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/net/core/bpf_jit_harden 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(?:2)\\s*\\Z|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "sysctl -w net.core.bpf_jit_harden=2 >/dev/null && cat /proc/sys/net/core/bpf_jit_harden",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-16",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

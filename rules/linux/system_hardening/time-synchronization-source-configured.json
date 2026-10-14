@@ -1,0 +1,48 @@
+{
+  "name": "Time Synchronization Source Configured",
+  "description": "Ensures an explicit time source is configured for chrony (server or pool), systemd-timesyncd (NTP=) or ntpd, instead of relying on compiled-in defaults.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/chrony.conf /etc/chrony/chrony.conf /etc/chrony/sources.d/*.sources /etc/systemd/timesyncd.conf /etc/systemd/timesyncd.conf.d/*.conf /etc/ntp.conf /etc/ntpsec/ntp.conf 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*(?:(?:server|pool)[ \\t]+\\S|NTP[ \\t]*=[ \\t]*\\S)"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.4",
+    "std:NIST_800-53:AU-8",
+    "std:ISO27001:A.8.17",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.7",
+    "std:PCI_DSS_4:10.6.1",
+    "std:HIPAA:164.312(b)",
+    "std:NIST_CSF_2:PR.PS-04",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

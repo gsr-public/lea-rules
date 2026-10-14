@@ -1,0 +1,72 @@
+{
+  "name": "SELinux Policy Type Targeted or MLS",
+  "description": "Ensures /etc/selinux/config uses the targeted or mls policy (SELINUXTYPE), not minimum or a custom policy with reduced coverage.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/selinux/config",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?m)^[ \\t]*SELINUXTYPE[ \\t]*=[ \\t]*(?:targeted|mls)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:AC-3",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.8",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

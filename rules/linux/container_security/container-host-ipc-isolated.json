@@ -33,6 +33,8 @@
   "tags": [
     "std:NIST_800-53:CM-7",
     "std:NIST_800-53:SC-39",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
     "cat:container_security",
     "env:linux",
     "env:host_level",

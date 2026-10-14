@@ -1,0 +1,64 @@
+{
+  "name": "GDM XDMCP Disabled",
+  "description": "Ensures XDMCP, which sends the login session unencrypted over the network, is not enabled in the GDM [xdmcp] section. Passes with LEA_RULE_no_service when GDM is not installed.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if [ -d /etc/gdm3 ] || [ -d /etc/gdm ]; then cat /etc/dconf/db/gdm.d/* /etc/dconf/db/local.d/* /etc/gdm3/custom.conf /etc/gdm/custom.conf 2>/dev/null; echo 'LEA_GDM'; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "LEA_GDM|LEA_RULE_no_service"
+        },
+        "not_re": {
+          "stdout": "(?ms)^\\[xdmcp\\][^\\[]*^[ \\t]*Enable[ \\t]*=[ \\t]*true\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.6",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-8",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.21",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:NIS2:Art21.2(e)",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:HIPAA:164.312(e)(2)(ii)",
+    "std:NIST_CSF_2:PR.DS-02",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

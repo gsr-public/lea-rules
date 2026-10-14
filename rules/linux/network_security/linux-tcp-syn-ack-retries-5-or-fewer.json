@@ -1,0 +1,61 @@
+{
+  "name": "Linux TCP SYN-ACK Retries 5 or Fewer",
+  "description": "Ensures net.ipv4.tcp_synack_retries is between 1 and 5, limiting how long half-open connections from a SYN flood occupy the backlog.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_synack_retries=2",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/net/ipv4/tcp_synack_retries",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(?:(?:[1-5]))\\s*\\Z"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "sysctl -w net.ipv4.tcp_synack_retries=2 >/dev/null && cat /proc/sys/net/ipv4/tcp_synack_retries",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:SC-5",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
+    "std:NIST_CSF_2:PR.IR-04",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

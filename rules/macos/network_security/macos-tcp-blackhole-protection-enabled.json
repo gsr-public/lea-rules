@@ -1,6 +1,6 @@
 {
   "name": "macOS TCP Blackhole Protection Enabled",
-  "description": "Ensures the macOS kernel parameter net.inet.tcp.blackhole is configured to aggressively drop unsolicited TCP traffic to closed ports (1 or 2), reducing information leakage and mitigating simple port scanning.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password:\nlea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet.tcp.blackhole=2",
+  "description": "Ensures the macOS kernel parameter net.inet.tcp.blackhole is configured to aggressively drop unsolicited TCP traffic to closed ports (1 or 2), reducing information leakage and mitigating simple port scanning.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet.tcp.blackhole=2",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -48,10 +48,12 @@
     "std:PCI_DSS_4:2.2.6",
     "std:NIS2:Art21.2(e)",
     "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:HIPAA:164.312(e)(1)",
+    "std:NIST_CSF_2:PR.IR-01",
     "cat:network_security",
     "env:macos",
     "env:host_level",
-    "risk:medium",
-    "priv:required"
+    "risk:medium"
   ]
 }

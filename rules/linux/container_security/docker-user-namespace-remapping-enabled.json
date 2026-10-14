@@ -1,0 +1,51 @@
+{
+  "name": "Docker User Namespace Remapping Enabled",
+  "description": "Ensures the Docker daemon remaps container root to an unprivileged host user (\"userns-remap\" set), limiting the impact of a container breakout. Passes with LEA_RULE_no_service when dockerd is not running.",
+  "active": true,
+  "category": "container_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^dockerd$'; then cat /etc/docker/daemon.json 2>/dev/null; echo LEA_DOCKER; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\"userns-remap\"[ \\t]*:[ \\t]*\"[^\"]+\"|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SC-39",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:container_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

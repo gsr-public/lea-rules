@@ -1,0 +1,42 @@
+{
+  "name": "Windows Logon Legal Notice Caption Configured",
+  "description": "Ensures the logon legal notice has a title (LegalNoticeCaption).",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\" /v LegalNoticeCaption",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+LegalNoticeCaption[ \\t]+REG_(?:EXPAND_)?SZ[ \\t]+\\S"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-8",
+    "std:ISO27001:A.5.10",
+    "std:CMMC:AC.L2-3.1.9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

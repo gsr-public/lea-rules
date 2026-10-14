@@ -1,0 +1,50 @@
+{
+  "name": "Windows Network Selection UI Hidden on Logon Screen",
+  "description": "Ensures the network selection UI is not shown on the logon screen (DontDisplayNetworkSelectionUI = 1), so unauthenticated users cannot change network connectivity.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\" /v DontDisplayNetworkSelectionUI",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]+DontDisplayNetworkSelectionUI[ \\t]+REG_DWORD[ \\t]+0x(?:1)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:system_hardening",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Process Information Hidden from Other Users (hidepid)",
+  "description": "Ensures /proc is mounted with hidepid=2 (or hidepid=invisible), so users cannot see the command lines and environment of other users' processes, which often contain secrets. Some monitoring agents need a gid= exemption.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/mounts",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^proc[ \\t]+/proc[ \\t]+proc[ \\t]+\\S*\\bhidepid=(?:2|invisible)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:NIST_800-53:AC-3",
+    "std:ISO27001:A.8.3",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.312(a)(1)",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

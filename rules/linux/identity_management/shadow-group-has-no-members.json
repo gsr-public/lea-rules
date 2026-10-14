@@ -1,0 +1,60 @@
+{
+  "name": "Shadow Group Has No Members",
+  "description": "Ensures the shadow group, which can read /etc/shadow on Debian-family systems, has no member accounts. Passes on systems without a shadow group.",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/group",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^root:"
+        },
+        "not_re": {
+          "stdout": "(?m)^shadow:[^:\\n]*:\\d+:[^\\s:]"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.3",
+    "std:NIST_800-53:AC-3",
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.5.17",
+    "std:ISO27001:A.8.3",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:CMMC:IA.L2-3.5.10",
+    "std:PCI_DSS_4:2.2.6",
+    "std:PCI_DSS_4:8.3.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(5)(ii)(D)",
+    "std:HIPAA:164.312(a)(1)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-01",
+    "std:NIST_CSF_2:PR.AA-05",
+    "cat:identity_management",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

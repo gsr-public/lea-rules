@@ -1,0 +1,51 @@
+{
+  "name": "Account Lockout Applies to Root (faillock)",
+  "description": "Ensures pam_faillock also locks the root account after repeated failures (even_deny_root, or root_unlock_time of 60 seconds or more), so root cannot be brute-forced.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/security/faillock.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*(?:even_deny_root\\b|root_unlock_time[ \\t]*=[ \\t]*(?:-1|(?:[6-9]\\d|[1-9]\\d{2,}))\\b)"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.10",
+    "std:NIST_800-53:AC-7",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.8",
+    "std:PCI_DSS_4:8.3.4",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(5)(ii)(C)",
+    "std:HIPAA:164.312(d)",
+    "std:NIST_CSF_2:PR.AA-03",
+    "cat:authentication",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}
