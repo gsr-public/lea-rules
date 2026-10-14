@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w fs.suid_dumpable=0 >/dev/null && cat /proc/sys/fs/suid_dumpable",
         "system": [

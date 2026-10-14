@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl net.inet.ip.redirect=0 >/dev/null && sysctl net.inet.ip.redirect",
         "system": [

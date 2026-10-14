@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w net.ipv4.conf.default.log_martians=1 >/dev/null && cat /proc/sys/net/ipv4/conf/default/log_martians",
         "system": [

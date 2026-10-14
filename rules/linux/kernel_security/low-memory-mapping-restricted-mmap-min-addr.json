@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w vm.mmap_min_addr=65536 >/dev/null && cat /proc/sys/vm/mmap_min_addr",
         "system": [

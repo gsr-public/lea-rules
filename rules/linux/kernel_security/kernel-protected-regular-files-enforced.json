@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w fs.protected_regular=2 >/dev/null && cat /proc/sys/fs/protected_regular",
         "system": [

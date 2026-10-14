@@ -26,11 +26,11 @@
     "cmd": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["validation", "expect", "remedy", "system"],
+      "required": ["validation", "expect", "_remedy", "system"],
       "properties": {
         "validation": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/command"}},
         "expect": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/expect"}},
-        "remedy": {"type": "array", "items": {"$ref": "#/$defs/command"}},
+        "_remedy": {"type": "array", "items": {"$ref": "#/$defs/command"}},
         "system": {"type": "array", "items": {"$ref": "#/$defs/system"}}
       }
     }

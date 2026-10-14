@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w kernel.unprivileged_bpf_disabled=1 >/dev/null && cat /proc/sys/kernel/unprivileged_bpf_disabled",
         "system": [

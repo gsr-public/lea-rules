@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w vm.swappiness=10 >/dev/null && cat /proc/sys/vm/swappiness",
         "system": [

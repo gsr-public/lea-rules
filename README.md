@@ -40,7 +40,7 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
        "re": {"stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+no\\b"},
        "not_re": {"stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+(?!no\\b)\\S"}}
     ],
-    "remedy": [],
+    "_remedy": [],
     "system": []
   },
   "parameters": [],
@@ -58,7 +58,7 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
 | `cmd_info_key` | Reserved for LEA metadata collectors; always `null` in this library. |
 | `cmd.validation` | Commands the agent runs. Each block has a `command`, a `system` filter (`Linux`, `Darwin`, `Windows`, compared with the agent's `uname` system) and a `distribution` filter. Linux and macOS commands run through `sh -c`; Windows commands run through PowerShell. When several blocks apply, their outputs are concatenated with newlines. |
 | `cmd.expect` | Server-side checks on the raw output. `re` must match, `not_re` must not match (per stream: `stdout`, `stderr`), `returncode` must equal the exit code, `md5` must equal the stdout hash, and `function` calls a built-in LEA server check. All applicable blocks must pass. |
-| `cmd.remedy` | Optional commands that correct the setting. Empty when no safe, idempotent, non-interactive fix exists. |
+| `cmd._remedy` | Remediation commands that correct the setting, shipped disabled (see [Remediation is disabled by default](#remediation-is-disabled-by-default)). Empty when no safe, idempotent, non-interactive fix exists. |
 | `parameters` | Rule parameters; empty in this library. |
 | `tags` | `std:` framework mappings, `cat:` category, `env:` operating systems, `risk:` `low`/`medium`/`high`, and `priv:required` when the agent needs elevated rights. |
 
@@ -75,10 +75,16 @@ Conventions followed by every rule:
 1. On each cycle the agent runs the `validation` commands that match its operating system and distribution and sends stdout, stderr and the exit code to the server.
 2. The server selects the `expect` blocks for the same system and distribution. Blocks that name the host's distribution take precedence over blocks with an empty distribution list.
 3. Every applicable `re`, `not_re`, `returncode`, `md5` or `function` check must succeed for the result to be recorded as passing. Each result, including the raw output and any failed pattern, is stored and signed as evidence.
-4. If the result fails and the rule has a `remedy` (and remedies are enabled for it), the server returns the remedy commands to the agent. The agent runs them and returns their output, which the server evaluates with the same expect blocks. Remedies in this library therefore end by printing the re-validation output (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null && cat /proc/sys/kernel/kptr_restrict`).
+4. If the result fails and the rule has an enabled `remedy` (see below), the server returns the remedy commands to the agent. The agent runs them and returns their output, which the server evaluates with the same expect blocks. Remedies in this library therefore end by printing the re-validation output (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null && cat /proc/sys/kernel/kptr_restrict`).
 5. The next scheduled validation confirms the state independently.
 
-Remedies are applied at runtime only (for example `sysctl -w` does not persist across reboots). The standard LEA import flow strips `remedy` before posting a rule; enable remedies deliberately and per group.
+Remedies are applied at runtime only (for example `sysctl -w` does not persist across reboots).
+
+### Remediation is disabled by default
+
+Every rule stores its remediation commands under `cmd._remedy`, not `cmd.remedy`. The leading underscore keeps the commands in the rule (in this repository and in the rule stored by LEA after import) so they can be reviewed, while the LEA server only runs commands under a key named exactly `remedy`, so no remediation runs after import.
+
+To enable remediation for a rule, rename `_remedy` to `remedy` in that rule before posting it (or edit the rule in LEA). Enable remedies deliberately, per rule and per group, after reviewing the commands for the hosts they will run on.
 
 ## Using the rules with LEA
 
@@ -86,7 +92,7 @@ Rules are imported through the LEA admin API:
 
 1. Authenticate: `POST /lea/authenticate_api` with HTTP basic authentication returns a bearer token.
 2. Find or create a client group per category: `GET /api/client_groups?name=eq.<Group Name>`, otherwise create it.
-3. For each rule file, look up an existing rule by `name`. `POST /api/cmds` to create a new rule, `PATCH /api/cmds?id=eq.<id>` to update an existing one. Remove the `remedy` field first unless you intend to enable remediation.
+3. For each rule file, look up an existing rule by `name`. `POST /api/cmds` to create a new rule, `PATCH /api/cmds?id=eq.<id>` to update an existing one. Remediation stays disabled because the commands are stored under `_remedy`; rename it to `remedy` only for rules where you intend to enable remediation.
 4. Add the created rule IDs to the group (the group's `cmd_id` list) and assign hosts to the group.
 
 The LEA distribution includes a provisioning script that implements this flow. Review rule descriptions before import: some rules are intended only for a subset of hosts (for example container-only rules, IPv6 forwarding on container hosts, SquashFS on Ubuntu hosts with snaps, UDF on Azure VMs, Kernel FIPS Mode Enabled outside FIPS scope).
@@ -154,7 +160,7 @@ Rules by framework (a rule is counted once per framework, however many controls 
 | ASD Essential Eight | `std:ASD_E8:` | 58 | 6 |
 | Post-quantum readiness | `std:NIST_PQC:` | 31 | - |
 
-Other facts: 104 rules include a remedy (47 Linux, 6 macOS, 51 Windows); 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated).
+Other facts: 104 rules include a remedy under `_remedy` (47 Linux, 6 macOS, 51 Windows); 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated).
 
 See [MAPPINGS.md](MAPPINGS.md) for the full control-to-rule mapping.
 

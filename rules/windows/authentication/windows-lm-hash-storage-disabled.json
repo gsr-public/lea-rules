@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash /t REG_DWORD /d 1 /f | Out-Null; reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash",
         "system": [

@@ -29,7 +29,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "modprobe -r vhost_net vhost_vsock vhost_scsi vhost 2>/dev/null; cat /proc/modules",
         "system": [

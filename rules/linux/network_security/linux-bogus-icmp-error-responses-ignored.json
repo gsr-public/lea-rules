@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1 >/dev/null && cat /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses",
         "system": [

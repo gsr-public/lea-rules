@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "auditpol /set /subcategory:\"Authentication Policy Change\" /success:enable | Out-Null; auditpol /get /category:*",
         "system": [

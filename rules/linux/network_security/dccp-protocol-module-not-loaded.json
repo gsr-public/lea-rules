@@ -29,7 +29,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "modprobe -r dccp 2>/dev/null; cat /proc/modules",
         "system": [

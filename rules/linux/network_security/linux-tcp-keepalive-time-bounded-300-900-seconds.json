@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w net.ipv4.tcp_keepalive_time=600 >/dev/null && cat /proc/sys/net/ipv4/tcp_keepalive_time",
         "system": [

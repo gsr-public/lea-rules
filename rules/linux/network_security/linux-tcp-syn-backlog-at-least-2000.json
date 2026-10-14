@@ -26,7 +26,7 @@
         }
       }
     ],
-    "remedy": [
+    "_remedy": [
       {
         "command": "sysctl -w net.ipv4.tcp_max_syn_backlog=4096 >/dev/null && cat /proc/sys/net/ipv4/tcp_max_syn_backlog",
         "system": [
