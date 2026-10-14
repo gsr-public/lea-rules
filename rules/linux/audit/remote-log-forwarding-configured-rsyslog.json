@@ -1,0 +1,52 @@
+{
+  "name": "Remote Log Forwarding Configured (rsyslog)",
+  "description": "Ensures rsyslog forwards logs to a remote collector, either with the legacy '@host' / '@@host' syntax or an omfwd action. Hosts that ship logs with another agent (for example journald upload, Fluent Bit or a SIEM agent) are not detected by this rule.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/rsyslog.conf /etc/rsyslog.d/*.conf 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*(?:[^#\\s][^\\n]*[ \\t]@@?[\\[\\w]|(?:[^#\\s][^\\n]*)?\\btype[ \\t]*=[ \\t]*\"omfwd\")"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.9",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-6",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.3.3",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Windows PMTU Black Hole Detection Disabled",
+  "description": "Ensures EnablePMTUBHDetect is disabled (0) to prevent inconsistent path MTU discovery behavior that can degrade network reliability. Required Windows permission: LEA agent account must be allowed to run only: reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUBHDetect via delegated permission.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUBHDetect",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "EnablePMTUBHDetect\\s+REG_DWORD\\s+0x0"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUBHDetect /t REG_DWORD /d 0 /f | Out-Null; reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUBHDetect",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:SC-5",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:low",
+    "priv:required"
+  ]
+}

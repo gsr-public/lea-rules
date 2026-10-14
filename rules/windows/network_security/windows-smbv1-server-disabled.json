@@ -1,0 +1,58 @@
+{
+  "name": "Windows SMBv1 Server Disabled",
+  "description": "Ensures the SMBv1 server protocol is disabled to prevent exposure of file shares over insecure SMBv1 on Windows.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters /v SMB1",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "SMB1\\s+REG_DWORD\\s+0x0"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.6",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-7",
+    "std:NIST_800-53:SC-8",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.21",
+    "std:ISO27001:A.13.1.1",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:NIS2:Art21.2(e)",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Windows RDP Uses TLS Security Layer",
+  "description": "Ensures Remote Desktop connections negotiate the TLS security layer (SecurityLayer = 2), which authenticates the server and protects the session.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp\" /v SecurityLayer",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "SecurityLayer\\s+REG_DWORD\\s+0x2\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:AC-17",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:AC.L2-3.1.12",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:2.2.7",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

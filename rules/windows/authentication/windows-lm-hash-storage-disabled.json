@@ -1,0 +1,54 @@
+{
+  "name": "Windows LM Hash Storage Disabled",
+  "description": "Ensures Windows does not store LAN Manager hashes of passwords (NoLMHash = 1). LM hashes can be cracked in minutes.\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "NoLMHash\\s+REG_DWORD\\s+0x1\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash /t REG_DWORD /d 1 /f | Out-Null; reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.5.17",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.10",
+    "std:PCI_DSS_4:8.3.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

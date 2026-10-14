@@ -1,0 +1,48 @@
+{
+  "name": "Inactive Accounts Disabled Within 30 Days",
+  "description": "Ensures new accounts are created with an inactivity lock of 30 days or less after password expiry (INACTIVE in /etc/default/useradd).",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/default/useradd",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*INACTIVE[ \\t]*=[ \\t]*(?:[0-9]|[12]\\d|30)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.3",
+    "std:NIST_800-53:AC-2",
+    "std:ISO27001:A.5.18",
+    "std:SOC2:CC6.2",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:8.2.6",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:identity_management",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

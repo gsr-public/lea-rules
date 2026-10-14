@@ -1,0 +1,65 @@
+{
+  "name": "SSH Host RSA Key At Least 3072 Bits",
+  "description": "Checks that the SSH server's RSA host key is at least 3072 bits, the minimum for 128-bit classical security (NIST SP 800-57) and part of a crypto-agility baseline ahead of post-quantum migration. Reads the public key fingerprint with ssh-keygen -l (no private key access). Passes with LEA_RULE_no_service when no RSA host key exists.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(?:30[7-9]\\d|3[1-9]\\d\\d|[4-9]\\d{3}|[1-9]\\d{4,})\\s+SHA256:|LEA_RULE_no_service"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\A(?:30[7-9]\\d|3[1-9]\\d\\d|[4-9]\\d{3}|[1-9]\\d{4,})\\s+SHA256:|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "cat:network_security",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

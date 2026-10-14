@@ -1,0 +1,51 @@
+{
+  "name": "System Accounts Use Non-Login Shells",
+  "description": "Ensures service accounts (UID 1-999, except sync, shutdown and halt) have nologin or false as their shell, so they cannot be used for interactive logins. If the LEA agent runs under a dedicated system account, give that account a non-login shell.",
+  "active": true,
+  "category": "identity_management",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/passwd",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^root:"
+        },
+        "not_re": {
+          "stdout": "(?m)^(?!(?:root|sync|shutdown|halt):)[^:\\n]+:[^:\\n]*:(?:[1-9]|[1-9]\\d|[1-9]\\d\\d):[^:\\n]*:[^:\\n]*:[^:\\n]*:(?!(?:/usr)?/s?bin/(?:nologin|false)[ \\t]*$)[^\\n]*$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.7",
+    "std:NIST_800-53:AC-2",
+    "std:ISO27001:A.5.18",
+    "std:SOC2:CC6.2",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:identity_management",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

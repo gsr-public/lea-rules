@@ -1,0 +1,70 @@
+{
+  "name": "SSH DSA Host Key Absent",
+  "description": "Ensures no DSA (ssh-dss) host key exists in /etc/ssh. DSA is limited to 1024-bit keys and SHA-1, and was removed from OpenSSH 10.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /etc/ssh",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ls /etc/ssh",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\bssh_host_dsa_key\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\bssh_host_dsa_key\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

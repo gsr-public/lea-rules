@@ -1,0 +1,69 @@
+{
+  "name": "System Crypto Policy Not LEGACY",
+  "description": "Ensures the system-wide crypto policy is not LEGACY, which re-enables SHA-1 signatures, 1024-bit Diffie-Hellman and other weak algorithms for every library that follows crypto-policies. A softer baseline than 'System Crypto Policy FUTURE or FIPS'.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/crypto-policies/state/CURRENT",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?m)^[A-Z]"
+        },
+        "not_re": {
+          "stdout": "(?m)^LEGACY\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Windows Firewall Enabled for All Profiles",
+  "description": "Checks that the Windows Firewall is enabled for all network profiles (Domain, Private, Public).\nRequired Windows permission: LEA agent account must be allowed to run only: netsh advfirewall show allprofiles via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "netsh advfirewall show allprofiles",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Domain Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Private Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Public Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:CIS_Controls_v8:4.5",
+    "std:NIST_800-53:AC-4",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:ISO27001:A.13.1.1",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:CMMC:SC.L2-3.13.6",
+    "std:PCI_DSS_4:1.3.1",
+    "std:PCI_DSS_4:1.5.1",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high",
+    "priv:required"
+  ]
+}

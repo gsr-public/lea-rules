@@ -1,0 +1,55 @@
+{
+  "name": "Windows AutoRun Commands Disabled",
+  "description": "Ensures autorun.inf commands are never executed (NoAutorun = 1).\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoAutorun (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoAutorun",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "NoAutorun\\s+REG_DWORD\\s+0x1\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoAutorun /t REG_DWORD /d 1 /f | Out-Null; reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoAutorun",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.3",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:MP.L2-3.8.7",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "cat:system_hardening",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "OpenSSH Version Supports Post-Quantum Key Exchange",
+  "description": "Checks that the installed OpenSSH is version 9.0 or later, which enables the hybrid post-quantum key exchange sntrup761x25519-sha512 by default (OpenSSH 9.9 adds mlkem768x25519-sha256 and 10.0 makes it the default). Reads the version banner that ssh -V prints to stderr; the client and server are shipped in the same package on supported distributions and on macOS.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ssh -V",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ssh -V",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stderr": "OpenSSH_(?:9|[1-9]\\d)\\.\\d"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stderr": "OpenSSH_(?:9|[1-9]\\d)\\.\\d"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:FIPS-203",
+    "std:NIST_PQC:transition",
+    "std:NCSC:PQC_readiness",
+    "cat:network_security",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

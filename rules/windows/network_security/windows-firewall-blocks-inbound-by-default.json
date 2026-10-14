@@ -1,0 +1,52 @@
+{
+  "name": "Windows Firewall Blocks Inbound by Default",
+  "description": "Ensures every Windows Firewall profile uses the BlockInbound default policy, so only explicitly allowed inbound connections are accepted.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "netsh advfirewall show allprofiles firewallpolicy",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "BlockInbound"
+        },
+        "not_re": {
+          "stdout": "(?m)^Firewall Policy\\s+AllowInbound"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:CMMC:SC.L2-3.13.6",
+    "std:PCI_DSS_4:1.3.1",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

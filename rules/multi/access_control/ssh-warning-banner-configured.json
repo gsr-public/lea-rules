@@ -1,0 +1,61 @@
+{
+  "name": "SSH Warning Banner Configured",
+  "description": "Ensures the SSH daemon displays a pre-login warning banner (Banner set to a file path, not none), providing the system-use notification required by many policies.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^sshd$'; then cat /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf 2>/dev/null; else echo 'LEA_RULE_no_service'; fi",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "cat /etc/ssh/sshd_config /etc/ssh/sshd_config.d/* 2>/dev/null",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*Banner[ \\t]+/\\S+|LEA_RULE_no_service"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*Banner[ \\t]+/\\S+|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-8",
+    "std:NIST_800-53:AC-17",
+    "std:CMMC:AC.L2-3.1.9",
+    "std:CMMC:AC.L2-3.1.12",
+    "std:PCI_DSS_4:2.2.7",
+    "cat:access_control",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:low"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Windows Defender Tamper Protection Enabled",
+  "description": "Ensures Microsoft Defender tamper protection is on (Get-MpComputerStatus IsTamperProtected = True), preventing malware or local administrators from silently turning protection off.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "Get-MpComputerStatus | Format-List -Property IsTamperProtected",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^IsTamperProtected\\s*:\\s*True\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.1",
+    "std:NIST_800-53:SI-3",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:SI.L2-3.14.2",
+    "std:PCI_DSS_4:5.2.1",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "cat:integrity",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

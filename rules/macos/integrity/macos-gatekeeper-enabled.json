@@ -1,0 +1,48 @@
+{
+  "name": "macOS Gatekeeper Enabled",
+  "description": "Ensures Gatekeeper is enabled (spctl --status reports 'assessments enabled'), so only signed and notarized applications run without an explicit override.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "spctl --status",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "assessments enabled"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.5",
+    "std:NIST_800-53:CM-14",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "cat:integrity",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

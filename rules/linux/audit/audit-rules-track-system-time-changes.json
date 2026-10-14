@@ -1,0 +1,53 @@
+{
+  "name": "Audit Rules Track System Time Changes",
+  "description": "Ensures the persistent audit rules record adjtimex, settimeofday or clock_settime system calls, so tampering with the clock (and therefore log timestamps) is logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*-a[ \\t][^\\n]*\\b(?:adjtimex|settimeofday|clock_settime)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.5",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.2",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.2.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:low",
+    "priv:required"
+  ]
+}

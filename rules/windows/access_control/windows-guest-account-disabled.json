@@ -1,0 +1,49 @@
+{
+  "name": "Windows Guest Account Disabled",
+  "description": "Verifies that the built-in Guest user account is disabled to prevent interactive logon.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "net user Guest",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\s*Account\\s+active\\s+No\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.7",
+    "std:NIST_800-53:AC-2",
+    "std:ISO27001:A.5.18",
+    "std:ISO27001:A.9.2.6",
+    "std:SOC2:CC6.2",
+    "std:CMMC:AC.L2-3.1.1",
+    "std:PCI_DSS_4:2.2.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

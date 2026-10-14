@@ -1,0 +1,122 @@
+{
+  "name": "Account Lockout Enforced After Failed Logins",
+  "description": "Ensures local and directory account policies lock accounts after repeated failed logon attempts: pam_faillock (or pam_tally2) in the PAM auth stack on Linux, a maxFailedAttempts account policy on macOS, and a non-zero LockoutThreshold in the Active Directory default domain password policy on Windows (requires the ActiveDirectory PowerShell module).",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/pam.d/common-auth",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ]
+      },
+      {
+        "command": "cat /etc/pam.d/system-auth /etc/pam.d/password-auth",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      },
+      {
+        "command": "pwpolicy getaccountpolicies",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "Get-ADDefaultDomainPasswordPolicy",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ],
+        "re": {
+          "stdout": "(?m)^[ \\t]*auth[ \\t]+(?:required|requisite|\\[[^\\]\\n]*\\])[ \\t]+pam_(?:faillock|tally2)\\.so\\b"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?m)^[ \\t]*auth[ \\t]+(?:required|requisite|\\[[^\\]\\n]*\\])[ \\t]+pam_faillock\\.so\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "maxFailedAttempts"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\s*LockoutThreshold\\s*:\\s*[1-9]\\d*\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:NIST_800-53:AC-7",
+    "std:ISO27001:A.8.5",
+    "std:ISO27001:A.9.4.2",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.8",
+    "std:PCI_DSS_4:8.3.4",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

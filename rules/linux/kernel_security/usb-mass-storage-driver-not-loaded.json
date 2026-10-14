@@ -1,0 +1,55 @@
+{
+  "name": "USB Mass Storage Driver Not Loaded",
+  "description": "Ensures the USB mass storage driver (usb_storage) is not loaded (checked in /proc/modules). Blocking USB storage reduces data exfiltration and malware introduction through removable media. A driver compiled into the kernel is not detected.",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/modules",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\busb_storage\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:MP-7",
+    "std:ISO27001:A.7.10",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:CMMC:MP.L2-3.8.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

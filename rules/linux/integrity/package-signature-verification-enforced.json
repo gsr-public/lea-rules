@@ -1,0 +1,92 @@
+{
+  "name": "Package Signature Verification Enforced",
+  "description": "Ensures the package manager verifies repository signatures. Debian and Ubuntu: no APT source is marked trusted=yes (one-line or deb822 'Trusted: yes') and AllowUnauthenticated is not enabled. RHEL family: gpgcheck=1 is set and no repository sets gpgcheck=0.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/apt/sources.list /etc/apt/sources.list.d/* /etc/apt/apt.conf.d/* 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ]
+      },
+      {
+        "command": "cat /etc/dnf/dnf.conf /etc/yum.conf /etc/yum.repos.d/*.repo 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*(?:deb(?:-src)?[ \\t]+\\[[^\\]\\n]*\\btrusted=yes\\b|Trusted:[ \\t]*yes\\b|APT::Get::AllowUnauthenticated[ \\t]+\"?(?:true|yes|1)\\b)"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux"
+        ],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*gpgcheck[ \\t]*=[ \\t]*(?:1|true|yes)\\b"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*gpgcheck[ \\t]*=[ \\t]*(?:0|false|no)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:CM-14",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.19",
+    "std:SOC2:CC8.1",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:NIS2:Art21.2(d)",
+    "std:DORA:Art9",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "rsh, rlogin and rexec Servers Not Running",
+  "description": "Ensures the legacy BSD remote-shell servers (rshd, rlogind, rexecd) are not running. They authenticate by host trust or clear-text passwords.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\b(?:rshd|rlogind|rexecd)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.6",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-8",
+    "std:ISO27001:A.8.9",
+    "std:ISO27001:A.8.21",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC6.7",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:NIS2:Art21.2(e)",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

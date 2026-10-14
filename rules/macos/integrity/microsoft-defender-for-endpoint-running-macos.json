@@ -1,0 +1,48 @@
+{
+  "name": "Microsoft Defender for Endpoint Running (macOS)",
+  "description": "Verifies that the Microsoft Defender ATP daemon process is running on macOS endpoints.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ps -ax",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)\\bwdavdaemon(?:\\.(?:unprivileged|edr))?\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.1",
+    "std:NIST_800-53:SI-3",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:SI.L2-3.14.2",
+    "std:PCI_DSS_4:5.2.1",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "cat:integrity",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

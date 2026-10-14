@@ -1,0 +1,58 @@
+{
+  "name": "macOS Firewall Logging Enabled",
+  "description": "Ensures the macOS Application Firewall logs blocked and allowed connections.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/libexec/ApplicationFirewall/socketfilterfw --getloggingmode",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?i)\\blog(?:ging)? mode is on\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:CIS_Controls_v8:8.2",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.15",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:CMMC:SC.L2-3.13.6",
+    "std:PCI_DSS_4:1.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:NIS2:Art21.2(b)",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:macos",
+    "env:host_level",
+    "risk:low"
+  ]
+}

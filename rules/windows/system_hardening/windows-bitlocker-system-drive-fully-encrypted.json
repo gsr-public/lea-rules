@@ -1,0 +1,51 @@
+{
+  "name": "Windows BitLocker System Drive Fully Encrypted",
+  "description": "Checks that BitLocker reports the system drive (C:) as 100% encrypted.\nRequired Windows permission: LEA agent account must be allowed to run only: manage-bde -status C: (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "manage-bde -status C:",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Percentage\\s+Encrypted\\s*:\\s*100(\\.0+)?%"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.6",
+    "std:CIS_Controls_v8:3.11",
+    "std:NIST_800-53:SC-28",
+    "std:ISO27001:A.8.24",
+    "std:ISO27001:A.10.1.1",
+    "std:SOC2:CC6.1",
+    "std:CMMC:SC.L2-3.13.16",
+    "std:PCI_DSS_4:3.5.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:system_hardening",
+    "env:windows",
+    "env:host_level",
+    "risk:high",
+    "priv:required"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "OpenSSL System Minimum Protocol TLS 1.2 or Higher",
+  "description": "Ensures the system OpenSSL configuration sets MinProtocol to TLSv1.2 or TLSv1.3 (Debian/Ubuntu openssl.cnf, RHEL openssl.cnf or the crypto-policies OpenSSL back-end) and does not set it to SSLv3, TLSv1 or TLSv1.1. Retiring legacy protocols reduces harvest-now-decrypt-later exposure.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/ssl/openssl.cnf /etc/pki/tls/openssl.cnf /etc/crypto-policies/back-ends/opensslcnf.config 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*MinProtocol[ \\t]*=[ \\t]*TLSv1\\.[23]\\b"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*MinProtocol[ \\t]*=[ \\t]*(?:SSLv3|TLSv1(?:\\.[01])?)[ \\t]*$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:FIPS-203",
+    "std:NIST_PQC:transition",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

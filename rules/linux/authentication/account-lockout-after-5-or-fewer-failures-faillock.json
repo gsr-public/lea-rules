@@ -1,0 +1,46 @@
+{
+  "name": "Account Lockout After 5 or Fewer Failures (faillock)",
+  "description": "Ensures pam_faillock locks an account after at most 5 consecutive failed logins (deny in /etc/security/faillock.conf). Pair with 'Account Lockout Enforced After Failed Logins', which checks that pam_faillock is in the PAM stack.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/security/faillock.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*deny[ \\t]*=[ \\t]*[1-5]\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-7",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.8",
+    "std:PCI_DSS_4:8.3.4",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

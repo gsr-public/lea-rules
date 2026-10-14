@@ -1,0 +1,50 @@
+{
+  "name": "OpenSSL Provides Native ML-KEM (OpenSSL 3.5+)",
+  "description": "Checks that the system OpenSSL is 3.5 or later, the first release with built-in ML-KEM (FIPS 203) and ML-DSA (FIPS 204) and hybrid X25519MLKEM768 TLS key exchange enabled by default. A readiness indicator for post-quantum TLS, not a pass/fail security requirement.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/bin/openssl version",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\bOpenSSL\\s+(?:3\\.(?:[5-9]|[1-9]\\d)|[4-9]\\.\\d+)\\.\\d+"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:FIPS-203",
+    "std:NIST_PQC:FIPS-204",
+    "std:NIST_PQC:transition",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

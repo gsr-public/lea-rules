@@ -1,0 +1,67 @@
+{
+  "name": "Java JAR Weak Signature Algorithms Disabled",
+  "description": "Ensures every installed OpenJDK runtime rejects JAR signatures that use MD5 or SHA-1 and RSA keys shorter than 2048 bits (jdk.jar.disabledAlgorithms). Continuation lines in java.security are evaluated. Passes with LEA_RULE_no_service when no OpenJDK java.security file is present.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "found=0; for f in /etc/java-*/security/java.security /usr/lib/jvm/*/conf/security/java.security /usr/lib/jvm/*/jre/lib/security/java.security; do [ -f \"$f\" ] && { cat \"$f\"; found=1; }; done; [ \"$found\" = 1 ] || echo 'LEA_RULE_no_service'",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*jdk\\.jar\\.disabledAlgorithms[ \\t]*=(?:[^\\\\\\n]|\\\\\\r?\\n)*?\\bMD5|LEA_RULE_no_service"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*jdk\\.jar\\.disabledAlgorithms[ \\t]*=(?:[^\\\\\\n]|\\\\\\r?\\n)*?\\bSHA1(?:withRSA)?\\b(?![ \\t]+(?:denyAfter|usage))|LEA_RULE_no_service"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*jdk\\.jar\\.disabledAlgorithms[ \\t]*=(?:[^\\\\\\n]|\\\\\\r?\\n)*?\\bRSA[ \\t]+keySize[ \\t]*<[ \\t]*(?:2048|3072|4096)\\b|LEA_RULE_no_service"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Container Host IPC Isolated",
+  "description": "Confirms that /dev/shm inside the container is empty, indicating the container does not share the host IPC namespace and shared-memory segments. Assign this rule only to groups of container agents.",
+  "active": true,
+  "category": "container_security",
+  "cycle": 1800,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls -l /dev/shm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^total\\s+0\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-39",
+    "cat:container_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

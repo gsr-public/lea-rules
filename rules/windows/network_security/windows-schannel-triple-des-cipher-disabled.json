@@ -1,0 +1,51 @@
+{
+  "name": "Windows SChannel Triple-DES Cipher Disabled",
+  "description": "Ensures the Triple DES 168 cipher is explicitly disabled in SCHANNEL (Enabled = 0). 3DES has a 64-bit block size (Sweet32) and is not enabled-by-absence safe on older Windows versions.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\Triple DES 168\" /v Enabled",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "Enabled\\s+REG_DWORD\\s+0x0\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

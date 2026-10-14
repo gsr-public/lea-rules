@@ -1,0 +1,74 @@
+{
+  "name": "OpenSSL Default Cipher List Excludes Weak Ciphers",
+  "description": "Ensures the system OpenSSL cipher list does not include legacy and quantum-weak ciphers such as RC4, DES, 3DES, EXPORT, NULL, or MD5-based suites, reducing harvest-now-decrypt-later exposure and preparing for post-quantum–ready cipher configurations.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "openssl ciphers",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "openssl ciphers",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?i)\\b(?:RC4|DES|3DES|EXPORT|NULL|MD5)\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?i)\\b(?:RC4|DES|3DES|EXPORT|NULL|MD5)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "cat:network_security",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

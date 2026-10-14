@@ -1,0 +1,58 @@
+{
+  "name": "Linux TCP SYN Backlog At Least 2000",
+  "description": "Ensures the Linux kernel parameter net.ipv4.tcp_max_syn_backlog is configured to handle at least a moderate backlog (>= 2000), improving resilience against SYN floods on busy servers.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password:\nlea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_max_syn_backlog=4096",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/net/ipv4/tcp_max_syn_backlog",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "^(?:[2-9]\\d{3}|[1-9]\\d{4,})$"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "sysctl -w net.ipv4.tcp_max_syn_backlog=4096 >/dev/null && cat /proc/sys/net/ipv4/tcp_max_syn_backlog",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:SC-5",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

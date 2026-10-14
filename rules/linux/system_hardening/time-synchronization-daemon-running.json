@@ -1,0 +1,46 @@
+{
+  "name": "Time Synchronization Daemon Running",
+  "description": "Ensures a time synchronization daemon is running: chronyd, ntpd, openntpd or systemd-timesyncd (process name truncated by the kernel to systemd-timesyn). Accurate time is required to correlate audit records.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\b(?:chronyd|ntpd|openntpd|systemd-timesyn)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.4",
+    "std:NIST_800-53:AU-8",
+    "std:ISO27001:A.8.17",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.7",
+    "std:PCI_DSS_4:10.6.1",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

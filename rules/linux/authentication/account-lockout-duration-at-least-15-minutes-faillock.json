@@ -1,0 +1,46 @@
+{
+  "name": "Account Lockout Duration At Least 15 Minutes (faillock)",
+  "description": "Ensures pam_faillock keeps a locked account locked for at least 900 seconds, or until an administrator unlocks it (unlock_time = 0), in /etc/security/faillock.conf.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/security/faillock.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*unlock_time[ \\t]*=[ \\t]*(?:0|9\\d\\d|[1-9]\\d{3,})\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:AC-7",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.8",
+    "std:PCI_DSS_4:8.3.4",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "SSH Server Not Running in Container",
+  "description": "Ensures no sshd process runs inside a containerized Linux workload; containers should be managed through the orchestrator, not SSH. Assign this rule only to groups of container agents, because regular hosts are expected to run sshd.",
+  "active": true,
+  "category": "container_security",
+  "cycle": 1800,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\bsshd\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-39",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:container_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "name": "Offensive Security Tools Not Running",
+  "description": "Ensures no known offensive security or password-cracking tools (nmap, sqlmap, hydra, john, hashcat, aircrack-ng, netcat, ncat) are running as processes. On macOS only executable names are listed (ps -axco command) so user names or arguments cannot cause false matches.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ps -axco command",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "tasklist",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:2.3",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SI-4",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.19",
+    "std:ISO27001:A.12.6.2",
+    "std:SOC2:CC6.8",
+    "std:CMMC:CM.L2-3.4.8",
+    "std:DORA:Art10",
+    "cat:integrity",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

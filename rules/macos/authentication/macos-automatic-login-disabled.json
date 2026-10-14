@@ -1,0 +1,45 @@
+{
+  "name": "macOS Automatic Login Disabled",
+  "description": "Ensures no user is configured for automatic login (no autoLoginUser key in /Library/Preferences/com.apple.loginwindow), so a password is required at startup.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "defaults read /Library/Preferences/com.apple.loginwindow autoLoginUser",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "\\S"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-2",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:macos",
+    "env:host_level",
+    "risk:high"
+  ]
+}

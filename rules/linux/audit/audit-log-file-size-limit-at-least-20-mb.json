@@ -1,0 +1,53 @@
+{
+  "name": "Audit Log File Size Limit At Least 20 MB",
+  "description": "Ensures the audit log file size limit (max_log_file in /etc/audit/auditd.conf) is at least 20 MB so audit records are not lost to premature rotation.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/audit/auditd.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^[ \\t]*max_log_file[ \\t]*=[ \\t]*(?:2\\d|[3-9]\\d|[1-9]\\d{2,})\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:ISO27001:A.12.4.1",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

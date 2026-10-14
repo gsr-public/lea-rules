@@ -1,0 +1,44 @@
+{
+  "name": "Outbound TCP Connections Within Network Boundary",
+  "description": "Captures the raw TCP connection table from /proc/net/tcp; the LEA server parses it (format_function proc_net_tcp_text) and verifies with its built-in proc_net_tcp_network_boundaries function that established connections stay within the host's /8 network boundary. Requires a LEA server; the check logic is not a regular expression.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 60,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "format_function": "proc_net_tcp_text",
+        "command": "cat /proc/net/tcp",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "function": "proc_net_tcp_network_boundaries",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-7",
+    "std:NIST_800-53:SI-4",
+    "std:ISO27001:A.8.16",
+    "std:SOC2:CC7.2",
+    "std:CMMC:SI.L2-3.14.6",
+    "std:DORA:Art10",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

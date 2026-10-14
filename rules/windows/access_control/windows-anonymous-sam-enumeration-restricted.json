@@ -1,0 +1,56 @@
+{
+  "name": "Windows Anonymous SAM Enumeration Restricted",
+  "description": "Ensures anonymous users cannot enumerate SAM accounts (RestrictAnonymousSAM = 1).\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RestrictAnonymousSAM (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RestrictAnonymousSAM",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "RestrictAnonymousSAM\\s+REG_DWORD\\s+0x1\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RestrictAnonymousSAM /t REG_DWORD /d 1 /f | Out-Null; reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RestrictAnonymousSAM",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

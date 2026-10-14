@@ -1,0 +1,55 @@
+{
+  "name": "Journald Persistent Storage Configured",
+  "description": "Ensures systemd-journald is configured with Storage=persistent so logs survive a reboot, and that no drop-in sets Storage=volatile or none.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/systemd/journald.conf /etc/systemd/journald.conf.d/*.conf /usr/lib/systemd/journald.conf.d/*.conf 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*Storage[ \\t]*=[ \\t]*persistent\\b"
+        },
+        "not_re": {
+          "stdout": "(?mi)^[ \\t]*Storage[ \\t]*=[ \\t]*(?:volatile|none)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.10",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-11",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.5.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

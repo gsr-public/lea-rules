@@ -1,0 +1,49 @@
+{
+  "name": "Windows NTLMv2 Only Authentication",
+  "description": "Ensures the LAN Manager authentication level sends NTLMv2 responses only and refuses LM and NTLMv1 (LmCompatibilityLevel = 5).",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v LmCompatibilityLevel",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "LmCompatibilityLevel\\s+REG_DWORD\\s+0x5\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-2",
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.5.17",
+    "std:ISO27001:A.8.5",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.2",
+    "std:CMMC:IA.L2-3.5.10",
+    "std:PCI_DSS_4:8.3.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Windows LSA Protection (RunAsPPL) Enabled",
+  "description": "Ensures the Local Security Authority runs as a protected process (RunAsPPL = 1 or 2), blocking credential-dumping tools from reading LSASS memory.",
+  "active": true,
+  "category": "authentication",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RunAsPPL",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "RunAsPPL\\s+REG_DWORD\\s+0x[12]\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:IA-5",
+    "std:ISO27001:A.5.17",
+    "std:SOC2:CC6.1",
+    "std:CMMC:IA.L2-3.5.10",
+    "std:PCI_DSS_4:8.3.2",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:authentication",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

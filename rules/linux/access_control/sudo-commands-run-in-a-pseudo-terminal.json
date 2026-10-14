@@ -1,0 +1,48 @@
+{
+  "name": "Sudo Commands Run in a Pseudo-Terminal",
+  "description": "Ensures sudoers sets 'Defaults use_pty', so commands run through sudo cannot keep running in the background and inject input into the user's terminal after sudo exits. sudo 1.9.14 and later enable use_pty by default; on those versions this rule documents the setting explicitly.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/sudoers /etc/sudoers.d/* 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^[ \\t]*Defaults\\b[^\\n]*(?<!!)\\buse_pty\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.4",
+    "std:NIST_800-53:AC-6",
+    "std:ISO27001:A.8.2",
+    "std:SOC2:CC6.3",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:linux",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

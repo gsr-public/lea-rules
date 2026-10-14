@@ -1,0 +1,46 @@
+{
+  "name": "File Integrity Monitoring (AIDE) Installed",
+  "description": "Ensures the Advanced Intrusion Detection Environment (AIDE) binary is installed on the Linux host for file integrity monitoring.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /usr/bin/aide /usr/sbin/aide",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)\\b(/usr/bin/aide|/usr/sbin/aide)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:NIST_800-53:SI-7",
+    "std:ISO27001:A.8.16",
+    "std:ISO27001:A.12.4.1",
+    "std:SOC2:CC7.1",
+    "std:PCI_DSS_4:11.5.2",
+    "std:DORA:Art10",
+    "cat:integrity",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

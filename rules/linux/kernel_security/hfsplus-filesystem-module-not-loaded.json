@@ -1,0 +1,60 @@
+{
+  "name": "HFS+ Filesystem Module Not Loaded",
+  "description": "Ensures the hfsplus filesystem kernel module is not loaded (checked in /proc/modules). Unused filesystem drivers add kernel attack surface that can be reached by mounting crafted media. A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r hfsplus",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/modules",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "\\bhfsplus\\b"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "modprobe -r hfsplus 2>/dev/null; cat /proc/modules",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:low"
+  ]
+}

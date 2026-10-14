@@ -1,0 +1,55 @@
+{
+  "name": "Windows Audit Process Creation",
+  "description": "Ensures the advanced audit policy subcategory 'Process Creation' records success events (Success and Failure also passes). Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "auditpol /get /category:*",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\s+Process Creation\\s+Success(?: and Failure)?\\s*$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.5",
+    "std:CIS_Controls_v8:8.8",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:CMMC:AU.L2-3.3.2",
+    "std:PCI_DSS_4:10.2.1",
+    "std:PCI_DSS_4:10.2.2",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

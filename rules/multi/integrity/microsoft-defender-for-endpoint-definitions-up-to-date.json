@@ -1,0 +1,68 @@
+{
+  "name": "Microsoft Defender for Endpoint Definitions Up to Date",
+  "description": "Ensures Microsoft Defender for Endpoint reports its definitions status as up_to_date.",
+  "active": true,
+  "category": "integrity",
+  "cycle": 43200,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "mdatp health",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "mdatp health",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "definitions_status\\s*:\\s*\"?up_to_date\\b"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "definitions_status\\s*:\\s*\"?up_to_date\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:10.1",
+    "std:CIS_Controls_v8:10.2",
+    "std:NIST_800-53:SI-3",
+    "std:ISO27001:A.8.7",
+    "std:SOC2:CC6.8",
+    "std:CMMC:SI.L2-3.14.2",
+    "std:CMMC:SI.L2-3.14.4",
+    "std:PCI_DSS_4:5.2.1",
+    "std:PCI_DSS_4:5.3.1",
+    "std:NIS2:Art21.2(g)",
+    "std:DORA:Art9",
+    "cat:integrity",
+    "env:linux",
+    "env:macos",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

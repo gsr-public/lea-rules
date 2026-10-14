@@ -1,0 +1,83 @@
+{
+  "name": "Windows Legacy SSL/TLS Server Protocols Not Enabled",
+  "description": "Ensures SSL 2.0, SSL 3.0, TLS 1.0 and TLS 1.1 are not explicitly enabled for SCHANNEL server endpoints. Each pattern only inspects the values of its own registry key, so settings of other protocol keys cannot cause false results.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols /s",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "Protocols\\\\SSL 2\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "Protocols\\\\SSL 3\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "Protocols\\\\TLS 1\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "Protocols\\\\TLS 1\\.1\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.10",
+    "std:CIS_Controls_v8:4.6",
+    "std:NIST_800-53:SC-8",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.21",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.8",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:2.2.5",
+    "std:PCI_DSS_4:2.2.7",
+    "std:PCI_DSS_4:4.2.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:transition",
+    "std:NCSC:PQC_readiness",
+    "cat:network_security",
+    "env:windows",
+    "env:host_level",
+    "risk:high"
+  ]
+}

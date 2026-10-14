@@ -1,0 +1,96 @@
+{
+  "name": "Linux Host Firewall Active (ufw or firewalld)",
+  "description": "Ensures a host-based firewall is active: ufw is enabled (ENABLED=yes in /etc/ufw/ufw.conf) on Debian and Ubuntu, and the firewalld daemon is running on RHEL-family and SUSE distributions. Hosts managed with plain nftables rules should use 'Linux Firewall Default Deny Policy (iptables)' instead.",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/ufw/ufw.conf",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ]
+      },
+      {
+        "command": "cat /proc/*/comm",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux",
+          "SLES",
+          "openSUSE Leap",
+          "openSUSE Tumbleweed"
+        ]
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian GNU/Linux"
+        ],
+        "re": {
+          "stdout": "(?m)^[ \\t]*ENABLED[ \\t]*=[ \\t]*yes\\b"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat Enterprise Linux",
+          "CentOS Linux",
+          "CentOS Stream",
+          "Fedora Linux",
+          "Oracle Linux Server",
+          "Amazon Linux",
+          "Rocky Linux",
+          "AlmaLinux",
+          "SLES",
+          "openSUSE Leap",
+          "openSUSE Tumbleweed"
+        ],
+        "re": {
+          "stdout": "\\bfirewalld\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.4",
+    "std:NIST_800-53:SC-7",
+    "std:ISO27001:A.8.20",
+    "std:ISO27001:A.13.1.1",
+    "std:SOC2:CC6.6",
+    "std:CMMC:SC.L2-3.13.1",
+    "std:CMMC:SC.L2-3.13.6",
+    "std:PCI_DSS_4:1.3.1",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

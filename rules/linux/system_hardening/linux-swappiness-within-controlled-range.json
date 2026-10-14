@@ -1,0 +1,52 @@
+{
+  "name": "Linux Swappiness Within Controlled Range",
+  "description": "Ensures vm.swappiness is configured within a controlled range (1-60), balancing swap usage to reduce performance degradation.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/vm/swappiness",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "^(?:[1-9]|[1-5][0-9]|60)$"
+        }
+      }
+    ],
+    "remedy": [
+      {
+        "command": "sysctl -w vm.swappiness=10 >/dev/null && cat /proc/sys/vm/swappiness",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:CP-2",
+    "std:ISO27001:A.8.6",
+    "std:SOC2:A1.1",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:low",
+    "priv:required"
+  ]
+}

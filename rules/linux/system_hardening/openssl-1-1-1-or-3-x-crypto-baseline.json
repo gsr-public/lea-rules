@@ -1,0 +1,52 @@
+{
+  "name": "OpenSSL 1.1.1 or 3.x Crypto Baseline",
+  "description": "Checks that the system OpenSSL is 1.1.1 or 3.x or later, a TLS 1.3-capable, crypto-agile baseline on which hybrid and post-quantum TLS can be deployed. macOS is not covered because /usr/bin/openssl on macOS is LibreSSL.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "/usr/bin/openssl version",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\bOpenSSL\\s+(?:1\\.1\\.1[a-z]*|[3-9]\\.\\d+\\.\\d+[a-z]*)\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:NIST_800-53:SC-12",
+    "std:NIST_800-53:SC-13",
+    "std:ISO27001:A.8.24",
+    "std:SOC2:CC6.7",
+    "std:CMMC:SC.L2-3.13.11",
+    "std:PCI_DSS_4:12.3.3",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "std:NIST_PQC:FIPS-203",
+    "std:NIST_PQC:FIPS-204",
+    "std:NIST_PQC:FIPS-205",
+    "std:NIST_PQC:transition",
+    "std:BIS:QuantumRoadmap",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

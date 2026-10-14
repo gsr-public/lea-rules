@@ -1,0 +1,47 @@
+{
+  "name": "Windows UAC Prompts Administrators for Consent",
+  "description": "Ensures User Account Control asks administrators for credentials (1) or consent (2) on the secure desktop for every elevation, instead of silently elevating.",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System /v ConsentPromptBehaviorAdmin",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "ConsentPromptBehaviorAdmin\\s+REG_DWORD\\s+0x[12]\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:5.4",
+    "std:NIST_800-53:AC-6",
+    "std:ISO27001:A.8.2",
+    "std:SOC2:CC6.3",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

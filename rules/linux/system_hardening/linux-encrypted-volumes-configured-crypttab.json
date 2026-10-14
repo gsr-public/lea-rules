@@ -1,0 +1,51 @@
+{
+  "name": "Linux Encrypted Volumes Configured (crypttab)",
+  "description": "Checks if the system is configured with at least one encrypted disk/partition (presence of entries in /etc/crypttab).",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /etc/crypttab",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^(?!#)\\S+"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:3.6",
+    "std:CIS_Controls_v8:3.11",
+    "std:NIST_800-53:SC-28",
+    "std:ISO27001:A.8.24",
+    "std:ISO27001:A.10.1.1",
+    "std:SOC2:CC6.1",
+    "std:CMMC:SC.L2-3.13.16",
+    "std:PCI_DSS_4:3.5.1",
+    "std:NIS2:Art21.2(h)",
+    "std:DORA:Art9",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:high",
+    "priv:required"
+  ]
+}

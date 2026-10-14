@@ -1,0 +1,50 @@
+{
+  "name": "Docker Socket Not Exposed",
+  "description": "Ensures the Docker engine control socket (/var/run/docker.sock) is not present inside the container being assessed; a mounted socket gives the workload root-equivalent control of the host. Assign this rule only to groups of container agents, because Docker hosts are expected to have the socket.",
+  "active": true,
+  "category": "system_hardening",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "ls /var/run/docker.sock",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "not_re": {
+          "stdout": "docker\\.sock"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:CM-7",
+    "std:NIST_800-53:SC-39",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:2.2.6",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "cat:system_hardening",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

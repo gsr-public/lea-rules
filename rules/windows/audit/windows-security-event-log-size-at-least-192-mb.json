@@ -1,0 +1,52 @@
+{
+  "name": "Windows Security Event Log Size At Least 192 MB",
+  "description": "Ensures the Security event log can grow to at least 196,608 KB (201,326,592 bytes), so audit events are not overwritten quickly.\nRequired Windows permission: LEA agent account must be allowed to run only: wevtutil gl Security (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "wevtutil gl Security",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^maxSize:\\s*(?:[3-9]\\d{8}|2[1-9]\\d{7}|20[2-9]\\d{6}|201[4-9]\\d{5}|2013[3-9]\\d{4}|20132[7-9]\\d{3}|201326[6-9]\\d{2}|20132659[2-9]|[1-9]\\d{9,})\\s*$"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.3",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-4",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:medium",
+    "priv:required"
+  ]
+}

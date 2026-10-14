@@ -1,0 +1,51 @@
+{
+  "name": "Windows PowerShell Module Logging Enabled",
+  "description": "Ensures PowerShell module logging is enabled by policy, recording pipeline execution details. Module names to log are configured separately under the ModuleNames subkey.",
+  "active": true,
+  "category": "audit",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging /v EnableModuleLogging",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "EnableModuleLogging\\s+REG_DWORD\\s+0x1\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:8.2",
+    "std:CIS_Controls_v8:8.8",
+    "std:NIST_800-53:AU-2",
+    "std:NIST_800-53:AU-12",
+    "std:ISO27001:A.8.15",
+    "std:SOC2:CC7.2",
+    "std:CMMC:AC.L2-3.1.7",
+    "std:CMMC:AU.L2-3.3.1",
+    "std:PCI_DSS_4:10.2.1",
+    "std:NIS2:Art21.2(b)",
+    "std:DORA:Art10",
+    "cat:audit",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

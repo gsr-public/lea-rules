@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gsr-it/lea-open-rules/schema/rule.schema.json",
+  "title": "LEA rule",
+  "description": "One LEA Platform rule, in the shape accepted by the LEA admin API (POST /api/cmds).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "description", "active", "category", "cycle", "cmd_info_key", "cmd", "parameters", "tags"],
+  "properties": {
+    "name": {"type": "string", "minLength": 3, "maxLength": 120},
+    "description": {"type": "string", "minLength": 20},
+    "active": {"type": "boolean"},
+    "category": {
+      "type": "string",
+      "enum": ["access_control", "audit", "authentication", "container_security", "identity_management", "integrity", "kernel_security", "network_security", "password_policy", "system_hardening"]
+    },
+    "cycle": {"type": "integer", "minimum": 60},
+    "cmd_info_key": {"type": ["string", "null"]},
+    "parameters": {"type": "array"},
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^(std|cat|env|risk|priv):[A-Za-z0-9_.:()\\-]+$"}
+    },
+    "cmd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["validation", "expect", "remedy", "system"],
+      "properties": {
+        "validation": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/command"}},
+        "expect": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/expect"}},
+        "remedy": {"type": "array", "items": {"$ref": "#/$defs/command"}},
+        "system": {"type": "array", "items": {"$ref": "#/$defs/system"}}
+      }
+    }
+  },
+  "$defs": {
+    "system": {"type": "string", "enum": ["Linux", "Darwin", "Windows"]},
+    "systems": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/system"}},
+    "distribution": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"type": "string", "minLength": 1},
+          {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}, "version": {"type": "array", "items": {"type": "string"}}}}
+        ]
+      }
+    },
+    "streams": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {"stdout": {"type": "string", "minLength": 1}, "stderr": {"type": "string", "minLength": 1}}
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "distribution"],
+      "anyOf": [{"required": ["command"]}, {"required": ["function"]}],
+      "properties": {
+        "command": {"type": "string", "minLength": 1},
+        "function": {"type": "string", "minLength": 1},
+        "format_function": {"type": "string"},
+        "timeout": {"type": "integer", "minimum": 1},
+        "system": {"$ref": "#/$defs/systems"},
+        "distribution": {"$ref": "#/$defs/distribution"}
+      }
+    },
+    "expect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "distribution"],
+      "anyOf": [{"required": ["re"]}, {"required": ["not_re"]}, {"required": ["returncode"]}, {"required": ["md5"]}, {"required": ["function"]}],
+      "properties": {
+        "system": {"$ref": "#/$defs/systems"},
+        "distribution": {"$ref": "#/$defs/distribution"},
+        "re": {"$ref": "#/$defs/streams"},
+        "not_re": {"$ref": "#/$defs/streams"},
+        "returncode": {"type": "integer"},
+        "md5": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+        "function": {"type": "string"},
+        "err": {"type": "string"}
+      }
+    }
+  }
+}

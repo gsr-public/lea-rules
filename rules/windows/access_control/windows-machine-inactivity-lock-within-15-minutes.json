@@ -1,0 +1,50 @@
+{
+  "name": "Windows Machine Inactivity Lock Within 15 Minutes",
+  "description": "Ensures the machine inactivity limit locks the session after 1 to 900 seconds (InactivityTimeoutSecs 0x1-0x384).",
+  "active": true,
+  "category": "access_control",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System /v InactivityTimeoutSecs",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "InactivityTimeoutSecs\\s+REG_DWORD\\s+0x(?:[1-9a-f]|[1-9a-f][0-9a-f]|[12][0-9a-f]{2}|3[0-7][0-9a-f]|38[0-4])\\b"
+        }
+      }
+    ],
+    "remedy": [],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.3",
+    "std:NIST_800-53:AC-11",
+    "std:NIST_800-53:AC-12",
+    "std:ISO27001:A.8.1",
+    "std:SOC2:CC6.1",
+    "std:CMMC:AC.L2-3.1.10",
+    "std:CMMC:AC.L2-3.1.11",
+    "std:PCI_DSS_4:8.2.8",
+    "std:NIS2:Art21.2(i)",
+    "std:DORA:Art9",
+    "cat:access_control",
+    "env:windows",
+    "env:host_level",
+    "risk:medium"
+  ]
+}
