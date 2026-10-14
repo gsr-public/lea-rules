@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/gsr-it/lea-open-rules/schema/rule.schema.json",
+  "$id": "https://github.com/gsr-public/lea-rules/schema/rule.schema.json",
   "title": "LEA rule",
   "description": "One LEA Platform rule, in the shape accepted by the LEA admin API (POST /api/cmds).",
   "type": "object",
