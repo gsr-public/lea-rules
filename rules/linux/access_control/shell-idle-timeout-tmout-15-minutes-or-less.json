@@ -1,4 +1,5 @@
 {
+  "uid": "9bb03844-368b-4bc3-9806-ed2b787cec13",
   "name": "Shell Idle Timeout (TMOUT) 15 Minutes or Less",
   "description": "Ensures system-wide shell profiles set TMOUT to between 1 and 900 seconds and mark it readonly, so idle interactive shells, including root shells, are terminated automatically.",
   "active": true,

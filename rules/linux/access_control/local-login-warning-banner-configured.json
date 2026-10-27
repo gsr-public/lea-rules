@@ -1,4 +1,5 @@
 {
+  "uid": "16f56c91-42b8-4fe8-899b-d6dadce5e294",
   "name": "Local Login Warning Banner Configured",
   "description": "Ensures /etc/issue contains a non-empty warning banner shown before local login, providing the system-use notification required by many policies.",
   "active": true,

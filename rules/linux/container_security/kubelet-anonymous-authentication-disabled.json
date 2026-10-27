@@ -1,4 +1,5 @@
 {
+  "uid": "68fed701-c942-48d2-a0cb-a1f8e81e279a",
   "name": "Kubelet Anonymous Authentication Disabled",
   "description": "Ensures the kubelet rejects anonymous requests (authentication.anonymous.enabled: false). Reads /var/lib/kubelet/config.yaml; passes with LEA_RULE_no_service when no kubelet is running.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /var/lib/kubelet/config.yaml",
   "active": true,

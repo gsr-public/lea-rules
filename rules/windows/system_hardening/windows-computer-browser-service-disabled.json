@@ -1,4 +1,5 @@
 {
+  "uid": "a374bd58-e2d0-4fa9-96c8-81d1aadf6637",
   "name": "Windows Computer Browser Service Disabled",
   "description": "Ensures the legacy Computer Browser service, which depends on SMBv1, is disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

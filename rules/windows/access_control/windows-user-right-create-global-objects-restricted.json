@@ -1,4 +1,5 @@
 {
+  "uid": "8ef76694-306c-43c4-84e3-53f67d02f908",
   "name": "Windows User Right 'Create Global Objects' Restricted",
   "description": "Ensures the user right 'Create Global Objects' (SeCreateGlobalPrivilege) is granted to only the default administrative and service principals. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): S-1-5-32-544, S-1-5-19, S-1-5-20, S-1-5-6; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

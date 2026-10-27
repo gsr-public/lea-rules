@@ -1,4 +1,5 @@
 {
+  "uid": "77286a69-6315-49d5-851f-0a6652ce9773",
   "name": "Bluetooth Service Not Running",
   "description": "Ensures the Bluetooth daemon (bluetoothd) is not running (process names read from /proc/*/comm).",
   "active": true,

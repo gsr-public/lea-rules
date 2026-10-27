@@ -1,4 +1,5 @@
 {
+  "uid": "091114a8-f482-401a-8877-84aafd8057ed",
   "name": "Audit Configuration Immutable",
   "description": "Ensures the audit rules end with '-e 2', which locks the audit configuration until reboot so an attacker with root cannot silently disable auditing.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

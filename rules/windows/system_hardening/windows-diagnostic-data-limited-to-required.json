@@ -1,4 +1,5 @@
 {
+  "uid": "24939acd-11a8-41a4-b6e0-b9ecc352bb3a",
   "name": "Windows Diagnostic Data Limited to Required",
   "description": "Ensures Windows diagnostic data is limited to Required/Basic or off (AllowTelemetry 0 or 1), reducing data sent to Microsoft.",
   "active": true,

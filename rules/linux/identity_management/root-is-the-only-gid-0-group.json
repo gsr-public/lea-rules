@@ -1,4 +1,5 @@
 {
+  "uid": "78efe1da-2e32-4a26-9ea8-36aee19f6c8f",
   "name": "Root Is the Only GID 0 Group",
   "description": "Ensures the only group with GID 0 in /etc/group is root.",
   "active": true,

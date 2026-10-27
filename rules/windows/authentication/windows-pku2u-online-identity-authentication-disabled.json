@@ -1,4 +1,5 @@
 {
+  "uid": "c01f468e-d36a-4407-8c12-f4935a935e09",
   "name": "Windows PKU2U Online Identity Authentication Disabled",
   "description": "Ensures PKU2U authentication requests using online identities are refused (AllowOnlineID = 0).",
   "active": true,

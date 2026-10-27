@@ -1,4 +1,5 @@
 {
+  "uid": "1938b593-983c-45b7-a46e-ed177c3ec3e4",
   "name": "Windows Secure Boot Enabled",
   "description": "Ensures UEFI Secure Boot is enabled (Confirm-SecureBootUEFI returns True), so only signed boot loaders and kernels start.\nRequired Windows permission: LEA agent account must be allowed to run only: Confirm-SecureBootUEFI (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

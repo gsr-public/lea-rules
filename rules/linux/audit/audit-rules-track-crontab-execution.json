@@ -1,4 +1,5 @@
 {
+  "uid": "dd5e217a-b0d5-46c6-89f0-ef8a90019edb",
   "name": "Audit Rules Track crontab Execution",
   "description": "Ensures the audit rules record every execution of /usr/bin/crontab (-a always,exit -F path=/usr/bin/crontab -F perm=x or -w /usr/bin/crontab -p x), giving an independent record of privileged command use.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

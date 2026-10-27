@@ -1,4 +1,5 @@
 {
+  "uid": "c89750ff-ab6e-4b0f-9891-47effa0d6fef",
   "name": "Windows Defender Cannot Be Turned Off by Policy",
   "description": "Ensures no policy turns off Microsoft Defender Antivirus (DisableAntiSpyware not 1 under the Windows Defender policy key). An absent value passes.",
   "active": true,

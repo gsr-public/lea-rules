@@ -1,4 +1,5 @@
 {
+  "uid": "c9d71604-a602-4545-b3ea-7a2ee68cc9fc",
   "name": "SSH DSA Host Key Absent",
   "description": "Ensures no DSA (ssh-dss) host key exists in /etc/ssh. DSA is limited to 1024-bit keys and SHA-1, and was removed from OpenSSH 10.",
   "active": true,

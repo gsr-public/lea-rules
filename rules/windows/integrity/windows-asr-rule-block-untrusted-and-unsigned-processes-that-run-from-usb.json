@@ -1,4 +1,5 @@
 {
+  "uid": "b2abd43f-c326-4f77-9e7f-22d1b92b1cc6",
   "name": "Windows ASR Rule: Block Untrusted and Unsigned Processes That Run from USB",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Untrusted and Unsigned Processes That Run from USB\" (b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

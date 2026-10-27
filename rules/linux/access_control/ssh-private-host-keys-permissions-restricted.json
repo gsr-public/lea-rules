@@ -1,4 +1,5 @@
 {
+  "uid": "fcdac89a-e5de-45a7-84c1-48dbda9707fa",
   "name": "SSH Private Host Keys Permissions Restricted",
   "description": "Ensures every SSH private host key (/etc/ssh/ssh_host_*_key) is owned by root and readable only by root (600/400) or, on RHEL-family systems, by the ssh_keys group (640). A stolen host key lets an attacker impersonate the server. Passes with LEA_RULE_no_service when no host keys exist.",
   "active": true,

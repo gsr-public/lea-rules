@@ -1,5 +1,10 @@
 {
+  "uid": "c15418ba-ff93-437a-8cdd-8aabec14089b",
   "name": "Linux IPv4 Forwarding Disabled",
+  "former_names": [
+    "IP Forwarding Disabled",
+    "Linux IP Forwarding Disabled"
+  ],
   "description": "Ensures the kernel parameter net.ipv4.ip_forward is 0 so the host does not route traffic between interfaces. Container hosts and routers legitimately enable forwarding; exclude them from this rule's group.",
   "active": true,
   "category": "network_security",

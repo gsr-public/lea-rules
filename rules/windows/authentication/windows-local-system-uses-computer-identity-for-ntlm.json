@@ -1,4 +1,5 @@
 {
+  "uid": "886af772-d23f-498c-bb31-19942c57d68e",
   "name": "Windows Local System Uses Computer Identity for NTLM",
   "description": "Ensures services running as Local System use the computer identity for NTLM instead of anonymous (null) sessions (UseMachineId = 1).",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "3c5631d8-dd8e-4dbc-bfe5-d80969a8846d",
   "name": "Audit Rules Track File Deletion and Renaming",
   "description": "Ensures the audit rules record unlink, unlinkat, rename and renameat system calls by users, so deletion of evidence or data is traceable.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

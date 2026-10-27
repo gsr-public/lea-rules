@@ -1,4 +1,5 @@
 {
+  "uid": "1924ac25-74c4-4b0e-9dc6-90671c1ed69a",
   "name": "USBGuard Daemon Running",
   "description": "Ensures the USBGuard daemon is running, so only authorized USB devices are accepted by the kernel.",
   "active": true,

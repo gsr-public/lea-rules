@@ -1,4 +1,5 @@
 {
+  "uid": "76247266-fae3-40c6-9e16-5600e284c555",
   "name": "/etc/group Permissions 644 or Stricter",
   "description": "Verifies that /etc/group is owned by root:root and not writable by group or others (mode 644 or stricter). stat reads metadata only, so no privileges are needed.",
   "active": true,

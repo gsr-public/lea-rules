@@ -1,4 +1,5 @@
 {
+  "uid": "94b3123e-b243-4288-9fa0-c7f660103d92",
   "name": "Windows Audit Authentication Policy Change (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Authentication Policy Change' records success events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

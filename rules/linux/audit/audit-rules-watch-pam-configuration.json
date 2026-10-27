@@ -1,4 +1,5 @@
 {
+  "uid": "80ff8580-8426-43d1-9296-f61fe05c8504",
   "name": "Audit Rules Watch PAM Configuration",
   "description": "Ensures the audit rules record changes to /etc/pam.d and /etc/security, where authentication backdoors are commonly planted.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

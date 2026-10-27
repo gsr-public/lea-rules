@@ -1,4 +1,5 @@
 {
+  "uid": "b7c3601a-1a75-4614-8123-78d8924ebf2f",
   "name": "World-Writable Directories Have the Sticky Bit",
   "description": "Ensures every world-writable directory on local filesystems has the sticky bit set, so users cannot delete or rename other users' files in shared directories such as /tmp. Without root, unreadable directories are skipped.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "21104af9-ff24-4b85-993d-9ef7bf2a6b40",
   "name": "macOS iCloud Keychain Sync Disabled",
   "description": "Ensures iCloud Keychain synchronization is disabled by profile (allowCloudKeychainSync = false), so corporate credentials are not synced to personal devices. Reads the effective value of allowCloudKeychainSync in the com.apple.applicationaccess domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

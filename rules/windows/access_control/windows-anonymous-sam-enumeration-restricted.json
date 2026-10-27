@@ -1,4 +1,5 @@
 {
+  "uid": "d1eddbe1-f1ab-4d0a-8ba9-547d7baceae5",
   "name": "Windows Anonymous SAM Enumeration Restricted",
   "description": "Ensures anonymous users cannot enumerate SAM accounts (RestrictAnonymousSAM = 1).\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v RestrictAnonymousSAM (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

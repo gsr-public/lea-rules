@@ -1,4 +1,5 @@
 {
+  "uid": "565f570d-3450-4f89-88de-52e4dc55f9f8",
   "name": "PostgreSQL Not Listening on Network Interfaces",
   "description": "Ensures nothing listens for PostgreSQL on TCP port 5432 on a non-loopback address; assign to hosts whose database serves only local applications. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

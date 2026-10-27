@@ -1,4 +1,5 @@
 {
+  "uid": "9d2054fc-e05a-42da-a7ba-ff9d5bcedfe4",
   "name": "macOS iCloud Drive Document Sync Disabled",
   "description": "Ensures iCloud Drive document and desktop synchronization is disabled by profile (allowCloudDocumentSync = false), preventing data leakage to personal cloud storage. Reads the effective value of allowCloudDocumentSync in the com.apple.applicationaccess domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

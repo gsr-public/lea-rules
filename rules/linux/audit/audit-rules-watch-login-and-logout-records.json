@@ -1,4 +1,5 @@
 {
+  "uid": "7d7b4c66-ae41-48c2-94ff-597f3ec7e9fa",
   "name": "Audit Rules Watch Login and Logout Records",
   "description": "Ensures the audit rules record changes to the login records /var/log/lastlog and the failed-login databases (/var/run/faillock, /var/log/faillog or /var/log/tallylog).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

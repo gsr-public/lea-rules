@@ -1,4 +1,5 @@
 {
+  "uid": "202f8683-87b3-4572-a712-d1304e924b19",
   "name": "SSH Maximum Sessions per Connection 10 or Fewer",
   "description": "Ensures MaxSessions is set between 1 and 10, limiting multiplexed sessions per network connection.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

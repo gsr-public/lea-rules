@@ -1,5 +1,9 @@
 {
+  "uid": "9b2be302-7c14-4c73-8bc2-fcb5d6244e59",
   "name": "Linux Host Firewall Active (ufw or firewalld)",
+  "former_names": [
+    "Linux Firewall Service Running"
+  ],
   "description": "Ensures a host-based firewall is active: ufw is enabled (ENABLED=yes in /etc/ufw/ufw.conf) on Debian and Ubuntu, and the firewalld daemon is running on RHEL-family and SUSE distributions. Hosts managed with plain nftables rules should use 'Linux Firewall Default Deny Policy (iptables)' instead.",
   "active": true,
   "category": "network_security",

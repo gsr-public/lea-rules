@@ -1,4 +1,5 @@
 {
+  "uid": "bf82c523-7669-4e92-a951-5cf837e85b81",
   "name": "SSH TCP Forwarding Disabled",
   "description": "Ensures sshd does not allow TCP port forwarding (AllowTcpForwarding no, or DisableForwarding yes), which can be used to tunnel around network controls. Bastion hosts that rely on forwarding should be excluded.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

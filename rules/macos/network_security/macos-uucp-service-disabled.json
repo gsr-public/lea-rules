@@ -1,4 +1,5 @@
 {
+  "uid": "5c948523-062d-43c4-8fcf-8bb3aab004b2",
   "name": "macOS UUCP Service Disabled",
   "description": "Ensures the legacy UUCP service is disabled. Passes when launchd lists \"com.apple.uucp\" as disabled in the system domain.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/launchctl print-disabled system",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "0cbbce9b-0d87-42b7-8326-2f85541e3506",
   "name": ".NET Framework Strong Cryptography Enabled (64-bit)",
+  "former_names": [
+    ".NET Strong Crypto Enabled 64bit"
+  ],
   "description": "Ensures the .NET Framework 4.x 64-bit runtime is configured to use strong cryptography (SchUseStrongCrypto=1).",
   "active": true,
   "category": "system_hardening",

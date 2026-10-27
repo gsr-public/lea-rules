@@ -1,4 +1,5 @@
 {
+  "uid": "dc35c9f0-ab47-4c37-bdb5-0b09496545e0",
   "name": "macOS App Store Apps Updated Automatically",
   "description": "Ensures App Store applications update automatically (com.apple.commerce AutoUpdate = true). Reads the effective value of AutoUpdate in the com.apple.commerce domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "4214fa0e-ddc2-4f0f-8ee5-516bfcfab4c2",
   "name": "Windows RDP Clipboard Redirection Disabled",
   "description": "Ensures clipboard redirection is disabled for Remote Desktop sessions (fDisableClip = 1), preventing data exfiltration through copy and paste. Hosts where administrators need clipboard transfer can be excluded.",
   "active": true,

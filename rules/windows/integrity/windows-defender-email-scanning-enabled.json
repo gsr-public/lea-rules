@@ -1,4 +1,5 @@
 {
+  "uid": "29ac48b4-1836-4e3f-a6b4-016d33496f9e",
   "name": "Windows Defender Email Scanning Enabled",
   "description": "Ensures Defender scans mailbox files (DisableEmailScanning = False).",
   "active": true,

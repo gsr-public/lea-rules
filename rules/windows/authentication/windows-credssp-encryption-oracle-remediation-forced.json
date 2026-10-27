@@ -1,4 +1,5 @@
 {
+  "uid": "0ba5d733-b422-4731-a338-c1f2d51e5ae5",
   "name": "Windows CredSSP Encryption Oracle Remediation Forced",
   "description": "Ensures CredSSP only talks to updated clients and servers (AllowEncryptionOracle = 0), mitigating CVE-2018-0886.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "3dc96e24-37b0-4bef-85ff-30969b5c28a0",
   "name": "Account Lockout Applies to Root (faillock)",
   "description": "Ensures pam_faillock also locks the root account after repeated failures (even_deny_root, or root_unlock_time of 60 seconds or more), so root cannot be brute-forced.",
   "active": true,

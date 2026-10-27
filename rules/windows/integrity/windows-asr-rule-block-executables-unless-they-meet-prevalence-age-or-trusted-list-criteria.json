@@ -1,4 +1,5 @@
 {
+  "uid": "26ac771f-3745-46f8-a683-d5b2738eefe6",
   "name": "Windows ASR Rule: Block Executables Unless They Meet Prevalence, Age or Trusted List Criteria",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Executables Unless They Meet Prevalence, Age or Trusted List Criteria\" (01443614-cd74-433a-b99e-2ecdc07bfc25) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

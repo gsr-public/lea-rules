@@ -1,4 +1,5 @@
 {
+  "uid": "a649a6d1-77b8-45b1-b29d-1e8f8caea5a5",
   "name": "Windows Audit Logon Events (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Logon' records success and failure events. Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

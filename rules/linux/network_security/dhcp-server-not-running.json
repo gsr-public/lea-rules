@@ -1,4 +1,5 @@
 {
+  "uid": "3fc1ef5d-dffe-4af1-b8a3-633096847a6b",
   "name": "DHCP Server Not Running",
   "description": "Ensures a DHCP server (ISC dhcpd or Kea) is not running (process names read from /proc/*/comm).",
   "active": true,

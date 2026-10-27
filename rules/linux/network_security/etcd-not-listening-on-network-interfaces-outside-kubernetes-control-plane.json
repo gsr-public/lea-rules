@@ -1,4 +1,5 @@
 {
+  "uid": "e80be037-98a1-4201-a496-077754f4c077",
   "name": "etcd Not Listening on Network Interfaces Outside Kubernetes Control Plane",
   "description": "Ensures nothing listens for etcd on TCP ports 2379/2380 on a non-loopback address; assign only to hosts that are not etcd cluster members. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "943b8493-cf7e-4f53-b3ae-cfe80d4c80be",
   "name": "macOS Updates Downloaded Automatically",
   "description": "Ensures macOS downloads new updates in the background (AutomaticDownload = true). Reads the effective value of AutomaticDownload in the com.apple.SoftwareUpdate domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

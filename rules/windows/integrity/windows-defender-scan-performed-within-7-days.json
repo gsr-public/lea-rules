@@ -1,4 +1,5 @@
 {
+  "uid": "2b92438a-8184-4ced-bebf-2bf0135b861c",
   "name": "Windows Defender Scan Performed Within 7 Days",
   "description": "Ensures a Defender quick scan ran within the last 7 days (QuickScanAge 0-7).",
   "active": true,

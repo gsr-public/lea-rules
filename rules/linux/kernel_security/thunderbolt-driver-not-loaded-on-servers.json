@@ -1,4 +1,5 @@
 {
+  "uid": "1c1878e3-2fd4-4f76-b45e-74e9a5fbfb94",
   "name": "Thunderbolt Driver Not Loaded on Servers",
   "description": "Ensures the Thunderbolt driver, which exposes a DMA-capable external bus (servers only; laptops and docks need it), is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

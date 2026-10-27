@@ -1,4 +1,5 @@
 {
+  "uid": "5ef987ac-0b74-4ef6-aa02-ba25c08f8f3b",
   "name": "Windows Audit Logoff (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Logoff' records success events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

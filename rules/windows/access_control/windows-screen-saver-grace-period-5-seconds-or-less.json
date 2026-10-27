@@ -1,4 +1,5 @@
 {
+  "uid": "0fa7ecf5-0cdc-4bc9-97e0-e17bef5c11a6",
   "name": "Windows Screen Saver Grace Period 5 Seconds or Less",
   "description": "Ensures the screen saver grace period before the lock takes effect is 5 seconds or less (ScreenSaverGracePeriod).",
   "active": true,

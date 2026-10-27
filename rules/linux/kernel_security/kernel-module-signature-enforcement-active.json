@@ -1,4 +1,5 @@
 {
+  "uid": "f8e853d5-bf38-4098-87de-4bcaea6b4cef",
   "name": "Kernel Module Signature Enforcement Active",
   "description": "Ensures the kernel refuses unsigned kernel modules: either module.sig_enforce is Y or kernel lockdown (which enforces module signatures) is in integrity or confidentiality mode.",
   "active": true,

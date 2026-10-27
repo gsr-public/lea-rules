@@ -1,4 +1,5 @@
 {
+  "uid": "39000724-6517-4eaf-a0e4-d760144acc8b",
   "name": "Process Information Hidden from Other Users (hidepid)",
   "description": "Ensures /proc is mounted with hidepid=2 (or hidepid=invisible), so users cannot see the command lines and environment of other users' processes, which often contain secrets. Some monitoring agents need a gid= exemption.",
   "active": true,

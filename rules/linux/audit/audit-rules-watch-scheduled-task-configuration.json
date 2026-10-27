@@ -1,4 +1,5 @@
 {
+  "uid": "55340d87-8909-46af-91af-959b184dac59",
   "name": "Audit Rules Watch Scheduled Task Configuration",
   "description": "Ensures the audit rules record changes to /etc/crontab, /etc/cron.d and the per-user crontab spool, a common persistence location.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "9a2ab0b5-3422-4fc2-a93b-335cac3296e0",
   "name": "Kernel FIPS Mode Enabled",
   "description": "Checks that the kernel runs in FIPS mode (/proc/sys/crypto/fips_enabled = 1), restricting kernel and, on most distributions, user-space cryptography to FIPS 140 approved algorithms. Apply only to environments that must use FIPS-validated cryptography (for example CMMC or FedRAMP scope).",
   "active": true,

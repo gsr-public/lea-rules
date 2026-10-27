@@ -1,4 +1,5 @@
 {
+  "uid": "da691078-5dbb-47fb-b2c0-30a2266f3df9",
   "name": "Java JAR Weak Signature Algorithms Disabled",
   "description": "Ensures every installed OpenJDK runtime rejects JAR signatures that use MD5 or SHA-1 and RSA keys shorter than 2048 bits (jdk.jar.disabledAlgorithms). Continuation lines in java.security are evaluated. Passes with LEA_RULE_no_service when no OpenJDK java.security file is present.",
   "active": true,

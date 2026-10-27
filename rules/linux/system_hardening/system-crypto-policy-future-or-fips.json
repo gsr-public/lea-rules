@@ -1,5 +1,9 @@
 {
+  "uid": "016f1561-56f0-4eaf-9a46-f2657d89b7ba",
   "name": "System Crypto Policy FUTURE or FIPS",
+  "former_names": [
+    "Linux System Crypto Policy Future Or FIPS"
+  ],
   "description": "Ensures the Linux system-wide crypto policy is set to FUTURE or FIPS on distributions that support crypto-policies.",
   "active": true,
   "category": "system_hardening",

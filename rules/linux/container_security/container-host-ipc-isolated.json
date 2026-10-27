@@ -1,4 +1,5 @@
 {
+  "uid": "061eb2c1-5dcb-48f2-a44f-2f0a64e1a934",
   "name": "Container Host IPC Isolated",
   "description": "Confirms that /dev/shm inside the container is empty, indicating the container does not share the host IPC namespace and shared-memory segments. Assign this rule only to groups of container agents.",
   "active": true,

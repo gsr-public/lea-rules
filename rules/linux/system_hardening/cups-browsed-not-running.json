@@ -1,4 +1,5 @@
 {
+  "uid": "3d63caff-2638-43d9-8af1-61cd1ad4fba5",
   "name": "cups-browsed Not Running",
   "description": "Ensures cups-browsed is not running. It has accepted unauthenticated remote printer registrations that lead to remote code execution (CVE-2024-47176 and related). Process names are read from /proc/*/comm.",
   "active": true,

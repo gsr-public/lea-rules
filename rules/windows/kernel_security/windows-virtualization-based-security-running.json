@@ -1,4 +1,5 @@
 {
+  "uid": "597e410b-14f7-4109-81ee-f11bd6a4a4b9",
   "name": "Windows Virtualization-Based Security Running",
   "description": "Ensures virtualization-based security is enabled and running (Win32_DeviceGuard VirtualizationBasedSecurityStatus = 2), the foundation for Credential Guard and memory integrity.",
   "active": true,

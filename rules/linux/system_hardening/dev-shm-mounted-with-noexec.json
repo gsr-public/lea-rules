@@ -1,4 +1,5 @@
 {
+  "uid": "3f7d9dba-7fac-40ba-9671-977b44c55965",
   "name": "/dev/shm Mounted with noexec",
   "description": "Ensures /dev/shm is mounted with the noexec option, so binaries cannot be executed directly from it. Reads /proc/mounts; fails if /dev/shm is not a separate mount.",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "502d1dd7-ba63-4210-9614-c97f03444026",
   "name": "Linux ICMP Redirects Not Accepted (All Interfaces)",
+  "former_names": [
+    "ICMP Redirects Disabled"
+  ],
   "description": "Ensures the host does not accept ICMP redirect messages that could alter its routing table: net.ipv4.conf.all.accept_redirects, net.ipv4.conf.all.secure_redirects and net.ipv6.conf.all.accept_redirects must all be 0.",
   "active": true,
   "category": "network_security",

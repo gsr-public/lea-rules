@@ -1,4 +1,5 @@
 {
+  "uid": "c5b58556-7933-4059-9118-9ce1ea6e84fa",
   "name": "macOS System Data Files and XProtect Updates Installed Automatically",
   "description": "Ensures XProtect, MRT and other system data files are installed automatically (ConfigDataInstall = true). Reads the effective value of ConfigDataInstall in the com.apple.SoftwareUpdate domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "f1d96315-7494-4544-8948-4ba041569733",
   "name": "Windows ASR Rule: Block Executable Content from Email Client and Webmail",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Executable Content from Email Client and Webmail\" (be9ba2d9-53ea-4cdc-84e5-9b1eeee46550) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

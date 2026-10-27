@@ -1,4 +1,5 @@
 {
+  "uid": "e13192d1-ccd7-4a4b-a52a-970b0199608d",
   "name": "Audit Rules Track Unsuccessful File Access Attempts",
   "description": "Ensures the audit rules record file open, create and truncate attempts that fail with EACCES or EPERM, revealing users probing for files they are not allowed to read.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

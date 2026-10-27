@@ -1,4 +1,5 @@
 {
+  "uid": "23700269-ce97-47f9-a743-3d3724eab873",
   "name": "Windows Built-in Administrator Account Disabled",
   "description": "Ensures the built-in Administrator account (RID 500) is disabled (EnableAdminAccount = 0), so its well-known SID cannot be targeted; use named administrator accounts and LAPS instead.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

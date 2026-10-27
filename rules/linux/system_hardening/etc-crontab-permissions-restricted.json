@@ -1,4 +1,5 @@
 {
+  "uid": "9cdafa10-89ef-4553-a0a4-4e70d967ef2f",
   "name": "/etc/crontab Permissions Restricted",
   "description": "Verifies that /etc/crontab is owned by root:root and accessible only by root (mode 600 or 400), so unprivileged users cannot read or alter scheduled root jobs. Passes with LEA_RULE_no_service when the file does not exist.",
   "active": true,

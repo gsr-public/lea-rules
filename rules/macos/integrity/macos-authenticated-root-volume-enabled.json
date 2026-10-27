@@ -1,4 +1,5 @@
 {
+  "uid": "9dc236b0-8c27-415d-955b-d8ea5b254ead",
   "name": "macOS Authenticated Root Volume Enabled",
   "description": "Ensures the sealed system volume is cryptographically verified at boot (csrutil authenticated-root status reports enabled), so modifications to the operating system are detected.",
   "active": true,

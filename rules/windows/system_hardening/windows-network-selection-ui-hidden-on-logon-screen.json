@@ -1,4 +1,5 @@
 {
+  "uid": "cbd7e439-b9be-4319-8b39-13581cf3b91a",
   "name": "Windows Network Selection UI Hidden on Logon Screen",
   "description": "Ensures the network selection UI is not shown on the logon screen (DontDisplayNetworkSelectionUI = 1), so unauthenticated users cannot change network connectivity.",
   "active": true,

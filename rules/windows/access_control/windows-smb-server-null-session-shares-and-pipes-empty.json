@@ -1,4 +1,5 @@
 {
+  "uid": "5852da2a-c52f-4a65-90dd-e6a92573f954",
   "name": "Windows SMB Server Null Session Shares and Pipes Empty",
   "description": "Ensures no shares or named pipes are accessible anonymously (NullSessionShares and NullSessionPipes empty).",
   "active": true,

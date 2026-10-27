@@ -1,4 +1,5 @@
 {
+  "uid": "f870f74f-92c9-45bd-b906-d49bd02df3fa",
   "name": "Windows Anonymous Enumeration of SAM Accounts and Shares Restricted",
   "description": "Ensures anonymous users cannot enumerate SAM accounts and shares (RestrictAnonymous = 1).",
   "active": true,

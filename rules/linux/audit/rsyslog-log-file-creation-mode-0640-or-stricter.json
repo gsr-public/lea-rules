@@ -1,4 +1,5 @@
 {
+  "uid": "49bb196b-9e9b-4839-909a-404fd55d3fa0",
   "name": "rsyslog Log File Creation Mode 0640 or Stricter",
   "description": "Ensures rsyslog creates log files with mode 0640 or stricter ($FileCreateMode or fileCreateMode), so new log files are not world-readable. Passes with LEA_RULE_no_service when rsyslogd is not running.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "8f28c105-ea47-4d71-9f5f-a87afb4b56d6",
   "name": "Account Lockout After 5 or Fewer Failures (faillock)",
   "description": "Ensures pam_faillock locks an account after at most 5 consecutive failed logins, set either in /etc/security/faillock.conf (deny) or as a deny= argument on the pam_faillock lines of the PAM stack, and that no file sets a higher or zero value. Pair with 'Account Lockout Enforced After Failed Logins', which checks that pam_faillock is in the PAM stack.",
   "active": true,

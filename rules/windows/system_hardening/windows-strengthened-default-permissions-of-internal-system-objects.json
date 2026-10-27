@@ -1,4 +1,5 @@
 {
+  "uid": "2787b22c-77bd-442e-9359-6fdd6c60414f",
   "name": "Windows Strengthened Default Permissions of Internal System Objects",
   "description": "Ensures internal system objects such as symbolic links use strengthened default permissions (ProtectionMode = 1).",
   "active": true,

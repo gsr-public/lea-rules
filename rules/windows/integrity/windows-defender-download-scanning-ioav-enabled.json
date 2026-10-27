@@ -1,4 +1,5 @@
 {
+  "uid": "918a1484-e521-4775-b5e9-05d798546beb",
   "name": "Windows Defender Download Scanning (IOAV) Enabled",
   "description": "Ensures Defender scans downloaded files and attachments (IoavProtectionEnabled = True).",
   "active": true,

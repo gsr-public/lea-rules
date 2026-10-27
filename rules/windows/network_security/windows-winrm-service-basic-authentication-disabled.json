@@ -1,4 +1,5 @@
 {
+  "uid": "2c409916-3f02-4339-a41a-4f43661ff48a",
   "name": "Windows WinRM Service Basic Authentication Disabled",
   "description": "Ensures the WinRM service does not accept Basic authentication (AllowBasic = 0).",
   "active": true,

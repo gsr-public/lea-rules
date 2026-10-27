@@ -1,4 +1,5 @@
 {
+  "uid": "5eb85052-8162-4775-b529-d4c4c8eea6c5",
   "name": "macOS Guest Account Disabled",
   "description": "Ensures the macOS guest user login is disabled (GuestEnabled = 0 in /Library/Preferences/com.apple.loginwindow). If the key has never been written the rule fails; set it explicitly or through MDM.",
   "active": true,

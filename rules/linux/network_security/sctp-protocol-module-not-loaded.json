@@ -1,4 +1,5 @@
 {
+  "uid": "ea87fe14-2ef7-42bc-95d8-97ca4b741084",
   "name": "SCTP Protocol Module Not Loaded",
   "description": "Ensures the SCTP network protocol module is not loaded (checked in /proc/modules). Rarely used protocol modules have a history of kernel vulnerabilities. A driver compiled into the kernel is not detected. Telecom and some clustering software use SCTP; exclude those hosts.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r sctp",
   "active": true,

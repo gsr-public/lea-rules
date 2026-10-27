@@ -1,4 +1,5 @@
 {
+  "uid": "f1c04168-728a-469c-a139-7bee0231f8c7",
   "name": "Windows Audit Kerberos Authentication Service (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Kerberos Authentication Service' records success and failure events. Relevant on domain controllers. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

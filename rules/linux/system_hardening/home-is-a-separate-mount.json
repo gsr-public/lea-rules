@@ -1,4 +1,5 @@
 {
+  "uid": "4b8a4495-808b-468d-85a0-f2a7c0165d34",
   "name": "/home Is a Separate Mount",
   "description": "Ensures /home is a separate filesystem in /proc/mounts, so it can carry restrictive mount options and filling it cannot exhaust other filesystems.",
   "active": true,

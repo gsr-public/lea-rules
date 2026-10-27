@@ -1,4 +1,5 @@
 {
+  "uid": "70e62341-b521-4873-b9d8-07dfa4a7f730",
   "name": "Windows LDAP Client Signing Required or Negotiated",
   "description": "Ensures the LDAP client negotiates or requires signing (LDAPClientIntegrity 1 or 2), protecting directory queries against tampering.",
   "active": true,

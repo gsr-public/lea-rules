@@ -1,5 +1,9 @@
 {
+  "uid": "01194c42-60c3-4a61-b407-491646242f34",
   "name": "No World-Writable Files on Local Filesystems",
+  "former_names": [
+    "No World Writable Files"
+  ],
   "description": "Ensures there are no world-writable regular files on the root filesystem (find -xdev does not descend into /proc, /sys or other mounts). Without root, directories the agent cannot read are skipped, so run with read access to the whole filesystem for full coverage.",
   "active": true,
   "category": "system_hardening",

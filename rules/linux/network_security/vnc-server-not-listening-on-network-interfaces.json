@@ -1,4 +1,5 @@
 {
+  "uid": "f7e226c4-2567-494a-a2c8-c6065703a002",
   "name": "VNC Server Not Listening on Network Interfaces",
   "description": "Ensures nothing listens for a VNC server on TCP ports 5900-5909 on a non-loopback address; tunnel VNC over SSH instead. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

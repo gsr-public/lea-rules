@@ -1,5 +1,9 @@
 {
+  "uid": "08d3efec-47ee-4ce0-9c69-54bbeac68d06",
   "name": "macOS IPv6 ICMP Redirects Not Accepted",
+  "former_names": [
+    "macOS IPv6 Redirect Accept Disabled"
+  ],
   "description": "Ensures the macOS kernel parameter net.inet6.icmp6.rediraccept is disabled (0), preventing acceptance of IPv6 ICMP redirect messages that can alter routing tables.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet6.icmp6.rediraccept=0",
   "active": true,
   "category": "network_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "2e28a926-58ea-49e2-aa55-2c81abc889b4",
   "name": "Windows RDP Idle Session Limit 15 Minutes or Less",
   "description": "Ensures idle Remote Desktop sessions are disconnected after at most 15 minutes (MaxIdleTime 1-900000 ms).",
   "active": true,

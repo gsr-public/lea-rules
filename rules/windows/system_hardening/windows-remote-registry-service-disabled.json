@@ -1,4 +1,5 @@
 {
+  "uid": "57a3aac8-497f-4a4b-953f-39161ed556d0",
   "name": "Windows Remote Registry Service Disabled",
   "description": "Ensures the Remote Registry service is disabled, so registry settings cannot be read or changed remotely. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

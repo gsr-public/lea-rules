@@ -1,4 +1,5 @@
 {
+  "uid": "1fc4f7af-f266-4a63-aaf0-2f745595f4e1",
   "name": "macOS Account Lockout After 5 or Fewer Failed Logins",
   "description": "Ensures the local account policy locks an account after at most 5 failed authentication attempts (policyAttributeMaximumFailedAuthentications 1-5). Read from pwpolicy getaccountpolicies (global policy, including policies installed by an MDM profile).",
   "active": true,

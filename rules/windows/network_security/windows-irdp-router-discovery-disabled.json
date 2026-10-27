@@ -1,4 +1,5 @@
 {
+  "uid": "1d7e6a8d-539f-4080-8610-49dbbdf8b2a8",
   "name": "Windows IRDP Router Discovery Disabled",
   "description": "Ensures ICMP router discovery cannot set the default gateway (PerformRouterDiscovery = 0).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\" /v PerformRouterDiscovery (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

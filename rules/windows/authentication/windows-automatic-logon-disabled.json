@@ -1,4 +1,5 @@
 {
+  "uid": "d5645fd8-e830-48c2-a0a6-33ee8818c44e",
   "name": "Windows Automatic Logon Disabled",
   "description": "Ensures Winlogon automatic logon is not enabled (AutoAdminLogon not 1), which would log a stored account in without a password at boot.",
   "active": true,

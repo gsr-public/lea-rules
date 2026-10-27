@@ -1,4 +1,5 @@
 {
+  "uid": "b6127df1-d4fa-4374-87d1-bdae306745ce",
   "name": "Windows SChannel NULL, DES and RC2 Ciphers Not Enabled",
   "description": "Ensures no NULL, DES or RC2 cipher is explicitly enabled in the SCHANNEL configuration. A missing key passes; an Enabled value other than 0 under any of these cipher keys fails.",
   "active": true,

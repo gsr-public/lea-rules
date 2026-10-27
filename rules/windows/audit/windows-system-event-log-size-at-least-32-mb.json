@@ -1,4 +1,5 @@
 {
+  "uid": "0cdd4d34-495f-44f5-b3cf-5e496bb4cb84",
   "name": "Windows System Event Log Size At Least 32 MB",
   "description": "Ensures the System event log can grow to at least 32,768 KB, so events are not overwritten before collection.",
   "active": true,

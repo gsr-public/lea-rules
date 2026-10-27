@@ -1,4 +1,5 @@
 {
+  "uid": "6c9c0830-f47f-413c-bbd1-a9cbef59ca86",
   "name": "Windows Automatic Sign-in After Restart Disabled",
   "description": "Ensures Windows does not automatically sign in and lock the last interactive user after a restart (DisableAutomaticRestartSignOn = 1).",
   "active": true,

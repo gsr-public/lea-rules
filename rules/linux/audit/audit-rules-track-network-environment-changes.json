@@ -1,4 +1,5 @@
 {
+  "uid": "dc11d2e1-6ce8-4e1d-9cd7-e4d674f337ef",
   "name": "Audit Rules Track Network Environment Changes",
   "description": "Ensures the audit rules record sethostname/setdomainname system calls and changes to /etc/hosts, so changes to name resolution and host identity are logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "009e97af-fb9c-4086-8461-bbcb527ecce2",
   "name": "Windows Remote SAM Calls Restricted to Administrators",
   "description": "Ensures remote calls to the SAM are restricted to administrators (RestrictRemoteSAM = O:BAG:BAD:(A;;RC;;;BA)), blocking account and group enumeration by ordinary domain users (a common BloodHound/SharpHound reconnaissance step).",
   "active": true,

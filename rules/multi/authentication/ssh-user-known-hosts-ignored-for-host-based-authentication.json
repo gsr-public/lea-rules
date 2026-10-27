@@ -1,4 +1,5 @@
 {
+  "uid": "53419bad-db9e-47bd-864b-40a73bc33213",
   "name": "SSH User Known Hosts Ignored for Host-Based Authentication",
   "description": "Ensures sshd does not set IgnoreUserKnownHosts no explicitly, so user-controlled known_hosts files cannot be used for host-based authentication.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

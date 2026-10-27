@@ -1,4 +1,5 @@
 {
+  "uid": "551c8707-be09-4d06-9031-9b5216b3c979",
   "name": "Docker Engine Unencrypted TCP API Not Listening",
   "description": "Ensures nothing listens for the Docker Engine API on unencrypted TCP port 2375, which grants root-equivalent control of the host to anyone who can reach it. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
   "active": true,

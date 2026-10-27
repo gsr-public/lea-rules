@@ -1,4 +1,5 @@
 {
+  "uid": "e5c960bc-8d08-4f90-b678-c1961c7a48fc",
   "name": "Windows Hardened UNC Paths for SYSVOL and NETLOGON",
   "description": "Ensures UNC hardening requires mutual authentication and integrity for \\\\*\\SYSVOL and \\\\*\\NETLOGON, protecting Group Policy and logon scripts against man-in-the-middle attacks (MS15-011).",
   "active": true,

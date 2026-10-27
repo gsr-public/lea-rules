@@ -1,4 +1,5 @@
 {
+  "uid": "e9f78c2e-c0a1-4485-879e-9df8744d33a3",
   "name": "Windows UAC Elevates Only UIAccess Apps in Secure Locations",
   "description": "Ensures UIAccess applications are elevated only from secure locations (EnableSecureUIAPaths = 1).",
   "active": true,

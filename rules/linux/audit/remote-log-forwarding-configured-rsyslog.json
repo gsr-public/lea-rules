@@ -1,4 +1,5 @@
 {
+  "uid": "a88fafbb-2d2e-4f4a-9cb5-9feaa0b3614d",
   "name": "Remote Log Forwarding Configured (rsyslog)",
   "description": "Ensures rsyslog forwards logs to a remote collector, either with the legacy '@host' / '@@host' syntax or an omfwd action. Hosts that ship logs with another agent (for example journald upload, Fluent Bit or a SIEM agent) are not detected by this rule.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "c14dce5c-80f3-4f41-a00b-a13920aabd0b",
   "name": "Windows Local Users Not Enumerated on Domain-Joined Computers",
   "description": "Ensures local user accounts are not enumerated on the logon screen of domain-joined computers (EnumerateLocalUsers = 0).",
   "active": true,

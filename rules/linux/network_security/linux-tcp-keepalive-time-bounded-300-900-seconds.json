@@ -1,5 +1,9 @@
 {
+  "uid": "a365a18f-f312-45e8-b734-432b84aa24c7",
   "name": "Linux TCP Keepalive Time Bounded (300-900 Seconds)",
+  "former_names": [
+    "Linux TCP Keepalive Time Optimized"
+  ],
   "description": "Ensures the Linux kernel parameter net.ipv4.tcp_keepalive_time is configured within an optimal range (300–900 seconds) to detect dead peers without excessive network chatter.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_keepalive_time=600",
   "active": true,
   "category": "network_security",

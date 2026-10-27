@@ -1,4 +1,5 @@
 {
+  "uid": "1876af4f-65e1-45e7-9175-7dd2e0345123",
   "name": "macOS Personalized Advertising Disabled",
   "description": "Ensures Apple personalized advertising is disabled (com.apple.AdLib allowApplePersonalizedAdvertising = false). Reads the effective value of allowApplePersonalizedAdvertising in the com.apple.AdLib domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

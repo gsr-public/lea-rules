@@ -1,4 +1,5 @@
 {
+  "uid": "d3fe6b0d-8617-444f-a777-4166078df706",
   "name": "File Integrity Checks Scheduled (AIDE)",
   "description": "Ensures AIDE integrity checks run periodically: a cron entry that runs aide, the Debian /etc/cron.daily/aide job, or an enabled aidecheck/dailyaidecheck systemd timer.",
   "active": true,

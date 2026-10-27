@@ -1,4 +1,5 @@
 {
+  "uid": "e0dcbc54-c42b-47e5-badc-bddf32af0bd2",
   "name": "macOS Firewall Logging Enabled",
   "description": "Ensures the macOS Application Firewall logs blocked and allowed connections.",
   "active": true,

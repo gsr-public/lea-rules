@@ -1,4 +1,5 @@
 {
+  "uid": "013ee79a-193a-4d46-9d5e-41da6b4aa153",
   "name": "Audit Daemon Warns When Disk Space Is Low",
   "description": "Ensures auditd takes action when audit log disk space runs low: space_left_action is email, exec, single or halt, so administrators are warned before records are lost.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "00ec2a8a-f094-40a9-8a40-af4f80afa39a",
   "name": "Docker Inter-Container Communication Restricted",
   "description": "Ensures /etc/docker/daemon.json sets \"icc\": false, so containers on the default bridge cannot talk to each other unless explicitly linked. Passes with LEA_RULE_no_service when dockerd is not running.",
   "active": true,

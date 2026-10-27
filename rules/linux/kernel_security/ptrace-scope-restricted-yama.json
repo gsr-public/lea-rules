@@ -1,5 +1,9 @@
 {
+  "uid": "6793744f-6430-40b7-a162-adc2bf0298ca",
   "name": "Ptrace Scope Restricted (Yama)",
+  "former_names": [
+    "Linux Yama Ptrace Scope Restricted"
+  ],
   "description": "Ensures kernel.yama.ptrace_scope is 1, 2 or 3, so processes cannot attach to and read the memory of unrelated processes owned by the same user. Fails if the Yama LSM is not available, because ptrace is then unrestricted.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.yama.ptrace_scope=1",
   "active": true,
   "category": "kernel_security",

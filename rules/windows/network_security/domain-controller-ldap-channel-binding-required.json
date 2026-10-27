@@ -1,4 +1,5 @@
 {
+  "uid": "e577a6dc-d6a5-477d-b450-70261c7dec97",
   "name": "Domain Controller LDAP Channel Binding Required",
   "description": "Ensures the domain controller always requires LDAPS channel binding tokens (LdapEnforceChannelBinding = 2). Passes with LEA_RULE_no_service on hosts that are not domain controllers.",
   "active": true,

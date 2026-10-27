@@ -1,5 +1,10 @@
 {
+  "uid": "e7012014-7942-4f7b-acdc-99e5afd016d1",
   "name": "File Integrity Monitoring (AIDE) Installed",
+  "former_names": [
+    "CIS - AIDE Installed",
+    "Linux AIDE Installed"
+  ],
   "description": "Ensures the Advanced Intrusion Detection Environment (AIDE) binary is installed on the Linux host for file integrity monitoring.",
   "active": true,
   "category": "integrity",

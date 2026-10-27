@@ -1,4 +1,5 @@
 {
+  "uid": "ad560b48-3b22-4f18-8e0a-8b95f5b20690",
   "name": "/etc/issue.net Does Not Disclose Operating System Details",
   "description": "Ensures the remote login banner (/etc/issue.net) does not reveal the operating system or kernel version through getty escape sequences (\\m, \\r, \\s, \\v) or distribution names, which helps attackers choose exploits. Passes when the file is absent or empty.",
   "active": true,

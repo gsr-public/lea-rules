@@ -1,4 +1,5 @@
 {
+  "uid": "d046112d-b6bc-4466-bb14-9e54a312b7d8",
   "name": "FTP Client Not Installed",
   "description": "Ensures the FTP client is not installed (/usr/bin/ftp, /usr/bin/tnftp absent). Removing unused clear-text or legacy tools reduces the attack surface and the risk of credentials being sent unencrypted.",
   "active": true,

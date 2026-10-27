@@ -1,4 +1,5 @@
 {
+  "uid": "21d8ab08-f452-44e0-b87e-bd360be6ed47",
   "name": "Audit Rules Track Kernel Module Removal",
   "description": "Ensures the audit rules record the delete_module system call, so unloading of kernel modules (for example security modules) is logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

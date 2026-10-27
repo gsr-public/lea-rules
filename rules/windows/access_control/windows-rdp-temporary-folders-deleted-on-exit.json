@@ -1,4 +1,5 @@
 {
+  "uid": "7eaf3465-2dc4-4fec-b7dd-48537b6eb8ab",
   "name": "Windows RDP Temporary Folders Deleted on Exit",
   "description": "Ensures per-session temporary folders are deleted when the session ends (DeleteTempDirsOnExit = 1).",
   "active": true,

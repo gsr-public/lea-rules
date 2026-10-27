@@ -1,4 +1,5 @@
 {
+  "uid": "06f5bc70-98a4-4327-9bb6-498e0c2d8032",
   "name": "Home Directories Permissions 750 or Stricter",
   "description": "Ensures every directory directly under /home denies write access to the group and all access to others (mode 750 or stricter), so users cannot read or plant files in each other's home directories. stat reads metadata only.",
   "active": true,

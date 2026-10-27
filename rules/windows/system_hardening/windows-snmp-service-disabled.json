@@ -1,4 +1,5 @@
 {
+  "uid": "3b90b84e-3786-44f3-b0b4-c6fe420397b1",
   "name": "Windows SNMP Service Disabled",
   "description": "Ensures the SNMP service, which uses clear-text community strings, is disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

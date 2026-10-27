@@ -1,4 +1,5 @@
 {
+  "uid": "cc7b9d67-644f-4c73-93e5-ea4aff0dfaf0",
   "name": "/dev/shm Mounted with nosuid",
   "description": "Ensures /dev/shm is mounted with the nosuid option, so set-UID and set-GID binaries placed there do not gain privileges. Reads /proc/mounts; fails if /dev/shm is not a separate mount.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "c2e487fe-1850-4f2c-b9fc-372bc58bdc4b",
   "name": "Windows Audit Other System Events (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Other System Events' records success and failure events. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

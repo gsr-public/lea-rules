@@ -1,4 +1,5 @@
 {
+  "uid": "ac671d50-88a8-4dc9-8ca4-a4f0be6ebc3a",
   "name": "sshd_config Permissions Restricted",
   "description": "Verifies that /etc/ssh/sshd_config is owned by root:root and readable only by root (mode 600 or 400). stat reads metadata only, so no privileges are needed. Passes with LEA_RULE_no_service when the file does not exist.",
   "active": true,

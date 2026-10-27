@@ -1,4 +1,5 @@
 {
+  "uid": "cb0056fc-a717-4e23-9172-d427a48fc43d",
   "name": "Windows Defender PUA Protection Enabled",
   "description": "Ensures potentially unwanted application protection blocks PUAs (PUAProtection = 1).",
   "active": true,

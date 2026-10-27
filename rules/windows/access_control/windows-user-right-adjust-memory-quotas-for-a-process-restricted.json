@@ -1,4 +1,5 @@
 {
+  "uid": "a6dd4c92-01ce-4515-897d-aa2227ed127e",
   "name": "Windows User Right 'Adjust Memory Quotas for a Process' Restricted",
   "description": "Ensures the user right 'Adjust Memory Quotas for a Process' (SeIncreaseQuotaPrivilege) is granted to only the default administrative and service principals. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): S-1-5-32-544, S-1-5-19, S-1-5-20; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

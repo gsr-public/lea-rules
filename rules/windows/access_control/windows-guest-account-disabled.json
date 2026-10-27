@@ -1,5 +1,9 @@
 {
+  "uid": "0d5f1778-f649-4e97-8f2c-6a4655dbcba9",
   "name": "Windows Guest Account Disabled",
+  "former_names": [
+    "Guest Account Disabled"
+  ],
   "description": "Verifies that the built-in Guest user account is disabled to prevent interactive logon.",
   "active": true,
   "category": "access_control",

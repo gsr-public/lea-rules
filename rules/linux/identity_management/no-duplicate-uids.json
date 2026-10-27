@@ -1,4 +1,5 @@
 {
+  "uid": "1c6fc08b-f868-400d-ad43-0a6c0e8319df",
   "name": "No Duplicate UIDs",
   "description": "Ensures no two accounts in /etc/passwd share a UID; shared UIDs make actions unattributable and grant one user the other's files.",
   "active": true,

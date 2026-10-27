@@ -1,4 +1,5 @@
 {
+  "uid": "70d711f0-3c41-4f4b-bc8c-cda9402c6490",
   "name": "macOS Sudo Timeout Set to Zero",
   "description": "Ensures sudoers sets Defaults timestamp_timeout=0, so sudo asks for the password every time, as recommended for macOS.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /private/etc/sudoers.d/*",
   "active": true,

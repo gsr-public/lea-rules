@@ -1,4 +1,5 @@
 {
+  "uid": "48146292-ca53-476f-8bd4-eca4f6966970",
   "name": "Windows Audit Other Policy Change Events (Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Other Policy Change Events' records failure events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

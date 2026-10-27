@@ -1,4 +1,5 @@
 {
+  "uid": "51439cab-4fd8-4ae6-a0f3-880a92688aef",
   "name": "FTP Control Port Not Listening",
   "description": "Ensures nothing listens for an FTP server on TCP port 21. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
   "active": true,

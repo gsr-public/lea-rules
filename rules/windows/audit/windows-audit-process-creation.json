@@ -1,4 +1,5 @@
 {
+  "uid": "43fdeb1a-4660-4fbf-8350-6f9f053a38cd",
   "name": "Windows Audit Process Creation",
   "description": "Ensures the advanced audit policy subcategory 'Process Creation' records success events (Success and Failure also passes). Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

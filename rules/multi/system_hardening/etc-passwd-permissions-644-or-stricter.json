@@ -1,5 +1,10 @@
 {
+  "uid": "480b2dff-a9d6-4223-86d7-fccd9716a629",
   "name": "/etc/passwd Permissions 644 or Stricter",
+  "former_names": [
+    "CIS - Permissions on /etc/passwd",
+    "Passwd File Permissions Secure"
+  ],
   "description": "Verifies that the account database /etc/passwd is owned by root (group root on Linux, wheel on macOS) and is not writable by group or others (mode 644 or stricter). stat reads metadata only, so no privileges are needed.",
   "active": true,
   "category": "system_hardening",

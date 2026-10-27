@@ -1,5 +1,9 @@
 {
+  "uid": "17ba7af7-6bdf-4a6c-8ecd-7222108cd63c",
   "name": "Linux TCP FIN Timeout Bounded (15-60 Seconds)",
+  "former_names": [
+    "Linux TCP FIN Timeout Optimized"
+  ],
   "description": "Ensures the Linux kernel parameter net.ipv4.tcp_fin_timeout is configured within an optimal security range (15–60 seconds), balancing resource cleanup with connection reliability.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_fin_timeout=30",
   "active": true,
   "category": "network_security",

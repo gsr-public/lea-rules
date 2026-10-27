@@ -1,4 +1,5 @@
 {
+  "uid": "a2a13c5b-03ca-4095-b319-ef5640037d77",
   "name": "Windows Application Event Log Size At Least 32 MB",
   "description": "Ensures the Application event log can grow to at least 32,768 KB, so events are not overwritten before collection.",
   "active": true,

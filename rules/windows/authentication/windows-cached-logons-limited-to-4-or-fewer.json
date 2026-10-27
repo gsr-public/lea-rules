@@ -1,4 +1,5 @@
 {
+  "uid": "12c94f6c-5744-4318-8f48-4e8354b4a4a3",
   "name": "Windows Cached Logons Limited to 4 or Fewer",
   "description": "Ensures no more than 4 domain logons are cached (CachedLogonsCount), limiting cached credential hashes an attacker can extract and crack offline.",
   "active": true,

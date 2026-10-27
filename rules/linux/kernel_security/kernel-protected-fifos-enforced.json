@@ -1,5 +1,9 @@
 {
+  "uid": "fb9fa948-90ed-4cb7-ba91-f1008d0d5f3b",
   "name": "Kernel Protected FIFOs Enforced",
+  "former_names": [
+    "Linux Protected FIFOs Strict"
+  ],
   "description": "Ensures fs.protected_fifos is configured in a restrictive mode (1 or 2), limiting how unprivileged users can open FIFOs.",
   "active": true,
   "category": "kernel_security",

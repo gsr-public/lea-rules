@@ -1,4 +1,5 @@
 {
+  "uid": "fca620b3-0687-4e13-88ba-06b9585a2fe4",
   "name": "macOS Internet Sharing Disabled",
   "description": "Ensures Internet Sharing (NAT) is not enabled in /Library/Preferences/SystemConfiguration/com.apple.nat.",
   "active": true,

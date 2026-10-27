@@ -1,5 +1,9 @@
 {
+  "uid": "707bacae-8249-4278-83a9-288a1c2a6fdd",
   "name": "Cloud Image Default Accounts Removed",
+  "former_names": [
+    "Cloud Default User Absent"
+  ],
   "description": "Ensures well-known default accounts created by cloud images (ubuntu, ec2-user, centos, cloud-user, fedora, rocky, almalinux, debian, opc) are not present in /etc/passwd. Shared, predictable account names should be replaced with named personal accounts.",
   "active": true,
   "category": "identity_management",

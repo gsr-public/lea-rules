@@ -1,4 +1,5 @@
 {
+  "uid": "bab16d74-e899-4a36-b40a-4ceeb8d156db",
   "name": "Windows Print Spooler Disabled on Servers",
   "description": "Ensures the Print Spooler service is disabled on domain controllers and servers that do not print, removing PrintNightmare-class attack surface. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

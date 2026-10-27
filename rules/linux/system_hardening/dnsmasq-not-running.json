@@ -1,4 +1,5 @@
 {
+  "uid": "2f366a4a-67b0-4018-88b2-eba363394310",
   "name": "dnsmasq Not Running",
   "description": "Ensures dnsmasq (DNS forwarder and DHCP server); virtualization hosts that use it for guest networking should be excluded is not running (process names read from /proc/*/comm).",
   "active": true,

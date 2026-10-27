@@ -1,4 +1,5 @@
 {
+  "uid": "e8dfe098-2a2a-4966-8513-325fdf3951ae",
   "name": "Windows User Right 'Modify Firmware Environment Values' Restricted",
   "description": "Ensures the user right 'Modify Firmware Environment Values' (SeSystemEnvironmentPrivilege) is granted to only the default administrative and service principals. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): S-1-5-32-544; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

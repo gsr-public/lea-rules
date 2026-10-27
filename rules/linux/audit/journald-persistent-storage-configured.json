@@ -1,4 +1,5 @@
 {
+  "uid": "b1f8ad07-299b-4feb-b22c-acfd1599ce5e",
   "name": "Journald Persistent Storage Configured",
   "description": "Ensures systemd-journald is configured with Storage=persistent so logs survive a reboot, and that no drop-in sets Storage=volatile or none.",
   "active": true,

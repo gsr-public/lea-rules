@@ -1,4 +1,5 @@
 {
+  "uid": "296abc1c-64c6-4437-8e06-7ec80a8f5473",
   "name": "NFS Server Not Running",
   "description": "Ensures an NFS server (nfsd kernel threads or rpc.mountd) is not running (process names read from /proc/*/comm).",
   "active": true,

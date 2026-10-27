@@ -1,4 +1,5 @@
 {
+  "uid": "731ab240-f122-4c3b-a079-2bb2ce3b81d1",
   "name": "Docker Userland Proxy Disabled",
   "description": "Ensures \"userland-proxy\": false, so published ports are handled by iptables NAT rules rather than a userland proxy process with a wider attack surface. Passes with LEA_RULE_no_service when dockerd is not running.",
   "active": true,

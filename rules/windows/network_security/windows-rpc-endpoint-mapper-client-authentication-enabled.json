@@ -1,4 +1,5 @@
 {
+  "uid": "ec9ed6dc-4e20-40fa-91ad-2deaa0bf007d",
   "name": "Windows RPC Endpoint Mapper Client Authentication Enabled",
   "description": "Ensures RPC clients authenticate to the endpoint mapper (EnableAuthEpResolution = 1).",
   "active": true,

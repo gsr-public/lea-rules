@@ -1,4 +1,5 @@
 {
+  "uid": "57e6c817-5e5e-4bae-8f0d-1b87ced4058f",
   "name": "Default Shell umask 027 or Stricter",
   "description": "Ensures system-wide shell profiles set umask 027 (or stricter) and no profile sets a weaker umask, so files created in interactive sessions are not world-readable.",
   "active": true,

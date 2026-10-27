@@ -1,4 +1,5 @@
 {
+  "uid": "30ef96b4-ee81-45bb-b8e1-dac8e84059c9",
   "name": "Windows PMTU Discovery Enabled",
   "description": "Ensures EnablePMTUDiscovery is enabled (1), allowing Windows to correctly discover path MTU and avoid fragmentation-based attacks. Required Windows permission: LEA agent account must be allowed to run only: reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUDiscovery.",
   "active": true,

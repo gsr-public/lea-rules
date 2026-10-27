@@ -1,4 +1,5 @@
 {
+  "uid": "f640a3ac-0187-451d-8b98-a2f7f8c282e1",
   "name": "Windows Domain Member Secure Channel Signed and Sealed",
   "description": "Ensures the domain member always signs and encrypts secure channel traffic (RequireSignOrSeal, SealSecureChannel and SignSecureChannel all 1) and requires a strong session key (RequireStrongKey 1).",
   "active": true,

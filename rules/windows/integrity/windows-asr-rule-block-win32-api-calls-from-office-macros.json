@@ -1,4 +1,5 @@
 {
+  "uid": "1c3b7893-97d9-4a07-a20c-e5184c341d8b",
   "name": "Windows ASR Rule: Block Win32 API Calls from Office Macros",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Win32 API Calls from Office Macros\" (92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

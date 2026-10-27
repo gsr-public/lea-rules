@@ -1,4 +1,5 @@
 {
+  "uid": "213d8cab-3e2d-42e9-b9b5-f351b79727a2",
   "name": "/var Is a Separate Mount",
   "description": "Ensures /var is a separate filesystem in /proc/mounts, so it can carry restrictive mount options and filling it cannot exhaust other filesystems.",
   "active": true,

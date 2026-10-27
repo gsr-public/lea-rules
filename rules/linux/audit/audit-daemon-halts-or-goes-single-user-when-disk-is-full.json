@@ -1,4 +1,5 @@
 {
+  "uid": "b1ac5069-a8a0-4a55-8a0d-345446078243",
   "name": "Audit Daemon Halts or Goes Single-User When Disk Is Full",
   "description": "Ensures disk_full_action is halt or single and disk_error_action is syslog, single or halt, so audit failures are never silently ignored.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
   "active": true,

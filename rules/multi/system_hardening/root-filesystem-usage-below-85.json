@@ -1,5 +1,9 @@
 {
+  "uid": "24bec011-6f23-4f0b-b09c-8bfd7e6712d0",
   "name": "Root Filesystem Usage Below 85%",
+  "former_names": [
+    "Disk Capacity Threshold"
+  ],
   "description": "Ensures the root filesystem usage remains below 85 percent on Linux and macOS hosts to avoid capacity-related failures.",
   "active": true,
   "category": "system_hardening",

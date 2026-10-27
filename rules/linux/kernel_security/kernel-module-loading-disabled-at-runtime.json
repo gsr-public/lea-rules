@@ -1,5 +1,9 @@
 {
+  "uid": "d278451f-97bc-49b7-a4ee-217b729cdd9d",
   "name": "Kernel Module Loading Disabled at Runtime",
+  "former_names": [
+    "Kernel Modules Locked"
+  ],
   "description": "Checks if the system has been locked down to prevent loading new kernel modules (kernel.modules_disabled set to 1).",
   "active": true,
   "category": "kernel_security",

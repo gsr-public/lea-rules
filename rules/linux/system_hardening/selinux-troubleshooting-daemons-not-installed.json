@@ -1,4 +1,5 @@
 {
+  "uid": "5ed1cc49-5946-4a36-a5e6-1e30e4f33bc5",
   "name": "SELinux Troubleshooting Daemons Not Installed",
   "description": "Ensures setroubleshoot and mcstrans, which are not needed on servers and run with elevated privileges, is not installed (/usr/sbin/setroubleshootd, /usr/sbin/mcstransd absent).",
   "active": true,

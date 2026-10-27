@@ -1,4 +1,5 @@
 {
+  "uid": "241bb89a-0089-48a4-a0e2-2ba333e3746d",
   "name": "Audit Rules Track Kernel Module Loading",
   "description": "Ensures the persistent audit rules record the init_module or finit_module system calls, so kernel module loading (a common rootkit technique) is logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

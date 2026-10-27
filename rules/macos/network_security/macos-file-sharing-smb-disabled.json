@@ -1,4 +1,5 @@
 {
+  "uid": "4da5ed58-083e-4bdd-b0c4-64d87872b2a1",
   "name": "macOS File Sharing (SMB) Disabled",
   "description": "Ensures SMB file sharing is disabled on endpoints that do not share files. Passes when launchd lists \"com.apple.smbd\" as disabled in the system domain.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/launchctl print-disabled system",
   "active": true,

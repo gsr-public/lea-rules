@@ -1,5 +1,9 @@
 {
+  "uid": "9ef3f470-855f-4366-936e-d15c190bf8b1",
   "name": "Audit Logs Retained Instead of Overwritten",
+  "former_names": [
+    "Audit Log Retention Configured"
+  ],
   "description": "Ensures the audit daemon keeps rotated logs (max_log_file_action = keep_logs) instead of deleting or overwriting old audit records.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
   "active": true,
   "category": "audit",

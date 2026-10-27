@@ -1,4 +1,5 @@
 {
+  "uid": "0c59bb91-3c09-43f6-932c-099b7fe9d954",
   "name": "Sysmon Running",
   "description": "Ensures Microsoft Sysinternals Sysmon is installed and running (Sysmon64 or Sysmon service), providing detailed process, network and file telemetry for detection and investigation.",
   "active": true,

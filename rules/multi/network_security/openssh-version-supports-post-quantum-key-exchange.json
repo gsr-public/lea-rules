@@ -1,4 +1,5 @@
 {
+  "uid": "3c8c3075-19a5-4a48-8b8f-c70e5cef2caf",
   "name": "OpenSSH Version Supports Post-Quantum Key Exchange",
   "description": "Checks that the installed OpenSSH is version 9.0 or later, which enables the hybrid post-quantum key exchange sntrup761x25519-sha512 by default (OpenSSH 9.9 adds mlkem768x25519-sha256 and 10.0 makes it the default). Reads the version banner that ssh -V prints to stderr; the client and server are shipped in the same package on supported distributions and on macOS.",
   "active": true,

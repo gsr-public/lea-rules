@@ -1,4 +1,5 @@
 {
+  "uid": "7093de40-6330-4d39-8778-f1897f37fd32",
   "name": "SSH Host RSA Key At Least 3072 Bits",
   "description": "Checks that the SSH server's RSA host key is at least 3072 bits, the minimum for 128-bit classical security (NIST SP 800-57) and part of a crypto-agility baseline ahead of post-quantum migration. Reads the public key fingerprint with ssh-keygen -l (no private key access). Passes with LEA_RULE_no_service when no RSA host key exists.",
   "active": true,

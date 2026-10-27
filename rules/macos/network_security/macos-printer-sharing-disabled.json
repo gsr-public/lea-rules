@@ -1,4 +1,5 @@
 {
+  "uid": "b13860bb-4764-4ef0-ae62-d56af8c59c91",
   "name": "macOS Printer Sharing Disabled",
   "description": "Ensures CUPS printer sharing is disabled (cupsctl reports _share_printers=0).",
   "active": true,

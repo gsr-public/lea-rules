@@ -1,4 +1,5 @@
 {
+  "uid": "e9e7c8fd-3129-42fc-8f89-39d76842ae06",
   "name": "System Logging Daemon Running",
   "description": "Ensures a system logging daemon is running: rsyslogd, syslog-ng or systemd-journald (process name truncated by the kernel to systemd-journal).",
   "active": true,

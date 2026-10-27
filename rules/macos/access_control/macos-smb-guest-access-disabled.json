@@ -1,4 +1,5 @@
 {
+  "uid": "bfc9266c-edcb-4e4d-9302-cda91e316552",
   "name": "macOS SMB Guest Access Disabled",
   "description": "Ensures the SMB server does not allow guest access to shared folders (AllowGuestAccess not 1).",
   "active": true,

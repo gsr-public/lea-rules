@@ -1,4 +1,5 @@
 {
+  "uid": "0ed2915f-403c-4437-a9f3-0daedc721270",
   "name": "Log Files Not Accessible by Other Users",
   "description": "Ensures files under /var/log are not writable by others and not readable by others, except the login accounting files lastlog, wtmp and btmp (and their rotations). Without root, unreadable directories are skipped.",
   "active": true,

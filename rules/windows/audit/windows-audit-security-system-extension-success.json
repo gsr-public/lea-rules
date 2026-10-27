@@ -1,4 +1,5 @@
 {
+  "uid": "3ab92e41-c8fd-40ab-9cc6-b1ca27f0cd8c",
   "name": "Windows Audit Security System Extension (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Security System Extension' records success events (Success and Failure also passes). Records new authentication packages, notification packages and security services, a persistence technique. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

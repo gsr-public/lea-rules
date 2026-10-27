@@ -1,4 +1,5 @@
 {
+  "uid": "ea7cfefb-693b-43f3-af67-d206bf60fe7f",
   "name": "Windows User Right 'Create a Token Object' Restricted",
   "description": "Ensures the user right 'Create a Token Object' (SeCreateTokenPrivilege) is granted to no one. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): no one; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

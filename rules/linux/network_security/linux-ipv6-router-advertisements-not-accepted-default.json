@@ -1,5 +1,9 @@
 {
+  "uid": "ade5d1bc-9dd8-4c61-acda-22a7c995a669",
   "name": "Linux IPv6 Router Advertisements Not Accepted (Default)",
+  "former_names": [
+    "Linux IPv6 Router Advertisements Disabled Default"
+  ],
   "description": "Ensures net.ipv6.conf.default.accept_ra is 0 so new interfaces do not accept IPv6 router advertisements. Hosts that rely on SLAAC for IPv6 connectivity should be excluded.",
   "active": true,
   "category": "network_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "1b30683d-b6ba-4df8-9e1d-628b35a48a73",
   "name": "TFTP Client Not Installed",
   "description": "Ensures the TFTP client is not installed (/usr/bin/tftp absent). Removing unused clear-text or legacy tools reduces the attack surface and the risk of credentials being sent unencrypted.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "28a1acc4-ec98-4edb-94e4-860b0d15aab5",
   "name": "/dev/shm Mounted with nodev",
   "description": "Ensures /dev/shm is mounted with the nodev option, so device files placed there are not honoured. Reads /proc/mounts; fails if /dev/shm is not a separate mount.",
   "active": true,

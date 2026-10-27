@@ -1,4 +1,5 @@
 {
+  "uid": "025ac9f3-adb6-4a11-a001-8009f5bd5647",
   "name": "TTY Line Discipline Autoloading Disabled",
   "description": "Ensures dev.tty.ldisc_autoload is 0, so unprivileged users cannot trigger loading of rarely used TTY line discipline modules, a recurring source of kernel privilege-escalation bugs. Kernels older than 5.1 do not provide the setting and fail.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w dev.tty.ldisc_autoload=0",
   "active": true,

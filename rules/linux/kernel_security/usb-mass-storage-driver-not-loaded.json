@@ -1,4 +1,5 @@
 {
+  "uid": "dca67e39-dc67-41ef-923b-9c7c9d099150",
   "name": "USB Mass Storage Driver Not Loaded",
   "description": "Ensures the USB mass storage driver (usb_storage) is not loaded (checked in /proc/modules). Blocking USB storage reduces data exfiltration and malware introduction through removable media. A driver compiled into the kernel is not detected.",
   "active": true,

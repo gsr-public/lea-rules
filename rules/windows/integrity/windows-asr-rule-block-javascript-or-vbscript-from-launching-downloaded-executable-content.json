@@ -1,4 +1,5 @@
 {
+  "uid": "10aa62df-6ac8-45c1-83cd-879957a2dcb6",
   "name": "Windows ASR Rule: Block JavaScript or VBScript from Launching Downloaded Executable Content",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block JavaScript or VBScript from Launching Downloaded Executable Content\" (d3e037e1-3eb8-44c8-a917-57927947596d) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

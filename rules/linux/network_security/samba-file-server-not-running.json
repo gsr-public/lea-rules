@@ -1,4 +1,5 @@
 {
+  "uid": "97088513-9474-468f-8e99-d1b6525b70be",
   "name": "Samba File Server Not Running",
   "description": "Ensures the Samba file and print server (smbd, nmbd); assign only to hosts that are not file servers is not running (process names read from /proc/*/comm).",
   "active": true,

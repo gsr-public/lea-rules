@@ -1,4 +1,5 @@
 {
+  "uid": "73463ce3-e66d-4b41-b9a4-cfa3e079fcfc",
   "name": "NIS Services Not Running",
   "description": "Ensures the legacy Network Information Service daemons (ypserv, ypbind, yppasswdd, ypxfrd) are not running. NIS distributes password hashes without encryption.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "7ef7e695-3d60-474f-98ad-e393bc5731a2",
   "name": "macOS Automatic Login Disabled",
   "description": "Ensures no user is configured for automatic login (no autoLoginUser key in /Library/Preferences/com.apple.loginwindow), so a password is required at startup.",
   "active": true,

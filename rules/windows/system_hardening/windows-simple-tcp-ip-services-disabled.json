@@ -1,4 +1,5 @@
 {
+  "uid": "d1d97075-54da-40a5-acaf-1e35ace6ac84",
   "name": "Windows Simple TCP/IP Services Disabled",
   "description": "Ensures Simple TCP/IP Services (echo, chargen, daytime) are disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

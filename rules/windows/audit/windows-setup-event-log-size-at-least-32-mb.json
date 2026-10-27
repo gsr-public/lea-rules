@@ -1,4 +1,5 @@
 {
+  "uid": "32ea15e3-7582-44d5-ad73-684d4f7e972b",
   "name": "Windows Setup Event Log Size At Least 32 MB",
   "description": "Ensures the Setup event log can grow to at least 32,768 KB, so events are not overwritten before collection.",
   "active": true,

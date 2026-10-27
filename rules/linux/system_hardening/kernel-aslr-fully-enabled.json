@@ -1,5 +1,9 @@
 {
+  "uid": "3998c3c8-b032-4fe0-bb6e-7662e0763d71",
   "name": "Kernel ASLR Fully Enabled",
+  "former_names": [
+    "ASLR Enabled"
+  ],
   "description": "Verifies that address space layout randomization is fully enabled (kernel.randomize_va_space = 2: stack, mmap, VDSO and heap randomized).\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.randomize_va_space=2",
   "active": true,
   "category": "system_hardening",

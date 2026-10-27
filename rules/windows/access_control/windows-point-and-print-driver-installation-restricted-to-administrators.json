@@ -1,4 +1,5 @@
 {
+  "uid": "be190a33-f360-421d-8714-5a9a99b90131",
   "name": "Windows Point and Print Driver Installation Restricted to Administrators",
   "description": "Ensures only administrators can install printer drivers through Point and Print (RestrictDriverInstallationToAdministrators = 1), mitigating PrintNightmare (CVE-2021-34527).",
   "active": true,

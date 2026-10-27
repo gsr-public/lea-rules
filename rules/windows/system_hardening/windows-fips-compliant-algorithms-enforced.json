@@ -1,5 +1,9 @@
 {
+  "uid": "ace16919-d2e5-4449-83d2-d82a242231a4",
   "name": "Windows FIPS-Compliant Algorithms Enforced",
+  "former_names": [
+    "Windows FIPS Algorithm Policy Enabled"
+  ],
   "description": "Ensures the Windows FIPS algorithm policy is enabled (FipsAlgorithmPolicy Enabled=1), restricting the host to approved cryptographic algorithms.",
   "active": true,
   "category": "system_hardening",

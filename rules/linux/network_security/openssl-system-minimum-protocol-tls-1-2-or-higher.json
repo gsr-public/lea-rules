@@ -1,5 +1,9 @@
 {
+  "uid": "4bc3a348-6f3a-42d8-8585-71fbf084a3fc",
   "name": "OpenSSL System Minimum Protocol TLS 1.2 or Higher",
+  "former_names": [
+    "System TLS Minimum Protocol TLS1.2"
+  ],
   "description": "Ensures the system OpenSSL configuration sets MinProtocol to TLSv1.2 or TLSv1.3 (Debian/Ubuntu openssl.cnf, RHEL openssl.cnf or the crypto-policies OpenSSL back-end) and does not set it to SSLv3, TLSv1 or TLSv1.1. Retiring legacy protocols reduces harvest-now-decrypt-later exposure.",
   "active": true,
   "category": "network_security",

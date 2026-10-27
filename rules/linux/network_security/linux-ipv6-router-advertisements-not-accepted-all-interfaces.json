@@ -1,5 +1,9 @@
 {
+  "uid": "1c319438-3d38-4be5-bae5-bb542a2d250d",
   "name": "Linux IPv6 Router Advertisements Not Accepted (All Interfaces)",
+  "former_names": [
+    "Linux IPv6 Router Advertisements Disabled All"
+  ],
   "description": "Ensures net.ipv6.conf.all.accept_ra is 0 on hosts that do not need SLAAC, so rogue IPv6 router advertisements cannot change the routing table. Hosts that rely on SLAAC for IPv6 connectivity should be excluded.",
   "active": true,
   "category": "network_security",

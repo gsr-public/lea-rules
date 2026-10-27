@@ -1,4 +1,5 @@
 {
+  "uid": "b8c59780-41a7-48b0-a107-35e22afd4984",
   "name": "Windows ASR Rule: Block Rebooting Machine in Safe Mode",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Rebooting Machine in Safe Mode\" (33ddedf1-c6e0-47cb-833e-de6133960387) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

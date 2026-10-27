@@ -1,4 +1,5 @@
 {
+  "uid": "b55ade79-43e2-490e-bc17-84f464d2a0e0",
   "name": "Docker daemon.json Permissions 644 or Stricter",
   "description": "Ensures /etc/docker/daemon.json is owned by root:root and not writable by group or others. Passes with LEA_RULE_no_service when dockerd is not running or the file does not exist.",
   "active": true,

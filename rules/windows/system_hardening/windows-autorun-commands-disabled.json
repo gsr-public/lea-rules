@@ -1,4 +1,5 @@
 {
+  "uid": "2eb5ccb4-eaa6-4205-bb67-7db788935de8",
   "name": "Windows AutoRun Commands Disabled",
   "description": "Ensures autorun.inf commands are never executed (NoAutorun = 1).\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoAutorun (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "18c6dd56-7b76-4271-997e-b33ef3eef2b8",
   "name": "mDNS Responder Not Listening on Servers",
   "description": "Ensures nothing listens for an mDNS responder (Avahi or systemd-resolved) on UDP port 5353; assign to servers only. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
   "active": true,

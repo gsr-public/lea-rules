@@ -1,4 +1,5 @@
 {
+  "uid": "e89679c8-26e1-420a-ac43-bf18a364b699",
   "name": "Audit Rules Watch Login Configuration",
   "description": "Ensures the audit rules record changes to /etc/login.defs and /etc/securetty or /etc/default/useradd, which control password aging and account defaults.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

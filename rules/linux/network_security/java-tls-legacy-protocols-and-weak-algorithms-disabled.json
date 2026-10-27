@@ -1,5 +1,9 @@
 {
+  "uid": "2851d3f8-1364-42c5-bd94-04d3f0dc07c4",
   "name": "Java TLS Legacy Protocols and Weak Algorithms Disabled",
+  "former_names": [
+    "Java TLS Weak Algorithms Disabled"
+  ],
   "description": "Ensures every installed OpenJDK runtime disables SSLv3, TLSv1, TLSv1.1, RC4, 3DES and MD5 for TLS (jdk.tls.disabledAlgorithms). Continuation lines in java.security are evaluated. Passes with LEA_RULE_no_service when no OpenJDK java.security file is present.",
   "active": true,
   "category": "network_security",

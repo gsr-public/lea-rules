@@ -1,4 +1,5 @@
 {
+  "uid": "92c7dea1-acba-4ade-8cd6-a8f57626c363",
   "name": "Journald Not Limited to Tiny Log Retention",
   "description": "Ensures journald is not configured with a maximum retention under 30 days (MaxRetentionSec below 30d) or a SystemMaxUse below 100M, which would discard evidence before it can be reviewed.",
   "active": true,

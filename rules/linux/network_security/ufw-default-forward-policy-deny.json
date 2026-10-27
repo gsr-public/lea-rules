@@ -1,4 +1,5 @@
 {
+  "uid": "c8aafc2c-7564-4632-8b6a-c04025c23af5",
   "name": "UFW Default Forward Policy Deny",
   "description": "Ensures ufw drops forwarded traffic by default (DEFAULT_FORWARD_POLICY DROP or REJECT). Container hosts and routers that forward traffic should be excluded.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "7efb9e2b-ffef-41d7-aa90-806b3f2a29e6",
   "name": "Windows Diffie-Hellman Server Minimum Key Size 2048 Bits",
   "description": "Ensures SCHANNEL servers refuse Diffie-Hellman groups smaller than 2048 bits (ServerMinKeyBitLength >= 0x800), mitigating Logjam-style downgrade attacks.",
   "active": true,

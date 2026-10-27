@@ -1,4 +1,5 @@
 {
+  "uid": "b8ca2bf8-dd94-4208-b1a5-4f8cdff72b4d",
   "name": "System Crypto Policy Not LEGACY",
   "description": "Ensures the system-wide crypto policy is not LEGACY, which re-enables SHA-1 signatures, 1024-bit Diffie-Hellman and other weak algorithms for every library that follows crypto-policies. A softer baseline than 'System Crypto Policy FUTURE or FIPS'.",
   "active": true,

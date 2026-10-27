@@ -1,4 +1,5 @@
 {
+  "uid": "59cbf683-fd95-4bf0-b16f-bf2bd3fb89f0",
   "name": "CPU Hardware Vulnerabilities Mitigated",
   "description": "Ensures the kernel reports no CPU hardware vulnerability as \"Vulnerable\" in /sys/devices/system/cpu/vulnerabilities (Spectre, Meltdown, MDS, L1TF, Retbleed, GDS and others). A vulnerable state usually means missing CPU microcode, an outdated kernel or a hypervisor that does not pass mitigations through to the VM.",
   "active": true,

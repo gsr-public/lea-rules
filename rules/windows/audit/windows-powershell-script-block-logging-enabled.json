@@ -1,4 +1,5 @@
 {
+  "uid": "237c2726-d740-4bfc-83b4-47fed08bd185",
   "name": "Windows PowerShell Script Block Logging Enabled",
   "description": "Ensures PowerShell script block logging is enabled by policy, recording the content of executed scripts (including de-obfuscated code) to the PowerShell Operational event log.\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging /v EnableScriptBlockLogging (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

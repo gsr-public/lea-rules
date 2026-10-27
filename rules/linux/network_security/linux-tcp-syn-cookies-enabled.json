@@ -1,5 +1,9 @@
 {
+  "uid": "54fe305a-d0c6-4279-9f5a-f777cebb1a8d",
   "name": "Linux TCP SYN Cookies Enabled",
+  "former_names": [
+    "Linux TCP Syncookies Enabled"
+  ],
   "description": "Ensures net.ipv4.tcp_syncookies is enabled (1) to provide protection against SYN flood attacks while maintaining service availability.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_syncookies=1",
   "active": true,
   "category": "network_security",

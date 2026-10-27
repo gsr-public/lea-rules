@@ -1,4 +1,5 @@
 {
+  "uid": "ebab9fcd-ab3a-4b3f-89b5-88795bca82ec",
   "name": "Windows Security Event Log Warning at 90% Capacity",
   "description": "Ensures Windows raises a warning event when the Security log reaches 90% of capacity or less (WarningLevel 1-90).",
   "active": true,

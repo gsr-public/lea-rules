@@ -1,4 +1,5 @@
 {
+  "uid": "88a6785f-9ba4-4cf7-aebd-cdd6f91d9851",
   "name": "SSH Legacy Algorithms Disabled",
   "description": "Ensures legacy and quantum-weak SSH algorithms (ssh-rsa with SHA-1 signatures, ssh-dss, and SHA-1 based Diffie-Hellman key exchanges) are not explicitly enabled on any active line of the SSH daemon configuration.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

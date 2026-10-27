@@ -1,0 +1,60 @@
+{
+  "uid": "6cde47ef-5119-4920-bb54-564b3df8e661",
+  "name": "PHP2Shell - Disable fatal error backtraces",
+  "description": "Require fatal_error_backtraces=Off on the isolated PHP 8.5 demo runtime. The remedy updates PHP startup configuration and reloads PHP-FPM workers. This mitigation does not replace patching PHP.",
+  "active": true,
+  "category": "application_security",
+  "severity": "high",
+  "cycle": 60,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "php-fpm -i",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "re": {
+          "stdout": "fatal_error_backtraces\\s+=>\\s+Off\\s+=>\\s+Off"
+        },
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "printf 'fatal_error_backtraces=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-backtraces.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:ID.RA-01",
+    "cat:application_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

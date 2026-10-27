@@ -1,4 +1,5 @@
 {
+  "uid": "8da40fc4-24f8-4623-bf74-cf249d0b9fbe",
   "name": "SSH Server Post-Quantum Key Exchange Not Removed",
   "description": "Ensures the SSH server keeps a hybrid post-quantum key exchange available. An explicit KexAlgorithms list must include sntrup761x25519-sha512 or mlkem768x25519-sha256 (ML-KEM, FIPS 203), and no line may remove them with the '-' prefix. When KexAlgorithms is not set, OpenSSH 9.0+ defaults already include a hybrid post-quantum algorithm and the rule passes; pair this rule with 'OpenSSH Version Supports Post-Quantum Key Exchange'.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

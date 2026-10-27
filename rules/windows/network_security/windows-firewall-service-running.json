@@ -1,4 +1,5 @@
 {
+  "uid": "2008412d-1a3d-42b9-9f79-7633ae89db7d",
   "name": "Windows Firewall Service Running",
   "description": "Ensures the Windows Defender Firewall service (MpsSvc) is running.",
   "active": true,

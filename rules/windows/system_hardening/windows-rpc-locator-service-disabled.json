@@ -1,4 +1,5 @@
 {
+  "uid": "d1d43060-3fac-45d3-85e3-50125669e68e",
   "name": "Windows RPC Locator Service Disabled",
   "description": "Ensures the legacy Remote Procedure Call Locator service is disabled. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "9cd00eb9-795e-4015-bf27-5cbe125366ce",
   "name": "All Primary Groups in /etc/passwd Exist",
   "description": "Ensures the primary GID of every account in /etc/passwd exists in /etc/group, so files created by the account are not owned by an undefined group that a future group could inherit.",
   "active": true,

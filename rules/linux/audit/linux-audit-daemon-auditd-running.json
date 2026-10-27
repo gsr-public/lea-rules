@@ -1,5 +1,10 @@
 {
+  "uid": "852aeeb4-e21f-434c-a934-1ddb0af627fd",
   "name": "Linux Audit Daemon (auditd) Running",
+  "former_names": [
+    "Audit Service Running",
+    "CIS - Auditd Installed"
+  ],
   "description": "Checks that the system auditing daemon (auditd) is running to capture security-relevant events.",
   "active": true,
   "category": "audit",

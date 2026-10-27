@@ -1,4 +1,5 @@
 {
+  "uid": "47f5ee0d-7305-41cf-9882-2394efd17d62",
   "name": "/var Mount Options Hardened (nodev, nosuid)",
   "description": "Ensures that, if /var is a separate mount, it carries the nodev, nosuid options. Passes when /var is part of another filesystem.",
   "active": true,

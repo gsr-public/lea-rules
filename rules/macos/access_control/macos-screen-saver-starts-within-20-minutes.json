@@ -1,4 +1,5 @@
 {
+  "uid": "85609bac-345e-49de-aed7-23ac10c4a3b8",
   "name": "macOS Screen Saver Starts Within 20 Minutes",
   "description": "Ensures the screen saver starts after at most 1200 seconds of inactivity (idleTime 1-1200). Reads the effective value of idleTime in the com.apple.screensaver domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "1cdf14b9-9e9f-43dc-8ac9-7b18ba062939",
   "name": "Audit Log Files Permissions 640 or Stricter",
   "description": "Ensures audit log files in /var/log/audit are owned by root (group root or adm) with mode 640 or stricter.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/bin/stat -c %n\\ %a\\ %U\\ %G /var/log/audit/*",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "899db281-131f-4394-9c81-38a37e93d3ae",
   "name": "/home Mount Options Hardened (nodev, nosuid)",
   "description": "Ensures that, if /home is a separate mount, it carries the nodev, nosuid options. Passes when /home is part of another filesystem.",
   "active": true,

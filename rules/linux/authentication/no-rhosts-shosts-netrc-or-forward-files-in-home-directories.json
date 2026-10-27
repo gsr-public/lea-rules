@@ -1,4 +1,5 @@
 {
+  "uid": "0d234266-0b86-4f1e-aed8-a650169dc269",
   "name": "No .rhosts, .shosts, .netrc or .forward Files in Home Directories",
   "description": "Ensures no home directory contains .rhosts or .shosts (host-based trust), .netrc (clear-text credentials for FTP and other clients) or .forward (mail forwarding that can execute commands). Without root, unreadable home directories are skipped.",
   "active": true,

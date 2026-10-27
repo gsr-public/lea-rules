@@ -1,0 +1,98 @@
+{
+  "uid": "14b8a4a3-e2d1-4797-8e38-19556f24d1d4",
+  "name": "Package Inventory Snapshot",
+  "description": "Collects a snapshot of installed packages on Linux and Windows systems for asset inventory and compliance mapping.",
+  "active": true,
+  "builtin": true,
+  "category": "inventory",
+  "cycle": 43200,
+  "cmd_info_key": "package_inventory",
+  "parameters": [],
+  "tags": [
+    "cat:lea_metadata",
+    "env:linux",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ],
+  "cmd": {
+    "validation": [
+      {
+        "command": "dpkg -l",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian"
+        ]
+      },
+      {
+        "command": "rpm -qa",
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat",
+          "CentOS",
+          "Fedora",
+          "Oracle",
+          "Amazon",
+          "Rocky",
+          "openSUSE",
+          "SUSE"
+        ]
+      },
+      {
+        "command": "Get-Package",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Ubuntu",
+          "Debian"
+        ],
+        "re": {
+          "stdout": "(?m)^ii\\s+\\S+"
+        }
+      },
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [
+          "Red Hat",
+          "CentOS",
+          "Fedora",
+          "Oracle",
+          "Amazon",
+          "Rocky",
+          "openSUSE",
+          "SUSE"
+        ],
+        "re": {
+          "stdout": "(?m)^\\S+-[0-9]"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\s*Name\\s+Version\\b"
+        }
+      }
+    ],
+    "_remedy": [],
+    "system": []
+  }
+}

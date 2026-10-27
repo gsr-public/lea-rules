@@ -1,4 +1,5 @@
 {
+  "uid": "0cb90c05-15d9-4774-a42a-33da1d48b297",
   "name": "Windows Insecure SMB Guest Logons Disabled",
   "description": "Ensures the SMB client refuses unauthenticated guest logons to file servers (AllowInsecureGuestAuth = 0).",
   "active": true,

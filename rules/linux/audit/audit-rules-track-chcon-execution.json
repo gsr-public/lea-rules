@@ -1,4 +1,5 @@
 {
+  "uid": "e47d1bdb-926f-45c5-96e5-6c6b2a9c1e1a",
   "name": "Audit Rules Track chcon Execution",
   "description": "Ensures the audit rules record every execution of /usr/bin/chcon (-a always,exit -F path=/usr/bin/chcon -F perm=x or -w /usr/bin/chcon -p x), giving an independent record of privileged command use.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

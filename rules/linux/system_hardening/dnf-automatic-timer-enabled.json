@@ -1,4 +1,5 @@
 {
+  "uid": "61ce9ae1-ab61-4c53-be6d-2bfec09ff46c",
   "name": "dnf-automatic Timer Enabled",
   "description": "Ensures dnf-automatic is scheduled (dnf-automatic.timer or dnf-automatic-install.timer enabled), so updates are downloaded and, with apply_updates, installed automatically.",
   "active": true,

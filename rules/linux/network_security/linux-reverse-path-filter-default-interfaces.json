@@ -1,4 +1,5 @@
 {
+  "uid": "54045135-3fe7-4468-943e-d6d4008ff714",
   "name": "Linux Reverse Path Filter Default Interfaces",
   "description": "Ensures net.ipv4.conf.default.rp_filter is 1 (strict) or 2 (loose) so new interfaces inherit reverse path filtering. The remedy applies loose mode, which is safe for multi-homed hosts with asymmetric routing.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.default.rp_filter=2",
   "active": true,

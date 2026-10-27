@@ -1,5 +1,9 @@
 {
+  "uid": "0316681d-d573-40b7-8225-c26c2b29a407",
   "name": "Linux TCP Retransmission Limit Bounded (5-15)",
+  "former_names": [
+    "Linux TCP Retries2 Bounded"
+  ],
   "description": "Ensures the Linux kernel parameter net.ipv4.tcp_retries2 is set within an optimal retry range (5–15) for established TCP connections, limiting excessive retry storms while preserving connection robustness.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_retries2=10",
   "active": true,
   "category": "network_security",

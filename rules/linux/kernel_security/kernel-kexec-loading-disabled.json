@@ -1,4 +1,5 @@
 {
+  "uid": "f8f7feb1-e830-4e41-aafa-4964a847421d",
   "name": "Kernel kexec Loading Disabled",
   "description": "Ensures kernel.kexec_load_disabled is 1, so a root user cannot replace the running kernel with an unsigned one through kexec, bypassing Secure Boot and module signing. The setting is one-way until reboot, so no remedy is provided; set it in /etc/sysctl.d. Hosts that rely on kdump crash kernels loaded after boot should be excluded.",
   "active": true,

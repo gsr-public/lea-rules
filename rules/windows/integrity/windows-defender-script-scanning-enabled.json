@@ -1,4 +1,5 @@
 {
+  "uid": "02268e16-83e0-4a8f-abac-7cae3076dc47",
   "name": "Windows Defender Script Scanning Enabled",
   "description": "Ensures Defender scans scripts at runtime (DisableScriptScanning = False).",
   "active": true,

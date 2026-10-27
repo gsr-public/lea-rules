@@ -1,4 +1,5 @@
 {
+  "uid": "32485878-061c-40a9-89e4-cc13bb4013cc",
   "name": "Windows SChannel Triple-DES Cipher Disabled",
   "description": "Ensures the Triple DES 168 cipher is explicitly disabled in SCHANNEL (Enabled = 0). 3DES has a 64-bit block size (Sweet32) and is not enabled-by-absence safe on older Windows versions.",
   "active": true,

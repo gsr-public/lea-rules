@@ -1,4 +1,5 @@
 {
+  "uid": "c7afef2a-d878-4c40-b9dd-cf3fa3d82557",
   "name": "Windows Audit Special Logon (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Special Logon' records success events (Success and Failure also passes). Records logons that receive administrator-equivalent privileges. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

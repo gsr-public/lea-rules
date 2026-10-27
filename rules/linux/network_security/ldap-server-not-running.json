@@ -1,4 +1,5 @@
 {
+  "uid": "0295dd5f-7e48-45ba-9492-4c8e3c1eac70",
   "name": "LDAP Server Not Running",
   "description": "Ensures an OpenLDAP server (slapd); assign only to hosts that are not directory servers is not running (process names read from /proc/*/comm).",
   "active": true,

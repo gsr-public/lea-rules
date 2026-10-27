@@ -1,4 +1,5 @@
 {
+  "uid": "d71d73c9-5fba-4254-977c-61ba1acb4479",
   "name": "Windows DEP Policy OptOut or AlwaysOn",
   "description": "Ensures Data Execution Prevention applies system-wide (boot configuration nx OptOut or AlwaysOn), not only to Windows components.\nRequired Windows permission: the LEA agent account must be allowed to run bcdedit /enum '{current}' (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

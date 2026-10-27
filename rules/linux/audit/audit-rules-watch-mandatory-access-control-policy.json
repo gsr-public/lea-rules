@@ -1,4 +1,5 @@
 {
+  "uid": "d3703af8-eceb-40c7-8567-d2e24428c213",
   "name": "Audit Rules Watch Mandatory Access Control Policy",
   "description": "Ensures the audit rules record changes to SELinux (/etc/selinux) or AppArmor (/etc/apparmor, /etc/apparmor.d) policy.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

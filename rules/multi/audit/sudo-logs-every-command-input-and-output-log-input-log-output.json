@@ -1,4 +1,5 @@
 {
+  "uid": "02b0d1b2-5fd0-474d-9b89-64d13e116285",
   "name": "Sudo Logs Every Command Input and Output (log_input/log_output)",
   "description": "Ensures sudoers enables I/O logging (Defaults log_output or log_input), recording the full session of privileged commands for forensic review.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
   "active": true,

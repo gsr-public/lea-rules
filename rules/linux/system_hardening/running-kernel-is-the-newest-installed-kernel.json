@@ -1,4 +1,5 @@
 {
+  "uid": "08333696-d6c4-4043-a729-62bc4f661711",
   "name": "Running Kernel Is the Newest Installed Kernel",
   "description": "Ensures the running kernel (uname -r) is the newest kernel image installed in /boot, so kernel security updates that were installed have actually taken effect after a reboot.",
   "active": true,

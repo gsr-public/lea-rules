@@ -1,4 +1,5 @@
 {
+  "uid": "f872caff-d5a2-4f8c-85a4-8bc08b6a0e4c",
   "name": "macOS Audit Flags Capture Logins, Administrative and Authorization Events",
   "description": "Ensures the audit flags in /etc/security/audit_control include login/logout (lo), administrative (ad) and authorization/authentication (aa) events.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/security/audit_control",
   "active": true,

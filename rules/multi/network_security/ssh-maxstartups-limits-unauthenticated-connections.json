@@ -1,4 +1,5 @@
 {
+  "uid": "4bdf0e23-266f-4a2a-8f86-f608d48749f8",
   "name": "SSH MaxStartups Limits Unauthenticated Connections",
   "description": "Ensures MaxStartups is 10:30:60 or stricter (start, rate and full values no higher), so floods of unauthenticated connections cannot exhaust sshd.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

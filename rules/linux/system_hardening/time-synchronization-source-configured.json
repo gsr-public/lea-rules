@@ -1,4 +1,5 @@
 {
+  "uid": "f801d863-48cf-4c25-8691-9f06c6fb7c12",
   "name": "Time Synchronization Source Configured",
   "description": "Ensures an explicit time source is configured for chrony (server or pool), systemd-timesyncd (NTP=) or ntpd, instead of relying on compiled-in defaults.",
   "active": true,

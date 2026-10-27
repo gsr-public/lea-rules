@@ -1,4 +1,5 @@
 {
+  "uid": "f8ac996e-d739-44df-ac80-325c26d45ddc",
   "name": "Windows Convenience PIN Sign-in Disabled",
   "description": "Ensures domain users cannot sign in with a convenience PIN (AllowDomainPINLogon = 0); use Windows Hello for Business instead.",
   "active": true,

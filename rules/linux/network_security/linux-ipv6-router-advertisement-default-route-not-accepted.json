@@ -1,4 +1,5 @@
 {
+  "uid": "4080f5b4-6e0f-4fe9-8a9f-16615979dbf3",
   "name": "Linux IPv6 Router Advertisement Default Route Not Accepted",
   "description": "Ensures net.ipv6.conf.all.accept_ra_defrtr is 0, so a rogue IPv6 router advertisement cannot install a default route that redirects traffic. Passes with LEA_RULE_no_service when IPv6 is disabled. Hosts that rely on SLAAC should be excluded.",
   "active": true,

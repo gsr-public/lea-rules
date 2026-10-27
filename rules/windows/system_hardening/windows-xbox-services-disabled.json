@@ -1,4 +1,5 @@
 {
+  "uid": "ae93fefd-dbf0-45a5-8572-7c93c3a36d41",
   "name": "Windows Xbox Services Disabled",
   "description": "Ensures the Xbox accessory, authentication, game save and networking services are disabled on business endpoints. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

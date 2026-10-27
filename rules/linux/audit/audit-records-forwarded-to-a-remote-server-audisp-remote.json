@@ -1,4 +1,5 @@
 {
+  "uid": "ddce744b-315c-47c3-9efe-86cd41414595",
   "name": "Audit Records Forwarded to a Remote Server (audisp-remote)",
   "description": "Ensures the audisp-remote plugin is active (active = yes in /etc/audit/plugins.d/au-remote.conf or /etc/audisp/plugins.d/au-remote.conf), so audit records leave the host before an attacker with root can delete them.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/plugins.d/au-remote.conf /etc/audisp/plugins.d/au-remote.conf",
   "active": true,

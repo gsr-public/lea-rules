@@ -1,4 +1,5 @@
 {
+  "uid": "b60c54bd-3fbe-4c5f-810e-c4ae9e33fcad",
   "name": "Windows ASR Rule: Block Webshell Creation for Servers",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Webshell Creation for Servers\" (a8f5898e-1dc8-49a9-9878-85004b8a61e6) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

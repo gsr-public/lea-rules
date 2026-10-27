@@ -1,4 +1,5 @@
 {
+  "uid": "7c6060ea-d76c-40ea-ab39-5776add792db",
   "name": "Audit Rules Track Permission and Ownership Changes",
   "description": "Ensures the audit rules record discretionary access control changes: chmod/fchmod/fchmodat, chown/fchown/fchownat/lchown and setxattr/lsetxattr/fsetxattr/removexattr system calls.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

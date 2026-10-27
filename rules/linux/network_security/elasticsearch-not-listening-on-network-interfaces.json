@@ -1,4 +1,5 @@
 {
+  "uid": "c29a8988-2a69-46d9-8fff-2d259aa8787a",
   "name": "Elasticsearch Not Listening on Network Interfaces",
   "description": "Ensures nothing listens for Elasticsearch or OpenSearch on TCP ports 9200/9300 on a non-loopback address; assign to hosts whose search cluster serves only local applications. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

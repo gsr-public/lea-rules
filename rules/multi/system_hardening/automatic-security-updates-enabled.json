@@ -1,5 +1,10 @@
 {
+  "uid": "358ebefb-28b5-4a37-a2c4-8d4e209a4900",
   "name": "Automatic Security Updates Enabled",
+  "former_names": [
+    "Automatic Updates Enabled",
+    "CIS - Automatic Updates Enabled"
+  ],
   "description": "Verifies that automatic operating system updates are enabled on Linux and Windows hosts to reduce exposure to known vulnerabilities.",
   "active": true,
   "category": "system_hardening",

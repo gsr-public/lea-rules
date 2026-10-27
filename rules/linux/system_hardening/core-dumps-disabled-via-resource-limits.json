@@ -1,5 +1,9 @@
 {
+  "uid": "9bad4757-d985-446d-914b-76ffb221f3db",
   "name": "Core Dumps Disabled via Resource Limits",
+  "former_names": [
+    "CIS - Core Dumps Disabled"
+  ],
   "description": "Ensures a hard core-file size limit of 0 is set for all users ('* hard core 0' in /etc/security/limits.conf or limits.d), preventing core dumps that may contain sensitive memory.",
   "active": true,
   "category": "system_hardening",

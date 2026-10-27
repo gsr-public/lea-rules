@@ -1,4 +1,5 @@
 {
+  "uid": "f9dee26b-7930-40ac-a0eb-e1abc1d9d428",
   "name": "macOS Bonjour Advertising Disabled",
   "description": "Ensures the mDNSResponder does not advertise services over multicast DNS (NoMulticastAdvertisements = true). Reads the effective value of NoMulticastAdvertisements in the com.apple.mDNSResponder domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

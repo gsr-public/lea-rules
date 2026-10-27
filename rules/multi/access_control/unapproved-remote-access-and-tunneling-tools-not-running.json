@@ -1,4 +1,5 @@
 {
+  "uid": "8b164843-19c9-4623-ab12-fc8dfe467fdf",
   "name": "Unapproved Remote Access and Tunneling Tools Not Running",
   "description": "Ensures no common remote monitoring and management or tunneling tool is running (TeamViewer, AnyDesk, ScreenConnect, RustDesk, Splashtop, LogMeIn, Atera, Ammyy, RemotePC, Zoho Assist, GoTo, TightVNC/UltraVNC, ngrok, chisel, frp). Attackers frequently install these tools for persistent access. Exclude hosts where one of them is a sanctioned support tool.",
   "active": true,

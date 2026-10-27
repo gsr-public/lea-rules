@@ -1,4 +1,5 @@
 {
+  "uid": "de2845cd-d021-4e7b-8779-4cc5ed78e039",
   "name": "Windows SMB Server SPN Target Name Validation Enabled",
   "description": "Ensures the SMB server validates the service principal name supplied by clients (SMBServerNameHardeningLevel 1 or 2), mitigating SMB relay attacks.",
   "active": true,

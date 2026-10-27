@@ -1,4 +1,5 @@
 {
+  "uid": "d34fc12e-bacf-4417-b134-fe183e91819b",
   "name": "Cron and at Access Restricted to Allow Lists",
   "description": "Ensures /etc/cron.allow exists, is owned by root (group root or crontab) and is mode 640 or stricter, and that /etc/cron.deny, /etc/at.allow and /etc/at.deny, where present, are equally restricted, so only listed users can schedule jobs. stat reads metadata only.",
   "active": true,

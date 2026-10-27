@@ -1,4 +1,5 @@
 {
+  "uid": "76f1a490-dba7-4aca-87b2-7c65f9f6b87f",
   "name": "Telnet Server Process Not Running",
   "description": "Ensures a Telnet server process is not running (process names read from /proc/*/comm).",
   "active": true,

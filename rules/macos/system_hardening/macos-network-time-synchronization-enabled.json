@@ -1,4 +1,5 @@
 {
+  "uid": "c1181372-9536-41d2-81a6-cad08d56386f",
   "name": "macOS Network Time Synchronization Enabled",
   "description": "Ensures macOS sets its clock from a network time server.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/systemsetup -getusingnetworktime",
   "active": true,

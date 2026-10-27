@@ -1,4 +1,5 @@
 {
+  "uid": "47da7767-5668-49bd-903a-c592c2c26ea1",
   "name": "macOS Security Auditing Enabled",
   "description": "Ensures the BSM audit subsystem is auditing (audit -c reports AUC_AUDITING). BSM audit is deprecated in recent macOS releases but still required by many benchmarks; endpoint security agents are the long-term replacement.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/audit -c",
   "active": true,

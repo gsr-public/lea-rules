@@ -1,4 +1,5 @@
 {
+  "uid": "c2687f0d-b2e9-41cb-9a94-a7eee30fd3eb",
   "name": "Windows ASR Rule: Use Advanced Protection Against Ransomware",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Use Advanced Protection Against Ransomware\" (c1db55ab-c21a-4637-bb3f-a12568109d35) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

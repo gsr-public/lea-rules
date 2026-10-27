@@ -1,5 +1,9 @@
 {
+  "uid": "a418f3f7-98e2-4b05-9059-3cd5d48e6518",
   "name": "SELinux Enforcing",
+  "former_names": [
+    "CIS - SELinux Enforcing Mode"
+  ],
   "description": "Checks that Security-Enhanced Linux (SELinux) is enabled and in enforcing mode.",
   "active": true,
   "category": "kernel_security",

@@ -1,0 +1,60 @@
+{
+  "uid": "8c64f5c6-ff39-4177-b7da-f22bcf7c8540",
+  "name": "PHP2Shell - Memory limit with cgroup cap",
+  "description": "Isolated demo policy: memory_limit=-1 and a 512 MiB cgroup v2 memory cap. The demo container supplies the cap; remediation changes only PHP startup configuration and reloads workers. This mitigation does not replace patching PHP.",
+  "active": true,
+  "category": "application_security",
+  "severity": "high",
+  "cycle": 60,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "php-fpm -i && cat /sys/fs/cgroup/memory.max",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "re": {
+          "stdout": "\\bmemory_limit\\s+=>\\s+-1\\s+=>\\s+-1[\\s\\S]*\\b536870912\\b"
+        },
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "printf 'memory_limit=-1\\n' > /usr/local/etc/php/conf.d/zz-lea-memory.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i && cat /sys/fs/cgroup/memory.max",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:ID.RA-01",
+    "cat:application_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

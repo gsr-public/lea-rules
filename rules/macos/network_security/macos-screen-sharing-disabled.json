@@ -1,4 +1,5 @@
 {
+  "uid": "71ca4685-91e3-4964-8c23-8b9ae711708c",
   "name": "macOS Screen Sharing Disabled",
   "description": "Ensures Screen Sharing (VNC) is disabled. Passes when launchd lists \"com.apple.screensharing\" as disabled in the system domain.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/launchctl print-disabled system",
   "active": true,

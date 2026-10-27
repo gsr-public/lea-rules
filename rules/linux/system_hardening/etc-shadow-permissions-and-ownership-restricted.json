@@ -1,5 +1,10 @@
 {
+  "uid": "d5e7c5aa-e67d-467c-877e-cb916fe43dfc",
   "name": "/etc/shadow Permissions and Ownership Restricted",
+  "former_names": [
+    "CIS - Permissions on /etc/shadow",
+    "Shadow File Permissions Secure"
+  ],
   "description": "Verifies that the password hash file /etc/shadow is owned by root, group root or shadow, and has mode 0, 400, 440, 600 or 640. stat reads metadata only, so no privileges are needed.",
   "active": true,
   "category": "system_hardening",

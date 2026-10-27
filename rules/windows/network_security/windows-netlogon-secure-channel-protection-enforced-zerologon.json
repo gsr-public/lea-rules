@@ -1,4 +1,5 @@
 {
+  "uid": "bef41e7a-b31a-46be-9ed9-ace2b746122a",
   "name": "Windows Netlogon Secure Channel Protection Enforced (Zerologon)",
   "description": "Ensures Netlogon secure RPC enforcement is not disabled (FullSecureChannelProtection not 0), mitigating Zerologon (CVE-2020-1472). Enforcement is on by default since February 2021, so an absent value passes. Relevant on domain controllers.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "325c578e-3878-45d8-94f5-7a0f9f26281e",
   "name": "Windows AutoPlay Disabled for All Drives",
   "description": "Ensures AutoPlay is turned off for all drive types (NoDriveTypeAutoRun = 0xff), so inserted media cannot start content automatically.\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer /v NoDriveTypeAutoRun (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

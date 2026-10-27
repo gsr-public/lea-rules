@@ -1,4 +1,5 @@
 {
+  "uid": "c86e661a-e675-4d87-b870-a451da981657",
   "name": "No Duplicate User Names",
   "description": "Ensures every account name in /etc/passwd is unique.",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "5bd9a8a5-3f25-48f6-9c74-2234ebb3a0c1",
   "name": "Telnet Server Not Listening",
+  "former_names": [
+    "Telnet Service Disabled"
+  ],
   "description": "Confirms that nothing is listening on TCP port 23 (Telnet) by reading the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (port 0x0017 in state 0A = LISTEN). Telnet transmits credentials in clear text.",
   "active": true,
   "category": "network_security",

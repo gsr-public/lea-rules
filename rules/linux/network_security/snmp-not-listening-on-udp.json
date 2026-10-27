@@ -1,4 +1,5 @@
 {
+  "uid": "4aae1961-a805-409f-bf66-7188fb98e2c4",
   "name": "SNMP Not Listening on UDP",
   "description": "Ensures nothing listens for an SNMP agent on UDP port 161; SNMP v1/v2c community strings travel in clear text. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
   "active": true,

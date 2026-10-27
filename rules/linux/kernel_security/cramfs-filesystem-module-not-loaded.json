@@ -1,5 +1,10 @@
 {
+  "uid": "55360c77-915a-4986-84c9-c5ca9041ad86",
   "name": "cramfs Filesystem Module Not Loaded",
+  "former_names": [
+    "CIS - Mounting cramfs Disabled",
+    "Cramfs Module Disabled"
+  ],
   "description": "Ensures the cramfs filesystem kernel module is not loaded, reducing attack surface from legacy filesystem drivers. Checks /proc/modules; a driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r cramfs",
   "active": true,
   "category": "kernel_security",

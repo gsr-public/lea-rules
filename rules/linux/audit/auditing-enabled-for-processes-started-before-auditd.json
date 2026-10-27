@@ -1,4 +1,5 @@
 {
+  "uid": "ed85f7ae-42b3-48c3-aef1-4449a9ee075e",
   "name": "Auditing Enabled for Processes Started Before auditd",
   "description": "Ensures the kernel command line contains audit=1, so processes that start before the audit daemon are also auditable.",
   "active": true,

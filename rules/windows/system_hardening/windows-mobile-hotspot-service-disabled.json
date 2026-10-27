@@ -1,4 +1,5 @@
 {
+  "uid": "f36488c5-6ed1-4647-afef-1554fa684c40",
   "name": "Windows Mobile Hotspot Service Disabled",
   "description": "Ensures the Windows Mobile Hotspot service is disabled. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

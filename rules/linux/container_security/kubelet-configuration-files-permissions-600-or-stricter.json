@@ -1,4 +1,5 @@
 {
+  "uid": "7848e7dc-b609-4058-bc0b-db6e421b8c16",
   "name": "Kubelet Configuration Files Permissions 600 or Stricter",
   "description": "Ensures the kubelet config file and kubeconfig (/var/lib/kubelet/config.yaml, /etc/kubernetes/kubelet.conf) are owned by root:root with mode 600 or stricter. Passes with LEA_RULE_no_service when no kubelet is running.",
   "active": true,

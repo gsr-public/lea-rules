@@ -1,4 +1,5 @@
 {
+  "uid": "247c6bfe-9424-48d5-bf1d-eb96b6278c86",
   "name": "Bluetooth Stack Not Loaded",
   "description": "Ensures the Bluetooth protocol stack (servers and hosts without Bluetooth peripherals) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

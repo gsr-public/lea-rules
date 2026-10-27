@@ -1,0 +1,60 @@
+{
+  "uid": "82da10ba-b9ca-4ac0-b195-9b1c9bf92992",
+  "name": "PHP2Shell - Disable session upload progress",
+  "description": "Require session.upload_progress.enabled=Off before request parsing. The isolated demo remedy writes the PHP startup configuration and reloads every PHP-FPM worker. This mitigation does not replace patching PHP.",
+  "active": true,
+  "category": "application_security",
+  "severity": "high",
+  "cycle": 60,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "php-fpm -i",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "re": {
+          "stdout": "session\\.upload_progress\\.enabled\\s+=>\\s+Off\\s+=>\\s+Off"
+        },
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "printf 'session.upload_progress.enabled=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-upload.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:ID.RA-01",
+    "cat:application_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

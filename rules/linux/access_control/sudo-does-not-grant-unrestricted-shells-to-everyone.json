@@ -1,4 +1,5 @@
 {
+  "uid": "3b27f4df-7593-4263-ac7d-741291462b1d",
   "name": "Sudo Does Not Grant Unrestricted Shells to Everyone",
   "description": "Ensures no sudoers entry grants ALL commands to the ALL user specification, which would make every local account an administrator.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
   "active": true,

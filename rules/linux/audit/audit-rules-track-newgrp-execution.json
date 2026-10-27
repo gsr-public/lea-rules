@@ -1,4 +1,5 @@
 {
+  "uid": "c07cb8f8-aa76-4e94-9c9e-ad43ce5e8082",
   "name": "Audit Rules Track newgrp Execution",
   "description": "Ensures the audit rules record every execution of /usr/bin/newgrp (-a always,exit -F path=/usr/bin/newgrp -F perm=x or -w /usr/bin/newgrp -p x), giving an independent record of privileged command use.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

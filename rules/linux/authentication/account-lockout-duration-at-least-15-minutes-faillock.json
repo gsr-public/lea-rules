@@ -1,4 +1,5 @@
 {
+  "uid": "52141717-9cef-47e8-b3c7-5dbb9e09afaf",
   "name": "Account Lockout Duration At Least 15 Minutes (faillock)",
   "description": "Ensures pam_faillock keeps a locked account locked for at least 900 seconds, or until an administrator unlocks it (unlock_time = 0), in /etc/security/faillock.conf.",
   "active": true,

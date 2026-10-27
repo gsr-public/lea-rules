@@ -1,4 +1,5 @@
 {
+  "uid": "b55d5d2a-f2e8-4fd1-8a37-2691a7841596",
   "name": "Sudo Re-authentication Not Disabled",
   "description": "Ensures no sudoers entry uses !authenticate, which would let users run commands as root without re-entering a password.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
   "active": true,

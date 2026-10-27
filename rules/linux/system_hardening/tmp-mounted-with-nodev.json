@@ -1,4 +1,5 @@
 {
+  "uid": "e4871aec-b958-4102-917c-b18ba605c86f",
   "name": "/tmp Mounted with nodev",
   "description": "Ensures /tmp is mounted with the nodev option, so device files placed there are not honoured. Reads /proc/mounts; fails if /tmp is not a separate mount.",
   "active": true,

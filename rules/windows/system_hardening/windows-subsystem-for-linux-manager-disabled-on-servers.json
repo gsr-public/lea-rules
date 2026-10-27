@@ -1,4 +1,5 @@
 {
+  "uid": "f19353d4-d8d7-4730-8492-d63dcc58639b",
   "name": "Windows Subsystem for Linux Manager Disabled on Servers",
   "description": "Ensures the LxssManager service (WSL) is disabled on servers, where a Linux environment can bypass Windows security tooling. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

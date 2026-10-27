@@ -1,4 +1,5 @@
 {
+  "uid": "b35beda9-9f8f-4524-aede-ebf587f7cc70",
   "name": "SELinux Enforcing at Boot",
   "description": "Ensures /etc/selinux/config sets SELINUX=enforcing, so SELinux stays in enforcing mode after a reboot (complements 'SELinux Enforcing', which checks the running mode).",
   "active": true,

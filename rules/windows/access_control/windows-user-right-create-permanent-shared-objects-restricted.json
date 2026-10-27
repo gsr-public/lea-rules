@@ -1,4 +1,5 @@
 {
+  "uid": "744d1881-b484-42d5-b496-6fd3561c6da3",
   "name": "Windows User Right 'Create Permanent Shared Objects' Restricted",
   "description": "Ensures the user right 'Create Permanent Shared Objects' (SeCreatePermanentPrivilege) is granted to no one. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): no one; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "00a55653-30c6-467c-99b2-5f898366f7a7",
   "name": "Windows Peer Networking Services Disabled",
   "description": "Ensures the Peer Name Resolution and Peer Networking services are disabled. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

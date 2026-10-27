@@ -1,4 +1,5 @@
 {
+  "uid": "b7279b6b-0268-40f0-b6f2-90bda6fbfdce",
   "name": "Windows App Notifications Hidden on Lock Screen",
   "description": "Ensures app notifications are not shown on the lock screen (DisableLockScreenAppNotifications = 1), avoiding disclosure of message content.",
   "active": true,

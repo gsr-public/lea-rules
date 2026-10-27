@@ -1,5 +1,9 @@
 {
+  "uid": "865b86d2-b5c0-4bfd-a3c3-aa7de4a59982",
   "name": "Inactive Accounts Disabled Within 30 Days",
+  "former_names": [
+    "Inactive Accounts Locked"
+  ],
   "description": "Ensures new accounts are created with an inactivity lock of 30 days or less after password expiry (INACTIVE in /etc/default/useradd).",
   "active": true,
   "category": "identity_management",

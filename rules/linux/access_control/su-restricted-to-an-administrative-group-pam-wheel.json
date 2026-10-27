@@ -1,4 +1,5 @@
 {
+  "uid": "1104fdb9-5c04-4420-87e4-39329013995f",
   "name": "su Restricted to an Administrative Group (pam_wheel)",
   "description": "Ensures /etc/pam.d/su requires membership of an administrative group (auth required pam_wheel.so use_uid), so ordinary users cannot become root with su even if they learn the root password.",
   "active": true,

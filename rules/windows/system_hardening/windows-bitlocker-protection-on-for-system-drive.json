@@ -1,4 +1,5 @@
 {
+  "uid": "f1e0af23-a739-4684-a370-05e0f6bd01be",
   "name": "Windows BitLocker Protection On for System Drive",
   "description": "Ensures BitLocker protection is active for the system drive (manage-bde reports 'Protection On'). A fully encrypted drive with suspended protection fails.\nRequired Windows permission: LEA agent account must be allowed to run only: manage-bde -status C: (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

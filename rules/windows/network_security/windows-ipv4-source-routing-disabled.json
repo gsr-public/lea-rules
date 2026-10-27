@@ -1,4 +1,5 @@
 {
+  "uid": "c343bd19-b61a-4673-b6e5-37f0d7fde0df",
   "name": "Windows IPv4 Source Routing Disabled",
   "description": "Ensures Windows does not allow processing of IPv4 source-routed packets by verifying DisableIPSourceRouting is configured to a secure value (2).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v DisableIPSourceRouting (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

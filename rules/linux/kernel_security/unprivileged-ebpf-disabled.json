@@ -1,5 +1,9 @@
 {
+  "uid": "8acc63a4-dc12-4a94-bf8c-3ac6e197741e",
   "name": "Unprivileged eBPF Disabled",
+  "former_names": [
+    "Linux Unprivileged BPF Disabled"
+  ],
   "description": "Ensures kernel.unprivileged_bpf_disabled is 1 or 2, preventing unprivileged processes from loading eBPF programs (a recurring kernel privilege-escalation vector). Ubuntu defaults to 2.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.unprivileged_bpf_disabled=1",
   "active": true,
   "category": "kernel_security",

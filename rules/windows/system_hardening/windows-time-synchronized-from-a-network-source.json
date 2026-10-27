@@ -1,4 +1,5 @@
 {
+  "uid": "490eb5e4-9ff2-4e06-a26d-c2b9721ff192",
   "name": "Windows Time Synchronized from a Network Source",
   "description": "Ensures the Windows Time service is synchronizing from a network time source rather than the local CMOS clock or a free-running clock (w32tm /query /status).\nRequired Windows permission: the LEA agent account must be allowed to run w32tm /query /status (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

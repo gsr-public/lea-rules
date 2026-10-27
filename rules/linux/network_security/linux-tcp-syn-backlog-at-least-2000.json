@@ -1,5 +1,9 @@
 {
+  "uid": "1cfb5c51-36c4-4e01-8772-e502311a04ca",
   "name": "Linux TCP SYN Backlog At Least 2000",
+  "former_names": [
+    "Linux TCP Max SYN Backlog Sized"
+  ],
   "description": "Ensures the Linux kernel parameter net.ipv4.tcp_max_syn_backlog is configured to handle at least a moderate backlog (>= 2000), improving resilience against SYN floods on busy servers.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_max_syn_backlog=4096",
   "active": true,
   "category": "network_security",

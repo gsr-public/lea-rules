@@ -1,4 +1,5 @@
 {
+  "uid": "9ab5950d-aa13-4dad-b723-d81732c17728",
   "name": "/etc/gshadow Permissions and Ownership Restricted",
   "description": "Verifies that /etc/gshadow is owned by root, group root or shadow, and has mode 0, 400, 440, 600 or 640. stat reads metadata only, so no privileges are needed.",
   "active": true,

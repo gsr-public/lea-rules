@@ -1,4 +1,5 @@
 {
+  "uid": "f24e2d2c-c6cf-4cb3-9945-40f18f31bc12",
   "name": "/etc/sudoers Permissions 440 or Stricter",
   "description": "Verifies that /etc/sudoers is owned by root:root with mode 440 or 400. Passes with LEA_RULE_no_service when sudo is not installed.",
   "active": true,

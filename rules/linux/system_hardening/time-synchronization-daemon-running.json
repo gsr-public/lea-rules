@@ -1,5 +1,9 @@
 {
+  "uid": "635b9758-fc38-42df-888c-4775f9eb4658",
   "name": "Time Synchronization Daemon Running",
+  "former_names": [
+    "CIS - NTP Configured"
+  ],
   "description": "Ensures a time synchronization daemon is running: chronyd, ntpd, openntpd or systemd-timesyncd (process name truncated by the kernel to systemd-timesyn). Accurate time is required to correlate audit records.",
   "active": true,
   "category": "system_hardening",

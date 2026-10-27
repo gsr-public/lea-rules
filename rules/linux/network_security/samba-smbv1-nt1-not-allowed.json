@@ -1,5 +1,9 @@
 {
+  "uid": "7f65fe0c-5e0c-4ceb-ab61-3cf6d4b9c768",
   "name": "Samba SMBv1 (NT1) Not Allowed",
+  "former_names": [
+    "Samba SMBv1 Disabled"
+  ],
   "description": "Ensures the Samba configuration does not explicitly enable SMBv1 or NT1 and does not set a minimum protocol lower than SMB2.",
   "active": true,
   "category": "network_security",

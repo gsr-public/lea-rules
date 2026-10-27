@@ -1,5 +1,9 @@
 {
+  "uid": "e0589821-f0eb-4a4c-a4f9-793f7a532932",
   "name": "Windows Firewall Enabled for All Profiles",
+  "former_names": [
+    "Windows Firewall Enabled"
+  ],
   "description": "Checks that the Windows Firewall is enabled for all network profiles (Domain, Private, Public).\nRequired Windows permission: LEA agent account must be allowed to run only: netsh advfirewall show allprofiles via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
   "category": "network_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "c4df8953-e1b6-4e72-bd1b-18f280b03908",
   "name": "macOS Remote Management (ARD) Not Running",
   "description": "Ensures the Apple Remote Desktop agent (ARDAgent) is not running, so the Mac cannot be remotely controlled through Remote Management. Process names are read with ps -axco command.",
   "active": true,

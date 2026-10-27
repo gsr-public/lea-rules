@@ -1,4 +1,5 @@
 {
+  "uid": "aaacc285-f14b-494b-812f-4e0ad37fad01",
   "name": "DNS Server (BIND) Not Running",
   "description": "Ensures the BIND DNS server (named) is not running (process names read from /proc/*/comm).",
   "active": true,

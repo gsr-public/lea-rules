@@ -1,4 +1,5 @@
 {
+  "uid": "677e2b76-40c1-42a6-8806-14a2009eea61",
   "name": "SSH Agent Forwarding Disabled",
   "description": "Ensures sshd does not allow SSH agent forwarding (AllowAgentForwarding no, or DisableForwarding yes); a compromised server can otherwise use the forwarded agent to log in elsewhere as the user.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "46fb9c17-2ba1-41eb-a442-7bb85423a073",
   "name": "Windows OpenSSH Server Disabled",
   "description": "Ensures the OpenSSH SSH Server service is disabled or not installed on hosts that do not need inbound SSH. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

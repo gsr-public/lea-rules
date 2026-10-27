@@ -1,4 +1,5 @@
 {
+  "uid": "4fce7c2e-173c-46b3-8f31-75526a43d774",
   "name": "Backup shadow and gshadow Files Permissions Restricted",
   "description": "Ensures the backup password hash files /etc/shadow- and /etc/gshadow- are owned by root, group root or shadow, with mode 0, 400, 440, 600 or 640. Passes with LEA_RULE_no_service when neither backup exists.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "ce4fe50f-e247-46bd-81b1-5bb2559fb563",
   "name": "Windows Audit Computer Account Management (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Computer Account Management' records success events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

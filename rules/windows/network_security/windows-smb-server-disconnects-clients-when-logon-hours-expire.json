@@ -1,4 +1,5 @@
 {
+  "uid": "4463c78c-ec4f-4e7d-9dd4-04c2beb834f5",
   "name": "Windows SMB Server Disconnects Clients When Logon Hours Expire",
   "description": "Ensures SMB sessions are disconnected when logon hours expire (enableforcedlogoff = 1).",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "8ffe6484-e7cf-49ab-8ffc-ea66d60a1ba2",
   "name": "Windows TLS 1.2 Server Protocol Not Disabled",
+  "former_names": [
+    "Windows TLS12 Or Higher Enabled"
+  ],
   "description": "Ensures TLS 1.2 is not disabled for SCHANNEL server endpoints (no Enabled = 0 and no DisabledByDefault = 1 under the TLS 1.2\\Server key). TLS 1.2 is on by default on supported Windows versions, so a missing key passes. A working TLS 1.2+ baseline is the foundation for later hybrid post-quantum deployments.",
   "active": true,
   "category": "network_security",

@@ -8,6 +8,8 @@ Thank you for helping improve LEA Open Rules. Pull requests with new rules, bug 
    - `platform` is `linux`, `macos`, `windows`, or `multi` when the rule has validation blocks for more than one system.
    - `category` must equal the rule's `category` field.
    - `slug` is the rule name in lower case with every run of non-alphanumeric characters replaced by `-` (`+` becomes `plus`).
+   - Give a new rule a new `uid` (`python3 -c 'import uuid; print(uuid.uuid4())'`). Never change or reuse a uid: LEA deployments track the rule by it.
+   - When you rename a rule, rename its file and add the old name to `former_names`. To withdraw a rule, delete its file and add `{"uid", "name", "reason"}` to `retired.json`.
 2. Follow the conventions described in the README:
    - Collect raw state only: `cat` of files and `/proc` entries, `stat`, `reg query`, read-only status commands. Do not filter on the client with `grep`, `awk`, `sed` or `cut`, and do not use `sudo` in commands. The only accepted `grep` is the service-presence guard: `if cat /proc/*/comm 2>/dev/null | grep -q '^name$'; then cat <config>; else echo 'LEA_RULE_no_service'; fi`.
    - Put all logic in the `expect` block as Python-compatible regular expressions. Prefer `[ \t]` over `\s` inside a line, use word boundaries (`\bname\b`), and anchor keyword checks at the start of a line so commented-out settings do not match.
@@ -18,7 +20,7 @@ Thank you for helping improve LEA Open Rules. Pull requests with new rules, bug 
 4. Add tags: `cat:<category>`, one `env:` tag per system plus `env:host_level`, `risk:low|medium|high`, and framework tags you can justify. Use the tag prefixes listed in the README; add `std:CIS` whenever you add a `std:CIS_Controls_v8:` tag. Do not add CIS Benchmark section numbers.
 5. In the pull request, include sample command output for a passing and a failing host, so reviewers can check the regular expressions.
 
-The `Validate rules` workflow checks every file against `schema/rule.schema.json`, compiles every regular expression, and checks file names, folders and duplicate names. Please make sure it passes.
+The `Validate rules` workflow checks every file against `schema/rule.schema.json`, compiles every regular expression, and checks file names, folders, duplicate names, uids and former names. Please make sure it passes. `python3 tools/build_pack.py --version X` builds a pack from your checkout (add `--key` to sign it).
 
 ## Mapping corrections
 

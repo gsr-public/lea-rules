@@ -1,4 +1,5 @@
 {
+  "uid": "3ac1fa99-c456-44ff-9785-eff3d8030479",
   "name": "Ctrl-Alt-Delete Reboot Disabled",
   "description": "Ensures ctrl-alt-del.target is masked (linked to /dev/null), so a person at the console cannot reboot the host without logging in.",
   "active": true,

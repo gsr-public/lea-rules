@@ -1,4 +1,5 @@
 {
+  "uid": "90d515cf-6273-42c0-8789-9dd3899f8e89",
   "name": "macOS Install Log Retained for 365 Days",
   "description": "Ensures the install log (/etc/asl/com.apple.install) is retained for at least 365 days (ttl=365 or more) and not capped by size (no all_max).",
   "active": true,

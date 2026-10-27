@@ -1,4 +1,5 @@
 {
+  "uid": "66864c35-c436-4a51-bb2b-1dd939c9ad99",
   "name": "Windows Firewall Blocks Inbound by Default",
   "description": "Ensures every Windows Firewall profile uses the BlockInbound default policy, so only explicitly allowed inbound connections are accepted.",
   "active": true,

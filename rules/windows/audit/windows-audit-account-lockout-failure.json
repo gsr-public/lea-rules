@@ -1,4 +1,5 @@
 {
+  "uid": "bb121af1-13ad-439c-9b61-ed3bec34833f",
   "name": "Windows Audit Account Lockout (Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Account Lockout' records failure events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

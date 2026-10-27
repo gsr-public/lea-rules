@@ -1,5 +1,9 @@
 {
+  "uid": "8fa1d76e-25ff-44bc-b6e7-6064ebaaa6a2",
   "name": "Linux Reverse Path Filter All Interfaces",
+  "former_names": [
+    "Reverse Path Filtering Enabled"
+  ],
   "description": "Ensures net.ipv4.conf.all.rp_filter is 1 (strict) or 2 (loose), so packets with source addresses that are not routable back through the receiving interface are dropped. The remedy applies loose mode, which is safe for multi-homed hosts with asymmetric routing.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.all.rp_filter=2",
   "active": true,
   "category": "network_security",

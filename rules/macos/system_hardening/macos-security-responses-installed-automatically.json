@@ -1,4 +1,5 @@
 {
+  "uid": "91d33e67-9f01-4538-ab71-6e01517847cd",
   "name": "macOS Security Responses Installed Automatically",
   "description": "Ensures macOS automatically installs Rapid Security Responses and system data files (CriticalUpdateInstall = 1 in /Library/Preferences/com.apple.SoftwareUpdate). Settings delivered only through an MDM configuration profile are stored elsewhere and are not read by this rule.",
   "active": true,

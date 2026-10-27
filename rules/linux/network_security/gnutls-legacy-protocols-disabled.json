@@ -1,4 +1,5 @@
 {
+  "uid": "08a4ecbb-ac4f-42cf-8725-5e0075d0e48c",
   "name": "GnuTLS Legacy Protocols Disabled",
   "description": "Ensures the GnuTLS system priority configuration excludes legacy protocols SSL 3.0, TLS 1.0, and TLS 1.1, aligning system services using GnuTLS with quantum-resilient protocol baselines.",
   "active": true,

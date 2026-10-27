@@ -1,4 +1,5 @@
 {
+  "uid": "36a6f785-9861-4b20-8ece-5ebb2fd1d6d0",
   "name": "Windows Last Signed-in User Name Not Displayed",
   "description": "Ensures the logon screen does not display the last signed-in user name (DontDisplayLastUserName = 1).",
   "active": true,

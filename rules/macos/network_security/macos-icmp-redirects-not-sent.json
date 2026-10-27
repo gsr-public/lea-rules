@@ -1,5 +1,9 @@
 {
+  "uid": "5044beec-a78a-4d6f-8157-7a12394a255b",
   "name": "macOS ICMP Redirects Not Sent",
+  "former_names": [
+    "macOS IPv4 ICMP Redirects Disabled"
+  ],
   "description": "Ensures the macOS kernel parameter net.inet.ip.redirect is disabled (0), preventing the host from sending ICMP redirect messages that could be abused to modify routing.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet.ip.redirect=0",
   "active": true,
   "category": "network_security",

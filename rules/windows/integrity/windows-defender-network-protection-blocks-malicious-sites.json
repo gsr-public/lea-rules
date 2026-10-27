@@ -1,4 +1,5 @@
 {
+  "uid": "0c9ba7df-701e-45d3-97fb-fae68ce50100",
   "name": "Windows Defender Network Protection Blocks Malicious Sites",
   "description": "Ensures Defender network protection is in block mode (EnableNetworkProtection = 1).",
   "active": true,

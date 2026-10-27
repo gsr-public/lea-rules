@@ -1,4 +1,5 @@
 {
+  "uid": "fb631c8b-3361-49ad-96a5-3d529b297130",
   "name": "CIFS Filesystem Module Not Loaded",
   "description": "Ensures the CIFS/SMB network filesystem module (exclude hosts that mount Windows shares) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

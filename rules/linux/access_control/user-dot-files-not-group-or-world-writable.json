@@ -1,4 +1,5 @@
 {
+  "uid": "04a95dce-5df7-42b1-a93d-642ab08f65bd",
   "name": "User Dot Files Not Group or World Writable",
   "description": "Ensures no hidden file in a home directory (for example .bashrc, .profile, .ssh/authorized_keys parent files) is writable by the group or others, which would let another user run commands as that user. Without root, unreadable home directories are skipped.",
   "active": true,

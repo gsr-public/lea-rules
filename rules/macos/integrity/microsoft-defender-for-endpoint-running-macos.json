@@ -1,5 +1,9 @@
 {
+  "uid": "cc4c6073-e739-4f10-9989-87a8a61da2f6",
   "name": "Microsoft Defender for Endpoint Running (macOS)",
+  "former_names": [
+    "MDATP Daemon Running"
+  ],
   "description": "Verifies that the Microsoft Defender ATP daemon process is running on macOS endpoints.",
   "active": true,
   "category": "integrity",

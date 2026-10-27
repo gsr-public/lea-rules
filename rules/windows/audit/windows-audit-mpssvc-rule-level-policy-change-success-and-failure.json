@@ -1,4 +1,5 @@
 {
+  "uid": "ab5a4a66-73fd-419d-b2f0-6c2db63cb757",
   "name": "Windows Audit MPSSVC Rule-Level Policy Change (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'MPSSVC Rule-Level Policy Change' records success and failure events. Records Windows Firewall rule changes. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

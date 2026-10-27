@@ -1,4 +1,5 @@
 {
+  "uid": "baa0f4fe-df38-485b-9391-54fb57b70a04",
   "name": "Windows SmartScreen for Explorer Set to Warn and Prevent Bypass",
   "description": "Ensures Windows Defender SmartScreen in Explorer blocks unrecognized apps without allowing the user to bypass the warning (ShellSmartScreenLevel = Block).",
   "active": true,

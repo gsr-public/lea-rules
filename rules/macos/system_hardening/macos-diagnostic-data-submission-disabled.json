@@ -1,4 +1,5 @@
 {
+  "uid": "70c1152e-b0de-4101-bed2-42600d40f4d9",
   "name": "macOS Diagnostic Data Submission Disabled",
   "description": "Ensures diagnostic and usage data is not submitted automatically (com.apple.SubmitDiagInfo AutoSubmit = false). Reads the effective value of AutoSubmit in the com.apple.SubmitDiagInfo domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

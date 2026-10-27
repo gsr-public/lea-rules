@@ -1,4 +1,5 @@
 {
+  "uid": "147a368a-7343-4083-9f10-8908d068e279",
   "name": "Windows ASR Rule: Block Office Applications from Creating Executable Content",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Office Applications from Creating Executable Content\" (3b576869-a4ec-4529-8536-b80a7769e899) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

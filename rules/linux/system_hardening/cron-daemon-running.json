@@ -1,4 +1,5 @@
 {
+  "uid": "b57b444a-bfbe-4ec4-99bf-2522817e2726",
   "name": "Cron Daemon Running",
   "description": "Ensures the cron daemon (cron or crond) is running, so scheduled maintenance and security jobs such as log rotation and integrity scans execute.",
   "active": true,

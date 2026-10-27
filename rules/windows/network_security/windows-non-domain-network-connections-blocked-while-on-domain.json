@@ -1,4 +1,5 @@
 {
+  "uid": "02d43261-9468-4cbe-8702-11c6df425304",
   "name": "Windows Non-Domain Network Connections Blocked While on Domain",
   "description": "Ensures the computer cannot connect simultaneously to the domain network and a non-domain network (fBlockNonDomain = 1), preventing it from bridging networks.",
   "active": true,

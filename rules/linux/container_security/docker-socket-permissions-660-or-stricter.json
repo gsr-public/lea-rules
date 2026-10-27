@@ -1,4 +1,5 @@
 {
+  "uid": "829fc48e-c363-499b-9dcb-c14d3182f4f1",
   "name": "Docker Socket Permissions 660 or Stricter",
   "description": "Ensures the Docker control socket /var/run/docker.sock is owned by root with group docker (or root) and mode 660 or stricter; any user who can write to it controls the host as root. Passes with LEA_RULE_no_service when dockerd is not running.",
   "active": true,

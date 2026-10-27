@@ -1,4 +1,5 @@
 {
+  "uid": "973acc2b-2e07-4ec1-b217-fb6e49542f2d",
   "name": "Windows Anonymous SID/Name Translation Disabled",
   "description": "Ensures anonymous users cannot translate SIDs to account names (LSAAnonymousNameLookup = 0), which would help enumerate accounts.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

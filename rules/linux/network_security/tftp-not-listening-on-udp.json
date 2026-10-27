@@ -1,4 +1,5 @@
 {
+  "uid": "698b577b-0745-4a19-b9db-701db47f327c",
   "name": "TFTP Not Listening on UDP",
   "description": "Ensures nothing listens for a TFTP server on UDP port 69, which has no authentication. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
   "active": true,

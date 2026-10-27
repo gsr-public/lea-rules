@@ -1,4 +1,5 @@
 {
+  "uid": "2c82f75b-ee0b-4bfc-8d0e-4b12bb79cc38",
   "name": "Journald Log Compression Not Disabled",
   "description": "Ensures systemd-journald compression is not turned off (Compress=no), so large journal entries are compressed and more history fits in the configured space. Compression is on by default.",
   "active": true,

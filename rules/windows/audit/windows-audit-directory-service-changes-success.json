@@ -1,4 +1,5 @@
 {
+  "uid": "c8e6382e-26c3-474a-870c-a279b75caf96",
   "name": "Windows Audit Directory Service Changes (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Directory Service Changes' records success events (Success and Failure also passes). Relevant on domain controllers. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

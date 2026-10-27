@@ -1,4 +1,5 @@
 {
+  "uid": "0ba381bd-a9ea-4c5d-98a8-763b995d2722",
   "name": "SSH Host-Based Authentication Disabled",
   "description": "Ensures no sshd configuration file enables HostbasedAuthentication, which trusts the client host instead of authenticating the user. The OpenSSH default is no.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

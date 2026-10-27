@@ -1,4 +1,5 @@
 {
+  "uid": "501d385d-8b14-4c62-b734-3a4384f9bc73",
   "name": "Kernel perf_event Access Restricted",
   "description": "Ensures kernel.perf_event_paranoid is 2 or higher, so unprivileged users cannot use performance events to profile the kernel or other users' processes.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.perf_event_paranoid=2",
   "active": true,

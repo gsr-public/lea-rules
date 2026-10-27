@@ -1,4 +1,5 @@
 {
+  "uid": "78fecdee-ebdd-44f8-83c2-6735feb1be14",
   "name": "GFS2 Filesystem Module Not Loaded",
   "description": "Ensures the GFS2 cluster filesystem module (exclude cluster nodes that use GFS2) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

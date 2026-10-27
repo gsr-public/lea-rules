@@ -1,4 +1,5 @@
 {
+  "uid": "15e4760b-2513-4b26-9d5f-cf47205a64f7",
   "name": "Audit Rules Track System Time Changes",
   "description": "Ensures the persistent audit rules record adjtimex, settimeofday or clock_settime system calls, so tampering with the clock (and therefore log timestamps) is logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

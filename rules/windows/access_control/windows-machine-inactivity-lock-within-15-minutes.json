@@ -1,4 +1,5 @@
 {
+  "uid": "0e46c828-e10d-46a1-98b1-bd05dc476088",
   "name": "Windows Machine Inactivity Lock Within 15 Minutes",
   "description": "Ensures the machine inactivity limit locks the session after 1 to 900 seconds (InactivityTimeoutSecs 0x1-0x384).",
   "active": true,

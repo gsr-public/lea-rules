@@ -1,4 +1,5 @@
 {
+  "uid": "4889a458-5dd8-4af2-b475-c4318a0b4588",
   "name": "Windows Point and Print Requires Elevation Prompts",
   "description": "Ensures Point and Print shows warning and elevation prompts for new connections and driver updates (NoWarningNoElevationOnInstall and UpdatePromptSettings not 1 or 2).",
   "active": true,

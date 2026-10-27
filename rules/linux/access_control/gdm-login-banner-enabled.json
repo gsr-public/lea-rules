@@ -1,4 +1,5 @@
 {
+  "uid": "707cdb07-6d36-455f-ae65-0ac774fdb538",
   "name": "GDM Login Banner Enabled",
   "description": "Ensures the GNOME Display Manager shows a login banner (banner-message-enable=true with banner-message-text). Passes with LEA_RULE_no_service when GDM is not installed.",
   "active": true,

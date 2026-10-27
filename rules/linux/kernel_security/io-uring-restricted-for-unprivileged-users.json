@@ -1,4 +1,5 @@
 {
+  "uid": "af947755-8f5c-4d16-9d7f-0ffdf3296480",
   "name": "io_uring Restricted for Unprivileged Users",
   "description": "Ensures kernel.io_uring_disabled is 1 (only members of kernel.io_uring_group may create io_uring instances) or 2 (io_uring disabled). io_uring has been the source of many kernel privilege-escalation vulnerabilities. Kernels older than 6.6 (and distributions that have not backported the switch) do not provide the setting and fail.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.io_uring_disabled=2",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "b1fbe421-c4f3-430b-8a37-3e1ac2b45abb",
   "name": "NFS Server Kernel Module Not Loaded",
   "description": "Ensures the in-kernel NFS server module (exclude NFS servers) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

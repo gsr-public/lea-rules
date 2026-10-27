@@ -1,4 +1,5 @@
 {
+  "uid": "300b016a-5be3-4845-9f9e-95d1205ea175",
   "name": "Boot Loader Configuration Permissions Restricted",
   "description": "Ensures the GRUB configuration (/boot/grub/grub.cfg or /boot/grub2/grub.cfg) is owned by root and readable only by root (mode 600 or 400), so boot parameters and password hashes are not exposed to or changed by other users. stat reads metadata only.",
   "active": true,

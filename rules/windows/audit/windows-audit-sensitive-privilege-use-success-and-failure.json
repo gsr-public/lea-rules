@@ -1,4 +1,5 @@
 {
+  "uid": "5c2cf18f-d5cf-4127-84ab-0733d38dfa7f",
   "name": "Windows Audit Sensitive Privilege Use (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Sensitive Privilege Use' records success and failure events. Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

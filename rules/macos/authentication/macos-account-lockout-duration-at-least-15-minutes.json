@@ -1,4 +1,5 @@
 {
+  "uid": "e46e9357-6026-4119-8e9c-52b6a59f8833",
   "name": "macOS Account Lockout Duration At Least 15 Minutes",
   "description": "Ensures a locked account stays locked for at least 15 minutes (autoEnableInSeconds 900 or more). Read from pwpolicy getaccountpolicies (global policy, including policies installed by an MDM profile).",
   "active": true,

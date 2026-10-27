@@ -1,4 +1,5 @@
 {
+  "uid": "4f77347d-b042-4a9c-bd00-c861c181a67c",
   "name": "Windows .NET Framework Uses System Default TLS Versions (64-bit)",
   "description": "Ensures the 64-bit .NET Framework 4.x lets the operating system choose TLS versions (SystemDefaultTlsVersions = 1), so applications pick up TLS 1.2/1.3 and post-quantum-ready protocol changes without code changes.",
   "active": true,

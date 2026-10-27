@@ -1,4 +1,5 @@
 {
+  "uid": "1e6c149d-13a3-4f34-a3f5-db353c5c7dd3",
   "name": "Windows Link-Layer Topology Discovery Mapper Disabled",
   "description": "Ensures the Link-Layer Topology Discovery Mapper service, which maps the local network, is disabled. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "07e6ec08-b19f-49de-9586-de41775749cb",
   "name": "Windows UAC Automatically Denies Standard User Elevation",
   "description": "Ensures elevation requests from standard users are automatically denied (ConsentPromptBehaviorUser = 0), so users cannot be tricked into entering administrator credentials.",
   "active": true,

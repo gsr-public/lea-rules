@@ -1,4 +1,5 @@
 {
+  "uid": "1e238838-1ddd-4e9e-b94b-8bb076190499",
   "name": "Windows Defender Scans Removable Drives",
   "description": "Ensures Defender scans removable drives during full scans (DisableRemovableDriveScanning = False).",
   "active": true,

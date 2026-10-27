@@ -1,4 +1,5 @@
 {
+  "uid": "d0a04259-f5ab-4bfa-bf3f-cb8aef876482",
   "name": "talk Server Not Running",
   "description": "Ensures the talk/ntalk chat server is not running (process names read from /proc/*/comm).",
   "active": true,

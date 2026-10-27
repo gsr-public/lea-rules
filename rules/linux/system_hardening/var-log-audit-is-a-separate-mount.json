@@ -1,4 +1,5 @@
 {
+  "uid": "10c81463-9ce1-4bb7-928e-181120f44e41",
   "name": "/var/log/audit Is a Separate Mount",
   "description": "Ensures /var/log/audit is a separate filesystem in /proc/mounts, so it can carry restrictive mount options and filling it cannot exhaust other filesystems or stop audit logging.",
   "active": true,

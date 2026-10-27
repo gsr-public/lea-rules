@@ -1,4 +1,5 @@
 {
+  "uid": "649cc021-cc02-44e1-9db4-b59c84e1c810",
   "name": "Linux TCP SYN-ACK Retries 5 or Fewer",
   "description": "Ensures net.ipv4.tcp_synack_retries is between 1 and 5, limiting how long half-open connections from a SYN flood occupy the backlog.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_synack_retries=2",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "7c591861-ce1c-4932-9d45-7b5f9cd960ad",
   "name": "Linux Swappiness Within Controlled Range",
+  "former_names": [
+    "Linux Swappiness Tuned"
+  ],
   "description": "Ensures vm.swappiness is configured within a controlled range (1-60), balancing swap usage to reduce performance degradation.",
   "active": true,
   "category": "system_hardening",

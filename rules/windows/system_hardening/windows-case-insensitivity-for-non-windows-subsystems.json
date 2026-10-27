@@ -1,4 +1,5 @@
 {
+  "uid": "06ff7161-9458-4a85-903a-b8980e6e9e91",
   "name": "Windows Case Insensitivity for Non-Windows Subsystems",
   "description": "Ensures object names are case-insensitive for all subsystems (ObCaseInsensitive = 1), preventing objects that differ only by case from bypassing access checks.",
   "active": true,

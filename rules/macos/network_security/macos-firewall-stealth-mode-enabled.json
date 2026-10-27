@@ -1,4 +1,5 @@
 {
+  "uid": "c968faba-491c-4560-a8a1-1eae6ef0dcea",
   "name": "macOS Firewall Stealth Mode Enabled",
   "description": "Ensures the macOS Application Firewall stealth mode is on, so the host does not answer ICMP pings or connection attempts to closed ports.",
   "active": true,

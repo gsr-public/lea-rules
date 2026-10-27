@@ -1,4 +1,5 @@
 {
+  "uid": "b930ff3a-1ca2-4507-bd5a-055034239a0e",
   "name": "/tmp Is a Separate Mount",
   "description": "Ensures /tmp is a separate filesystem (tmpfs or partition) in /proc/mounts, so it can carry restrictive mount options and cannot exhaust the root filesystem.",
   "active": true,

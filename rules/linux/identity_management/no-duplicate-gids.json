@@ -1,4 +1,5 @@
 {
+  "uid": "56ef6dfd-c252-45b2-818e-59bf7eddb12e",
   "name": "No Duplicate GIDs",
   "description": "Ensures no two groups in /etc/group share a GID.",
   "active": true,

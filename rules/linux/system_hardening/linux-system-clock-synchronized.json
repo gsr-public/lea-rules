@@ -1,5 +1,9 @@
 {
+  "uid": "eb2c6cfc-8ad0-4066-b905-8a25cbb40245",
   "name": "Linux System Clock Synchronized",
+  "former_names": [
+    "Time Synchronization Enabled"
+  ],
   "description": "Verifies that the system is synchronized with a reliable time source (NTP or equivalent).",
   "active": true,
   "category": "system_hardening",

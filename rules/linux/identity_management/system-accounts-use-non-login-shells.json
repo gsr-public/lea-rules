@@ -1,4 +1,5 @@
 {
+  "uid": "e4f644c9-7947-4415-a0ec-464f219b91eb",
   "name": "System Accounts Use Non-Login Shells",
   "description": "Ensures service accounts (UID 1-999, except sync, shutdown and halt) have nologin or false as their shell, so they cannot be used for interactive logins. If the LEA agent runs under a dedicated system account, give that account a non-login shell.",
   "active": true,

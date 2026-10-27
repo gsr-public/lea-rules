@@ -1,4 +1,5 @@
 {
+  "uid": "10093665-957d-4333-9f72-9a1085acc8d6",
   "name": "X Window Server Not Running on Servers",
   "description": "Ensures an X Window System server; assign only to servers without a graphical console is not running (process names read from /proc/*/comm).",
   "active": true,

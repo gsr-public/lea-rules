@@ -1,4 +1,5 @@
 {
+  "uid": "ef163f28-7fea-49ba-94f5-a8c107f0cde6",
   "name": "macOS ICMP Broadcast Echo Disabled",
   "description": "Ensures the macOS kernel parameter net.inet.icmp.bmcastecho is disabled (0), causing the host to ignore broadcast and multicast ICMP echo requests and reducing amplification attack surface.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet.icmp.bmcastecho=0",
   "active": true,

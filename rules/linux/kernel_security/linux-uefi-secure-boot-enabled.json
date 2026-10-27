@@ -1,4 +1,5 @@
 {
+  "uid": "1d8615d1-bb55-4bbf-8c27-b47c79c4bec4",
   "name": "Linux UEFI Secure Boot Enabled",
   "description": "Ensures the host booted with UEFI Secure Boot enabled by reading the SecureBoot EFI variable (last byte 01). Secure Boot restricts boot loaders and kernels to signed images and, on most distributions, enables kernel lockdown. Hosts booted in legacy BIOS mode, or VMs without a virtual TPM/UEFI, have no such variable and fail.",
   "active": true,

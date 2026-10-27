@@ -1,5 +1,9 @@
 {
+  "uid": "051e6c4b-03fa-4654-9c3d-14e46db33689",
   "name": "macOS FileVault Enabled",
+  "former_names": [
+    "Disk Encryption Enabled (macOS)"
+  ],
   "description": "Ensures FileVault full-disk encryption is enabled on the system.",
   "active": true,
   "category": "system_hardening",

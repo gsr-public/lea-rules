@@ -1,4 +1,5 @@
 {
+  "uid": "16b52021-a311-4c48-93cb-14b458a7551e",
   "name": "AppArmor Has No Profiles in Complain Mode",
   "description": "Ensures every loaded AppArmor profile is in enforce mode, not complain mode (which only logs violations).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /sys/kernel/security/apparmor/profiles",
   "active": true,

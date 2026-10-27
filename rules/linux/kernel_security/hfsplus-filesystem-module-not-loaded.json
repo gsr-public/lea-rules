@@ -1,4 +1,5 @@
 {
+  "uid": "b3dbd6db-38d9-4624-ac3f-7861ae2175fd",
   "name": "HFS+ Filesystem Module Not Loaded",
   "description": "Ensures the hfsplus filesystem kernel module is not loaded (checked in /proc/modules). Unused filesystem drivers add kernel attack surface that can be reached by mounting crafted media. A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r hfsplus",
   "active": true,

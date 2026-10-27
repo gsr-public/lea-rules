@@ -1,5 +1,9 @@
 {
+  "uid": "991a0800-7c8a-451b-997f-801131c77977",
   "name": "Windows ICMP Redirects Not Accepted",
+  "former_names": [
+    "Windows ICMP Redirects Disabled"
+  ],
   "description": "Ensures Windows does not accept ICMP redirect messages by enforcing EnableICMPRedirects=0, preventing unintended routing manipulation.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnableICMPRedirects (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
   "category": "network_security",

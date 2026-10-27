@@ -1,4 +1,5 @@
 {
+  "uid": "e809eb44-b580-461d-a517-2adf597149a7",
   "name": "Windows SMB Server Signing Required",
   "description": "Ensures the SMB server always requires packet signing (RequireSecuritySignature = 1), preventing SMB relay and man-in-the-middle tampering.",
   "active": true,

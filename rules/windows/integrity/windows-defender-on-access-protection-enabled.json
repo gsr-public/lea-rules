@@ -1,4 +1,5 @@
 {
+  "uid": "0fa350f9-1f42-428a-b6c4-e21d709b15da",
   "name": "Windows Defender On-Access Protection Enabled",
   "description": "Ensures Defender scans files when they are opened (OnAccessProtectionEnabled = True).",
   "active": true,

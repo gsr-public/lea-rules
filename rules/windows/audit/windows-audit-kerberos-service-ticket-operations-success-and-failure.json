@@ -1,4 +1,5 @@
 {
+  "uid": "3049d3eb-1a33-41f9-8198-aa49b17490be",
   "name": "Windows Audit Kerberos Service Ticket Operations (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'Kerberos Service Ticket Operations' records success and failure events. Relevant on domain controllers; detects Kerberoasting. Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "a02f693c-f9a1-4992-82af-174bee4f38be",
   "name": "File Access Policy Daemon (fapolicyd) Running",
   "description": "Ensures fapolicyd, the RHEL application allow-listing daemon, is running so only trusted binaries and scripts can execute.",
   "active": true,

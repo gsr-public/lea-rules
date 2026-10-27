@@ -1,0 +1,75 @@
+{
+  "uid": "9dc18226-61ad-4537-a3e0-1b9565cf03c1",
+  "name": "Host Name",
+  "description": "Collects the host name for inventory and correlation purposes across Linux, macOS, and Windows.",
+  "active": true,
+  "builtin": true,
+  "category": "metadata",
+  "cycle": 3600,
+  "cmd_info_key": "hostname",
+  "parameters": [],
+  "tags": [
+    "cat:lea_metadata",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ],
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/sys/kernel/hostname",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "scutil --get LocalHostName",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "hostname",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\S.+$"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\S.+$"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?m)^\\S.+$"
+        }
+      }
+    ],
+    "_remedy": [],
+    "system": []
+  }
+}

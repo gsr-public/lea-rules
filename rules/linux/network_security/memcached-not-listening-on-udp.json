@@ -1,4 +1,5 @@
 {
+  "uid": "a605f512-7f22-4beb-89fb-ade1fdb120ca",
   "name": "Memcached Not Listening on UDP",
   "description": "Ensures nothing listens for memcached on UDP port 11211, which has been abused for large DDoS amplification attacks. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
   "active": true,

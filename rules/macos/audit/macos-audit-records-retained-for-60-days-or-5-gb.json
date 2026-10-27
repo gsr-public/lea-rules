@@ -1,4 +1,5 @@
 {
+  "uid": "09a94399-69ee-402c-84d1-48930bcb592a",
   "name": "macOS Audit Records Retained for 60 Days or 5 GB",
   "description": "Ensures audit records are retained until they are at least 60 days old or total 5 GB (expire-after in /etc/security/audit_control).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/security/audit_control",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "facb1058-c522-4215-934e-f4185332e80f",
   "name": "Local Package Signature Verification Enforced (localpkg_gpgcheck)",
   "description": "Ensures dnf/yum verify the signatures of local package files as well (localpkg_gpgcheck=1), so unsigned RPMs copied to the host cannot be installed silently.",
   "active": true,

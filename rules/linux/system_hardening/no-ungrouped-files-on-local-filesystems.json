@@ -1,4 +1,5 @@
 {
+  "uid": "0c91281f-f784-4d06-8ce3-362cbd7b3555",
   "name": "No Ungrouped Files on Local Filesystems",
   "description": "Ensures there are no files or directories on the root filesystem whose group does not exist, which typically indicates leftovers of deleted accounts that a new group could inherit.",
   "active": true,

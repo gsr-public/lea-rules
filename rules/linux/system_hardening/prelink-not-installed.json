@@ -1,4 +1,5 @@
 {
+  "uid": "3497c104-03d0-4206-993d-40e497ebe319",
   "name": "prelink Not Installed",
   "description": "Ensures prelink, which rewrites binaries and breaks file integrity monitoring baselines, is not installed (/usr/sbin/prelink, /usr/bin/prelink absent).",
   "active": true,

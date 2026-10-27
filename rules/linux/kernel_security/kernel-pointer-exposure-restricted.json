@@ -1,5 +1,9 @@
 {
+  "uid": "64ea5be7-2d74-495a-9862-dcb0cadc777a",
   "name": "Kernel Pointer Exposure Restricted",
+  "former_names": [
+    "Linux Kernel Pointer Restriction Enabled"
+  ],
   "description": "Ensures kernel.kptr_restrict is set to a restrictive value (1 or 2), limiting exposure of kernel pointer addresses to unprivileged users.",
   "active": true,
   "category": "kernel_security",

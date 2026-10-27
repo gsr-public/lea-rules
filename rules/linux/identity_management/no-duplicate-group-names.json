@@ -1,4 +1,5 @@
 {
+  "uid": "43ff9274-0d04-4fe2-8258-1ab7569c3bba",
   "name": "No Duplicate Group Names",
   "description": "Ensures every group name in /etc/group is unique.",
   "active": true,

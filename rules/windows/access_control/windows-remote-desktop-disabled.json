@@ -1,5 +1,9 @@
 {
+  "uid": "189c1c54-cfc4-4e24-bf81-87e4c3caec3f",
   "name": "Windows Remote Desktop Disabled",
+  "former_names": [
+    "Remote Desktop Disabled"
+  ],
   "description": "Ensures that the system's Remote Desktop service is disabled (no unapproved remote GUI access).",
   "active": true,
   "category": "access_control",

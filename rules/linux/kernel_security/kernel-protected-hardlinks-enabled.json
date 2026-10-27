@@ -1,5 +1,9 @@
 {
+  "uid": "1c9cd607-1a28-4272-8fea-aba2be8793bd",
   "name": "Kernel Protected Hardlinks Enabled",
+  "former_names": [
+    "Linux Protected Hardlinks Enabled"
+  ],
   "description": "Ensures fs.protected_hardlinks is enabled (1), preventing unprivileged users from creating hardlinks to files they cannot write.",
   "active": true,
   "category": "kernel_security",

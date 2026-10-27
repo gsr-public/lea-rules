@@ -1,4 +1,5 @@
 {
+  "uid": "f3a19ece-6f1d-4104-814d-1d3bc5a08c31",
   "name": "Unprivileged User Namespaces Restricted",
   "description": "Ensures unprivileged users cannot freely create user namespaces, which expose large amounts of kernel attack surface (netfilter, mounts) to unprivileged code. Passes when any of the following holds: kernel.unprivileged_userns_clone = 0 (Debian kernels), kernel.apparmor_restrict_unprivileged_userns = 1 (Ubuntu 23.10+), or user.max_user_namespaces = 0. Rootless containers and browser sandboxes need user namespaces; exclude hosts that run them.",
   "active": true,

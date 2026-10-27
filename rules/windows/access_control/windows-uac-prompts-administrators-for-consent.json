@@ -1,4 +1,5 @@
 {
+  "uid": "7b7fe0e2-478c-4d38-a83f-5b12b441367c",
   "name": "Windows UAC Prompts Administrators for Consent",
   "description": "Ensures User Account Control asks administrators for credentials (1) or consent (2) on the secure desktop for every elevation, instead of silently elevating.",
   "active": true,

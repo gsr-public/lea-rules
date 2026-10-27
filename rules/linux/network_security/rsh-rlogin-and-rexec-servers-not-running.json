@@ -1,4 +1,5 @@
 {
+  "uid": "b3e10241-a398-4b05-b51a-359f82d4bfc0",
   "name": "rsh, rlogin and rexec Servers Not Running",
   "description": "Ensures the legacy BSD remote-shell servers (rshd, rlogind, rexecd) are not running. They authenticate by host trust or clear-text passwords.",
   "active": true,

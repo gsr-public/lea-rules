@@ -1,4 +1,5 @@
 {
+  "uid": "d4674947-4ee4-4ea5-8100-ec62b528e1a3",
   "name": "Windows LSA Protection (RunAsPPL) Enabled",
   "description": "Ensures the Local Security Authority runs as a protected process (RunAsPPL = 1 or 2), blocking credential-dumping tools from reading LSASS memory.",
   "active": true,

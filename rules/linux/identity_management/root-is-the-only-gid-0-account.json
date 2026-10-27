@@ -1,4 +1,5 @@
 {
+  "uid": "f38e26dd-02ed-4f55-934f-e6dea2c54ca8",
   "name": "Root Is the Only GID 0 Account",
   "description": "Ensures no account other than root (and the legacy sync, shutdown, halt and operator accounts) has GID 0 as its primary group, which grants access to files owned by group root.",
   "active": true,

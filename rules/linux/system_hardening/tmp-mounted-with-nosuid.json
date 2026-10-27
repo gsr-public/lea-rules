@@ -1,4 +1,5 @@
 {
+  "uid": "fc6f45fe-a9f1-473d-8fbe-31eab07b1921",
   "name": "/tmp Mounted with nosuid",
   "description": "Ensures /tmp is mounted with the nosuid option, so set-UID and set-GID binaries placed there do not gain privileges. Reads /proc/mounts; fails if /tmp is not a separate mount.",
   "active": true,

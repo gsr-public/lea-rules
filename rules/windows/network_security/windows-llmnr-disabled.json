@@ -1,4 +1,5 @@
 {
+  "uid": "e2c8e9d8-6e21-422d-95e0-f85c9efb8d70",
   "name": "Windows LLMNR Disabled",
   "description": "Ensures Link-Local Multicast Name Resolution is disabled by policy (EnableMulticast = 0). LLMNR responses are easily spoofed to capture NTLM hashes.\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\DNSClient\" /v EnableMulticast (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

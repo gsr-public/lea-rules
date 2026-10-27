@@ -1,4 +1,5 @@
 {
+  "uid": "13dda79f-b3c4-4857-a67e-f7d610acde49",
   "name": "Windows TCP Timestamping Disabled",
   "description": "Ensures TCP timestamps are disabled (Tcp1323Opts = 0), reducing exposure to timestamp-based fingerprinting and uptime disclosure. Note that this value also disables TCP window scaling; review throughput impact before enforcing.",
   "active": true,

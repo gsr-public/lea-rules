@@ -1,4 +1,5 @@
 {
+  "uid": "80a4990e-0325-4fe3-864c-f0a09ccf12fd",
   "name": "macOS Guest Home Folder Removed",
   "description": "Ensures no /Users/Guest home folder remains after the guest account is disabled.",
   "active": true,

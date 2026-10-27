@@ -1,4 +1,5 @@
 {
+  "uid": "d8eaf2e4-a9c9-4840-a31a-5ddf571c2bff",
   "name": "macOS Content Caching Disabled",
   "description": "Ensures the Content Caching service, which shares Apple downloads with other devices on the network, is not activated (AssetCacheManagerUtil status reports Activated: false).",
   "active": true,

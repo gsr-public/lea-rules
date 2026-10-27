@@ -1,4 +1,5 @@
 {
+  "uid": "f436bbaa-38cd-42ac-9f20-d6f0327ea69f",
   "name": "Windows WinRM Client Basic Authentication Disabled",
   "description": "Ensures the WinRM client does not use Basic authentication (AllowBasic = 0), which sends credentials base64-encoded.",
   "active": true,

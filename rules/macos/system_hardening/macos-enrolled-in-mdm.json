@@ -1,4 +1,5 @@
 {
+  "uid": "21dbd059-6cbb-476c-9fdb-ec5891a8eede",
   "name": "macOS Enrolled in MDM",
   "description": "Ensures the Mac is enrolled in a mobile device management service (profiles status reports MDM enrollment: Yes), so configuration profiles and security settings are centrally enforced.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/bin/profiles status -type enrollment",
   "active": true,

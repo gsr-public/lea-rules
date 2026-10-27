@@ -1,4 +1,5 @@
 {
+  "uid": "afca81f3-0579-4ad6-976d-0a1d5ea1b409",
   "name": "Windows Audit Policy Change Events",
   "description": "Ensures the advanced audit policy subcategory 'Audit Policy Change' records success events (Success and Failure also passes). Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

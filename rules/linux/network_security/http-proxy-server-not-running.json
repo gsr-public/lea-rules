@@ -1,4 +1,5 @@
 {
+  "uid": "2b206ab6-35d7-4181-9f62-124989e8b5f4",
   "name": "HTTP Proxy Server Not Running",
   "description": "Ensures the Squid HTTP proxy is not running (process names read from /proc/*/comm).",
   "active": true,

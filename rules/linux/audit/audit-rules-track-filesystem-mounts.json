@@ -1,4 +1,5 @@
 {
+  "uid": "407ebcdb-51ff-48f8-b056-65701e8304ab",
   "name": "Audit Rules Track Filesystem Mounts",
   "description": "Ensures the audit rules record the mount system call, so users copying data to mounted media or mounting hostile filesystems is logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

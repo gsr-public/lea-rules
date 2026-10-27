@@ -1,4 +1,5 @@
 {
+  "uid": "fd64e91f-70ad-44e3-840c-7d695dcbec02",
   "name": "Windows NTLM SSP Client Requires NTLMv2 and 128-bit Encryption",
   "description": "Ensures NTLM SSP clients require NTLMv2 session security and 128-bit encryption (NTLMMinClientSec = 0x20080000).",
   "active": true,

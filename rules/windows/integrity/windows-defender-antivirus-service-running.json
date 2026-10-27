@@ -1,5 +1,9 @@
 {
+  "uid": "56aa7362-7473-4ba3-8d4c-fc00a8a24fe0",
   "name": "Windows Defender Antivirus Service Running",
+  "former_names": [
+    "Anti-Malware Service Running"
+  ],
   "description": "Verifies that the Microsoft Defender Antivirus service (WinDefend) is running. The command calls sc.exe explicitly because in PowerShell 'sc' is an alias of Set-Content.",
   "active": true,
   "category": "integrity",

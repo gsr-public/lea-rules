@@ -1,4 +1,5 @@
 {
+  "uid": "ebfccc68-a9ba-4a19-b53c-035793af0e8c",
   "name": "Root Home Directory Permissions 700 or Stricter",
   "description": "Ensures /root is owned by root and accessible only by root (mode 700 or 750 at most), protecting root's shell history, keys and scripts. stat reads metadata only.",
   "active": true,

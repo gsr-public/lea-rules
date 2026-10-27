@@ -1,4 +1,5 @@
 {
+  "uid": "3a103f0d-fb70-4951-8d26-3f0e258c0e10",
   "name": "Windows Shutdown Without Logon Disabled",
   "description": "Ensures the system cannot be shut down from the logon screen without authenticating (ShutdownWithoutLogon = 0).",
   "active": true,

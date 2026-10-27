@@ -1,5 +1,10 @@
 {
+  "uid": "e3eb608d-524d-49da-a0f5-df2698976881",
   "name": "xinetd Super-Server Not Running",
+  "former_names": [
+    "CIS - xinetd Not Installed",
+    "Xinetd Service Not Running"
+  ],
   "description": "Ensures the legacy xinetd super-server is not running on Linux hosts, reducing exposure to obsolete network services.",
   "active": true,
   "category": "system_hardening",

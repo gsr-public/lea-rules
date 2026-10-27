@@ -1,4 +1,5 @@
 {
+  "uid": "257c173b-fec7-450a-8413-a398da0fa10a",
   "name": "APT Package Lists Refreshed Automatically",
   "description": "Ensures APT refreshes package lists daily (APT::Periodic::Update-Package-Lists \"1\"), so security updates are discovered promptly.",
   "active": true,

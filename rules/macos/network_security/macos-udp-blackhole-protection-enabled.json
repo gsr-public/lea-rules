@@ -1,4 +1,5 @@
 {
+  "uid": "35bee428-ca6e-4150-803d-dec94abe43b7",
   "name": "macOS UDP Blackhole Protection Enabled",
   "description": "Ensures the macOS kernel parameter net.inet.udp.blackhole is enabled (1), causing UDP packets to closed ports to be silently dropped to reduce information disclosure and simple scanning.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/sysctl net.inet.udp.blackhole=1",
   "active": true,

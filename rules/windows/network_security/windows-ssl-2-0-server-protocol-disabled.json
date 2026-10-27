@@ -1,4 +1,5 @@
 {
+  "uid": "9a4f11b3-e9b0-47ec-be46-9eefc01d397f",
   "name": "Windows SSL 2.0 Server Protocol Disabled",
   "description": "Ensures SSL 2.0 is explicitly disabled for SCHANNEL server connections (Enabled = 0). Older Windows versions enable it when the key is absent, so an explicit setting is required.",
   "active": true,

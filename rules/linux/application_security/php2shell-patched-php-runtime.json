@@ -1,0 +1,60 @@
+{
+  "uid": "0bbd2052-3e43-46fc-8902-63842149617e",
+  "name": "PHP2Shell - Patched PHP runtime",
+  "description": "PHP2Shell demo: require PHP 8.5.12 or newer in the 8.5 branch. The demo remedy installs pre-staged official PHP 8.5.12 binaries and reloads PHP-FPM. Only assign this deployment-specific remedy to the isolated PHP demo host.",
+  "active": true,
+  "category": "application_security",
+  "severity": "critical",
+  "cycle": 60,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "php-fpm -v",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "re": {
+          "stdout": "PHP 8\\.5\\.(?:1[2-9]|[2-9][0-9]|[1-9][0-9]{2,})(?:\\s|\\b)"
+        },
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "cp /opt/lea-remediation/php /usr/local/bin/php.lea-new && chmod 755 /usr/local/bin/php.lea-new && mv /usr/local/bin/php.lea-new /usr/local/bin/php && cp /opt/lea-remediation/php-fpm /usr/local/sbin/php-fpm.lea-new && chmod 755 /usr/local/sbin/php-fpm.lea-new && mv /usr/local/sbin/php-fpm.lea-new /usr/local/sbin/php-fpm && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -v",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS_Controls_v8:4.1",
+    "std:NIST_800-53:CM-6",
+    "std:NIST_800-53:SI-2",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC7.1",
+    "std:CMMC:CM.L2-3.4.2",
+    "std:PCI_DSS_4:6.3.3",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:NIST_CSF_2:PR.PS-01",
+    "std:NIST_CSF_2:ID.RA-01",
+    "cat:application_security",
+    "env:linux",
+    "env:host_level",
+    "risk:high"
+  ]
+}

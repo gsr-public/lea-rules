@@ -1,4 +1,5 @@
 {
+  "uid": "b3724376-09e1-4a23-bd24-dc08a6374476",
   "name": "Windows Secure Attention Sequence (Ctrl+Alt+Del) Required",
   "description": "Ensures users must press Ctrl+Alt+Del before logging on (DisableCAD = 0), a sequence that malware cannot intercept to spoof the logon screen.",
   "active": true,

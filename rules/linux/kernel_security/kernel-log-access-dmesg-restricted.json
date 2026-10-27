@@ -1,5 +1,9 @@
 {
+  "uid": "cdbe0078-8d8f-45c3-b552-85ed8d24a710",
   "name": "Kernel Log Access (dmesg) Restricted",
+  "former_names": [
+    "Kernel dmesg Restricted"
+  ],
   "description": "Ensures unprivileged users cannot read the kernel message buffer (kernel.dmesg_restrict = 1), which can leak kernel addresses and hardware details useful to an attacker.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w kernel.dmesg_restrict=1",
   "active": true,
   "category": "kernel_security",

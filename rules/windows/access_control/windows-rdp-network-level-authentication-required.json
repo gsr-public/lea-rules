@@ -1,5 +1,9 @@
 {
+  "uid": "f45f270c-f7d2-4f95-85d5-fa851daf79e2",
   "name": "Windows RDP Network Level Authentication Required",
+  "former_names": [
+    "RDP Network Level Authentication Required"
+  ],
   "description": "Verifies that Remote Desktop connections require Network Level Authentication (NLA) for added security.",
   "active": true,
   "category": "access_control",

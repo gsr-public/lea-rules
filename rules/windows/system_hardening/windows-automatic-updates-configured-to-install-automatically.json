@@ -1,4 +1,5 @@
 {
+  "uid": "e1df1b63-1b77-4fa7-a560-8dd5e6d84ecb",
   "name": "Windows Automatic Updates Configured to Install Automatically",
   "description": "Ensures Automatic Updates downloads and installs updates on a schedule (AUOptions = 4), unless management by another tool (WSUS approval, Intune) is documented.",
   "active": true,

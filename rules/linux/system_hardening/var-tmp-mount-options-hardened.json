@@ -1,4 +1,5 @@
 {
+  "uid": "c5c60d7a-90f6-457c-a0bc-247afee25248",
   "name": "/var/tmp Mount Options Hardened",
   "description": "Ensures that, if /var/tmp is a separate mount, it carries the nodev, nosuid and noexec options. Passes when /var/tmp is part of the root filesystem.",
   "active": true,

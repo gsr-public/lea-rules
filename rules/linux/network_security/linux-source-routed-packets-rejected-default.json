@@ -1,4 +1,5 @@
 {
+  "uid": "b7aa643f-5e84-4e9a-b6ab-3e82a8e57545",
   "name": "Linux Source-Routed Packets Rejected (Default)",
   "description": "Ensures new interfaces do not accept source-routed packets: net.ipv4.conf.default.accept_source_route and net.ipv6.conf.default.accept_source_route must be 0.",
   "active": true,

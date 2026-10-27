@@ -1,4 +1,5 @@
 {
+  "uid": "cc7cb6b3-fbb9-49a6-a8ff-0f9f44cb0601",
   "name": "Windows Infrared Monitor Service Disabled",
   "description": "Ensures the Infrared monitor service is disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "a941f7a7-5275-484b-b694-d3c5ce822e8f",
   "name": "macOS Siri Disabled",
   "description": "Ensures Siri is disabled by configuration profile (com.apple.ace.mdm.allowAssistant allowAssistant = false), so voice queries and on-screen content are not sent to Apple on managed endpoints. Reads the effective value of allowAssistant in the com.apple.applicationaccess domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "4f7f131e-13e3-48dd-8488-02169257875c",
   "name": "Linux TIME-WAIT Assassination Protection (RFC 1337)",
+  "former_names": [
+    "Linux RFC1337 Protection Enabled"
+  ],
   "description": "Ensures the Linux kernel parameter net.ipv4.tcp_rfc1337 is enabled (1) to protect against TIME-WAIT assassination hazards as described in RFC 1337.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.tcp_rfc1337=1",
   "active": true,
   "category": "network_security",

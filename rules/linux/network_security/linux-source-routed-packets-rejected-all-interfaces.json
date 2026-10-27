@@ -1,5 +1,9 @@
 {
+  "uid": "3705e40c-ed30-4233-b27e-d417c4e6748d",
   "name": "Linux Source-Routed Packets Rejected (All Interfaces)",
+  "former_names": [
+    "Source Routing Disabled"
+  ],
   "description": "Ensures IPv4 and IPv6 source-routed packets are not accepted on any interface (net.ipv4.conf.all.accept_source_route = 0 and net.ipv6.conf.all.accept_source_route = 0). Every value printed must be 0; hosts without IPv6 report only the IPv4 value.",
   "active": true,
   "category": "network_security",

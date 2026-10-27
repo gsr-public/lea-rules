@@ -1,4 +1,5 @@
 {
+  "uid": "2762a94c-6ec5-4b2b-96cb-326b85cb9d6a",
   "name": "No Pending Reboot After Package Updates",
   "description": "Ensures the Debian/Ubuntu reboot-required flag (/var/run/reboot-required) is absent, meaning no installed update (kernel, libc, OpenSSL, systemd) is waiting for a reboot to take effect.",
   "active": true,

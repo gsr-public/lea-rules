@@ -1,4 +1,5 @@
 {
+  "uid": "906528c4-031c-4d1c-9458-9be4a431035f",
   "name": "UFW Default Incoming Policy Deny",
   "description": "Ensures the Uncomplicated Firewall drops or rejects unsolicited inbound traffic by default (DEFAULT_INPUT_POLICY in /etc/default/ufw).",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "fb39743a-4625-4199-9a06-265ac55d87c3",
   "name": "GDM Last User List Disabled",
   "description": "Ensures the GNOME login screen does not list user accounts (disable-user-list=true), so account names are not disclosed. Passes with LEA_RULE_no_service when GDM is not installed.",
   "active": true,

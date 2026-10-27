@@ -1,5 +1,9 @@
 {
+  "uid": "24cc3650-19e3-436c-adfa-999d6ff9a807",
   "name": "macOS Application Firewall Enabled",
+  "former_names": [
+    "macOS Firewall Enabled"
+  ],
   "description": "Checks that the macOS Application Firewall is enabled.",
   "active": true,
   "category": "network_security",

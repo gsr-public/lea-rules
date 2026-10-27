@@ -1,4 +1,5 @@
 {
+  "uid": "c1f1bcdc-8acd-486f-8d1a-928c9342d3da",
   "name": "Windows Logon Legal Notice Caption Configured",
   "description": "Ensures the logon legal notice has a title (LegalNoticeCaption).",
   "active": true,

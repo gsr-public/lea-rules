@@ -1,5 +1,9 @@
 {
+  "uid": "4a55acc7-761f-4ea4-8298-1dc8ef2fa827",
   "name": "Windows SMBv1 Client Driver Disabled",
+  "former_names": [
+    "Windows SMBv1 Client Disabled"
+  ],
   "description": "Ensures the SMBv1 client driver (mrxsmb10) is disabled (Start = 4) or removed. The SMBv1 client is controlled by this driver's start type, not by a LanmanWorkstation value. Passes when the driver is not installed, which is the default on current Windows releases.",
   "active": true,
   "category": "network_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "db446d9d-8179-464a-91a7-ced912e18636",
   "name": "Docker no-new-privileges Enabled by Default",
   "description": "Ensures the Docker daemon starts containers with no-new-privileges (\"no-new-privileges\": true), so processes cannot gain privileges through set-UID binaries. Passes with LEA_RULE_no_service when dockerd is not running.",
   "active": true,

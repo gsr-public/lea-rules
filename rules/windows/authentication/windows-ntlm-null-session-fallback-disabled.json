@@ -1,4 +1,5 @@
 {
+  "uid": "fb39c251-d936-4db5-b822-657ac4cf29af",
   "name": "Windows NTLM Null Session Fallback Disabled",
   "description": "Ensures NTLM does not fall back to null sessions (allownullsessionfallback = 0).",
   "active": true,

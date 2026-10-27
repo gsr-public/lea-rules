@@ -1,4 +1,5 @@
 {
+  "uid": "913e765b-bd2a-4ea6-9b79-43b4f6edb40b",
   "name": "BPF JIT Compiler Hardened",
   "description": "Ensures net.core.bpf_jit_harden is 2, so the BPF JIT compiler blinds constants for all users and JIT spraying attacks are mitigated. Passes with LEA_RULE_no_service when the kernel has no BPF JIT.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.core.bpf_jit_harden=2",
   "active": true,

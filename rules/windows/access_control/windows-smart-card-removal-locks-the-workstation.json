@@ -1,4 +1,5 @@
 {
+  "uid": "3ba837f6-c112-4c3a-93b0-76d1d10a9d1a",
   "name": "Windows Smart Card Removal Locks the Workstation",
   "description": "Ensures removing a smart card locks the workstation or forces logoff (ScRemoveOption 1, 2 or 3).",
   "active": true,

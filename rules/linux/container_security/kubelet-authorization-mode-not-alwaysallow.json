@@ -1,4 +1,5 @@
 {
+  "uid": "a1767727-8f62-41c1-bd8a-c17ea91318b3",
   "name": "Kubelet Authorization Mode Not AlwaysAllow",
   "description": "Ensures the kubelet authorizes API requests with Webhook mode (authorization.mode: Webhook) instead of allowing every authenticated request. Reads /var/lib/kubelet/config.yaml; passes with LEA_RULE_no_service when no kubelet is running.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /var/lib/kubelet/config.yaml",
   "active": true,

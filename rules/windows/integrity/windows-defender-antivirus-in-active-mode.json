@@ -1,4 +1,5 @@
 {
+  "uid": "2f5b2a95-0649-4cc7-9cde-c7f4d6c6bf53",
   "name": "Windows Defender Antivirus in Active Mode",
   "description": "Ensures Microsoft Defender Antivirus is the active engine (AMRunningMode = Normal), not passive or disabled. Hosts protected by another primary antivirus product report passive mode and should be excluded.",
   "active": true,

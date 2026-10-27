@@ -1,4 +1,5 @@
 {
+  "uid": "f8dc655b-ee75-405e-b5d6-8831946f1587",
   "name": "Ceph Filesystem Module Not Loaded",
   "description": "Ensures the CephFS network filesystem module (exclude Ceph clients) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
   "active": true,

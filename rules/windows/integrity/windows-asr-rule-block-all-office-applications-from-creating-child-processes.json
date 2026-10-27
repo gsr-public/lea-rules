@@ -1,4 +1,5 @@
 {
+  "uid": "00c7ece5-aff8-4b92-afa0-847f45312a46",
   "name": "Windows ASR Rule: Block All Office Applications from Creating Child Processes",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block All Office Applications from Creating Child Processes\" (d4f940ab-401b-4efc-aadc-ad5f3c50688a) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

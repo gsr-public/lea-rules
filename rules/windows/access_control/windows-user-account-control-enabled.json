@@ -1,5 +1,9 @@
 {
+  "uid": "78c60bd8-4842-44db-aa3b-f1d4577b10e8",
   "name": "Windows User Account Control Enabled",
+  "former_names": [
+    "User Account Control Enabled"
+  ],
   "description": "Verifies that User Account Control (UAC) is enabled to enforce elevation prompts for administrative actions.",
   "active": true,
   "category": "access_control",

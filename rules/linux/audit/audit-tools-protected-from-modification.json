@@ -1,4 +1,5 @@
 {
+  "uid": "37150b3b-7b02-494a-9208-50a597630bfd",
   "name": "Audit Tools Protected from Modification",
   "description": "Ensures the audit tools (auditctl, aureport, ausearch, autrace, auditd, augenrules) are owned by root:root and not writable by group or others, so they cannot be replaced to hide activity. stat reads metadata only.",
   "active": true,

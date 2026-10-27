@@ -1,4 +1,5 @@
 {
+  "uid": "93820f4a-477e-49a1-88c6-4d48d6e8ae99",
   "name": "Windows UAC Prompts on the Secure Desktop",
   "description": "Ensures elevation prompts are shown on the secure desktop (PromptOnSecureDesktop = 1), which other processes cannot spoof or click.",
   "active": true,

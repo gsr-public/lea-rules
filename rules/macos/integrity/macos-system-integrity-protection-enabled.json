@@ -1,4 +1,5 @@
 {
+  "uid": "6a5dfee5-d0b3-4c4e-89be-bc8e8589352c",
   "name": "macOS System Integrity Protection Enabled",
   "description": "Ensures System Integrity Protection is fully enabled (csrutil status), protecting system files, processes and kernel extensions from modification, even by root.",
   "active": true,

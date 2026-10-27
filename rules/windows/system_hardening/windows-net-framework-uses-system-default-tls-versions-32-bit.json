@@ -1,4 +1,5 @@
 {
+  "uid": "d1c8ee30-c9d2-474e-8c8a-0a352e361774",
   "name": "Windows .NET Framework Uses System Default TLS Versions (32-bit)",
   "description": "Ensures the 32-bit .NET Framework 4.x lets the operating system choose TLS versions (SystemDefaultTlsVersions = 1).",
   "active": true,

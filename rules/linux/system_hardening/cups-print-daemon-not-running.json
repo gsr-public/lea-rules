@@ -1,5 +1,10 @@
 {
+  "uid": "95013454-aeb6-4ebc-8db7-e553142f7028",
   "name": "CUPS Print Daemon Not Running",
+  "former_names": [
+    "CIS - CUPS Disabled",
+    "CUPS Service Disabled"
+  ],
   "description": "Ensures the CUPS printing service daemon is not running on Linux hosts where printing is not required.",
   "active": true,
   "category": "system_hardening",

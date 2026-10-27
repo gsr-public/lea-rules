@@ -1,4 +1,5 @@
 {
+  "uid": "081da7b5-3e5f-4bb0-baa5-61c621835275",
   "name": "Mail Transfer Agent Listens Only on Loopback",
   "description": "Ensures nothing listens on TCP port 25 (SMTP) on a non-loopback address, by reading the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (port 0x0019 in state 0A = LISTEN; 0100007F is 127.0.0.1). Hosts that are not mail servers should only accept local mail submission.",
   "active": true,

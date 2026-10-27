@@ -1,5 +1,9 @@
 {
+  "uid": "aa04a297-781e-4260-80ce-06a947dfb0ef",
   "name": "Microsoft Defender for Endpoint Definitions Up to Date",
+  "former_names": [
+    "MDATP Definitions Up To Date"
+  ],
   "description": "Ensures Microsoft Defender for Endpoint reports its definitions status as up_to_date.",
   "active": true,
   "category": "integrity",

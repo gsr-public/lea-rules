@@ -1,5 +1,9 @@
 {
+  "uid": "fe008d2f-e1fd-4e94-b62b-4b65b8ab8584",
   "name": "Kernel Protected Regular Files Enforced",
+  "former_names": [
+    "Linux Protected Regular Files Strict"
+  ],
   "description": "Ensures fs.protected_regular is configured in a restrictive mode (1 or 2), protecting regular files from being opened in unsafe ways.",
   "active": true,
   "category": "kernel_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "dca307b4-915e-4070-b1ef-65bceb52f3f4",
   "name": "FTP Server Not Running",
   "description": "Ensures no FTP server daemon (vsftpd, proftpd, pure-ftpd) is running. FTP transmits credentials and data in clear text; use SFTP instead.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "705ddf3c-ea21-44ec-a9eb-993ce8a8499f",
   "name": "Windows LM Hash Storage Disabled",
   "description": "Ensures Windows does not store LAN Manager hashes of passwords (NoLMHash = 1). LM hashes can be cracked in minutes.\nRequired Windows permission (remedy only): LEA agent account must be allowed to run only: reg add HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa /v NoLMHash (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

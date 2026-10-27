@@ -1,5 +1,9 @@
 {
+  "uid": "97a7edb4-c094-4f01-8cdb-6864cf8c3eae",
   "name": "Offensive Security Tools Not Running",
+  "former_names": [
+    "Blacklisted Offensive Tools Not Running"
+  ],
   "description": "Ensures no known offensive security or password-cracking tools (nmap, sqlmap, hydra, john, hashcat, aircrack-ng, netcat, ncat) are running as processes. On macOS only executable names are listed (ps -axco command) so user names or arguments cannot cause false matches.",
   "active": true,
   "category": "integrity",

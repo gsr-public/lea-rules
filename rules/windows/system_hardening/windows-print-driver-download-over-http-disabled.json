@@ -1,4 +1,5 @@
 {
+  "uid": "b1764333-ac75-4ddc-b0bc-5879ec8b95b8",
   "name": "Windows Print Driver Download over HTTP Disabled",
   "description": "Ensures print drivers are not downloaded over HTTP (DisableWebPnPDownload = 1).",
   "active": true,

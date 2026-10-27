@@ -1,5 +1,9 @@
 {
+  "uid": "c543fead-3f4b-41a6-96af-933f415f3e2c",
   "name": "SUID Program Core Dumps Disabled",
+  "former_names": [
+    "Core Dumps Restricted"
+  ],
   "description": "Ensures set-UID programs cannot produce core dumps (fs.suid_dumpable = 0), which could otherwise expose privileged memory such as password hashes.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w fs.suid_dumpable=0",
   "active": true,
   "category": "system_hardening",

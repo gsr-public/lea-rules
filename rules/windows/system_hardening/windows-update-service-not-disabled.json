@@ -1,4 +1,5 @@
 {
+  "uid": "4b0ab7cc-b5b7-4140-9516-c73e9ac4ed32",
   "name": "Windows Update Service Not Disabled",
   "description": "Ensures the Windows Update service (wuauserv) is not disabled (Start not 4), so security updates can be installed.",
   "active": true,

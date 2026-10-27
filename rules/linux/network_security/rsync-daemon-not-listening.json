@@ -1,4 +1,5 @@
 {
+  "uid": "60ecaab8-d774-4bcb-baa4-d9d030d154b3",
   "name": "rsync Daemon Not Listening",
   "description": "Ensures nothing listens for the rsync daemon on TCP port 873, which transfers data in clear text. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
   "active": true,

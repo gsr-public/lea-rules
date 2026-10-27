@@ -1,4 +1,5 @@
 {
+  "uid": "56f706de-df68-4875-bfdb-88b69a89ce4e",
   "name": "Windows Firewall Logs Dropped Packets (All Profiles)",
   "description": "Ensures Windows Firewall logging of dropped packets is enabled for the Domain, Private and Public profiles.",
   "active": true,

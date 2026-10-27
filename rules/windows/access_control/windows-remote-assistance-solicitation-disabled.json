@@ -1,4 +1,5 @@
 {
+  "uid": "fd2987e4-fb03-40e3-a9b7-d1534e8f0153",
   "name": "Windows Remote Assistance Solicitation Disabled",
   "description": "Ensures users cannot request unsolicited Remote Assistance (fAllowToGetHelp = 0 in policy and in the Remote Assistance configuration).",
   "active": true,

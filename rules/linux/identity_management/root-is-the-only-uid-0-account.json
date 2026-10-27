@@ -1,5 +1,9 @@
 {
+  "uid": "a27d30c8-c71a-4b6d-8636-cc8f7f110895",
   "name": "Root Is the Only UID 0 Account",
+  "former_names": [
+    "No Unauthorized UID 0 Accounts"
+  ],
   "description": "Ensures no user accounts other than 'root' have a UID of 0 (full administrative privileges).",
   "active": true,
   "category": "identity_management",

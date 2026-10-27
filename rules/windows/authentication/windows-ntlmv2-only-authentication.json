@@ -1,4 +1,5 @@
 {
+  "uid": "b63d5048-4855-45a9-90e5-8541823b81de",
   "name": "Windows NTLMv2 Only Authentication",
   "description": "Ensures the LAN Manager authentication level sends NTLMv2 responses only and refuses LM and NTLMv1 (LmCompatibilityLevel = 5).",
   "active": true,

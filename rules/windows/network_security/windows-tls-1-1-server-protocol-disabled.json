@@ -1,4 +1,5 @@
 {
+  "uid": "d6e80035-a01d-49b3-b3fc-208f95765283",
   "name": "Windows TLS 1.1 Server Protocol Disabled",
   "description": "Ensures TLS 1.1 is explicitly disabled for SCHANNEL server endpoints (Enabled = 0). Older Windows versions enable TLS 1.1 when the key is absent, so an explicit setting is required.",
   "active": true,

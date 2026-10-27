@@ -1,4 +1,5 @@
 {
+  "uid": "6eace91e-a7cb-4259-8bb9-b99916d40c9f",
   "name": "Windows ASR Rule: Block Office Applications from Injecting Code into Other Processes",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Office Applications from Injecting Code into Other Processes\" (75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

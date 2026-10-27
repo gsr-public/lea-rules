@@ -1,5 +1,9 @@
 {
+  "uid": "ddfd2ed2-39cf-4364-8af7-714d267c24e4",
   "name": "Linux Encrypted Volumes Configured (crypttab)",
+  "former_names": [
+    "Disk Encryption Enabled (Linux)"
+  ],
   "description": "Checks if the system is configured with at least one encrypted disk/partition (presence of entries in /etc/crypttab). /etc/crypttab is mode 0600 on RHEL-family systems.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/crypttab",
   "active": true,
   "category": "system_hardening",

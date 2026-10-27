@@ -1,4 +1,5 @@
 {
+  "uid": "87e1ea9a-243c-4c6a-bb73-b2ae46ce2e71",
   "name": "nftables Input Chain Default Policy Drop",
   "description": "Ensures the nftables ruleset has a base chain hooked on input with a drop policy, so inbound traffic not explicitly allowed is discarded. For hosts managed directly with nftables.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/nft list ruleset",
   "active": true,

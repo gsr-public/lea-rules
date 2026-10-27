@@ -1,4 +1,5 @@
 {
+  "uid": "5882e7a6-364d-4082-b1e9-837e0f6ba3a4",
   "name": "macOS TFTP Server Disabled",
   "description": "Ensures the TFTP server, which has no authentication, is disabled. Passes when launchd lists \"com.apple.tftpd\" as disabled in the system domain.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/launchctl print-disabled system",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "2c824c33-6c05-4286-8fe9-ed35849a4bc4",
   "name": "Kernel Protected Symlinks Enabled",
+  "former_names": [
+    "Linux Protected Symlinks Enabled"
+  ],
   "description": "Ensures fs.protected_symlinks is enabled (1), restricting unsafe symlink following by unprivileged users.",
   "active": true,
   "category": "kernel_security",

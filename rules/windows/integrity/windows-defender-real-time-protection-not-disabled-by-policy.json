@@ -1,4 +1,5 @@
 {
+  "uid": "6bbebb7b-6f16-4aaa-a228-f0186cd98b5d",
   "name": "Windows Defender Real-Time Protection Not Disabled by Policy",
   "description": "Ensures no policy disables Defender real-time protection (DisableRealtimeMonitoring not 1). An absent value passes.",
   "active": true,

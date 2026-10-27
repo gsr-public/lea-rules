@@ -1,4 +1,5 @@
 {
+  "uid": "aa3acc0c-1039-4f5a-8445-87f805554d55",
   "name": "Windows ASR Rule: Block Process Creations from PSExec and WMI Commands",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Process Creations from PSExec and WMI Commands\" (d1e49aac-8f56-4280-b9ba-993a6d77406c) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

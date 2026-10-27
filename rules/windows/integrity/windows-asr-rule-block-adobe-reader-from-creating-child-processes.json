@@ -1,4 +1,5 @@
 {
+  "uid": "a6ffb115-9fc6-4bf8-9c55-131643f3a887",
   "name": "Windows ASR Rule: Block Adobe Reader from Creating Child Processes",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Adobe Reader from Creating Child Processes\" (7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

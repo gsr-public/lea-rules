@@ -1,4 +1,5 @@
 {
+  "uid": "773b9f88-82f6-4168-8f0c-04165dcc6d0d",
   "name": "macOS System Preferences Require Administrator Authentication",
   "description": "Ensures system-wide settings panes cannot be unlocked by standard users (authorization right system.preferences has shared = false).",
   "active": true,

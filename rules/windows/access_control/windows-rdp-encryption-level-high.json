@@ -1,4 +1,5 @@
 {
+  "uid": "60377e66-b7d5-439a-bd1d-62390e128311",
   "name": "Windows RDP Encryption Level High",
   "description": "Ensures Remote Desktop sessions use the High (3) or FIPS-compliant (4) encryption level.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "0ae08a71-c00a-4e2e-9953-fb6c7e618625",
   "name": "Windows UAC Detects Application Installations",
   "description": "Ensures UAC detects application installations and prompts for elevation (EnableInstallerDetection = 1).",
   "active": true,

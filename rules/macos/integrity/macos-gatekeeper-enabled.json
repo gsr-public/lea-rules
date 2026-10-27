@@ -1,4 +1,5 @@
 {
+  "uid": "45c9c53d-e0d6-4e9f-a2d5-e785b10d8fd8",
   "name": "macOS Gatekeeper Enabled",
   "description": "Ensures Gatekeeper is enabled (spctl --status reports 'assessments enabled'), so only signed and notarized applications run without an explicit override.",
   "active": true,

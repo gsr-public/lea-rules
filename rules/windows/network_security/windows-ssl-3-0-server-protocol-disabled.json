@@ -1,4 +1,5 @@
 {
+  "uid": "f22ffc5c-c985-4f89-be1a-d880384e6b0d",
   "name": "Windows SSL 3.0 Server Protocol Disabled",
   "description": "Ensures SSL 3.0 is explicitly disabled for SCHANNEL server connections (Enabled = 0). Older Windows versions enable it when the key is absent, so an explicit setting is required.",
   "active": true,

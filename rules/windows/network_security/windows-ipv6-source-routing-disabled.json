@@ -1,4 +1,5 @@
 {
+  "uid": "80f9a848-07cf-4ce1-8a1c-9f0565522d8e",
   "name": "Windows IPv6 Source Routing Disabled",
   "description": "Ensures IPv6 source-routed packets are dropped (Tcpip6 DisableIPSourceRouting = 2).\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters\" /v DisableIPSourceRouting (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "701296c3-7d9b-403e-8a5f-cf72f938313e",
   "name": "LDAP Client Tools Not Installed",
   "description": "Ensures the OpenLDAP client tools (exclude directory administration hosts) is not installed (/usr/bin/ldapsearch absent).",
   "active": true,

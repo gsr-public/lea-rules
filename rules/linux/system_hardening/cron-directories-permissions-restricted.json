@@ -1,4 +1,5 @@
 {
+  "uid": "b8932c0f-dab7-4513-8064-e5cfee1c2509",
   "name": "Cron Directories Permissions Restricted",
   "description": "Ensures /etc/cron.hourly, cron.daily, cron.weekly, cron.monthly and cron.d are owned by root:root and accessible only by root (mode 700), so other users cannot read or plant jobs that run as root.",
   "active": true,

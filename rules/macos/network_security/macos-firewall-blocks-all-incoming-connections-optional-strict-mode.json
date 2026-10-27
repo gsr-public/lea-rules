@@ -1,4 +1,5 @@
 {
+  "uid": "fe508c04-0e4f-4845-9ad5-971d4e421418",
   "name": "macOS Firewall Blocks All Incoming Connections (Optional Strict Mode)",
   "description": "Ensures the application firewall blocks all incoming connections except basic services (com.apple.security.firewall BlockAllIncoming = true). Intended for laptops and endpoints that host no services. Reads the effective value of BlockAllIncoming in the com.apple.security.firewall domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

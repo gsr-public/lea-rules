@@ -1,5 +1,10 @@
 {
+  "uid": "b9830215-805c-419f-96d5-d05b0a5d019a",
   "name": "Sudo Installed for Controlled Privilege Escalation",
+  "former_names": [
+    "CIS - Ensure sudo is Installed",
+    "Linux Sudo Installed"
+  ],
   "description": "Ensures the sudo binary is installed on Linux hosts to support controlled privilege escalation.",
   "active": true,
   "category": "access_control",

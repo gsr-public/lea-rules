@@ -1,4 +1,5 @@
 {
+  "uid": "05e64744-1b0d-44e6-8dff-5c7d95f4c016",
   "name": "MongoDB Not Listening on Network Interfaces",
   "description": "Ensures nothing listens for MongoDB on TCP ports 27017-27018 on a non-loopback address; assign to hosts whose database serves only local applications. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

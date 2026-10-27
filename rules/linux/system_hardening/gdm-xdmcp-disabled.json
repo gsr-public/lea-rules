@@ -1,4 +1,5 @@
 {
+  "uid": "bcf140a7-b56a-411a-a536-634285c78f14",
   "name": "GDM XDMCP Disabled",
   "description": "Ensures XDMCP, which sends the login session unencrypted over the network, is not enabled in the GDM [xdmcp] section. Passes with LEA_RULE_no_service when GDM is not installed.",
   "active": true,

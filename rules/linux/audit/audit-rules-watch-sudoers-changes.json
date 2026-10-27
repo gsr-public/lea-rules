@@ -1,4 +1,5 @@
 {
+  "uid": "7e4d3901-aae3-4ed7-9882-1cbda0052ede",
   "name": "Audit Rules Watch Sudoers Changes",
   "description": "Ensures the persistent audit rules record changes to /etc/sudoers or /etc/sudoers.d, which define who may run commands as root.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "4c07a20d-7f1e-40ef-8bb5-8b87542b8cf1",
   "name": "Windows Defender Tamper Protection Enabled",
   "description": "Ensures Microsoft Defender tamper protection is on (Get-MpComputerStatus IsTamperProtected = True), preventing malware or local administrators from silently turning protection off.",
   "active": true,

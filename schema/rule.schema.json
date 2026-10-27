@@ -5,15 +5,19 @@
   "description": "One LEA Platform rule, in the shape accepted by the LEA admin API (POST /api/cmds).",
   "type": "object",
   "additionalProperties": false,
-  "required": ["name", "description", "active", "category", "cycle", "cmd_info_key", "cmd", "parameters", "tags"],
+  "required": ["uid", "name", "description", "active", "category", "cycle", "cmd_info_key", "cmd", "parameters", "tags"],
   "properties": {
+    "uid": {"type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", "description": "Stable identity of the rule across renames and versions. Never change or reuse it."},
     "name": {"type": "string", "minLength": 3, "maxLength": 120},
+    "former_names": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 3}, "description": "Earlier names of this rule; deployments match rules created under these names to this uid."},
     "description": {"type": "string", "minLength": 20},
     "active": {"type": "boolean"},
+    "builtin": {"type": "boolean", "description": "Platform rule (host name, MAC address, package inventory): LEA creates and activates it when the pack is imported, because host metadata and dynamic groups depend on it."},
     "category": {
       "type": "string",
-      "enum": ["access_control", "audit", "authentication", "container_security", "identity_management", "integrity", "kernel_security", "network_security", "password_policy", "system_hardening"]
+      "enum": ["access_control", "application_security", "audit", "authentication", "container_security", "identity_management", "integrity", "inventory", "kernel_security", "metadata", "network_security", "password_policy", "system_hardening"]
     },
+    "severity": {"type": "string", "enum": ["informative", "low", "medium", "high", "critical"]},
     "cycle": {"type": "integer", "minimum": 60},
     "cmd_info_key": {"type": ["string", "null"]},
     "parameters": {"type": "array"},

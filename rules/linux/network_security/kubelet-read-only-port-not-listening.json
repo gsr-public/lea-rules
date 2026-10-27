@@ -1,4 +1,5 @@
 {
+  "uid": "6b15629d-ad16-4c3d-a243-b086f64c7dd0",
   "name": "Kubelet Read-Only Port Not Listening",
   "description": "Ensures nothing listens for the kubelet read-only API on TCP port 10255, which exposes pod and node details without authentication. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
   "active": true,

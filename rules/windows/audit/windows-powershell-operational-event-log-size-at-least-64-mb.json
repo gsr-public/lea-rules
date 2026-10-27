@@ -1,4 +1,5 @@
 {
+  "uid": "cda1036b-d0c3-4e04-90fa-44bc85578808",
   "name": "Windows PowerShell Operational Event Log Size At Least 64 MB",
   "description": "Ensures the Microsoft-Windows-PowerShell/Operational log, which receives script block logging, can grow to at least 65,536 KB.",
   "active": true,

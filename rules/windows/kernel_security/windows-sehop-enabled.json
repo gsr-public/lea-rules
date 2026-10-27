@@ -1,4 +1,5 @@
 {
+  "uid": "4fd040ca-9d37-45f6-ab97-fa9fc710fb79",
   "name": "Windows SEHOP Enabled",
   "description": "Ensures Structured Exception Handler Overwrite Protection is enabled (DisableExceptionChainValidation = 0), blocking a common exploitation technique.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel\" /v DisableExceptionChainValidation (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

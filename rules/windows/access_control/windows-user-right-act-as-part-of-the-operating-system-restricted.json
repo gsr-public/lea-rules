@@ -1,4 +1,5 @@
 {
+  "uid": "a260a8cc-1ccc-4674-8cdc-bfe5bfff5213",
   "name": "Windows User Right 'Act as Part of the Operating System' Restricted",
   "description": "Ensures the user right 'Act as Part of the Operating System' (SeTcbPrivilege) is granted to no one. This right can be abused to take full control of the system or bypass access controls. Allowed principals (SIDs): no one; any other principal fails.\nRequired Windows permission: the LEA agent account must be allowed to run secedit /export /areas SECURITYPOLICY USER_RIGHTS (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

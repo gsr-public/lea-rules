@@ -1,4 +1,5 @@
 {
+  "uid": "fbbe076a-8ab8-4dda-9dae-2767173e7389",
   "name": "SSH Log Level INFO or VERBOSE",
   "description": "Ensures sshd logs at INFO or VERBOSE level (LogLevel not QUIET, FATAL, ERROR or DEBUG), so logins and key fingerprints are recorded. The default is INFO.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

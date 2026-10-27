@@ -1,4 +1,5 @@
 {
+  "uid": "6ac4d3b0-4f04-4f32-9e45-d104e6806715",
   "name": "Domain Controller LDAP Server Signing Required",
   "description": "Ensures the domain controller requires LDAP signing (LDAPServerIntegrity = 2), blocking LDAP relay attacks. Passes with LEA_RULE_no_service on hosts that are not domain controllers.",
   "active": true,

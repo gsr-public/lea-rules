@@ -1,5 +1,10 @@
 {
+  "uid": "46bc336c-0777-4fb2-b5ec-f3501f9630ca",
   "name": "Avahi mDNS Daemon Not Running",
+  "former_names": [
+    "Avahi Service Disabled",
+    "CIS - Avahi Server Disabled"
+  ],
   "description": "Ensures the Avahi/mDNS discovery service is not running on Linux hosts, reducing unnecessary local network exposure.",
   "active": true,
   "category": "system_hardening",

@@ -1,4 +1,5 @@
 {
+  "uid": "f27dd5b5-1032-41fd-9862-65931b4a684a",
   "name": "macOS Guest Account Disabled (Effective Policy)",
   "description": "Ensures the guest account is disabled in the effective login window policy (GuestEnabled = false), including MDM profiles. Reads the effective value of GuestEnabled in the com.apple.loginwindow domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

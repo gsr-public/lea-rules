@@ -1,4 +1,5 @@
 {
+  "uid": "d409e9e4-a4a0-49c3-bd99-5a199733737a",
   "name": "Windows Unauthenticated RPC Clients Restricted",
   "description": "Ensures the RPC runtime rejects unauthenticated RPC clients (RestrictRemoteClients = 1). Intended for workstations; some server roles require exemptions.",
   "active": true,

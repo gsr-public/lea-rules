@@ -1,4 +1,5 @@
 {
+  "uid": "d733a1fe-05cc-4a06-b571-08fe67e50b87",
   "name": "rpcbind Not Running",
   "description": "Ensures rpcbind (the RPC port mapper), which is only needed for NFSv3 and other ONC RPC services and exposes service information is not running (process names read from /proc/*/comm).",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "f0c0352f-0d12-4fe9-90c9-05b855d622a2",
   "name": "Windows Everyone Permissions Not Applied to Anonymous Users",
   "description": "Ensures permissions granted to Everyone do not also apply to anonymous users (EveryoneIncludesAnonymous = 0).",
   "active": true,

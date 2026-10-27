@@ -1,4 +1,5 @@
 {
+  "uid": "4887ed2b-3815-4780-8166-9c52b35f9b0d",
   "name": "Windows UAC Admin Approval Mode for Built-in Administrator",
   "description": "Ensures the built-in Administrator account runs in UAC Admin Approval Mode (FilterAdministratorToken = 1).",
   "active": true,

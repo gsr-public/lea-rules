@@ -1,4 +1,5 @@
 {
+  "uid": "135717f3-546b-4d2e-a04e-86c922302667",
   "name": "SSH GSSAPI Authentication Disabled",
   "description": "Ensures GSSAPI authentication is not enabled (GSSAPIAuthentication yes fails) on hosts that do not use Kerberos single sign-on for SSH, reducing authentication attack surface.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

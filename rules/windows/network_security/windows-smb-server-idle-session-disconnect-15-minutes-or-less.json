@@ -1,4 +1,5 @@
 {
+  "uid": "df37bd36-fcde-4768-97f3-924f941e203b",
   "name": "Windows SMB Server Idle Session Disconnect 15 Minutes or Less",
   "description": "Ensures idle SMB sessions are suspended after at most 15 minutes (AutoDisconnect 0-15).",
   "active": true,

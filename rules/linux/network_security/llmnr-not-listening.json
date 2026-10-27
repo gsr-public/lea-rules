@@ -1,4 +1,5 @@
 {
+  "uid": "e00dac39-d134-4f49-bc93-aeb0d89bf569",
   "name": "LLMNR Not Listening",
   "description": "Ensures nothing listens for LLMNR on UDP port 5355; LLMNR responses are easily spoofed to capture credentials. Reads the raw kernel socket tables /proc/net/udp and /proc/net/udp6 (state 07 = unconnected UDP socket).",
   "active": true,

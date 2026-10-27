@@ -1,4 +1,5 @@
 {
+  "uid": "cef4a3f5-5e20-4c00-908e-1afa60af443c",
   "name": "Audit Backlog Limit At Least 8192",
   "description": "Ensures the kernel command line sets audit_backlog_limit to 8192 or more, so audit events generated during boot, before auditd starts, are not dropped from the kernel queue.",
   "active": true,

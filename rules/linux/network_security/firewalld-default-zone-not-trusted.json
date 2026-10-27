@@ -1,4 +1,5 @@
 {
+  "uid": "ad900a76-504b-446d-9c68-76a5ba8034b2",
   "name": "firewalld Default Zone Not trusted",
   "description": "Ensures the firewalld default zone is not \"trusted\", which accepts all traffic.",
   "active": true,

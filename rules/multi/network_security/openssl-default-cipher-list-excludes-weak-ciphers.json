@@ -1,5 +1,9 @@
 {
+  "uid": "5cbe92ff-bb90-4b52-a302-f59a9b6506b2",
   "name": "OpenSSL Default Cipher List Excludes Weak Ciphers",
+  "former_names": [
+    "OpenSSL Weak Ciphers Disabled"
+  ],
   "description": "Ensures the system OpenSSL cipher list does not include legacy and quantum-weak ciphers such as RC4, DES, 3DES, EXPORT, NULL, or MD5-based suites, reducing harvest-now-decrypt-later exposure and preparing for post-quantum–ready cipher configurations.",
   "active": true,
   "category": "network_security",

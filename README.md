@@ -1,6 +1,6 @@
 # LEA Open Rules
 
-An open library of 769 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
+An open library of 781 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
 
 - Website: https://gsr-lea.com
 - Repository: https://github.com/gsr-public/lea-rules
@@ -13,7 +13,9 @@ LEA is a self-hosted compliance monitoring platform by GSR. Lightweight agents o
 
 ```
 rules/<platform>/<category>/<rule-slug>.json   one rule per file
+retired.json                                   rules withdrawn from the library (uid, name, reason)
 schema/rule.schema.json                        JSON Schema for a rule file
+tools/build_pack.py                            builds a signed LEA rule pack from rules/
 MAPPINGS.md                                    framework control -> rules
 CHANGELOG.md                                   release notes, renames, fixes
 .github/workflows/validate.yml                 schema and regex validation
@@ -25,6 +27,7 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
 
 ```json
 {
+  "uid": "1b0e5d0c-6f7e-4a59-9a43-2c1f0d7b8e21",
   "name": "SSH Root Login Disabled",
   "description": "What is checked, why it matters, and the minimum privilege needed.",
   "active": true,
@@ -50,16 +53,20 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
 
 | Field | Meaning |
 |---|---|
+| `uid` | Stable identity of the rule (UUID). It never changes, also when the rule is renamed; LEA deployments track versions and updates by it. |
 | `name` | Unique, human-readable rule name. The file name is its kebab-case slug. |
+| `former_names` | Optional: earlier names of the rule. A deployment that created the rule under such a name is matched to it on import. |
+| `builtin` | Optional: platform rule (host name, MAC address, package inventory) that LEA creates and activates when the pack is imported. |
+| `severity` | Optional: `informative`, `low`, `medium`, `high` or `critical`; otherwise LEA derives it from the `risk:` tag. |
 | `description` | What the rule verifies and why. Rules that need elevated rights end with a `Required sudo rule` or `Required Windows permission` line naming the exact command to delegate. |
 | `active` | Whether the rule is scheduled after import. |
-| `category` | Functional group; the LEA import flow creates one client group per category. |
+| `category` | Functional group (also used to browse the library in the LEA console). |
 | `cycle` | Seconds between evaluations (3600 by default; 43200 for expensive filesystem scans and signature-age checks). |
-| `cmd_info_key` | Reserved for LEA metadata collectors; always `null` in this library. |
+| `cmd_info_key` | Key under which LEA stores the output in the host's metadata (`cmd_info`, used by dynamic groups); `null` except for the built-in platform rules. |
 | `cmd.validation` | Commands the agent runs. Each block has a `command`, a `system` filter (`Linux`, `Darwin`, `Windows`, compared with the agent's `uname` system) and a `distribution` filter. Linux and macOS commands run through `sh -c`; Windows commands run through PowerShell. When several blocks apply, their outputs are concatenated with newlines. |
 | `cmd.expect` | Server-side checks on the raw output. `re` must match, `not_re` must not match (per stream: `stdout`, `stderr`), `returncode` must equal the exit code, `md5` must equal the stdout hash, and `function` calls a built-in LEA server check. All applicable blocks must pass. |
 | `cmd._remedy` | Remediation commands that correct the setting, shipped disabled (see [Remediation is disabled by default](#remediation-is-disabled-by-default)). Empty when no safe, idempotent, non-interactive fix exists. |
-| `parameters` | Rule parameters; empty in this library. |
+| `parameters` | Rule parameters: `%name%` placeholders in commands with default values (`[{"name", "value", "type": "internal"}]`); sites tune the values per rule in LEA without forking the definition. |
 | `tags` | `std:` framework mappings, `cat:` category, `env:` operating systems, `risk:` `low`/`medium`/`high`, and `priv:required` when the agent needs elevated rights. |
 
 Conventions followed by every rule:
@@ -88,14 +95,23 @@ To enable remediation for a rule, rename `_remedy` to `remedy` in that rule befo
 
 ## Using the rules with LEA
 
-Rules are imported through the LEA admin API:
+The library ships to LEA deployments as a signed rule pack: `lea-rules-<version>.tgz` (the `rules/` tree plus a
+`manifest.json` with every rule's uid, path and sha256, and the retired uids), a detached ed25519 signature
+(`.tgz.sig`) and a `latest.json` feed. Every LEA release bundles the current pack; newer packs can be imported in the
+console (Settings → Rule sources), with `lea rules import`, or with `./lea_rules.sh import` on air-gapped servers, and
+connected servers can watch the feed. The server verifies the signature with GSR's public key before reading the pack.
 
-1. Authenticate: `POST /lea/authenticate_api` with HTTP basic authentication returns a bearer token.
-2. Find or create a client group per category: `GET /api/client_groups?name=eq.<Group Name>`, otherwise create it.
-3. For each rule file, look up an existing rule by `name`. `POST /api/cmds` to create a new rule, `PATCH /api/cmds?id=eq.<id>` to update an existing one. Remediation stays disabled because the commands are stored under `_remedy`; rename it to `remedy` only for rules where you intend to enable remediation.
-4. Add the created rule IDs to the group (the group's `cmd_id` list) and assign hosts to the group.
+Importing never changes running rules. New rules wait in the console's rule library (Rules → Add from library), changed
+ones in Rules → Updates, where an administrator applies them to all hosts or to new hosts only (hosts already running a
+rule keep their version until promoted). Built-in platform rules (`builtin`) are created and activated on import.
 
-The LEA distribution includes a provisioning script that implements this flow. Review rule descriptions before import: some rules are intended only for a subset of hosts (for example container-only rules, IPv6 forwarding on container hosts, SquashFS on Ubuntu hosts with snaps, UDF on Azure VMs, Kernel FIPS Mode Enabled outside FIPS scope).
+To run your own rules next to (or instead of) these, keep them in a repository with the same layout, build packs with
+`python3 tools/build_pack.py --version 1.0.0 --key your-ed25519.key` (`openssl genpkey -algorithm ed25519 -out your-ed25519.key`)
+and add a rule source with your public key in LEA (the `.sig` file prints it as `public_key`).
+
+Review rule descriptions before you add rules to a group: some rules are intended only for a subset of hosts (for
+example container-only rules, IPv6 forwarding on container hosts, SquashFS on Ubuntu hosts with snaps, UDF on Azure VMs,
+Kernel FIPS Mode Enabled outside FIPS scope).
 
 ### Evidence report prefixes
 
@@ -118,49 +134,52 @@ Rules by platform folder:
 
 | Platform | Rules |
 |---|---|
-| linux | 347 |
+| linux | 356 |
 | macos | 78 |
 | windows | 299 |
-| multi | 45 |
-| **Total** | **769** |
+| multi | 48 |
+| **Total** | **781** |
 
-Rules that run on each operating system (multi-platform rules counted once per system): Linux 391, macOS 119, Windows 308.
+Rules that run on each operating system (multi-platform rules counted once per system): Linux 403, macOS 121, Windows 311.
 
 Rules by category:
 
 | Category | linux | macos | windows | multi | Total |
 |---|---|---|---|---|---|
 | access_control | 23 | 14 | 69 | 15 | 121 |
+| application_security | 4 | 0 | 0 | 0 | 4 |
 | audit | 54 | 5 | 49 | 2 | 110 |
 | authentication | 6 | 6 | 27 | 10 | 49 |
 | container_security | 15 | 0 | 0 | 0 | 15 |
 | identity_management | 16 | 5 | 3 | 0 | 24 |
 | integrity | 8 | 7 | 39 | 3 | 57 |
-| kernel_security | 48 | 1 | 6 | 0 | 55 |
+| inventory | 0 | 0 | 0 | 1 | 1 |
+| kernel_security | 49 | 1 | 6 | 0 | 56 |
+| metadata | 0 | 0 | 0 | 2 | 2 |
 | network_security | 87 | 22 | 54 | 8 | 171 |
 | password_policy | 17 | 5 | 7 | 4 | 33 |
-| system_hardening | 73 | 13 | 45 | 3 | 134 |
-| **Total** | **347** | **78** | **299** | **45** | **769** |
+| system_hardening | 77 | 13 | 45 | 3 | 138 |
+| **Total** | **356** | **78** | **299** | **48** | **781** |
 
 Rules by framework (a rule is counted once per framework, however many controls it maps to):
 
 | Framework | Tag prefix | Rules | Distinct controls |
 |---|---|---|---|
-| CIS Controls v8 | `std:CIS_Controls_v8:` | 688 | 35 safeguards |
-| CIS (product report tag) | `std:CIS` | 693 | - |
-| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 769 | 46 |
-| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 767 | 22 (2022 IDs) |
-| SOC 2 | `std:SOC2:` | 759 | 10 |
-| CMMC 2.0 Level 2 | `std:CMMC:` | 755 | 39 |
-| PCI DSS 4.0 | `std:PCI_DSS_4:` | 721 | 39 |
-| NIS2 Art. 21(2) | `std:NIS2:` | 749 | 7 |
-| DORA | `std:DORA:` | 752 | 2 |
-| HIPAA Security Rule | `std:HIPAA:` | 763 | 16 |
-| NIST CSF 2.0 | `std:NIST_CSF_2:` | 763 | 16 |
-| ASD Essential Eight | `std:ASD_E8:` | 58 | 6 |
+| CIS Controls v8 | `std:CIS_Controls_v8:` | 697 | 35 safeguards |
+| CIS (product report tag) | `std:CIS` | 697 | - |
+| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 778 | 46 |
+| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 776 | 22 (2022 IDs) |
+| SOC 2 | `std:SOC2:` | 768 | 10 |
+| CMMC 2.0 Level 2 | `std:CMMC:` | 764 | 39 |
+| PCI DSS 4.0 | `std:PCI_DSS_4:` | 730 | 39 |
+| NIS2 Art. 21(2) | `std:NIS2:` | 758 | 7 |
+| DORA | `std:DORA:` | 761 | 2 |
+| HIPAA Security Rule | `std:HIPAA:` | 768 | 16 |
+| NIST CSF 2.0 | `std:NIST_CSF_2:` | 772 | 16 |
+| ASD Essential Eight | `std:ASD_E8:` | 59 | 6 |
 | Post-quantum readiness | `std:NIST_PQC:` | 31 | - |
 
-Other facts: 104 rules include a remedy under `_remedy` (47 Linux, 6 macOS, 51 Windows); 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated).
+Other facts: 109 rules include a remedy under `_remedy`; 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated); 3 rules are built-in platform rules (`builtin`).
 
 See [MAPPINGS.md](MAPPINGS.md) for the full control-to-rule mapping.
 

@@ -1,4 +1,5 @@
 {
+  "uid": "32f8828f-2095-44aa-92d7-1294ae080368",
   "name": "Windows PowerShell Module Logging Enabled",
   "description": "Ensures PowerShell module logging is enabled by policy, recording pipeline execution details. Module names to log are configured separately under the ModuleNames subkey.",
   "active": true,

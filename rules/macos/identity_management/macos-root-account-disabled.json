@@ -1,4 +1,5 @@
 {
+  "uid": "4208a56a-4962-4843-b0fc-4824700313a1",
   "name": "macOS Root Account Disabled",
   "description": "Ensures the root account has no authentication authority (directory services report no AuthenticationAuthority for root), so nobody can log in as root.",
   "active": true,

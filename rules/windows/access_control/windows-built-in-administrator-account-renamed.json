@@ -1,5 +1,9 @@
 {
+  "uid": "b4808a75-b64c-4b47-aa67-388a1130474f",
   "name": "Windows Built-in Administrator Account Renamed",
+  "former_names": [
+    "Administrator Account Renamed"
+  ],
   "description": "Ensures the built-in Administrator account has been renamed from the default 'Administrator'.",
   "active": true,
   "category": "access_control",

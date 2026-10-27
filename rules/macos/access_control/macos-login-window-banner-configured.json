@@ -1,4 +1,5 @@
 {
+  "uid": "c65042b8-f84d-48a6-b91c-40cc4fb45868",
   "name": "macOS Login Window Banner Configured",
   "description": "Ensures the login window displays a policy banner (LoginwindowText is set). Reads the effective value of LoginwindowText in the com.apple.loginwindow domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

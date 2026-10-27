@@ -1,4 +1,5 @@
 {
+  "uid": "05f3c481-b6d9-41c1-a072-fe86fec609b0",
   "name": "Windows Audit Security State Change (Success)",
   "description": "Ensures the advanced audit policy subcategory 'Security State Change' records success events (Success and Failure also passes). Parsed from the English-language auditpol output. Enable 'Audit: Force audit policy subcategory settings to override audit policy category settings' so subcategory policy takes effect.\nRequired Windows permission: the LEA agent account must be allowed to run auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

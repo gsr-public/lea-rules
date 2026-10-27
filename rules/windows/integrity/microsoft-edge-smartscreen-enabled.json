@@ -1,4 +1,5 @@
 {
+  "uid": "ad838280-1f86-41ab-8fc6-224a6fd4cb67",
   "name": "Microsoft Edge SmartScreen Enabled",
   "description": "Ensures Microsoft Defender SmartScreen is enabled in Microsoft Edge by policy (SmartScreenEnabled = 1).",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "900e1d77-3b3f-42e4-82ef-f111d6c0bb6b",
   "name": "Windows IIS Web Services Disabled on Non-Web Hosts",
   "description": "Ensures the IIS World Wide Web Publishing, IIS Admin and Web Management services are disabled or not installed on hosts that are not web servers. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

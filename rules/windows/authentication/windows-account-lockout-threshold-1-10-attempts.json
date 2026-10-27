@@ -1,5 +1,9 @@
 {
+  "uid": "c15f7e95-56e9-4edf-bd36-beffe1d7b62a",
   "name": "Windows Account Lockout Threshold 1-10 Attempts",
+  "former_names": [
+    "Account Lockout Policy Configured"
+  ],
   "description": "Ensures local accounts are locked out after no more than 10 failed logon attempts (PCI DSS 4.0 requirement 8.3.4 sets 10 as the maximum). A threshold of 'Never' fails.",
   "active": true,
   "category": "authentication",

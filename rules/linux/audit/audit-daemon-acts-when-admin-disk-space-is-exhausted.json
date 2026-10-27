@@ -1,4 +1,5 @@
 {
+  "uid": "dc04375b-6e51-46b6-88ee-f0489b9b026b",
   "name": "Audit Daemon Acts When Admin Disk Space Is Exhausted",
   "description": "Ensures admin_space_left_action is single or halt, so the system stops processing rather than continuing without an audit trail.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
   "active": true,

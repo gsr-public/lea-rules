@@ -1,4 +1,5 @@
 {
+  "uid": "b20a112a-dbf3-4e01-8fa8-4e6ad2bcdf78",
   "name": "Windows Defender Behavior Monitoring Enabled",
   "description": "Ensures Defender behavior monitoring is on (BehaviorMonitorEnabled = True).",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "c9c8ceaa-e84a-40cd-a4ae-302666229c22",
   "name": "Windows SSDP and UPnP Services Disabled",
   "description": "Ensures SSDP Discovery and UPnP Device Host are disabled, removing network device discovery services that expose the host. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

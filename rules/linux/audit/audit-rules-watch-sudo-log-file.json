@@ -1,4 +1,5 @@
 {
+  "uid": "c4a10bb7-c8dd-4711-83cd-c3897b5404fb",
   "name": "Audit Rules Watch Sudo Log File",
   "description": "Ensures the audit rules record changes to the sudo log file (/var/log/sudo.log or similar), so attempts to erase sudo activity are logged.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

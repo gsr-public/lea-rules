@@ -1,4 +1,5 @@
 {
+  "uid": "1f2b6a5d-b51e-4219-9648-3f03d4c03444",
   "name": "TIPC Protocol Module Not Loaded",
   "description": "Ensures the Transparent Inter-Process Communication (TIPC) network protocol module is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r tipc",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "b0bda4f5-85f0-4c0e-8267-c33ad64a4269",
   "name": "Audit Log File Size Limit At Least 20 MB",
+  "former_names": [
+    "Audit Log Storage Size Configured"
+  ],
   "description": "Ensures the audit log file size limit (max_log_file in /etc/audit/auditd.conf) is at least 20 MB so audit records are not lost to premature rotation.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/auditd.conf",
   "active": true,
   "category": "audit",

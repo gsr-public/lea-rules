@@ -1,4 +1,5 @@
 {
+  "uid": "9664f302-9457-4d08-95a6-d07797cbc0d6",
   "name": "Windows SMB Client Signing Required",
   "description": "Ensures the SMB client always requires packet signing (RequireSecuritySignature = 1) when connecting to file servers.",
   "active": true,

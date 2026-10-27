@@ -1,4 +1,5 @@
 {
+  "uid": "78cd4d5d-e5e0-4c32-badd-57fe72e76cac",
   "name": "Windows Telnet Service Disabled",
   "description": "Ensures the legacy Telnet server is disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

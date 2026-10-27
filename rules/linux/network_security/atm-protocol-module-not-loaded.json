@@ -1,4 +1,5 @@
 {
+  "uid": "3d01b5c3-0640-4d71-872e-9010e2107919",
   "name": "ATM Protocol Module Not Loaded",
   "description": "Ensures the Asynchronous Transfer Mode (ATM) network protocol module is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r atm",
   "active": true,

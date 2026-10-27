@@ -1,4 +1,5 @@
 {
+  "uid": "3ef616bc-ae94-4439-ad42-9c8353ed4276",
   "name": "Linux IPv6 Forwarding Disabled",
   "description": "Ensures IPv6 forwarding is disabled (net.ipv6.conf.all.forwarding = 0) so the host does not route IPv6 traffic. Passes with LEA_RULE_no_service when IPv6 is not available. Container hosts and routers legitimately enable forwarding; exclude them from this rule's group.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "f59814e8-4a09-4023-ad13-6a6bbf40693d",
   "name": "nologin Not Listed as a Valid Shell",
   "description": "Ensures /etc/shells does not list nologin, so tools that check /etc/shells (for example FTP daemons and chsh) do not treat locked service accounts as having a valid login shell.",
   "active": true,

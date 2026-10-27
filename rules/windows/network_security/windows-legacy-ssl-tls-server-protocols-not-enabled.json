@@ -1,5 +1,9 @@
 {
+  "uid": "f06da162-9658-4fc3-8c37-8818522f0e5c",
   "name": "Windows Legacy SSL/TLS Server Protocols Not Enabled",
+  "former_names": [
+    "Windows Legacy TLS Protocols Disabled"
+  ],
   "description": "Ensures SSL 2.0, SSL 3.0, TLS 1.0 and TLS 1.1 are not explicitly enabled for SCHANNEL server endpoints. Each pattern only inspects the values of its own registry key, so settings of other protocol keys cannot cause false results.",
   "active": true,
   "category": "network_security",

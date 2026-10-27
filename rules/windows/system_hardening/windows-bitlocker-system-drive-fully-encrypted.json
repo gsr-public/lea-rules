@@ -1,5 +1,9 @@
 {
+  "uid": "f35b0cf0-5ecf-43a3-a32c-1fbfbe1420d7",
   "name": "Windows BitLocker System Drive Fully Encrypted",
+  "former_names": [
+    "Disk Encryption Enabled (Windows)"
+  ],
   "description": "Checks that BitLocker reports the system drive (C:) as 100% encrypted.\nRequired Windows permission: LEA agent account must be allowed to run only: manage-bde -status C: (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
   "category": "system_hardening",

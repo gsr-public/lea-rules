@@ -1,4 +1,5 @@
 {
+  "uid": "021d8e4b-00ef-4979-b73c-21f7e5ec21af",
   "name": "Windows Audit User Account Management (Success and Failure)",
   "description": "Ensures the advanced audit policy subcategory 'User Account Management' records success and failure events. Parsed from the English-language auditpol output.\nRequired Windows permission: LEA agent account must be allowed to run only: auditpol /get /category:* (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

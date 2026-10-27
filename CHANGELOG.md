@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.2.0 - 2026-10-27
+
+781 rules, distributed as a signed LEA rule pack.
+
+### Added
+
+- `uid` on every rule: a stable identity (UUID) that LEA deployments use to track versions and updates across renames. The schema requires it and the validate workflow rejects duplicate uids.
+- `former_names`: earlier names of renamed rules, so deployments that created a rule under an older name (for example from the LEA server's former built-in rule set) are matched to it. Added to the rules that the LEA server previously shipped under other names.
+- `builtin` and the categories `metadata` and `inventory`: the LEA platform rules Host Name, MAC Address (feed host metadata used by dynamic groups) and Package Inventory Snapshot are now part of the library (`rules/multi/metadata/`, `rules/multi/inventory/`) and are created and activated when the pack is imported.
+- Category `application_security` with four PHP2Shell demo-runtime rules (CVE-2026-109618/109619): patched PHP runtime, fatal error backtraces disabled, session upload progress disabled, memory limit with cgroup cap.
+- Optional `severity` field.
+- `tools/build_pack.py`: builds `lea-rules-<version>.tgz` with `manifest.json`, an ed25519 signature and `latest.json`; `retired.json` lists withdrawn rules.
+
+### Changed
+
+- The library is now the only rule source of the LEA Platform; the server's former `provision/rules` set was merged into it (its rules were already exported here with fixes, under the names listed in `former_names`).
+- `vhost-module-not-loaded.json` renamed to match its rule name (`vhost-kernel-module-not-loaded-cve-2026-74580.json`).
+
+
 ## v1.1.0 - 2026-10-14
 
 769 rules: 525 new rules, fixes to existing rules and three additional framework mappings.

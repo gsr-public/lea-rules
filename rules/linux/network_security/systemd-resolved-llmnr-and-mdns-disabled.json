@@ -1,4 +1,5 @@
 {
+  "uid": "5b5c7fcb-9dc4-4439-8f04-488734ec3855",
   "name": "systemd-resolved LLMNR and mDNS Disabled",
   "description": "Ensures systemd-resolved does not answer or send LLMNR and multicast DNS (LLMNR=no and MulticastDNS=no), which are easily spoofed to capture credentials. Passes with LEA_RULE_no_service when systemd-resolved is not running.",
   "active": true,

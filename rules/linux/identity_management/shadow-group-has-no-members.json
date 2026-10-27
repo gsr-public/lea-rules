@@ -1,4 +1,5 @@
 {
+  "uid": "88d898b2-a5a3-4bad-827b-8fb679f0643e",
   "name": "Shadow Group Has No Members",
   "description": "Ensures the shadow group, which can read /etc/shadow on Debian-family systems, has no member accounts. Passes on systems without a shadow group.",
   "active": true,

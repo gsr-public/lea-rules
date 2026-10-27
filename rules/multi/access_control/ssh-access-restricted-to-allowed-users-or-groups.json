@@ -1,4 +1,5 @@
 {
+  "uid": "e883bc2a-5f12-4e64-bb58-47d91df603ce",
   "name": "SSH Access Restricted to Allowed Users or Groups",
   "description": "Ensures sshd limits which accounts may log in with AllowUsers, AllowGroups, DenyUsers or DenyGroups.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

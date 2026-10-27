@@ -1,4 +1,5 @@
 {
+  "uid": "f45751f3-5cbc-4613-a210-29d1dc404807",
   "name": "Audit Rules Track chsh Execution",
   "description": "Ensures the audit rules record every execution of /usr/bin/chsh (-a always,exit -F path=/usr/bin/chsh -F perm=x or -w /usr/bin/chsh -p x), giving an independent record of privileged command use.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

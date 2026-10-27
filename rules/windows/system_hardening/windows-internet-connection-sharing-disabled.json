@@ -1,4 +1,5 @@
 {
+  "uid": "3b75733f-24c3-49de-927f-5969a18c3e9e",
   "name": "Windows Internet Connection Sharing Disabled",
   "description": "Ensures Internet Connection Sharing (SharedAccess) is disabled, so the host cannot route or NAT traffic for other devices. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "edb2090d-1c47-44a3-97c7-6c54174c4768",
   "name": "Memcached Not Listening on Network Interfaces (TCP)",
   "description": "Ensures nothing listens for memcached on TCP port 11211 on a non-loopback address. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "5c8971cc-6f71-4f0a-b1a9-6554509b3bbc",
   "name": "macOS Remote Login (SSH) Disabled",
   "description": "Ensures Remote Login (the macOS SSH server) is turned off on endpoints that do not need inbound SSH.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/systemsetup -getremotelogin",
   "active": true,

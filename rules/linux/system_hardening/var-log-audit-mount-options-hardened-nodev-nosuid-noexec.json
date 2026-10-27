@@ -1,4 +1,5 @@
 {
+  "uid": "9206dfc8-6702-40a9-ba6f-a48624daf814",
   "name": "/var/log/audit Mount Options Hardened (nodev, nosuid, noexec)",
   "description": "Ensures that, if /var/log/audit is a separate mount, it carries the nodev, nosuid, noexec options. Passes when /var/log/audit is part of another filesystem.",
   "active": true,

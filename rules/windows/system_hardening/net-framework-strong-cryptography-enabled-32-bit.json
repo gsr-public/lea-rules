@@ -1,5 +1,9 @@
 {
+  "uid": "9bd65445-2447-4508-ab8f-6bfd1ac1f747",
   "name": ".NET Framework Strong Cryptography Enabled (32-bit)",
+  "former_names": [
+    ".NET Strong Crypto Enabled 32bit"
+  ],
   "description": "Ensures the 32-bit .NET Framework 4.x runtime (WOW6432Node) is configured to use strong cryptography (SchUseStrongCrypto=1).",
   "active": true,
   "category": "system_hardening",

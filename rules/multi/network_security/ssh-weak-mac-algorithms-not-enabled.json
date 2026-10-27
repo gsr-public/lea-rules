@@ -1,4 +1,5 @@
 {
+  "uid": "8f894846-1016-4946-b692-7c5e90970d25",
   "name": "SSH Weak MAC Algorithms Not Enabled",
   "description": "Ensures an explicit MACs list in the sshd configuration does not enable MD5, RIPEMD-160, SHA-1 or 64-bit UMAC message authentication codes. Lines that remove algorithms (MACs -...) are ignored. When MACs is not set, the OpenSSH defaults apply and the rule passes.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

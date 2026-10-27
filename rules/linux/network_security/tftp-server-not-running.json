@@ -1,4 +1,5 @@
 {
+  "uid": "c38f062a-7e7f-4e73-bac7-0c99e6b6112f",
   "name": "TFTP Server Not Running",
   "description": "Ensures no TFTP server (in.tftpd, tftpd, atftpd) is running. TFTP has no authentication.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "ba16fe6d-5b8b-4504-85df-3d39e0ea1196",
   "name": "Windows Installer User Control Over Installs Disabled",
   "description": "Ensures users cannot change installation options normally reserved for administrators (EnableUserControl not 1).",
   "active": true,

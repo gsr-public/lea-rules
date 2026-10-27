@@ -1,4 +1,5 @@
 {
+  "uid": "d037c611-6945-478d-9ac4-206bcd947042",
   "name": "Windows Routing and Remote Access Service Disabled",
   "description": "Ensures the Routing and Remote Access service is disabled on hosts that are not VPN or routing servers. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

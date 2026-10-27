@@ -1,4 +1,5 @@
 {
+  "uid": "ed7db5ca-3a52-4bc7-b1ef-d5ad60bd7fa2",
   "name": "Windows Media Player Network Sharing Disabled",
   "description": "Ensures Windows Media Player network sharing is disabled. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

@@ -1,5 +1,9 @@
 {
+  "uid": "b3ef7911-120f-4d2a-b835-079bff631fab",
   "name": "No Unowned Files on Local Filesystems",
+  "former_names": [
+    "No Unowned Files"
+  ],
   "description": "Ensures there are no files or directories on the local filesystem without an associated user owner.",
   "active": true,
   "category": "system_hardening",

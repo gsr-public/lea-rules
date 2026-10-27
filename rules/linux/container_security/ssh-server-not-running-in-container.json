@@ -1,5 +1,9 @@
 {
+  "uid": "835d58ff-6d7e-417a-adcb-da8fe4d4aa58",
   "name": "SSH Server Not Running in Container",
+  "former_names": [
+    "Container SSH Server Not Running"
+  ],
   "description": "Ensures no sshd process runs inside a containerized Linux workload; containers should be managed through the orchestrator, not SSH. Assign this rule only to groups of container agents, because regular hosts are expected to run sshd.",
   "active": true,
   "category": "container_security",

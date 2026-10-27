@@ -1,0 +1,75 @@
+{
+  "uid": "a1f4570f-ef09-4e4c-b0fd-fc5c1c5572dd",
+  "name": "MAC Address",
+  "description": "Collects one or more non-trivial MAC addresses from active network interfaces for inventory and correlation.",
+  "active": true,
+  "builtin": true,
+  "category": "metadata",
+  "cycle": 3600,
+  "cmd_info_key": "mac_addr",
+  "parameters": [],
+  "tags": [
+    "cat:lea_metadata",
+    "env:linux",
+    "env:macos",
+    "env:windows",
+    "env:host_level",
+    "risk:low"
+  ],
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /sys/class/net/*/address",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "ifconfig en0",
+        "system": [
+          "Darwin"
+        ],
+        "distribution": []
+      },
+      {
+        "command": "getmac",
+        "system": [
+          "Windows"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)^(?!00:00:00:00:00:00)[0-9a-f]{2}(?::[0-9a-f]{2}){5}$"
+        }
+      },
+      {
+        "system": [
+          "Darwin"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)\\bether\\s+[0-9a-f]{2}(?::[0-9a-f]{2}){5}\\b"
+        }
+      },
+      {
+        "system": [
+          "Windows"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "(?mi)[0-9A-F]{2}(?:-[0-9A-F]{2}){5}"
+        }
+      }
+    ],
+    "_remedy": [],
+    "system": []
+  }
+}

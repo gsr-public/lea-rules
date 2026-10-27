@@ -1,4 +1,5 @@
 {
+  "uid": "b7dc74bf-e0b1-4e4f-94da-1be6c38e1711",
   "name": "macOS Updates Installed Automatically",
   "description": "Ensures macOS installs macOS updates automatically (AutomaticallyInstallMacOSUpdates = true). Reads the effective value of AutomaticallyInstallMacOSUpdates in the com.apple.SoftwareUpdate domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

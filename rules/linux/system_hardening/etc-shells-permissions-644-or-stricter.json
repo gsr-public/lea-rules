@@ -1,4 +1,5 @@
 {
+  "uid": "c85d20c4-9a2f-45f5-b106-aaea53867e90",
   "name": "/etc/shells Permissions 644 or Stricter",
   "description": "Ensures /etc/shells, which lists the shells users may select, is owned by root:root and not writable by group or others.",
   "active": true,

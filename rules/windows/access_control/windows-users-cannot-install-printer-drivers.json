@@ -1,4 +1,5 @@
 {
+  "uid": "8d54e0cd-0553-4daf-ab20-f4aca6296c14",
   "name": "Windows Users Cannot Install Printer Drivers",
   "description": "Ensures standard users cannot install printer drivers when connecting to shared printers (AddPrinterDrivers = 1).",
   "active": true,

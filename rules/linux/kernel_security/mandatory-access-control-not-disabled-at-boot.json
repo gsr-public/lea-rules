@@ -1,4 +1,5 @@
 {
+  "uid": "c22d5b4a-0bc2-4b1a-8798-829f4de990e0",
   "name": "Mandatory Access Control Not Disabled at Boot",
   "description": "Ensures the kernel command line does not disable SELinux or AppArmor (selinux=0, enforcing=0, apparmor=0, security=none), which would silently remove mandatory access control at the next boot.",
   "active": true,

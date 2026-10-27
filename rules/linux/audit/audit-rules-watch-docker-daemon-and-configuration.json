@@ -1,4 +1,5 @@
 {
+  "uid": "b195af76-8dad-4e9b-a5df-f762f308b98c",
   "name": "Audit Rules Watch Docker Daemon and Configuration",
   "description": "Ensures the audit rules watch the Docker daemon binary and its configuration directory (dockerd and /etc/docker), so tampering with the container runtime is logged. Passes with LEA_RULE_no_service when dockerd is not running.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

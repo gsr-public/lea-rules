@@ -1,4 +1,5 @@
 {
+  "uid": "8b88a293-20bf-4dbb-8180-d786540c7f9e",
   "name": "No Active Wireless Interfaces on Servers",
   "description": "Ensures no wireless network interface is present (/proc/net/wireless lists none), so servers cannot be bridged to unmanaged wireless networks. Assign only to servers.",
   "active": true,

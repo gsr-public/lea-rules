@@ -1,4 +1,5 @@
 {
+  "uid": "6fa1cfa6-85bb-4e6c-b348-53e295a13a1c",
   "name": "Redis Not Listening on Network Interfaces",
   "description": "Ensures nothing listens for Redis on TCP port 6379 on a non-loopback address; Redis has no authentication by default. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN); loopback addresses (127.0.0.0/8, ::1) are allowed.",
   "active": true,

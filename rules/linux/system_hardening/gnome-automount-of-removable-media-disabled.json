@@ -1,4 +1,5 @@
 {
+  "uid": "5c0fb5d8-20da-400d-8aab-470ec5fcb4e4",
   "name": "GNOME Automount of Removable Media Disabled",
   "description": "Ensures GNOME does not automatically mount or open removable media (automount=false and automount-open=false). Passes with LEA_RULE_no_service when GDM is not installed.",
   "active": true,

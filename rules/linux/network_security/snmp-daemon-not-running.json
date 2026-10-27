@@ -1,4 +1,5 @@
 {
+  "uid": "49e672a5-da1d-45e3-bfc3-77205472936b",
   "name": "SNMP Daemon Not Running",
   "description": "Ensures the SNMP agent (snmpd) is not running on hosts that are not monitored over SNMP. SNMP v1/v2c community strings are sent in clear text.",
   "active": true,

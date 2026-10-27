@@ -1,5 +1,9 @@
 {
+  "uid": "04be793f-da96-41a7-ae7e-23b8517d7eed",
   "name": "Low Memory Mapping Restricted (mmap_min_addr)",
+  "former_names": [
+    "Linux mmap Minimum Address Hardened"
+  ],
   "description": "Ensures vm.mmap_min_addr is configured to a hardened minimum address (>= 4096), making it harder for userland processes to map low memory addresses.",
   "active": true,
   "category": "kernel_security",

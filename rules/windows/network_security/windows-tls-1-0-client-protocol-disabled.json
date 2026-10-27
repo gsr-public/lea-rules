@@ -1,4 +1,5 @@
 {
+  "uid": "cedef4c9-e011-4675-ae54-6635f6a991a9",
   "name": "Windows TLS 1.0 Client Protocol Disabled",
   "description": "Ensures TLS 1.0 is explicitly disabled for SCHANNEL client connections (Enabled = 0). Older Windows versions enable it when the key is absent, so an explicit setting is required.",
   "active": true,

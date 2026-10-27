@@ -1,4 +1,5 @@
 {
+  "uid": "18653856-1e22-4d1b-adac-9647b94e1c1f",
   "name": "macOS Library Validation Not Disabled",
   "description": "Ensures library validation is not disabled system-wide (com.apple.security.libraryvalidation DisableLibraryValidation = false), so processes only load libraries signed by Apple or the same team. Reads the effective value of DisableLibraryValidation in the com.apple.security.libraryvalidation domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

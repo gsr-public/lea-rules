@@ -1,4 +1,5 @@
 {
+  "uid": "1fb4c8a2-2601-4978-8cbe-458971a67899",
   "name": "Linux Log Martian Packets Default Interfaces",
   "description": "Ensures net.ipv4.conf.default.log_martians is set to 1 so new interfaces log packets with invalid source addresses by default.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.default.log_martians=1",
   "active": true,

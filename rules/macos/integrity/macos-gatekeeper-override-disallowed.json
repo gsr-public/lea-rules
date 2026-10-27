@@ -1,4 +1,5 @@
 {
+  "uid": "8f98f366-0faf-47e0-a2dc-2c3276867fd7",
   "name": "macOS Gatekeeper Override Disallowed",
   "description": "Ensures users cannot bypass Gatekeeper for unsigned or unnotarized apps (com.apple.systempolicy.managed DisableOverride = true). Reads the effective value of DisableOverride in the com.apple.systempolicy.managed domain (including settings delivered by an MDM configuration profile) through NSUserDefaults; an unset value fails.",
   "active": true,

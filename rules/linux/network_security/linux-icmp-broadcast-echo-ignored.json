@@ -1,5 +1,9 @@
 {
+  "uid": "7f419094-1ec3-44e6-a988-36f26e570ef2",
   "name": "Linux ICMP Broadcast Echo Ignored",
+  "former_names": [
+    "Linux ICMP Broadcast Ignore Enabled"
+  ],
   "description": "Ensures the Linux kernel ignores ICMP echo requests to broadcast addresses by setting net.ipv4.icmp_echo_ignore_broadcasts to 1, mitigating Smurf-style amplification attacks.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.icmp_echo_ignore_broadcasts=1",
   "active": true,
   "category": "network_security",

@@ -1,4 +1,5 @@
 {
+  "uid": "55ddd3e6-c1fa-4fe3-8287-3687f9f5f707",
   "name": "Docker User Namespace Remapping Enabled",
   "description": "Ensures the Docker daemon remaps container root to an unprivileged host user (\"userns-remap\" set), limiting the impact of a container breakout. Passes with LEA_RULE_no_service when dockerd is not running.",
   "active": true,

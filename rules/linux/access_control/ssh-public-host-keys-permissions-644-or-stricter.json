@@ -1,4 +1,5 @@
 {
+  "uid": "4d2d3b1a-25fe-4d2d-8d83-428a1b9b70af",
   "name": "SSH Public Host Keys Permissions 644 or Stricter",
   "description": "Ensures SSH public host keys are owned by root:root and not writable by group or others, so they cannot be replaced. Passes with LEA_RULE_no_service when no host keys exist.",
   "active": true,

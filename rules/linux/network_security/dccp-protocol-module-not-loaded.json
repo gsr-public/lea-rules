@@ -1,4 +1,5 @@
 {
+  "uid": "eba65e30-d8d4-47a8-ac2f-26b4286402fa",
   "name": "DCCP Protocol Module Not Loaded",
   "description": "Ensures the DCCP network protocol module is not loaded (checked in /proc/modules). Rarely used protocol modules have a history of kernel vulnerabilities. A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r dccp",
   "active": true,

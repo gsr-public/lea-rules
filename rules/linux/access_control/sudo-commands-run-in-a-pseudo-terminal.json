@@ -1,4 +1,5 @@
 {
+  "uid": "8941746d-add1-45bb-932f-4e15303fc838",
   "name": "Sudo Commands Run in a Pseudo-Terminal",
   "description": "Ensures sudoers sets 'Defaults use_pty', so commands run through sudo cannot keep running in the background and inject input into the user's terminal after sudo exits. sudo 1.9.14 and later enable use_pty by default; on those versions this rule documents the setting explicitly.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
   "active": true,

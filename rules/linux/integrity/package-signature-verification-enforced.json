@@ -1,4 +1,5 @@
 {
+  "uid": "5a755fd6-0c07-4ac2-afd1-81a65d4b1bbd",
   "name": "Package Signature Verification Enforced",
   "description": "Ensures the package manager verifies repository signatures. Debian and Ubuntu: no APT source is marked trusted=yes (one-line or deb822 'Trusted: yes') and AllowUnauthenticated is not enabled. RHEL family: gpgcheck=1 is set and no repository sets gpgcheck=0.",
   "active": true,

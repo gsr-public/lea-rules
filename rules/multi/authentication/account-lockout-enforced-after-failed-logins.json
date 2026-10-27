@@ -1,5 +1,10 @@
 {
+  "uid": "fd15ab1f-336f-4ea8-b8e8-ac0689ac00ca",
   "name": "Account Lockout Enforced After Failed Logins",
+  "former_names": [
+    "CIS - Account Lockout After Failed Logins",
+    "Multi-Platform Account Lockout Policy"
+  ],
   "description": "Ensures local and directory account policies lock accounts after repeated failed logon attempts: pam_faillock (or pam_tally2) in the PAM auth stack on Linux, a maxFailedAttempts account policy on macOS, and a non-zero LockoutThreshold in the Active Directory default domain password policy on Windows (requires the ActiveDirectory PowerShell module).",
   "active": true,
   "category": "authentication",

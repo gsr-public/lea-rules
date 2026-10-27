@@ -1,4 +1,5 @@
 {
+  "uid": "c581f1cd-39fa-4f23-a0d9-3ff05cb1cebb",
   "name": "Windows WinRM Client Digest Authentication Disabled",
   "description": "Ensures the WinRM client does not use Digest authentication (AllowDigest = 0).",
   "active": true,

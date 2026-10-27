@@ -1,4 +1,5 @@
 {
+  "uid": "617bbacd-395a-4b70-877f-4364815b5902",
   "name": "macOS Root Is the Only UID 0 Account",
   "description": "Ensures no local account other than root has UID 0.",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "9841421c-02f1-4b23-8cc2-50dee65509c3",
   "name": "Audit Rules Track Commands Run as Another User",
   "description": "Ensures the audit rules record every execve where the effective UID differs from the real UID (-C euid!=uid), capturing actions performed through sudo, su and set-UID programs.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

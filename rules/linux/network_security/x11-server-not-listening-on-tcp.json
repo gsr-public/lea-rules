@@ -1,4 +1,5 @@
 {
+  "uid": "81d38d98-8e4b-4bb1-890d-8c8fb5a75d72",
   "name": "X11 Server Not Listening on TCP",
   "description": "Ensures nothing listens for an X11 display server on TCP ports 6000-6063; X11 over TCP is unauthenticated or uses weak cookies. Reads the raw kernel socket tables /proc/net/tcp and /proc/net/tcp6 (state 0A = LISTEN).",
   "active": true,

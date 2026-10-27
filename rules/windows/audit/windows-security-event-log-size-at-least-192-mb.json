@@ -1,4 +1,5 @@
 {
+  "uid": "3451245b-7e4c-4919-87b9-c2164a905c94",
   "name": "Windows Security Event Log Size At Least 192 MB",
   "description": "Ensures the Security event log can grow to at least 196,608 KB (201,326,592 bytes), so audit events are not overwritten quickly.\nRequired Windows permission: LEA agent account must be allowed to run only: wevtutil gl Security (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

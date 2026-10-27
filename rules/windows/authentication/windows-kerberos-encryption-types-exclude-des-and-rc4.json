@@ -1,4 +1,5 @@
 {
+  "uid": "27c98c32-db5f-4f5d-bc37-19ea0939177c",
   "name": "Windows Kerberos Encryption Types Exclude DES and RC4",
   "description": "Ensures the Kerberos SupportedEncryptionTypes policy allows only AES (and future) encryption types and excludes DES (0x1, 0x2) and RC4 (0x4), mitigating Kerberoasting with weak RC4 tickets.",
   "active": true,

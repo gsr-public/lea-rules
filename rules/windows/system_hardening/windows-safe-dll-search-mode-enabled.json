@@ -1,4 +1,5 @@
 {
+  "uid": "eb18ca90-29d1-4c43-b504-8a668a62c11a",
   "name": "Windows Safe DLL Search Mode Enabled",
   "description": "Ensures Safe DLL search mode is not disabled (SafeDllSearchMode not 0), so the system directory is searched before the current directory, mitigating DLL planting. An absent value (default) passes.",
   "active": true,

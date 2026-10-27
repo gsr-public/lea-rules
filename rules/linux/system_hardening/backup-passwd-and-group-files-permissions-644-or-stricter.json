@@ -1,4 +1,5 @@
 {
+  "uid": "f1402a47-2fff-469a-853e-5d054b5fc569",
   "name": "Backup passwd and group Files Permissions 644 or Stricter",
   "description": "Ensures the backup account files /etc/passwd- and /etc/group- are owned by root:root and not writable by group or others. Passes with LEA_RULE_no_service when neither backup exists.",
   "active": true,

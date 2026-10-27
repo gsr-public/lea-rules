@@ -1,4 +1,5 @@
 {
+  "uid": "d036bbd5-6308-4d47-a62e-97ad7a3a76a5",
   "name": "SSH Weak Ciphers Not Enabled",
   "description": "Ensures an explicit Ciphers list in the sshd configuration does not enable CBC-mode, 3DES, RC4 (arcfour), Blowfish or CAST ciphers. Lines that remove algorithms (Ciphers -...) are ignored. When Ciphers is not set, the OpenSSH defaults apply and the rule passes.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file fails the check instead of passing). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,

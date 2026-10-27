@@ -1,4 +1,5 @@
 {
+  "uid": "986f228c-c1ff-4c89-b148-93c432ce3da9",
   "name": "talk Client Not Installed",
   "description": "Ensures the talk client is not installed (/usr/bin/talk absent). Removing unused clear-text or legacy tools reduces the attack surface and the risk of credentials being sent unencrypted.",
   "active": true,

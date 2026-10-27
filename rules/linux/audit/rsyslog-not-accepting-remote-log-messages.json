@@ -1,4 +1,5 @@
 {
+  "uid": "1fd8f1f5-1264-470f-9eae-fc4d76e13650",
   "name": "rsyslog Not Accepting Remote Log Messages",
   "description": "Ensures rsyslog does not load the TCP or UDP network input modules (imtcp, imudp, imrelp) on hosts that are not designated log collectors, so attackers cannot flood or forge local logs over the network. Passes with LEA_RULE_no_service when rsyslogd is not running.",
   "active": true,

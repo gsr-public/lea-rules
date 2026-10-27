@@ -1,4 +1,5 @@
 {
+  "uid": "9cfbc639-3fb8-45ca-bc0f-f48262c3668a",
   "name": "Windows Installer Always Install Elevated Disabled",
   "description": "Ensures Windows Installer does not install packages with elevated privileges for any user (AlwaysInstallElevated not 1), a well-known local privilege escalation. An absent value passes.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer\" /v AlwaysInstallElevated (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,

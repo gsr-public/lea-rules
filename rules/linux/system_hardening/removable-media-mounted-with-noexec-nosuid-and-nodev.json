@@ -1,4 +1,5 @@
 {
+  "uid": "22423414-157f-44a8-be58-7259fadb5b10",
   "name": "Removable Media Mounted with noexec, nosuid and nodev",
   "description": "Ensures every currently mounted removable or optical filesystem (vfat, exfat, ntfs, iso9660, udf under /media, /mnt or /run/media) carries nodev, nosuid and noexec. Passes when no removable media is mounted.",
   "active": true,

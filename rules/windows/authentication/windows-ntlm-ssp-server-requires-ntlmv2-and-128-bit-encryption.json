@@ -1,4 +1,5 @@
 {
+  "uid": "1d55c26a-b64d-49bb-bdca-74fd84211bf0",
   "name": "Windows NTLM SSP Server Requires NTLMv2 and 128-bit Encryption",
   "description": "Ensures NTLM SSP servers require NTLMv2 session security and 128-bit encryption (NTLMMinServerSec = 0x20080000).",
   "active": true,

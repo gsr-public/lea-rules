@@ -1,4 +1,5 @@
 {
+  "uid": "5a1c09ab-b15c-4faa-bd57-4518e7092514",
   "name": "Windows PowerShell Transcription Enabled",
   "description": "Ensures PowerShell transcription is enabled by policy (EnableTranscripting = 1), recording the input and output of every PowerShell session.",
   "active": true,

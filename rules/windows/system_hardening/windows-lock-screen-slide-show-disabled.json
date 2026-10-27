@@ -1,4 +1,5 @@
 {
+  "uid": "65d42a4f-1598-4801-abf5-8bea68c6feae",
   "name": "Windows Lock Screen Slide Show Disabled",
   "description": "Ensures the lock screen slide show is disabled (NoLockScreenSlideshow = 1), so pictures are not displayed on a locked device.",
   "active": true,

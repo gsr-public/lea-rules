@@ -1,4 +1,5 @@
 {
+  "uid": "3c0ba986-76bb-4210-8f6a-24b1bc2b1e3c",
   "name": "IMAP and POP3 Servers Not Running",
   "description": "Ensures an IMAP or POP3 mail server (Dovecot, Cyrus, UW-IMAP) is not running (process names read from /proc/*/comm).",
   "active": true,

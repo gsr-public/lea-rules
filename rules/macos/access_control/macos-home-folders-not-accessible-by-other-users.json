@@ -1,4 +1,5 @@
 {
+  "uid": "852fa7b9-8e2e-4365-b81e-67bcb8415780",
   "name": "macOS Home Folders Not Accessible by Other Users",
   "description": "Ensures every home folder in /Users (except /Users/Shared) grants group and others at most execute permission (700, 701, 710 or 711), so users cannot browse each other's files.",
   "active": true,

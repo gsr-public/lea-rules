@@ -1,5 +1,9 @@
 {
+  "uid": "ac3e5c9b-3a17-4107-8583-77c9a95802b0",
   "name": "Docker Socket Not Exposed",
+  "former_names": [
+    "Docker Socket Not Mounted"
+  ],
   "description": "Ensures the Docker engine control socket (/var/run/docker.sock) is not present inside the container being assessed; a mounted socket gives the workload root-equivalent control of the host. Assign this rule only to groups of container agents, because Docker hosts are expected to have the socket.",
   "active": true,
   "category": "system_hardening",

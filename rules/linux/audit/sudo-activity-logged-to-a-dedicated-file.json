@@ -1,4 +1,5 @@
 {
+  "uid": "9ff90f04-a928-4ea2-8977-a5ae7336d937",
   "name": "Sudo Activity Logged to a Dedicated File",
   "description": "Ensures sudoers sets 'Defaults logfile=/path', giving an independent record of every command run with elevated privileges.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /etc/sudoers.d/*",
   "active": true,

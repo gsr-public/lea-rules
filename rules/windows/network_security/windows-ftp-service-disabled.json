@@ -1,4 +1,5 @@
 {
+  "uid": "dcb9959e-6ed9-40ef-966b-04339f2a47d8",
   "name": "Windows FTP Service Disabled",
   "description": "Ensures the Microsoft FTP service is disabled or not installed. Passes when the service is set to Disabled (Start = 4) or is not installed.",
   "active": true,

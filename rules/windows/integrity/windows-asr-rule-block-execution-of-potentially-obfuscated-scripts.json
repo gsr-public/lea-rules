@@ -1,4 +1,5 @@
 {
+  "uid": "654e180f-6afc-4c9b-ac43-f991dd7198df",
   "name": "Windows ASR Rule: Block Execution of Potentially Obfuscated Scripts",
   "description": "Ensures the Microsoft Defender attack surface reduction rule \"Block Execution of Potentially Obfuscated Scripts\" (5beb7efe-fd9a-4556-801d-275e5ffc04cc) is in block mode (action 1). Audit (2) or warn (6) mode fails. Requires Microsoft Defender Antivirus as the active antivirus.",
   "active": true,

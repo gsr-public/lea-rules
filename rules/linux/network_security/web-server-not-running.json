@@ -1,4 +1,5 @@
 {
+  "uid": "26bc7dab-5911-4b34-80a8-2dbdd72e3f5a",
   "name": "Web Server Not Running",
   "description": "Ensures a web server (Apache httpd, nginx, lighttpd); assign only to hosts that are not web servers is not running (process names read from /proc/*/comm).",
   "active": true,

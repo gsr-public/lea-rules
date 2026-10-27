@@ -1,4 +1,5 @@
 {
+  "uid": "918098bb-f8ed-4e3a-beb0-b03b0bc18edb",
   "name": "Windows Connected Users Not Enumerated on Domain-Joined Computers",
   "description": "Ensures the logon UI does not enumerate connected users (DontEnumerateConnectedUsers = 1).",
   "active": true,

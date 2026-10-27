@@ -1,4 +1,5 @@
 {
+  "uid": "47d42508-f082-4187-93d0-044940a56e9a",
   "name": "macOS System-Wide Applications Not World-Writable",
   "description": "Ensures no application bundle in /Applications is world-writable, so other users cannot replace application code that administrators run.",
   "active": true,

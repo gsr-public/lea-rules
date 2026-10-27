@@ -1,4 +1,5 @@
 {
+  "uid": "e6af8385-ebd4-48de-8482-74efbff05b9d",
   "name": "Linux IPv6 Firewall Default Deny Policy (ip6tables)",
   "description": "Ensures the ip6tables INPUT and FORWARD chains default to DROP or REJECT, so IPv6 does not bypass an IPv4-only firewall. Passes when IPv6 is disabled in the kernel.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/ip6tables -L -n",
   "active": true,

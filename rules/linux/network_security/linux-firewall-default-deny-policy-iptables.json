@@ -1,5 +1,9 @@
 {
+  "uid": "b228683d-16d2-4ad0-a32d-dfcf3ef18e84",
   "name": "Linux Firewall Default Deny Policy (iptables)",
+  "former_names": [
+    "Firewall Default Policy Secure"
+  ],
   "description": "Ensures the Linux host firewall default policies drop unsolicited inbound (INPUT) and forwarded (FORWARD) traffic.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /usr/sbin/iptables -L -n",
   "active": true,
   "category": "network_security",

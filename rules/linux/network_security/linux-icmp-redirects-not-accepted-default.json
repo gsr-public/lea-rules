@@ -1,4 +1,5 @@
 {
+  "uid": "1e29b4db-8a40-46f6-a210-a2695dd8a483",
   "name": "Linux ICMP Redirects Not Accepted (Default)",
   "description": "Ensures new interfaces do not accept ICMP redirects: net.ipv4.conf.default.accept_redirects, net.ipv4.conf.default.secure_redirects and net.ipv6.conf.default.accept_redirects must all be 0.",
   "active": true,

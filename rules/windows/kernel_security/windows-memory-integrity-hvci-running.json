@@ -1,4 +1,5 @@
 {
+  "uid": "219b6d93-6187-4da9-90bc-95a4b73b4666",
   "name": "Windows Memory Integrity (HVCI) Running",
   "description": "Ensures hypervisor-protected code integrity is running (SecurityServicesRunning contains 2), so only signed, validated code can run in kernel mode.",
   "active": true,

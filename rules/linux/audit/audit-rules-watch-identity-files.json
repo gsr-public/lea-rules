@@ -1,4 +1,5 @@
 {
+  "uid": "11f3d9b8-f87a-4d1f-a5a0-b7f4b610b7f8",
   "name": "Audit Rules Watch Identity Files",
   "description": "Ensures the persistent audit rules record write and attribute changes to /etc/passwd, /etc/group, /etc/shadow and /etc/gshadow (-w ... -p wa, or -a ... -F path=... -F perm=wa).\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

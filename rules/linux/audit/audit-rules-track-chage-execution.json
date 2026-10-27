@@ -1,4 +1,5 @@
 {
+  "uid": "03cefe0c-bf2b-4e4e-8ff5-1f5300552085",
   "name": "Audit Rules Track chage Execution",
   "description": "Ensures the audit rules record every execution of /usr/bin/chage (-a always,exit -F path=/usr/bin/chage -F perm=x or -w /usr/bin/chage -p x), giving an independent record of privileged command use.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
   "active": true,

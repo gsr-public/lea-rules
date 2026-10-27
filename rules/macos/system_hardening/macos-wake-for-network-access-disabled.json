@@ -1,4 +1,5 @@
 {
+  "uid": "de99b0df-fd99-48fb-8056-5c51a045b105",
   "name": "macOS Wake for Network Access Disabled",
   "description": "Ensures the Mac does not wake for network access (pmset womp 0), so it cannot be woken remotely outside business hours.",
   "active": true,

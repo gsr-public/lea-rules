@@ -1,4 +1,5 @@
 {
+  "uid": "c2003cf5-9a8d-4eb6-bca2-0834c22ae9ff",
   "name": "Windows Defender Real-Time Protection Enabled",
   "description": "Ensures Microsoft Defender Antivirus real-time protection is on (Get-MpComputerStatus RealTimeProtectionEnabled = True).",
   "active": true,

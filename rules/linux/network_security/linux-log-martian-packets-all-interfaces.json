@@ -1,5 +1,9 @@
 {
+  "uid": "dde31f8c-5cc7-473e-8fd7-421260356996",
   "name": "Linux Log Martian Packets All Interfaces",
+  "former_names": [
+    "Martian Packet Logging Enabled"
+  ],
   "description": "Ensures net.ipv4.conf.all.log_martians is set to 1 to log packets with impossible or unroutable source addresses, aiding in detection of spoofed or misrouted traffic.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w net.ipv4.conf.all.log_martians=1",
   "active": true,
   "category": "network_security",

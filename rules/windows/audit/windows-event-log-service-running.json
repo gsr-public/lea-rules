@@ -1,4 +1,5 @@
 {
+  "uid": "89f2743a-ba6d-4e8b-972c-736ee59e0efa",
   "name": "Windows Event Log Service Running",
   "description": "Ensures the Windows Event Log service (EventLog) is running, without which no security events are recorded.",
   "active": true,

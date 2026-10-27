@@ -1,4 +1,5 @@
 {
+  "uid": "15e37b70-35c2-4280-aaaa-18a3a6ac08b8",
   "name": "macOS IPv4 Forwarding Disabled",
   "description": "Ensures the macOS kernel parameter net.inet.ip.forwarding is 0, so the host does not route IPv4 traffic unless explicitly configured to (for example Internet Sharing).",
   "active": true,

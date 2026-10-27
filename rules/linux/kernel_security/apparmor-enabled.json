@@ -1,4 +1,5 @@
 {
+  "uid": "e47947e7-2522-4417-adc8-e7e20434f257",
   "name": "AppArmor Enabled",
   "description": "Checks that the AppArmor Linux Security Module is enabled in the running kernel (/sys/module/apparmor/parameters/enabled reports Y) on distributions that use AppArmor. Reading this file needs no privileges, unlike apparmor_status.",
   "active": true,

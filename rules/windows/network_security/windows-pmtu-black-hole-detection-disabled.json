@@ -1,5 +1,9 @@
 {
+  "uid": "0f12b87e-e19a-4e96-b86e-e4205a566be7",
   "name": "Windows PMTU Black Hole Detection Disabled",
+  "former_names": [
+    "Windows PMTU Blackhole Detection Disabled"
+  ],
   "description": "Ensures EnablePMTUBHDetect is disabled (0) to prevent inconsistent path MTU discovery behavior that can degrade network reliability.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters /v EnablePMTUBHDetect (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
   "category": "network_security",

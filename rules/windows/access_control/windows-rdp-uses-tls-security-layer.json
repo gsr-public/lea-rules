@@ -1,4 +1,5 @@
 {
+  "uid": "7424f2df-727b-4e2b-821e-cbac4c1966ac",
   "name": "Windows RDP Uses TLS Security Layer",
   "description": "Ensures Remote Desktop connections negotiate the TLS security layer (SecurityLayer = 2), which authenticates the server and protects the session.",
   "active": true,

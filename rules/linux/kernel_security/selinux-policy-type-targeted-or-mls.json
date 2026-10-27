@@ -1,4 +1,5 @@
 {
+  "uid": "7d72ae46-626b-4a16-ab65-9b44b18e6a6d",
   "name": "SELinux Policy Type Targeted or MLS",
   "description": "Ensures /etc/selinux/config uses the targeted or mls policy (SELINUXTYPE), not minimum or a custom policy with reduced coverage.",
   "active": true,

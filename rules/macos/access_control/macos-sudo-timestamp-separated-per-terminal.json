@@ -1,4 +1,5 @@
 {
+  "uid": "411f6c84-94a1-48e6-919a-a4c6bfcfb0b3",
   "name": "macOS Sudo Timestamp Separated per Terminal",
   "description": "Ensures sudoers does not switch the sudo authentication timestamp to global or per-parent-process records (timestamp_type=global/ppid or !tty_tickets), so one authenticated terminal does not elevate another. The macOS default is per terminal.\nRequired sudo rule: allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /bin/cat /etc/sudoers /private/etc/sudoers.d/*",
   "active": true,

@@ -1,4 +1,5 @@
 {
+  "uid": "64aa8820-4a6f-48e8-a53e-f4a4b736ecbd",
   "name": "Windows Audit Subcategory Settings Override Category Settings",
   "description": "Ensures advanced audit policy subcategory settings override legacy category settings (SCENoApplyLegacyAuditPolicy = 1), otherwise the subcategory audit rules may not be applied.\nRequired Windows permission (remedy only): the LEA agent account must be allowed to run reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\" /v SCENoApplyLegacyAuditPolicy (administrator rights) via a delegated run-as permission, Scheduled Task, or service configuration.",
   "active": true,
