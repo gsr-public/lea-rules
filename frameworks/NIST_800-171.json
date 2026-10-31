@@ -1,0 +1,12 @@
+{
+  "id": "NIST_800-171",
+  "display_name": "NIST SP 800-171",
+  "short_label": "NIST 800-171",
+  "authority": "NIST",
+  "region": "United States",
+  "url": "https://csrc.nist.gov/pubs/sp/800/171/r3/final",
+  "description": "Selected automated technical checks associated with NIST SP 800-171 security requirements.",
+  "report_title": "NIST SP 800-171 Requirement Evidence",
+  "legal_context": "U.S. defense contractors must implement NIST SP 800-171 under DFARS 252.204-7012 to protect Controlled Unclassified Information, and report their assessment scores to the Department of Defense. Inaccurate self-assessments can create False Claims Act exposure.",
+  "control_label": "Requirement"
+}

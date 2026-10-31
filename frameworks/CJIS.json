@@ -1,0 +1,12 @@
+{
+  "id": "CJIS",
+  "display_name": "CJIS Security Policy",
+  "short_label": "CJIS",
+  "authority": "FBI Criminal Justice Information Services",
+  "region": "United States",
+  "url": "https://le.fbi.gov/cjis-division/cjis-security-policy-resource-center",
+  "description": "Selected automated technical checks associated with the FBI CJIS Security Policy.",
+  "report_title": "CJIS Security Policy Evidence",
+  "legal_context": "Agencies and vendors that access criminal justice information must comply with the CJIS Security Policy. Audits by the FBI and state CJIS systems agencies can suspend access for non-compliance.",
+  "control_label": "Policy area"
+}

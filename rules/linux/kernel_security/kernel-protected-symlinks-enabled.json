@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w fs.protected_symlinks=1 >/dev/null && cat /proc/sys/fs/protected_symlinks",
+        "command": "sysctl -w fs.protected_symlinks=1 >/dev/null",
         "system": [
           "Linux"
         ],

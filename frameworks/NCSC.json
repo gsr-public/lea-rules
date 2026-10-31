@@ -1,0 +1,12 @@
+{
+  "id": "NCSC",
+  "display_name": "NCSC Post-Quantum Migration Guidance",
+  "short_label": "NCSC PQC",
+  "authority": "UK National Cyber Security Centre",
+  "region": "United Kingdom",
+  "url": "https://www.ncsc.gov.uk/guidance/pqc-migration-timelines",
+  "description": "Selected automated technical checks associated with the UK NCSC post-quantum migration guidance.",
+  "report_title": "NCSC Post-Quantum Readiness Evidence",
+  "legal_context": "The UK NCSC sets migration milestones for post-quantum cryptography: discovery and planning by 2028, priority migration by 2031 and completion by 2035. Organizations supporting UK government and critical national infrastructure are expected to follow them.",
+  "control_label": "Readiness item"
+}

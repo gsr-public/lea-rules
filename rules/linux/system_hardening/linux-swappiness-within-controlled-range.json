@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w vm.swappiness=10 >/dev/null && cat /proc/sys/vm/swappiness",
+        "command": "sysctl -w vm.swappiness=10 >/dev/null",
         "system": [
           "Linux"
         ],

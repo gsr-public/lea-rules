@@ -1,0 +1,12 @@
+{
+  "id": "ASD_E8",
+  "display_name": "ASD Essential Eight",
+  "short_label": "Essential Eight",
+  "authority": "Australian Signals Directorate",
+  "region": "Australia",
+  "url": "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight",
+  "description": "Selected automated technical checks associated with the ASD Essential Eight mitigation strategies.",
+  "report_title": "Essential Eight Mitigation Evidence",
+  "legal_context": "The Essential Eight is the Australian Government baseline of mitigation strategies. Non-corporate Commonwealth entities must implement it under the Protective Security Policy Framework, and it is widely expected by Australian regulators, customers and insurers. Technical check results do not establish a maturity level.",
+  "control_label": "Mitigation strategy"
+}

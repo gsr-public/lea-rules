@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w kernel.yama.ptrace_scope=1 >/dev/null && cat /proc/sys/kernel/yama/ptrace_scope",
+        "command": "sysctl -w kernel.yama.ptrace_scope=1 >/dev/null",
         "system": [
           "Linux"
         ],

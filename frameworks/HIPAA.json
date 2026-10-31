@@ -1,0 +1,12 @@
+{
+  "id": "HIPAA",
+  "display_name": "HIPAA Security Rule",
+  "short_label": "HIPAA",
+  "authority": "U.S. Department of Health and Human Services",
+  "region": "United States",
+  "url": "https://www.hhs.gov/hipaa/for-professionals/security/index.html",
+  "description": "Selected automated technical checks associated with HIPAA Security Rule technical safeguards.",
+  "report_title": "HIPAA Security Rule Safeguard Evidence",
+  "legal_context": "Covered entities and business associates must protect electronic protected health information under the HIPAA Security Rule. The HHS Office for Civil Rights enforces it with civil money penalties and corrective action plans, and documented safeguard evidence supports the required risk analysis and breach investigations.",
+  "control_label": "Implementation specification"
+}

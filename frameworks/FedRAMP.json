@@ -1,0 +1,12 @@
+{
+  "id": "FedRAMP",
+  "display_name": "FedRAMP",
+  "short_label": "FedRAMP",
+  "authority": "U.S. General Services Administration",
+  "region": "United States",
+  "url": "https://www.fedramp.gov/",
+  "description": "Selected automated technical checks associated with the FedRAMP baselines (NIST SP 800-53).",
+  "report_title": "FedRAMP Control Evidence",
+  "legal_context": "Cloud services used by U.S. federal agencies need a FedRAMP authorization. Continuous monitoring evidence keeps the authorization in good standing, and unresolved findings can lead to suspension.",
+  "control_label": "Control"
+}

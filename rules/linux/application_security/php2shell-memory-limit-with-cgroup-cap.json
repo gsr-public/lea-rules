@@ -30,7 +30,7 @@
     ],
     "_remedy": [
       {
-        "command": "printf 'memory_limit=-1\\n' > /usr/local/etc/php/conf.d/zz-lea-memory.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i && cat /sys/fs/cgroup/memory.max",
+        "command": "printf 'memory_limit=-1\\n' > /usr/local/etc/php/conf.d/zz-lea-memory.ini && kill -USR2 $(cat /tmp/php-fpm.pid)",
         "system": [
           "Linux"
         ],

@@ -1,0 +1,12 @@
+{
+  "id": "TISAX",
+  "display_name": "TISAX (VDA ISA)",
+  "short_label": "TISAX",
+  "authority": "ENX Association",
+  "region": "International",
+  "url": "https://enx.com/tisax",
+  "description": "Selected automated technical checks associated with the VDA Information Security Assessment used for TISAX.",
+  "report_title": "TISAX Control Evidence",
+  "legal_context": "Automotive manufacturers require suppliers and service providers to hold a TISAX label based on the VDA Information Security Assessment. A missing or lapsed label can block participation in development and production projects.",
+  "control_label": "Control question"
+}

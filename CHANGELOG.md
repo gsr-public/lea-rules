@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- `frameworks/<id>.json`: report wording for 29 compliance frameworks (the 15 tagged in this library and 14 more common standards such as NIST SP 800-171, FedRAMP, Cyber Essentials, GDPR Art. 32, TISAX, IEC 62443 and NERC CIP), validated by `schema/framework.schema.json`. `tools/build_pack.py` puts them in `manifest.json` (`frameworks`); LEA servers that predate it ignore the key. Every `std:<id>` framework now gets signed snapshots and reports in LEA, not only CIS, ISO 27001, SOC 2 and CMMC.
+
+### Fixed
+
+- Remedies no longer re-print the checked value (`&& cat …`, `; cat /proc/modules`, `; reg query …`, `; auditpol /get …`, `&& sysctl …`, `&& php-fpm -i`). The agent already runs the validation right after the remedy and the server checks both outputs together, so the value appeared twice and anchored patterns such as `^(?:1|2)$` reported a failed remedy even when it worked. All 109 remedies are affected; they stay disabled under `_remedy`.
+
 ## v1.2.0 - 2026-10-27
 
 781 rules, distributed as a signed LEA rule pack.

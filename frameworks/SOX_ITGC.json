@@ -1,0 +1,12 @@
+{
+  "id": "SOX_ITGC",
+  "display_name": "SOX IT General Controls",
+  "short_label": "SOX ITGC",
+  "authority": "U.S. Securities and Exchange Commission / PCAOB",
+  "region": "United States",
+  "url": "https://pcaobus.org/",
+  "description": "Selected automated technical checks associated with IT general controls supporting SOX Section 404.",
+  "report_title": "SOX ITGC Technical Check Evidence",
+  "legal_context": "Public companies must assess internal control over financial reporting under Section 404 of the Sarbanes-Oxley Act, and external auditors test the IT general controls that support it. Deficiencies can lead to adverse audit opinions and disclosure of material weaknesses.",
+  "control_label": "Control"
+}

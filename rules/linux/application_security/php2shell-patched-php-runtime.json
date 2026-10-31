@@ -30,7 +30,7 @@
     ],
     "_remedy": [
       {
-        "command": "cp /opt/lea-remediation/php /usr/local/bin/php.lea-new && chmod 755 /usr/local/bin/php.lea-new && mv /usr/local/bin/php.lea-new /usr/local/bin/php && cp /opt/lea-remediation/php-fpm /usr/local/sbin/php-fpm.lea-new && chmod 755 /usr/local/sbin/php-fpm.lea-new && mv /usr/local/sbin/php-fpm.lea-new /usr/local/sbin/php-fpm && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -v",
+        "command": "cp /opt/lea-remediation/php /usr/local/bin/php.lea-new && chmod 755 /usr/local/bin/php.lea-new && mv /usr/local/bin/php.lea-new /usr/local/bin/php && cp /opt/lea-remediation/php-fpm /usr/local/sbin/php-fpm.lea-new && chmod 755 /usr/local/sbin/php-fpm.lea-new && mv /usr/local/sbin/php-fpm.lea-new /usr/local/sbin/php-fpm && kill -USR2 $(cat /tmp/php-fpm.pid)",
         "system": [
           "Linux"
         ],

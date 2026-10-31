@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w net.ipv4.tcp_rfc1337=1 >/dev/null && cat /proc/sys/net/ipv4/tcp_rfc1337",
+        "command": "sysctl -w net.ipv4.tcp_rfc1337=1 >/dev/null",
         "system": [
           "Linux"
         ],

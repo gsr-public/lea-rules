@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl net.inet.udp.blackhole=1 >/dev/null && sysctl net.inet.udp.blackhole",
+        "command": "sysctl net.inet.udp.blackhole=1 >/dev/null",
         "system": [
           "Darwin"
         ],

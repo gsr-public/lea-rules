@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "auditpol /set /subcategory:\"Other Object Access Events\" /success:enable /failure:enable | Out-Null; auditpol /get /category:*",
+        "command": "auditpol /set /subcategory:\"Other Object Access Events\" /success:enable /failure:enable | Out-Null",
         "system": [
           "Windows"
         ],

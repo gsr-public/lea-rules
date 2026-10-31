@@ -1,0 +1,13 @@
+{
+  "id": "CSA_CCM",
+  "display_name": "CSA Cloud Controls Matrix v4",
+  "short_label": "CSA CCM",
+  "authority": "Cloud Security Alliance",
+  "version": "4",
+  "region": "International",
+  "url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix",
+  "description": "Selected automated technical checks associated with the CSA Cloud Controls Matrix.",
+  "report_title": "CSA CCM Control Evidence",
+  "legal_context": "The Cloud Controls Matrix is the basis of the CSA STAR registry and is widely used in cloud provider assessments and customer due diligence. Technical check results can support STAR submissions and contractual security commitments.",
+  "control_label": "Control"
+}

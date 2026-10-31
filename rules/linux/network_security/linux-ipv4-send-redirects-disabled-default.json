@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w net.ipv4.conf.default.send_redirects=0 >/dev/null && cat /proc/sys/net/ipv4/conf/default/send_redirects",
+        "command": "sysctl -w net.ipv4.conf.default.send_redirects=0 >/dev/null",
         "system": [
           "Linux"
         ],

@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w vm.unprivileged_userfaultfd=0 >/dev/null && cat /proc/sys/vm/unprivileged_userfaultfd",
+        "command": "sysctl -w vm.unprivileged_userfaultfd=0 >/dev/null",
         "system": [
           "Linux"
         ],

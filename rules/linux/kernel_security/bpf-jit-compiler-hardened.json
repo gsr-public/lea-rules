@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w net.core.bpf_jit_harden=2 >/dev/null && cat /proc/sys/net/core/bpf_jit_harden",
+        "command": "sysctl -w net.core.bpf_jit_harden=2 >/dev/null",
         "system": [
           "Linux"
         ],

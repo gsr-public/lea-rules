@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w kernel.sysrq=0 >/dev/null && cat /proc/sys/kernel/sysrq",
+        "command": "sysctl -w kernel.sysrq=0 >/dev/null",
         "system": [
           "Linux"
         ],

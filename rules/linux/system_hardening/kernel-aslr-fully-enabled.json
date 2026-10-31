@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w kernel.randomize_va_space=2 >/dev/null && cat /proc/sys/kernel/randomize_va_space",
+        "command": "sysctl -w kernel.randomize_va_space=2 >/dev/null",
         "system": [
           "Linux"
         ],

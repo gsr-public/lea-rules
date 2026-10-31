@@ -1,0 +1,13 @@
+{
+  "id": "NIST_800-53",
+  "display_name": "NIST SP 800-53 Rev. 5",
+  "short_label": "NIST 800-53",
+  "authority": "NIST",
+  "version": "Rev. 5",
+  "region": "United States",
+  "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+  "description": "Selected automated technical checks associated with NIST SP 800-53 Rev. 5 controls.",
+  "report_title": "NIST SP 800-53 Technical Check Evidence",
+  "legal_context": "NIST SP 800-53 is mandatory for U.S. federal information systems under FISMA and is the control baseline behind FedRAMP. Many state agencies, contractors and private organizations adopt it as their control catalogue, so assessment evidence supports authorizations to operate and contractual obligations.",
+  "control_label": "Control"
+}

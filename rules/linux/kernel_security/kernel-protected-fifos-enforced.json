@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w fs.protected_fifos=2 >/dev/null && cat /proc/sys/fs/protected_fifos",
+        "command": "sysctl -w fs.protected_fifos=2 >/dev/null",
         "system": [
           "Linux"
         ],

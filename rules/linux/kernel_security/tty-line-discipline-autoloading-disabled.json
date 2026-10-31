@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w dev.tty.ldisc_autoload=0 >/dev/null && cat /proc/sys/dev/tty/ldisc_autoload",
+        "command": "sysctl -w dev.tty.ldisc_autoload=0 >/dev/null",
         "system": [
           "Linux"
         ],

@@ -1,0 +1,12 @@
+{
+  "id": "SOC2",
+  "display_name": "SOC 2",
+  "short_label": "SOC 2",
+  "authority": "AICPA",
+  "region": "United States",
+  "url": "https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2",
+  "description": "Selected automated technical checks associated with the SOC 2 Trust Services Criteria.",
+  "report_title": "SOC 2 Technical Check Evidence",
+  "legal_context": "A SOC 2 report is an attestation by an independent CPA firm on controls relevant to the AICPA Trust Services Criteria, and is commonly requested in customer and vendor security reviews. Automated host check results can support the evidence an organization provides; they are not a SOC 2 report.",
+  "control_label": "Criterion"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "GDPR",
+  "display_name": "GDPR Article 32 Security of Processing",
+  "short_label": "GDPR Art. 32",
+  "authority": "European Union",
+  "region": "European Union",
+  "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+  "description": "Selected automated technical checks associated with GDPR Article 32 security of processing.",
+  "report_title": "GDPR Article 32 Technical Measures Evidence",
+  "legal_context": "Controllers and processors must implement appropriate technical and organisational measures to secure personal data under Article 32 of the GDPR. Infringements can lead to administrative fines of up to EUR 10 million or 2% of worldwide annual turnover, and documented measures support accountability and breach notifications.",
+  "control_label": "Measure"
+}

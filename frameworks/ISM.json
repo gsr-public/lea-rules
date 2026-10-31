@@ -1,0 +1,12 @@
+{
+  "id": "ISM",
+  "display_name": "Australian Government Information Security Manual",
+  "short_label": "ISM",
+  "authority": "Australian Signals Directorate",
+  "region": "Australia",
+  "url": "https://www.cyber.gov.au/ism",
+  "description": "Selected automated technical checks associated with the Australian Government Information Security Manual.",
+  "report_title": "ISM Control Evidence",
+  "legal_context": "The ISM sets out the cybersecurity controls for Australian Government systems and those who handle government information. It underpins IRAP assessments of systems and cloud services used by government.",
+  "control_label": "Control"
+}

@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "auditpol /set /subcategory:\"Directory Service Access\" /failure:enable | Out-Null; auditpol /get /category:*",
+        "command": "auditpol /set /subcategory:\"Directory Service Access\" /failure:enable | Out-Null",
         "system": [
           "Windows"
         ],

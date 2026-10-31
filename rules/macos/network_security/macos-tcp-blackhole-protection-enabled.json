@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl net.inet.tcp.blackhole=2 >/dev/null && sysctl net.inet.tcp.blackhole",
+        "command": "sysctl net.inet.tcp.blackhole=2 >/dev/null",
         "system": [
           "Darwin"
         ],

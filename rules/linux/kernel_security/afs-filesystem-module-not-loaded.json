@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "modprobe -r afs 2>/dev/null; cat /proc/modules",
+        "command": "modprobe -r afs 2>/dev/null",
         "system": [
           "Linux"
         ],

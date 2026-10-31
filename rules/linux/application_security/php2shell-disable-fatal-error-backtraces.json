@@ -30,7 +30,7 @@
     ],
     "_remedy": [
       {
-        "command": "printf 'fatal_error_backtraces=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-backtraces.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i",
+        "command": "printf 'fatal_error_backtraces=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-backtraces.ini && kill -USR2 $(cat /tmp/php-fpm.pid)",
         "system": [
           "Linux"
         ],

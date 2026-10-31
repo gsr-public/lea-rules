@@ -1,0 +1,12 @@
+{
+  "id": "BSI_Grundschutz",
+  "display_name": "BSI IT-Grundschutz",
+  "short_label": "IT-Grundschutz",
+  "authority": "German Federal Office for Information Security (BSI)",
+  "region": "Germany",
+  "url": "https://www.bsi.bund.de/grundschutz",
+  "description": "Selected automated technical checks associated with BSI IT-Grundschutz requirements.",
+  "report_title": "IT-Grundschutz Requirement Evidence",
+  "legal_context": "IT-Grundschutz is the BSI methodology for information security in Germany and the basis for ISO 27001 certification on the basis of IT-Grundschutz. German federal authorities and many operators of critical infrastructure use it to demonstrate the state of the art.",
+  "control_label": "Requirement"
+}

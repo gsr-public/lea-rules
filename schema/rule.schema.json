@@ -25,7 +25,8 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "items": {"type": "string", "pattern": "^(std|cat|env|risk|priv):[A-Za-z0-9_.:()\\-]+$"}
+      "items": {"type": "string", "pattern": "^(std|cat|env|risk|priv|evidence):[A-Za-z0-9_.:()\\-]+$"},
+      "description": "std:<framework>[:<requirement>] framework mappings, cat:, env:, risk:, priv:required, and evidence:sample (real command against sample or lab data, not live configuration) or evidence:simulated (synthetic output; no live control is tested). Rules without an evidence: tag produce live evidence."
     },
     "cmd": {
       "type": "object",

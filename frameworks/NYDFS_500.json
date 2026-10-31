@@ -1,0 +1,12 @@
+{
+  "id": "NYDFS_500",
+  "display_name": "NYDFS Cybersecurity Regulation (23 NYCRR 500)",
+  "short_label": "NYDFS 500",
+  "authority": "New York State Department of Financial Services",
+  "region": "United States",
+  "url": "https://www.dfs.ny.gov/industry_guidance/cybersecurity",
+  "description": "Selected automated technical checks associated with the NYDFS Cybersecurity Regulation (23 NYCRR 500).",
+  "report_title": "NYDFS Part 500 Control Evidence",
+  "legal_context": "Financial services companies licensed in New York must maintain a cybersecurity program under 23 NYCRR 500 and annually certify compliance to the Department. Inaccurate certifications and control failures have led to significant penalties.",
+  "control_label": "Section"
+}

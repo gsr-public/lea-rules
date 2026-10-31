@@ -1,0 +1,12 @@
+{
+  "id": "Cyber_Essentials",
+  "display_name": "Cyber Essentials",
+  "short_label": "Cyber Essentials",
+  "authority": "UK National Cyber Security Centre",
+  "region": "United Kingdom",
+  "url": "https://www.ncsc.gov.uk/cyberessentials/overview",
+  "description": "Selected automated technical checks associated with the UK Cyber Essentials technical controls.",
+  "report_title": "Cyber Essentials Control Evidence",
+  "legal_context": "Cyber Essentials is the UK government-backed baseline certification. It is required for many UK government contracts that handle sensitive or personal information and is often a condition of cyber insurance.",
+  "control_label": "Control"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "CIS",
+  "display_name": "CIS Benchmark",
+  "short_label": "CIS",
+  "authority": "Center for Internet Security",
+  "region": "International",
+  "url": "https://www.cisecurity.org/cis-benchmarks",
+  "description": "Selected automated technical checks associated with the CIS Benchmarks.",
+  "report_title": "CIS Benchmark Technical Check Report",
+  "legal_context": "CIS Benchmarks are widely recognized as an industry standard of due care for system hardening, and are frequently referenced in security due-diligence, cyber-insurance underwriting, and vendor risk assessments.",
+  "control_label": "Control"
+}

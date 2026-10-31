@@ -1,0 +1,13 @@
+{
+  "id": "NIST_CSF_2",
+  "display_name": "NIST Cybersecurity Framework 2.0",
+  "short_label": "NIST CSF 2.0",
+  "authority": "NIST",
+  "version": "2.0",
+  "region": "United States",
+  "url": "https://www.nist.gov/cyberframework",
+  "description": "Selected automated technical checks associated with NIST Cybersecurity Framework 2.0 outcomes.",
+  "report_title": "NIST CSF 2.0 Technical Check Evidence",
+  "legal_context": "The NIST Cybersecurity Framework is voluntary but widely referenced by regulators, sector agencies, boards and cyber insurers as the common language of cyber risk. Technical check results can support current and target profiles and governance reporting.",
+  "control_label": "Subcategory"
+}

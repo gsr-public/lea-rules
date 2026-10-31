@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl net.inet6.icmp6.rediraccept=0 >/dev/null && sysctl net.inet6.icmp6.rediraccept",
+        "command": "sysctl net.inet6.icmp6.rediraccept=0 >/dev/null",
         "system": [
           "Darwin"
         ],

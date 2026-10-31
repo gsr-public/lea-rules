@@ -14,7 +14,9 @@ LEA is a self-hosted compliance monitoring platform by GSR. Lightweight agents o
 ```
 rules/<platform>/<category>/<rule-slug>.json   one rule per file
 retired.json                                   rules withdrawn from the library (uid, name, reason)
+frameworks/<id>.json                           report wording per compliance framework (one per std:<id>)
 schema/rule.schema.json                        JSON Schema for a rule file
+schema/framework.schema.json                   JSON Schema for a framework profile
 tools/build_pack.py                            builds a signed LEA rule pack from rules/
 MAPPINGS.md                                    framework control -> rules
 CHANGELOG.md                                   release notes, renames, fixes
@@ -67,7 +69,7 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
 | `cmd.expect` | Server-side checks on the raw output. `re` must match, `not_re` must not match (per stream: `stdout`, `stderr`), `returncode` must equal the exit code, `md5` must equal the stdout hash, and `function` calls a built-in LEA server check. All applicable blocks must pass. |
 | `cmd._remedy` | Remediation commands that correct the setting, shipped disabled (see [Remediation is disabled by default](#remediation-is-disabled-by-default)). Empty when no safe, idempotent, non-interactive fix exists. |
 | `parameters` | Rule parameters: `%name%` placeholders in commands with default values (`[{"name", "value", "type": "internal"}]`); sites tune the values per rule in LEA without forking the definition. |
-| `tags` | `std:` framework mappings, `cat:` category, `env:` operating systems, `risk:` `low`/`medium`/`high`, and `priv:required` when the agent needs elevated rights. |
+| `tags` | `std:` framework mappings, `cat:` category, `env:` operating systems, `risk:` `low`/`medium`/`high`, `priv:required` when the agent needs elevated rights, and `evidence:sample` / `evidence:simulated` for rules that do not read live system state (reports label their results as sample or simulated evidence). |
 
 Conventions followed by every rule:
 
@@ -82,7 +84,7 @@ Conventions followed by every rule:
 1. On each cycle the agent runs the `validation` commands that match its operating system and distribution and sends stdout, stderr and the exit code to the server.
 2. The server selects the `expect` blocks for the same system and distribution. Blocks that name the host's distribution take precedence over blocks with an empty distribution list.
 3. Every applicable `re`, `not_re`, `returncode`, `md5` or `function` check must succeed for the result to be recorded as passing. Each result, including the raw output and any failed pattern, is stored and signed as evidence.
-4. If the result fails and the rule has an enabled `remedy` (see below), the server returns the remedy commands to the agent. The agent runs them and returns their output, which the server evaluates with the same expect blocks. Remedies in this library therefore end by printing the re-validation output (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null && cat /proc/sys/kernel/kptr_restrict`).
+4. If the result fails and the rule has an enabled `remedy` (see below), the server returns the remedy commands together with the validation commands. The agent runs the remedy, then the validation, and returns both outputs as one result (remedy output first), which the server evaluates with the same expect blocks. Remedies in this library therefore print nothing themselves (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null`); extra output would be checked together with the validation output and could fail anchored patterns.
 5. The next scheduled validation confirms the state independently.
 
 Remedies are applied at runtime only (for example `sysctl -w` does not persist across reboots).
@@ -96,7 +98,7 @@ To enable remediation for a rule, rename `_remedy` to `remedy` in that rule befo
 ## Using the rules with LEA
 
 The library ships to LEA deployments as a signed rule pack: `lea-rules-<version>.tgz` (the `rules/` tree plus a
-`manifest.json` with every rule's uid, path and sha256, and the retired uids), a detached ed25519 signature
+`manifest.json` with every rule's uid, path and sha256, the retired uids and the framework profiles), a detached ed25519 signature
 (`.tgz.sig`) and a `latest.json` feed. Every LEA release bundles the current pack; newer packs can be imported in the
 console (Settings → Rule sources), with `lea rules import`, or with `./lea_rules.sh import` on air-gapped servers, and
 connected servers can watch the feed. The server verifies the signature with GSR's public key before reading the pack.
@@ -113,18 +115,19 @@ Review rule descriptions before you add rules to a group: some rules are intende
 example container-only rules, IPv6 forwarding on container hosts, SquashFS on Ubuntu hosts with snaps, UDF on Azure VMs,
 Kernel FIPS Mode Enabled outside FIPS scope).
 
-### Evidence report prefixes
+### Frameworks and evidence reports
 
-The LEA compliance snapshot service selects rules for a framework report by tag prefix. A tag is counted when it equals the prefix or starts with the prefix followed by a colon:
+A framework is any `<id>` used in `std:<id>` and `std:<id>:<control>` tags. The LEA compliance snapshot service builds a framework's evidence from the active rules that carry a tag equal to `std:<id>` or starting with `std:<id>:`; each `std:<id>:<control>` tag on a rule maps it to one requirement (`<id>-<control>`). A rule with only `std:<id>` is a technical check associated with the framework but not mapped to any requirement: its evidence records use the internal ID `<id>-cmd-<rule id>` and reports list it as an unmapped check, never as a requirement. New tags therefore need no LEA release: tag the rules and enable the framework in the console.
 
-| Report | Prefix the product expects | Tag form used here |
-|---|---|---|
-| CIS | `std:CIS` | `std:CIS` on every rule with a CIS Controls v8 safeguard, plus `std:CIS_Controls_v8:<safeguard>` |
-| ISO 27001 | `std:ISO27001` | `std:ISO27001:A.8.9` (2022 Annex A; some rules also keep 2013 IDs) |
-| SOC 2 | `std:SOC2` | `std:SOC2:CC6.1` |
-| CMMC | `std:CMMC` | `std:CMMC:AC.L2-3.1.1` |
+| Report | Tag form used here |
+|---|---|
+| CIS | `std:CIS` on every rule with a CIS Controls v8 safeguard (the safeguard tag `std:CIS_Controls_v8:<safeguard>` is its own framework) |
+| ISO 27001 | `std:ISO27001:A.8.9` (2022 Annex A; some rules also keep 2013 IDs) |
+| SOC 2 | `std:SOC2:CC6.1` |
+| CMMC | `std:CMMC:AC.L2-3.1.1` |
+| any other | `std:<id>:<control>`, for example `std:NIST_800-53:AC-6`, `std:PCI_DSS_4:2.2.1`, `std:HIPAA:164.312(b)` |
 
-Because `std:CIS_Controls_v8:...` does not start with `std:CIS:`, the generic `std:CIS` tag is what includes a rule in the CIS report; the safeguard tag documents the mapping. NIST SP 800-53, PCI DSS 4.0, NIS2, DORA, HIPAA, NIST CSF 2.0, ASD Essential Eight and post-quantum tags are informative and are not used by the current evidence reports.
+`frameworks/<id>.json` holds the wording LEA prints in PDF reports for a framework: full and short name, publisher, report title, a one-sentence description of which checks the report covers, the legal and commercial context, what a requirement is called and up to four optional extra evidence report columns (`schema/framework.schema.json`). Results are always printed as "Check passed" / "Check failed"; a passing automated check is never reported as an implemented or effective control. `id`, `display_name`, `short_label`, `description` and `report_title` are required. The profiles travel in the pack's `manifest.json`; LEA administrators can override any field, and LEA asks for the wording of a framework that has no profile before it makes its first PDF report.
 
 ## Coverage
 

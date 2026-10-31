@@ -1,0 +1,12 @@
+{
+  "id": "DORA",
+  "display_name": "Digital Operational Resilience Act (EU) 2022/2554",
+  "short_label": "DORA",
+  "authority": "European Union",
+  "region": "European Union",
+  "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+  "description": "Selected automated technical checks associated with DORA ICT risk-management requirements.",
+  "report_title": "DORA ICT Risk Management Evidence",
+  "legal_context": "DORA applies directly to EU financial entities from 17 January 2025 and requires a documented ICT risk-management framework, including protection and prevention (Article 9) and detection (Article 10). Competent authorities supervise compliance and can impose remedial measures and penalties.",
+  "control_label": "Article"
+}

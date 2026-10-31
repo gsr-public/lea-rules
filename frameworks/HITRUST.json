@@ -1,0 +1,12 @@
+{
+  "id": "HITRUST",
+  "display_name": "HITRUST CSF",
+  "short_label": "HITRUST",
+  "authority": "HITRUST Alliance",
+  "region": "United States",
+  "url": "https://hitrustalliance.net/",
+  "description": "Selected automated technical checks associated with the HITRUST CSF.",
+  "report_title": "HITRUST CSF Control Evidence",
+  "legal_context": "HITRUST certification is widely required by U.S. healthcare organizations and their suppliers to demonstrate protection of sensitive data, and it maps to HIPAA and other regulations. Technical check results can support assessments and corrective action plans.",
+  "control_label": "Requirement statement"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "IEC_62443",
+  "display_name": "IEC 62443",
+  "short_label": "IEC 62443",
+  "authority": "IEC",
+  "region": "International",
+  "url": "https://www.iec.ch/",
+  "description": "Selected automated technical checks associated with IEC 62443 system security requirements.",
+  "report_title": "IEC 62443 Requirement Evidence",
+  "legal_context": "IEC 62443 is the international standard series for securing industrial automation and control systems. Asset owners, integrators and regulators in critical infrastructure and manufacturing commonly require it in procurement and certification.",
+  "control_label": "Requirement"
+}

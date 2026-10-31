@@ -11,4 +11,5 @@
 - Every rule has a `uid` (UUID v4). Never change or reuse it; LEA deployments track rules and their versions by uid
 - New rule = new uid; renamed rule = same uid, old name appended to `former_names`; withdrawn rule = file deleted and an entry in `retired.json`
 - The validate workflow rejects duplicate uids and former names that clash with other rules
+- Framework profiles: `frameworks/<id>.json` (report wording, `schema/framework.schema.json`), `id` = file name = the `<id>` of `std:<id>` tags; new standard = tag rules + add a profile; keep legal text factual
 - Packs: `tools/build_pack.py` (the LEA repo runs it via `./lea_release.sh rules` and signs with the GSR ed25519 rule-signing key)

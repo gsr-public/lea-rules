@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build a LEA rule pack (lea-rules-<version>.tgz + manifest + optional ed25519 signature) from a rules/ tree.
 
-  python3 tools/build_pack.py --version 1.2.0 [--rules rules] [--retired retired.json] [--key signing.key] [--out dist] [--pack-id lea-open-rules]
+  python3 tools/build_pack.py --version 1.2.0 [--rules rules] [--frameworks frameworks] [--retired retired.json] [--key signing.key] [--out dist] [--pack-id lea-open-rules]
 
+Framework profiles (frameworks/<id>.json, report wording) travel inside manifest.json, so older LEA servers ignore them.
 Writes <out>/lea-rules-<version>.tgz, <out>/lea-rules-<version>.tgz.sig (with --key) and <out>/latest.json.
 Signing needs the Python 'cryptography' package and an ed25519 private key in PEM (openssl genpkey -algorithm ed25519).
 """
@@ -13,6 +14,7 @@ import hashlib
 import io
 import json
 import pathlib
+import re
 import sys
 import tarfile
 import uuid
@@ -51,6 +53,29 @@ def collect(rules_dir):
     return entries, files, uids
 
 
+FRAMEWORK_ID_RE = re.compile(r'^[A-Za-z0-9][A-Za-z0-9_.-]{0,31}$')
+FRAMEWORK_REQUIRED = ('id', 'display_name', 'short_label', 'description', 'report_title')
+
+
+def collect_frameworks(frameworks_dir):
+    profiles = []
+    for path in sorted(frameworks_dir.glob('*.json')):
+        rel = 'frameworks/' + path.name
+        try:
+            profile = json.loads(path.read_bytes())
+        except ValueError as e:
+            fail(f'{rel}: invalid JSON: {e}')
+        if not isinstance(profile, dict):
+            fail(f'{rel}: must contain one framework object')
+        missing = [k for k in FRAMEWORK_REQUIRED if not profile.get(k)]
+        if missing:
+            fail(f'{rel}: missing {", ".join(missing)}')
+        if not FRAMEWORK_ID_RE.match(profile['id']) or profile['id'] != path.stem:
+            fail(f"{rel}: id {profile['id']!r} must match the file name and {FRAMEWORK_ID_RE.pattern}")
+        profiles.append(profile)
+    return profiles
+
+
 def tgz(files):
     raw = io.BytesIO()
     with tarfile.open(fileobj=raw, mode='w', format=tarfile.PAX_FORMAT) as tar:
@@ -79,6 +104,7 @@ def main():
     ap = argparse.ArgumentParser(description='Build a LEA rule pack')
     ap.add_argument('--version', required=True)
     ap.add_argument('--rules', default='rules')
+    ap.add_argument('--frameworks', default='frameworks')
     ap.add_argument('--retired', default='retired.json')
     ap.add_argument('--key')
     ap.add_argument('--out', default='dist')
@@ -86,12 +112,14 @@ def main():
     args = ap.parse_args()
 
     entries, files, uids = collect(pathlib.Path(args.rules))
+    frameworks = collect_frameworks(pathlib.Path(args.frameworks))
     retired_path = pathlib.Path(args.retired)
     retired = json.loads(retired_path.read_text()) if retired_path.exists() else []
     for r in retired:
         if r['uid'] in uids:
             fail(f"retired uid {r['uid']} ({r.get('name')}) is still in {args.rules}")
-    manifest = {'format': 1, 'pack_id': args.pack_id, 'version': args.version, 'rules': entries, 'retired': [r['uid'] for r in retired]}
+    manifest = {'format': 1, 'pack_id': args.pack_id, 'version': args.version, 'rules': entries, 'retired': [r['uid'] for r in retired],
+                'frameworks': frameworks}
     files['manifest.json'] = (json.dumps(manifest, indent=1, sort_keys=True) + '\n').encode()
     data = tgz(files)
     out = pathlib.Path(args.out)
@@ -103,7 +131,7 @@ def main():
         (out / f'{name}.sig').write_text(json.dumps(sign(data, args.key), indent=1) + '\n')
         latest['sig'] = f'{name}.sig'
     (out / 'latest.json').write_text(json.dumps(latest, indent=1) + '\n')
-    print(f"{out / name}: {len(entries)} rules, {len(retired)} retired, sha256 {latest['sha256']}{', signed' if args.key else ', unsigned'}")
+    print(f"{out / name}: {len(entries)} rules, {len(frameworks)} frameworks, {len(retired)} retired, sha256 {latest['sha256']}{', signed' if args.key else ', unsigned'}")
 
 
 if __name__ == '__main__':

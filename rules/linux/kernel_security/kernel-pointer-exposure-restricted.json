@@ -32,7 +32,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w kernel.kptr_restrict=1 >/dev/null && cat /proc/sys/kernel/kptr_restrict",
+        "command": "sysctl -w kernel.kptr_restrict=1 >/dev/null",
         "system": [
           "Linux"
         ],

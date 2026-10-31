@@ -1,0 +1,12 @@
+{
+  "id": "BIS",
+  "display_name": "BIS Quantum-Readiness Roadmap",
+  "short_label": "BIS Quantum",
+  "authority": "Bank for International Settlements",
+  "region": "International",
+  "url": "https://www.bis.org/",
+  "description": "Selected automated technical checks associated with the BIS quantum-readiness roadmap for the financial system.",
+  "report_title": "Quantum-Readiness Roadmap Evidence",
+  "legal_context": "The Bank for International Settlements urges financial institutions to plan and execute a migration to quantum-safe cryptography. Supervisors increasingly reference such roadmaps when assessing the operational resilience of banks and financial market infrastructures.",
+  "control_label": "Roadmap item"
+}

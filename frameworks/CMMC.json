@@ -1,0 +1,13 @@
+{
+  "id": "CMMC",
+  "display_name": "Cybersecurity Maturity Model Certification 2.0",
+  "short_label": "CMMC",
+  "authority": "U.S. Department of Defense",
+  "version": "2.0",
+  "region": "United States",
+  "url": "https://dodcio.defense.gov/CMMC/",
+  "description": "Selected automated technical checks associated with CMMC 2.0 practices.",
+  "report_title": "CMMC Technical Check Evidence",
+  "legal_context": "CMMC status governs eligibility to hold or bid on U.S. Department of Defense contracts requiring the protection of Controlled Unclassified Information (CUI).",
+  "control_label": "Practice"
+}

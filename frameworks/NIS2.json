@@ -1,0 +1,12 @@
+{
+  "id": "NIS2",
+  "display_name": "NIS2 Directive (EU) 2022/2555",
+  "short_label": "NIS2",
+  "authority": "European Union",
+  "region": "European Union",
+  "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+  "description": "Selected automated technical checks associated with NIS2 Article 21 risk-management measures.",
+  "report_title": "NIS2 Article 21 Measures Evidence",
+  "legal_context": "NIS2 requires essential and important entities in the EU to implement cybersecurity risk-management measures (Article 21) under national transposition laws. Management bodies are accountable for approving and overseeing these measures, and national authorities can impose administrative fines of up to EUR 10 million or 2% of worldwide annual turnover for essential entities.",
+  "control_label": "Measure"
+}

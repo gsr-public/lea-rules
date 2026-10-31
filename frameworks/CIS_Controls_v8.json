@@ -1,0 +1,13 @@
+{
+  "id": "CIS_Controls_v8",
+  "display_name": "CIS Critical Security Controls v8",
+  "short_label": "CIS Controls v8",
+  "authority": "Center for Internet Security",
+  "version": "8",
+  "region": "International",
+  "url": "https://www.cisecurity.org/controls",
+  "description": "Selected automated technical checks associated with CIS Critical Security Controls v8 safeguards.",
+  "report_title": "CIS Controls v8 Technical Check Evidence",
+  "legal_context": "The CIS Critical Security Controls are a prioritized, widely adopted set of safeguards. Regulators, courts and insurers commonly cite them as a benchmark of reasonable security, and implementation groups IG1 to IG3 give a defensible baseline for organizations of any size.",
+  "control_label": "Safeguard"
+}

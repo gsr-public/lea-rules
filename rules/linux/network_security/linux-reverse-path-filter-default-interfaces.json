@@ -29,7 +29,7 @@
     ],
     "_remedy": [
       {
-        "command": "sysctl -w net.ipv4.conf.default.rp_filter=2 >/dev/null && cat /proc/sys/net/ipv4/conf/default/rp_filter",
+        "command": "sysctl -w net.ipv4.conf.default.rp_filter=2 >/dev/null",
         "system": [
           "Linux"
         ],

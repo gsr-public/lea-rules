@@ -36,7 +36,7 @@
     ],
     "_remedy": [
       {
-        "command": "modprobe -r cramfs 2>/dev/null; cat /proc/modules",
+        "command": "modprobe -r cramfs 2>/dev/null",
         "system": [
           "Linux"
         ],

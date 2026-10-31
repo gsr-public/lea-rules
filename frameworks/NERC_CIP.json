@@ -1,0 +1,12 @@
+{
+  "id": "NERC_CIP",
+  "display_name": "NERC Critical Infrastructure Protection",
+  "short_label": "NERC CIP",
+  "authority": "North American Electric Reliability Corporation",
+  "region": "North America",
+  "url": "https://www.nerc.com/pa/Stand/Pages/CIPStandards.aspx",
+  "description": "Selected automated technical checks associated with the NERC CIP reliability standards.",
+  "report_title": "NERC CIP Technical Check Evidence",
+  "legal_context": "NERC CIP standards are mandatory for owners and operators of the North American bulk electric system and are enforced under FERC oversight. Violations can carry substantial per-violation, per-day penalties.",
+  "control_label": "Requirement"
+}

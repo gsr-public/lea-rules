@@ -1,0 +1,13 @@
+{
+  "id": "PCI_DSS_4",
+  "display_name": "PCI DSS v4.0",
+  "short_label": "PCI DSS 4.0",
+  "authority": "PCI Security Standards Council",
+  "version": "4.0",
+  "region": "International",
+  "url": "https://www.pcisecuritystandards.org/",
+  "description": "Selected automated technical checks associated with PCI DSS v4.0 requirements.",
+  "report_title": "PCI DSS 4.0 Requirement Evidence",
+  "legal_context": "PCI DSS compliance is a contractual obligation for organizations that store, process or transmit payment card data, enforced by the card brands through acquirers. Non-compliance can lead to fines, higher transaction fees, liability for fraud losses and loss of the ability to accept cards.",
+  "control_label": "Requirement"
+}

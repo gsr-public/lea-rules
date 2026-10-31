@@ -30,7 +30,7 @@
     ],
     "_remedy": [
       {
-        "command": "printf 'session.upload_progress.enabled=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-upload.ini && kill -USR2 $(cat /tmp/php-fpm.pid) && php-fpm -i",
+        "command": "printf 'session.upload_progress.enabled=Off\\n' > /usr/local/etc/php/conf.d/zz-lea-upload.ini && kill -USR2 $(cat /tmp/php-fpm.pid)",
         "system": [
           "Linux"
         ],
