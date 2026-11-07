@@ -1,0 +1,115 @@
+name: Validate rules
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install jsonschema
+        run: pip install "jsonschema>=4.18"
+
+      - name: Validate rule files
+        shell: python
+        run: |
+          import json, pathlib, re, sys
+          from jsonschema import Draft202012Validator
+
+          root = pathlib.Path(".")
+          schema = json.loads((root / "schema/rule.schema.json").read_text())
+          validator = Draft202012Validator(schema)
+          platform_systems = {"linux": {"Linux"}, "macos": {"Darwin"}, "windows": {"Windows"}}
+          errors, names, uids, former = [], {}, {}, {}
+
+          def slug(name):
+              s = name.replace("+", "plus").lower()
+              return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+          files = sorted(root.glob("rules/*/*/*.json"))
+          if not files:
+              sys.exit("no rule files found")
+          for path in files:
+              try:
+                  rule = json.loads(path.read_text())
+              except Exception as e:
+                  errors.append(f"{path}: invalid JSON: {e}")
+                  continue
+              if not isinstance(rule, dict):
+                  errors.append(f"{path}: file must contain exactly one rule object")
+                  continue
+              for err in validator.iter_errors(rule):
+                  errors.append(f"{path}: {'/'.join(map(str, err.path))}: {err.message}")
+              platform, category, filename = path.parts[-3], path.parts[-2], path.stem
+              if platform not in ("linux", "macos", "windows", "multi"):
+                  errors.append(f"{path}: unknown platform folder {platform}")
+              if rule.get("category") != category:
+                  errors.append(f"{path}: category {rule.get('category')} does not match folder {category}")
+              if slug(rule.get("name", "")) != filename:
+                  errors.append(f"{path}: file name should be {slug(rule.get('name', ''))}.json")
+              if rule.get("name") in names:
+                  errors.append(f"{path}: duplicate rule name (also in {names[rule['name']]})")
+              names[rule.get("name")] = path
+              if rule.get("uid") in uids:
+                  errors.append(f"{path}: duplicate uid (also in {uids[rule['uid']]})")
+              uids[rule.get("uid")] = path
+              for old in rule.get("former_names", []):
+                  if old in former:
+                      errors.append(f"{path}: former name {old!r} also claimed by {former[old]}")
+                  former[old] = path
+              systems = {s for block in rule.get("cmd", {}).get("validation", []) for s in block.get("system", [])}
+              if platform in platform_systems and systems != platform_systems[platform]:
+                  errors.append(f"{path}: systems {sorted(systems)} do not match platform folder {platform}")
+              if platform == "multi" and len(systems) < 2:
+                  errors.append(f"{path}: rules in multi/ must cover at least two systems")
+              for i, block in enumerate(rule.get("cmd", {}).get("expect", [])):
+                  for key in ("re", "not_re"):
+                      for stream, pattern in block.get(key, {}).items():
+                          try:
+                              re.compile(pattern)
+                          except re.error as e:
+                              errors.append(f"{path}: expect[{i}].{key}.{stream} does not compile: {e}")
+
+          for old, path in former.items():
+              if old in names and names[old] != path:
+                  errors.append(f"{path}: former name {old!r} is the current name of {names[old]}")
+
+          for line in errors:
+              print(line)
+          print(f"{len(files)} rule files checked, {len(errors)} problems")
+          sys.exit(1 if errors else 0)
+
+      - name: Validate framework profiles
+        shell: python
+        run: |
+          import json, pathlib, sys
+          from jsonschema import Draft202012Validator
+
+          root = pathlib.Path(".")
+          validator = Draft202012Validator(json.loads((root / "schema/framework.schema.json").read_text()))
+          errors = []
+          files = sorted(root.glob("frameworks/*.json"))
+          for path in files:
+              try:
+                  profile = json.loads(path.read_text())
+              except Exception as e:
+                  errors.append(f"{path}: invalid JSON: {e}")
+                  continue
+              for err in validator.iter_errors(profile):
+                  errors.append(f"{path}: {'/'.join(map(str, err.path))}: {err.message}")
+              if isinstance(profile, dict) and profile.get("id") != path.stem:
+                  errors.append(f"{path}: id {profile.get('id')!r} does not match the file name")
+          for line in errors:
+              print(line)
+          print(f"{len(files)} framework profiles checked, {len(errors)} problems")
+          sys.exit(1 if errors else 0)
