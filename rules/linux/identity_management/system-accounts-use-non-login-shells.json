@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?!(?:root|sync|shutdown|halt):)[^:\\n]+:[^:\\n]*:(?:[1-9]|[1-9]\\d|[1-9]\\d\\d):[^:\\n]*:[^:\\n]*:[^:\\n]*:(?!(?:/usr)?/s?bin/(?:nologin|false)[ \\t]*$)[^\\n]*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

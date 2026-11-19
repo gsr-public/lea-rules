@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/systemd/journald.conf /etc/systemd/journald.conf.d/*.conf /usr/lib/systemd/journald.conf.d/*.conf 2>/dev/null",
+        "command": "cat /etc/systemd/journald.conf /etc/systemd/journald.conf.d/*.conf /usr/lib/systemd/journald.conf.d/*.conf",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?mi)^[ \\t]*Compress[ \\t]*=[ \\t]*(?:no|false|0)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

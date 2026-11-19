@@ -38,6 +38,9 @@
         ],
         "re": {
           "stdout": "\\AY\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

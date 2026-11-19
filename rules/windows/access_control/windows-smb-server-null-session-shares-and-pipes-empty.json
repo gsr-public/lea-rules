@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?mi)^[ \\t]+NullSession(?:Shares|Pipes)[ \\t]+REG_MULTI_SZ[ \\t]+\\S"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

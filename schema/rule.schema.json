@@ -82,6 +82,7 @@
         "distribution": {"$ref": "#/$defs/distribution"},
         "re": {"$ref": "#/$defs/streams"},
         "not_re": {"$ref": "#/$defs/streams"},
+        "unknown_re": {"$ref": "#/$defs/streams"},
         "returncode": {"type": "integer"},
         "md5": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
         "function": {"type": "string"},

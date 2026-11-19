@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?:talkd|in\\.talkd|ntalkd|in\\.ntalkd)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

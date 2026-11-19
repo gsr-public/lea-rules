@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "for f in /proc/sys/kernel/unprivileged_userns_clone /proc/sys/kernel/apparmor_restrict_unprivileged_userns /proc/sys/user/max_user_namespaces; do printf '%s=' \"$f\"; cat \"$f\" 2>/dev/null || echo absent; done",
+        "command": "for f in /proc/sys/kernel/unprivileged_userns_clone /proc/sys/kernel/apparmor_restrict_unprivileged_userns /proc/sys/user/max_user_namespaces; do printf '%s=' \"$f\"; cat \"$f\" || echo absent; done",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^(?:/proc/sys/kernel/unprivileged_userns_clone=0|/proc/sys/kernel/apparmor_restrict_unprivileged_userns=1|/proc/sys/user/max_user_namespaces=0)\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

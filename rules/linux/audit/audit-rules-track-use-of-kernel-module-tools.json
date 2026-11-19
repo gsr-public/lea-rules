@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:-w[ \\t]+/sbin/insmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/sbin/modprobe(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/sbin/rmmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/usr/sbin/insmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/usr/sbin/modprobe(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/usr/sbin/rmmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/usr/bin/kmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-w[ \\t]+/bin/kmod(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x|-a[ \\t]+(?:always,exit|exit,always)[^\\n]*-F[ \\t]*path=/(?:usr/)?s?bin/(?:kmod|insmod|modprobe|rmmod)(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwa]*x)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

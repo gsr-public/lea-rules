@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "\\b(?:ypserv|ypbind|yppasswdd|ypxfrd)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

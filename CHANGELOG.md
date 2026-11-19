@@ -2,8 +2,14 @@
 
 ## Unreleased
 
+## v1.3.0 - 2026-11-19
+
+781 rules, distributed as a signed LEA rule pack.
+
 ### Added
 
+- `unknown_re` on every expect block: output that shows the agent could not read the input (Linux/macOS `Permission denied|Operation not permitted`, the PowerShell access-denied messages on Windows) is recorded as *Could not check* instead of a failure. A block that passes still passes, and a `not_re` violation still fails. Commands keep their stderr so the server can tell the two apart.
+- Errors that mean the check could not run, on the rules where they occur: `No such file or directory` for kernel settings the running kernel does not expose (`/proc/sys` rules, CPU vulnerability reporting, no `/boot` for the newest-kernel rule), `A required privilege is not held by the client` for `auditpol`, `An attempt to access a required resource was denied` for `manage-bde`, `The requested operation requires elevation` for `Get-WindowsOptionalFeature`, `You need administrator access to run this tool` for macOS `systemsetup`, and `System has not been booted with systemd|Failed to connect to bus` for `timedatectl`. Missing files that mean a protection is absent (FIPS, AppArmor, lockdown, module signing, Secure Boot, configuration files) still fail.
 - `frameworks/<id>.json`: report wording for 29 compliance frameworks (the 15 tagged in this library and 14 more common standards such as NIST SP 800-171, FedRAMP, Cyber Essentials, GDPR Art. 32, TISAX, IEC 62443 and NERC CIP), validated by `schema/framework.schema.json`. `tools/build_pack.py` puts them in `manifest.json` (`frameworks`); LEA servers that predate it ignore the key. Every `std:<id>` framework now gets signed snapshots and reports in LEA, not only CIS, ISO 27001, SOC 2 and CMMC.
 
 ### Fixed

@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A[46][04][04] root root\\s*\\Z"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

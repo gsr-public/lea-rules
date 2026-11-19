@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*admin_space_left_action[ \\t]*=[ \\t]*(?:single|halt)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

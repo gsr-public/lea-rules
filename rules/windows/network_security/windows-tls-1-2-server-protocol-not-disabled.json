@@ -27,6 +27,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "\\bEnabled\\s+REG_DWORD\\s+0x0\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -36,6 +39,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "\\bDisabledByDefault\\s+REG_DWORD\\s+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

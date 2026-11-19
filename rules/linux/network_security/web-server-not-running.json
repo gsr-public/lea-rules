@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?:httpd|apache2|nginx|lighttpd)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

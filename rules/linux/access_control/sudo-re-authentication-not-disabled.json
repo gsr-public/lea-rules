@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/sudoers /etc/sudoers.d/* 2>/dev/null",
+        "command": "cat /etc/sudoers /etc/sudoers.d/*",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*[^#\\n]*!authenticate\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

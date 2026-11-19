@@ -27,6 +27,10 @@
         "distribution": [],
         "re": {
           "stdout": "Percentage\\s+Encrypted\\s*:\\s*100(\\.0+)?%"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied|An attempt to access a required resource was denied",
+          "stdout": "An attempt to access a required resource was denied"
         }
       }
     ],

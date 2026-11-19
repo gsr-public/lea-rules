@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/dnf/dnf.conf /etc/yum.conf 2>/dev/null",
+        "command": "cat /etc/dnf/dnf.conf /etc/yum.conf",
         "system": [
           "Linux"
         ],
@@ -45,6 +45,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*localpkg_gpgcheck[ \\t]*=[ \\t]*(?:0|false|no)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

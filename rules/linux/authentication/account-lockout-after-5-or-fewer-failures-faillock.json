@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/security/faillock.conf /etc/pam.d/system-auth /etc/pam.d/password-auth /etc/pam.d/common-auth 2>/dev/null",
+        "command": "cat /etc/security/faillock.conf /etc/pam.d/system-auth /etc/pam.d/password-auth /etc/pam.d/common-auth",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?:[ \\t]*deny[ \\t]*=[ \\t]*|[ \\t]*auth\\b[^#\\n]*\\bpam_faillock\\.so\\b[^#\\n]*\\bdeny=)(?:0|[6-9]|[1-9]\\d+)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

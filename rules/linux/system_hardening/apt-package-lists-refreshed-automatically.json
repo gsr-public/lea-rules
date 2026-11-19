@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/apt/apt.conf.d/* 2>/dev/null",
+        "command": "cat /etc/apt/apt.conf.d/*",
         "system": [
           "Linux"
         ],
@@ -30,6 +30,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*APT::Periodic::Update-Package-Lists[ \\t]+\"?[1-9]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

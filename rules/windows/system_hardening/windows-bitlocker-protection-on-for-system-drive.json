@@ -24,6 +24,10 @@
         "distribution": [],
         "re": {
           "stdout": "Protection Status:\\s*Protection On\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied|An attempt to access a required resource was denied",
+          "stdout": "An attempt to access a required resource was denied"
         }
       }
     ],

@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?![0-7][01][01] )\\d+ /Users/(?!Shared$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\b(?:chronyd|ntpd|openntpd|systemd-timesyn)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

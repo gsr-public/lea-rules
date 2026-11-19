@@ -27,6 +27,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

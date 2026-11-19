@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^net\\.inet\\.ip\\.redirect:\\s*0\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

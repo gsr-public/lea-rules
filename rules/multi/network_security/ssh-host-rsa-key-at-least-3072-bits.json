@@ -9,14 +9,14 @@
   "cmd": {
     "validation": [
       {
-        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub || echo 'LEA_RULE_no_service'",
         "system": [
           "Linux"
         ],
         "distribution": []
       },
       {
-        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub || echo 'LEA_RULE_no_service'",
         "system": [
           "Darwin"
         ],
@@ -31,6 +31,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A(?:30[7-9]\\d|3[1-9]\\d\\d|[4-9]\\d{3}|[1-9]\\d{4,})\\s+SHA256:|LEA_RULE_no_service"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -40,6 +43,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A(?:30[7-9]\\d|3[1-9]\\d\\d|[4-9]\\d{3}|[1-9]\\d{4,})\\s+SHA256:|LEA_RULE_no_service"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

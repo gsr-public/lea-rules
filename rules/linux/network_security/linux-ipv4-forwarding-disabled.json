@@ -28,6 +28,9 @@
         "distribution": [],
         "re": {
           "stdout": "^0$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted|No such file or directory"
         }
       }
     ],

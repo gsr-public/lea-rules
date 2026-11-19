@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%n %a %U %G' /etc/cron.allow /etc/cron.deny /etc/at.allow /etc/at.deny 2>/dev/null",
+        "command": "stat -c '%n %a %U %G' /etc/cron.allow /etc/cron.deny /etc/at.allow /etc/at.deny",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^/etc/(?:cron|at)\\.(?:allow|deny) (?![0-6][04]0 root (?:root|crontab|daemon)$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -30,6 +30,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?:ubuntu|ec2-user|centos|cloud-user|fedora|rocky|almalinux|debian|opc):"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

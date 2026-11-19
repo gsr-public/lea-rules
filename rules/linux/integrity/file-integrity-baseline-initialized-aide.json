@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^aide\\.db(?:\\.gz)?$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

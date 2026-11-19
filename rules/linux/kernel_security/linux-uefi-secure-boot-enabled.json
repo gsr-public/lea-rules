@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A\\s*(?:[0-9a-f]{2}\\s+){4}01\\s*\\Z"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -41,6 +41,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -53,6 +56,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -65,6 +71,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:xmrig|minerd|cpuminer|ethminer|t\\-rex|nbminer|lolminer|phoenixminer|kdevtmpfsi|kinsing|xmr\\-stak|nanominer|gminer|teamredminer|srbminer)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

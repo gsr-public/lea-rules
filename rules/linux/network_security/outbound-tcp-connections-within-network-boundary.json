@@ -26,7 +26,10 @@
         "system": [
           "Linux"
         ],
-        "distribution": []
+        "distribution": [],
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
+        }
       }
     ],
     "_remedy": [],

@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/log/lastlog/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/lastlog/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/var/log/wtmp/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/wtmp/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/run/faillock/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/run/faillock/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/run/faillock/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/run/faillock/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/var/log/faillog/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/faillog/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/var/log/tallylog/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/tallylog/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

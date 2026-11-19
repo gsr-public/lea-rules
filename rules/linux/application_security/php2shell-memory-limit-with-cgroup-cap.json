@@ -22,6 +22,9 @@
         "re": {
           "stdout": "\\bmemory_limit\\s+=>\\s+-1\\s+=>\\s+-1[\\s\\S]*\\b536870912\\b"
         },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
+        },
         "system": [
           "Linux"
         ],

@@ -30,6 +30,9 @@
         },
         "not_re": {
           "stdout": "(?m)^\\s*\\d+:\\s+[0-9A-F]+:0017\\s+[0-9A-F]+:0000\\s+0A\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

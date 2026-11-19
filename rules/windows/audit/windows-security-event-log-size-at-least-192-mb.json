@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^maxSize:\\s*(?:[3-9]\\d{8}|2[1-9]\\d{7}|20[2-9]\\d{6}|201[4-9]\\d{5}|2013[3-9]\\d{4}|20132[7-9]\\d{3}|201326[6-9]\\d{2}|20132659[2-9]|[1-9]\\d{9,})\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

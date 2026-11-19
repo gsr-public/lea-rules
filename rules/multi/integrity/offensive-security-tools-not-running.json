@@ -44,6 +44,9 @@
         },
         "not_re": {
           "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -56,6 +59,9 @@
         },
         "not_re": {
           "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -68,6 +74,9 @@
         },
         "not_re": {
           "stdout": "(?mi)\\b(?:nmap|sqlmap|hydra|john|hashcat|aircrack-ng|netcat|ncat)\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

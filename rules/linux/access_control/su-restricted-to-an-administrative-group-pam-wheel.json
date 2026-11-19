@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*auth[ \\t]+(?:required|requisite)[ \\t]+pam_wheel\\.so\\b[^\\n]*\\buse_uid\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

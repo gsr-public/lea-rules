@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "type[ \\t]+filter[ \\t]+hook[ \\t]+input[ \\t]+priority[ \\t]+[^;\\n]+;[ \\t]*policy[ \\t]+drop[ \\t]*;"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

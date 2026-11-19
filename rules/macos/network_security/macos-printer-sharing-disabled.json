@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^_share_printers=0$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

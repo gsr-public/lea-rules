@@ -34,6 +34,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S+\\s+\\d+\\s+\\d+\\s+\\d+\\s+(?:\\d|[0-7]\\d|8[0-4])%\\s+/\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -43,6 +46,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S+\\s+\\d+\\s+\\d+\\s+\\d+\\s+(?:\\d|[0-7]\\d|8[0-4])%\\s+/\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "\\ball_max="
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

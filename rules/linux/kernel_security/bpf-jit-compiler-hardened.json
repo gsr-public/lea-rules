@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /proc/sys/net/core/bpf_jit_harden 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "cat /proc/sys/net/core/bpf_jit_harden || echo 'LEA_RULE_no_service'",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A(?:2)\\s*\\Z|LEA_RULE_no_service"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

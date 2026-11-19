@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "Authenticated Root status:[ \\t]*enabled\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^[-l][rwxsStT-]{9}"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

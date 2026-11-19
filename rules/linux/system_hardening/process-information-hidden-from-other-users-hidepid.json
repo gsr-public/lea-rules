@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^proc[ \\t]+/proc[ \\t]+proc[ \\t]+\\S*\\bhidepid=(?:2|invisible)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

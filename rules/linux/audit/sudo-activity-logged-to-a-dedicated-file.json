@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/sudoers /etc/sudoers.d/* 2>/dev/null",
+        "command": "cat /etc/sudoers /etc/sudoers.d/*",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*Defaults\\b[^\\n]*\\blogfile[ \\t]*=[ \\t]*\"?/"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

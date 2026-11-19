@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "if [ -d /etc/gdm3 ] || [ -d /etc/gdm ]; then cat /etc/dconf/db/gdm.d/* /etc/dconf/db/local.d/* /etc/gdm3/custom.conf /etc/gdm/custom.conf 2>/dev/null; echo 'LEA_GDM'; else echo 'LEA_RULE_no_service'; fi",
+        "command": "if [ -d /etc/gdm3 ] || [ -d /etc/gdm ]; then cat /etc/dconf/db/gdm.d/* /etc/dconf/db/local.d/* /etc/gdm3/custom.conf /etc/gdm/custom.conf; echo 'LEA_GDM'; else echo 'LEA_RULE_no_service'; fi",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?ms)^\\[xdmcp\\][^\\[]*^[ \\t]*Enable[ \\t]*=[ \\t]*true\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

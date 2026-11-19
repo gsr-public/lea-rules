@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "\\b(?:tftpd|atftpd)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

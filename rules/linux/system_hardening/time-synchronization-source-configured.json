@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/chrony.conf /etc/chrony/chrony.conf /etc/chrony/sources.d/*.sources /etc/systemd/timesyncd.conf /etc/systemd/timesyncd.conf.d/*.conf /etc/ntp.conf /etc/ntpsec/ntp.conf 2>/dev/null",
+        "command": "cat /etc/chrony.conf /etc/chrony/chrony.conf /etc/chrony/sources.d/*.sources /etc/systemd/timesyncd.conf /etc/systemd/timesyncd.conf.d/*.conf /etc/ntp.conf /etc/ntpsec/ntp.conf",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:server|pool)[ \\t]+\\S|NTP[ \\t]*=[ \\t]*\\S)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

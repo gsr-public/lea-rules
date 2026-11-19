@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^a8f5898e\\-1dc8\\-49a9\\-9878\\-85004b8a61e6=1[ \\t]*\\r?$"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

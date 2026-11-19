@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "EnableLUA\\s+REG_DWORD\\s+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

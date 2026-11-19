@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "No such key:\\s*AuthenticationAuthority"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

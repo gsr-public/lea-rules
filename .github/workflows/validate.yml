@@ -73,7 +73,7 @@ jobs:
               if platform == "multi" and len(systems) < 2:
                   errors.append(f"{path}: rules in multi/ must cover at least two systems")
               for i, block in enumerate(rule.get("cmd", {}).get("expect", [])):
-                  for key in ("re", "not_re"):
+                  for key in ("re", "not_re", "unknown_re"):
                       for stream, pattern in block.get(key, {}).items():
                           try:
                               re.compile(pattern)

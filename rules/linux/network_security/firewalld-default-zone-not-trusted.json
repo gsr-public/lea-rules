@@ -45,6 +45,9 @@
         },
         "not_re": {
           "stdout": "(?m)^[ \\t]*DefaultZone[ \\t]*=[ \\t]*trusted\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

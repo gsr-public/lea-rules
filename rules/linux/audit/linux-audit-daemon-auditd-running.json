@@ -28,6 +28,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\bauditd\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

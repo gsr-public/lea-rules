@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\s*(?!#)system_priority\\s*=.*-VERS-SSL3\\.0.*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\s*(?!#)system_priority\\s*=.*-VERS-TLS1\\.0.*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -42,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\s*(?!#)system_priority\\s*=.*-VERS-TLS1\\.1.*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

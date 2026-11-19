@@ -27,6 +27,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "Protocols\\\\SSL 2\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -36,6 +39,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "Protocols\\\\SSL 3\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -45,6 +51,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "Protocols\\\\TLS 1\\.0\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -54,6 +63,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "Protocols\\\\TLS 1\\.1\\\\Server\\s*\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled\\s+REG_DWORD\\s+0x(?!0\\b)[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

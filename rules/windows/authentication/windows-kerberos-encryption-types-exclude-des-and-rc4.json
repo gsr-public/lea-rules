@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+SupportedEncryptionTypes[ \\t]+REG_DWORD[ \\t]+0x[0-9a-f]*(?:8|[13579bdf]0)\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^systemd-resolve$'; then cat /etc/systemd/resolved.conf /etc/systemd/resolved.conf.d/*.conf 2>/dev/null; echo LEA_RESOLVED; else echo 'LEA_RULE_no_service'; fi",
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^systemd-resolve$'; then cat /etc/systemd/resolved.conf /etc/systemd/resolved.conf.d/*.conf; echo LEA_RESOLVED; else echo 'LEA_RULE_no_service'; fi",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*MulticastDNS[ \\t]*=[ \\t]*(?:yes|true|1|resolve)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/rsyslog.conf /etc/rsyslog.d/*.conf 2>/dev/null",
+        "command": "cat /etc/rsyslog.conf /etc/rsyslog.d/*.conf",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*(?:[^#\\s][^\\n]*[ \\t]@@?[\\[\\w]|(?:[^#\\s][^\\n]*)?\\btype[ \\t]*=[ \\t]*\"omfwd\")"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -24,6 +24,10 @@
         "distribution": [],
         "re": {
           "stdout": "Remote Login:\\s*Off\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted|You need administrator access to run this tool",
+          "stdout": "You need administrator access to run this tool"
         }
       }
     ],

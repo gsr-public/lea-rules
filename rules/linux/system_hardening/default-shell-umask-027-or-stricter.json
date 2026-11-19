@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/profile /etc/profile.d/*.sh /etc/bashrc /etc/bash.bashrc 2>/dev/null",
+        "command": "cat /etc/profile /etc/profile.d/*.sh /etc/bashrc /etc/bash.bashrc",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^[ \\t]*umask[ \\t]+0?[0-7](?:[0145][0-7]|[0-7][0-6])\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

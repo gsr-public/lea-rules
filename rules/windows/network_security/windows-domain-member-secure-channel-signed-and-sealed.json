@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+RequireSignOrSeal[ \\t]+REG_DWORD[ \\t]+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+SealSecureChannel[ \\t]+REG_DWORD[ \\t]+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -42,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+SignSecureChannel[ \\t]+REG_DWORD[ \\t]+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -51,6 +60,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+RequireStrongKey[ \\t]+REG_DWORD[ \\t]+0x1\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

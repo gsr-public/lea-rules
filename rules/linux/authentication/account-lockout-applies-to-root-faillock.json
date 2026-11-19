@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:even_deny_root\\b|root_unlock_time[ \\t]*=[ \\t]*(?:-1|(?:[6-9]\\d|[1-9]\\d{2,}))\\b)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

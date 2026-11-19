@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^\\S+[ \\t]+/var/log/audit[ \\t]+\\S+[ \\t]+(?![^ \\t\\n]*\\bnodev\\b)\\S"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -36,6 +39,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?m)^\\S+[ \\t]+/var/log/audit[ \\t]+\\S+[ \\t]+(?![^ \\t\\n]*\\bnosuid\\b)\\S"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -45,6 +51,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?m)^\\S+[ \\t]+/var/log/audit[ \\t]+\\S+[ \\t]+(?![^ \\t\\n]*\\bnoexec\\b)\\S"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

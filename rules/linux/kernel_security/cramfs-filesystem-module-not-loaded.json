@@ -31,6 +31,9 @@
         },
         "not_re": {
           "stdout": "(?m)^cramfs[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

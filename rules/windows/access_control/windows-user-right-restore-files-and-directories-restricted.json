@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^SeRestorePrivilege[ \\t]*=[ \\t]*(?:[^,\\r\\n]*,)*(?![ \\t]*(?:\\*S\\-1\\-5\\-32\\-544)[ \\t]*(?:,|\\r?$))[^,\\r\\n]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

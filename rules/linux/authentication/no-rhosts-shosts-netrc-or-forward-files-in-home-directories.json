@@ -1,7 +1,7 @@
 {
   "uid": "0d234266-0b86-4f1e-aed8-a650169dc269",
   "name": "No .rhosts, .shosts, .netrc or .forward Files in Home Directories",
-  "description": "Ensures no home directory contains .rhosts or .shosts (host-based trust), .netrc (clear-text credentials for FTP and other clients) or .forward (mail forwarding that can execute commands). Without root, unreadable home directories are skipped.",
+  "description": "Ensures no home directory contains .rhosts or .shosts (host-based trust), .netrc (clear-text credentials for FTP and other clients) or .forward (mail forwarding that can execute commands). Without root, unreadable home directories report Could not check.",
   "active": true,
   "category": "authentication",
   "cycle": 43200,
@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "find /home /root -maxdepth 2 \\( -name .rhosts -o -name .shosts -o -name .netrc -o -name .forward \\) 2>/dev/null",
+        "command": "find /home /root -maxdepth 2 \\( -name .rhosts -o -name .shosts -o -name .netrc -o -name .forward \\)",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

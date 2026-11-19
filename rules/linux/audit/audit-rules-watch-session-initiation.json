@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/run/utmp/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/run/utmp/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/run/utmp/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/run/utmp/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/log/wtmp/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/wtmp/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -42,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/log/btmp/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/log/btmp/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

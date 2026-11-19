@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^Chain INPUT \\(policy (DROP|REJECT)\\)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -36,6 +39,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^Chain FORWARD \\(policy (DROP|REJECT)\\)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

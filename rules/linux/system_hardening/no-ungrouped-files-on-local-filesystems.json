@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "find / -xdev -nogroup 2>/dev/null",
+        "command": "find / -xdev -nogroup",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

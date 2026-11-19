@@ -37,6 +37,9 @@
         },
         "not_re": {
           "stdout": "(?i)\\b(?:RC4|DES|3DES|EXPORT|NULL|MD5)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -49,6 +52,9 @@
         },
         "not_re": {
           "stdout": "(?i)\\b(?:RC4|DES|3DES|EXPORT|NULL|MD5)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

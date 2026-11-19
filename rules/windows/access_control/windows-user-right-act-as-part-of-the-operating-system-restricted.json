@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^SeTcbPrivilege[ \\t]*=[ \\t]*(?:[^,\\r\\n]*,)*(?![ \\t]*(?:(?!))[ \\t]*(?:,|\\r?$))[^,\\r\\n]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

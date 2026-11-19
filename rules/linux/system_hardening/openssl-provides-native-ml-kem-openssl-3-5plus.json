@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\bOpenSSL\\s+(?:3\\.(?:[5-9]|[1-9]\\d)|[4-9]\\.\\d+)\\.\\d+"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -45,6 +45,9 @@
         ],
         "re": {
           "stdout": "(?m)^(?:FUTURE|FIPS)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

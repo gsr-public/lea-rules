@@ -41,6 +41,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -53,6 +56,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -65,6 +71,9 @@
         },
         "not_re": {
           "stdout": "(?mi)(?:^|[\\\\/ ])(?:TeamViewer|TeamViewer_Service|AnyDesk|ScreenConnect\\.ClientService|ScreenConnect\\.WindowsClient|rustdesk|SRService|SRManager|LogMeIn|LMIGuardianSvc|AteraAgent|Splashtop|AA_v3|AmmyyAdmin|RemotePCService|ZohoMeeting|g2mcomm|tvnserver|winvnc|ngrok|chisel|frpc|frps)(?:\\.exe)?\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

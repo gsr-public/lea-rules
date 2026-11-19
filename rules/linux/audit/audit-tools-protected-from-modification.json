@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%n %a %U %G' /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/augenrules 2>/dev/null",
+        "command": "stat -c '%n %a %U %G' /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/augenrules",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?!LEA_RULE_no_service)\\S+ (?!(?:[0-7][0-5][0-5] root root)$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

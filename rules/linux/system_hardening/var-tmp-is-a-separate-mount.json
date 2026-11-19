@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S+[ \\t]+/var/tmp[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

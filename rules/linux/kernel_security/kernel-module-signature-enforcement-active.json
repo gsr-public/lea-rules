@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /sys/module/module/parameters/sig_enforce /sys/kernel/security/lockdown 2>/dev/null",
+        "command": "cat /sys/module/module/parameters/sig_enforce /sys/kernel/security/lockdown",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\AY\\b|\\[(?:integrity|confidentiality)\\]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

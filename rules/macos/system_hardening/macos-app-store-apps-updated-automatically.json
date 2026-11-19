@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A\\s*(?:true|1)\\s*\\Z"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

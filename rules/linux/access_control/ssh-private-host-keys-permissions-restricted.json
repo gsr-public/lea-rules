@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%n %a %U %G' /etc/ssh/ssh_host_*_key 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "stat -c '%n %a %U %G' /etc/ssh/ssh_host_*_key || echo 'LEA_RULE_no_service'",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?!LEA_RULE_no_service)\\S+ (?!(?:[46]00 root root|[46][04]0 root ssh_keys)$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

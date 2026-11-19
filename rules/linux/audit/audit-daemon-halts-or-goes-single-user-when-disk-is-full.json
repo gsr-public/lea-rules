@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*disk_full_action[ \\t]*=[ \\t]*(?:halt|single)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*disk_error_action[ \\t]*=[ \\t]*(?:syslog|single|halt)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

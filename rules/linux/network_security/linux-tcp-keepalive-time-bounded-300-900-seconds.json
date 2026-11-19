@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "^(?:[3-8][0-9]{2}|900)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted|No such file or directory"
         }
       }
     ],

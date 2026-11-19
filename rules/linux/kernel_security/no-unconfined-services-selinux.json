@@ -45,6 +45,9 @@
         },
         "not_re": {
           "stdout": "\\bunconfined_service_t\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

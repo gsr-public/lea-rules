@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\s*Lockout\\s+observation\\s+window\\s*\\(minutes\\)\\s*:\\s*(?:1[5-9]|[2-9]\\d|[1-9]\\d{2}|[1-9]\\d{3}|[1-9]\\d{4})\\s*\\r?$"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

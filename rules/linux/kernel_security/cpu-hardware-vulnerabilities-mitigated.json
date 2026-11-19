@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^Vulnerable\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted|No such file or directory"
         }
       }
     ],

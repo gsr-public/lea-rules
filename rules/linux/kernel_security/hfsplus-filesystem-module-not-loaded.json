@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^hfsplus[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

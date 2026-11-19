@@ -13,7 +13,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/apt/apt.conf.d/20auto-upgrades /etc/dnf/automatic.conf 2>/dev/null",
+        "command": "cat /etc/apt/apt.conf.d/20auto-upgrades /etc/dnf/automatic.conf",
         "system": [
           "Linux"
         ],
@@ -35,6 +35,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:APT::Periodic::Unattended-Upgrade[ \\t]+\"1\"|apply_updates[ \\t]*=[ \\t]*yes\\b)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -44,6 +47,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A\\s*0?\\s*\\Z"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

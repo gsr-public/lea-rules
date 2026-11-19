@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\"com\\.apple\\.smbd\"[ \\t]*=>[ \\t]*(?:disabled|true)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

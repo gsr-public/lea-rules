@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /proc/net/wireless 2>/dev/null",
+        "command": "cat /proc/net/wireless",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?m)^[ \\t]*\\w+:[ \\t]+\\d"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

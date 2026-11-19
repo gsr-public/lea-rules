@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/profile /etc/profile.d/*.sh /etc/bashrc /etc/bash.bashrc 2>/dev/null",
+        "command": "cat /etc/profile /etc/profile.d/*.sh /etc/bashrc /etc/bash.bashrc",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:readonly|export|declare[ \\t]+-[a-z]*)[ \\t]+)*TMOUT=(?:[1-9]|[1-9]\\d|[1-8]\\d{2}|900)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:readonly[ \\t]+(?:TMOUT\\b|TMOUT=)|declare[ \\t]+-[a-z]*r[a-z]*[ \\t]+TMOUT\\b|typeset[ \\t]+-[a-z]*r[a-z]*[ \\t]+TMOUT\\b)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "Domain Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -36,6 +39,9 @@
         "distribution": [],
         "re": {
           "stdout": "Private Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -45,6 +51,9 @@
         "distribution": [],
         "re": {
           "stdout": "Public Profile Settings:[^\\n]*\\r?\\n(?:[^\\n]*\\r?\\n){0,3}?State\\s+ON\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^\\S+[ \\t]+/(?:media|mnt|run/media)/\\S*[ \\t]+(?:vfat|exfat|ntfs3?|iso9660|udf|fuseblk)[ \\t]+(?:(?![^ \\t\\n]*\\bnodev\\b)|(?![^ \\t\\n]*\\bnosuid\\b)|(?![^ \\t\\n]*\\bnoexec\\b))\\S"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

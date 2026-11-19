@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*unlock_time[ \\t]*=[ \\t]*(?:0|9\\d\\d|[1-9]\\d{3,})\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

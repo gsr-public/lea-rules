@@ -27,6 +27,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?m)^\\s*User name\\s+Administrator\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

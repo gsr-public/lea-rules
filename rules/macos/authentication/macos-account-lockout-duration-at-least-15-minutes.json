@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "<key>autoEnableInSeconds</key>\\s*<integer>(?:9[0-9]\\d|[1-9]\\d{3,})</integer>"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

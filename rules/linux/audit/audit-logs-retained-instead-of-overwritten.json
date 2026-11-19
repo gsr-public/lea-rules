@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]*max_log_file_action[ \\t]*=[ \\t]*keep_logs\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

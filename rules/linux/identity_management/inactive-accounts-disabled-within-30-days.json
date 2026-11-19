@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*INACTIVE[ \\t]*=[ \\t]*(?:[0-9]|[12]\\d|30)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

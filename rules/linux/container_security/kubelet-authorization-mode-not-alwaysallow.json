@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^kubelet$'; then cat /var/lib/kubelet/config.yaml 2>/dev/null; echo LEA_KUBELET; else echo 'LEA_RULE_no_service'; fi",
+        "command": "if cat /proc/*/comm 2>/dev/null | grep -q '^kubelet$'; then cat /var/lib/kubelet/config.yaml; echo LEA_KUBELET; else echo 'LEA_RULE_no_service'; fi",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^authorization:[ \\t]*\\n(?:[ \\t]+[^\\n]*\\n)*?[ \\t]+mode:[ \\t]*Webhook\\b|LEA_RULE_no_service"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

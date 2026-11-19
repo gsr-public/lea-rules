@@ -22,6 +22,9 @@
         "re": {
           "stdout": "fatal_error_backtraces\\s+=>\\s+Off\\s+=>\\s+Off"
         },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
+        },
         "system": [
           "Linux"
         ],

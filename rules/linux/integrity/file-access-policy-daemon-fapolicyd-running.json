@@ -42,6 +42,9 @@
         ],
         "re": {
           "stdout": "(?m)^(?:fapolicyd)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

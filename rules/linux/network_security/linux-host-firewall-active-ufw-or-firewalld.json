@@ -52,6 +52,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*ENABLED[ \\t]*=[ \\t]*yes\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -73,6 +76,9 @@
         ],
         "re": {
           "stdout": "\\bfirewalld\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

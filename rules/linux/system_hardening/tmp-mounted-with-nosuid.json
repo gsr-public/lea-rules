@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S+[ \\t]+/tmp[ \\t]+\\S+[ \\t]+\\S*\\bnosuid\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

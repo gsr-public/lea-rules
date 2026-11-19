@@ -31,6 +31,9 @@
         "distribution": [],
         "re": {
           "stderr": "OpenSSH_(?:9|[1-9]\\d)\\.\\d"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -40,6 +43,9 @@
         "distribution": [],
         "re": {
           "stderr": "OpenSSH_(?:9|[1-9]\\d)\\.\\d"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

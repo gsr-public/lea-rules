@@ -48,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S.+$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -57,6 +60,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S.+$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -66,6 +72,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\S.+$"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

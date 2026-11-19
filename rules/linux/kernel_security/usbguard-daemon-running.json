@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^(?:usbguard\\-daemon)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

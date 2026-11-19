@@ -64,6 +64,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*auth[ \\t]+(?:required|requisite|\\[[^\\]\\n]*\\])[ \\t]+pam_(?:faillock|tally2)\\.so\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -82,6 +85,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*auth[ \\t]+(?:required|requisite|\\[[^\\]\\n]*\\])[ \\t]+pam_faillock\\.so\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -91,6 +97,9 @@
         "distribution": [],
         "re": {
           "stdout": "maxFailedAttempts"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -100,6 +109,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^\\s*LockoutThreshold\\s*:\\s*[1-9]\\d*\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

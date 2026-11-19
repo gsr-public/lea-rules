@@ -1,7 +1,7 @@
 {
   "uid": "b7c3601a-1a75-4614-8123-78d8924ebf2f",
   "name": "World-Writable Directories Have the Sticky Bit",
-  "description": "Ensures every world-writable directory on local filesystems has the sticky bit set, so users cannot delete or rename other users' files in shared directories such as /tmp. Without root, unreadable directories are skipped.",
+  "description": "Ensures every world-writable directory on local filesystems has the sticky bit set, so users cannot delete or rename other users' files in shared directories such as /tmp. Without root, unreadable directories report Could not check.",
   "active": true,
   "category": "system_hardening",
   "cycle": 43200,
@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "find / -xdev -type d -perm -0002 ! -perm -1000 2>/dev/null",
+        "command": "find / -xdev -type d -perm -0002 ! -perm -1000",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

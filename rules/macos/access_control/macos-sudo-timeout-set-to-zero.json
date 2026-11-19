@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/sudoers /private/etc/sudoers.d/* 2>/dev/null",
+        "command": "cat /etc/sudoers /private/etc/sudoers.d/*",
         "system": [
           "Darwin"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*Defaults\\b[^\\n]*\\btimestamp_timeout[ \\t]*=[ \\t]*(?!0(?:\\.0*)?\\b)\\S"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

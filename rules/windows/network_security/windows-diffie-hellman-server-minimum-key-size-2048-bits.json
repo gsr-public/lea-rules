@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "ServerMinKeyBitLength\\s+REG_DWORD\\s+0x(?:[89a-f][0-9a-f]{2}|[1-9a-f][0-9a-f]{3,})\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

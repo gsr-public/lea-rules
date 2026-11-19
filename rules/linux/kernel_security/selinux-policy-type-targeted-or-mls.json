@@ -42,6 +42,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*SELINUXTYPE[ \\t]*=[ \\t]*(?:targeted|mls)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

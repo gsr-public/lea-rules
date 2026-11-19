@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+WarningLevel[ \\t]+REG_DWORD[ \\t]+0x(?:[1-9a-f]|[1-4][0-9a-f]|5[0-9a])\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

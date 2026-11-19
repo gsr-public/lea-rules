@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/etc/selinux/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/etc/selinux/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/etc/apparmor/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/etc/apparmor/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/etc/apparmor\\.d/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/etc/apparmor\\.d/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

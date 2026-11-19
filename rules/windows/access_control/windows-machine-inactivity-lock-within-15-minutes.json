@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "InactivityTimeoutSecs\\s+REG_DWORD\\s+0x(?:[1-9a-f]|[1-9a-f][0-9a-f]|[12][0-9a-f]{2}|3[0-7][0-9a-f]|38[0-4])\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

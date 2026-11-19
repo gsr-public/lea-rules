@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%a %n' /home/* 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "stat -c '%a %n' /home/* || echo 'LEA_RULE_no_service'",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?![0-7][0-5]0 )\\d+ /home/"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

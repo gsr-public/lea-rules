@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "Domain Profile Settings:(?:(?!Profile Settings:)[\\s\\S])*?LogDroppedConnections[ \\t]+Enable\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "Private Profile Settings:(?:(?!Profile Settings:)[\\s\\S])*?LogDroppedConnections[ \\t]+Enable\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -42,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "Public Profile Settings:(?:(?!Profile Settings:)[\\s\\S])*?LogDroppedConnections[ \\t]+Enable\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

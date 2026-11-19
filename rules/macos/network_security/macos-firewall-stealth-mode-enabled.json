@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?i)stealth mode (?:is )?(?:on|enabled)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

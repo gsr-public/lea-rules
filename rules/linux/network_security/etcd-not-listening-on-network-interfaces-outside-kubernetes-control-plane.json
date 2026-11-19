@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^\\s*\\d+:\\s+(?!(?:[0-9A-F]{6}7F|0{24}01000000|0{16}FFFF0000[0-9A-F]{6}7F):)[0-9A-F]{8}(?:[0-9A-F]{24})?:(?:094B|094C)\\s+[0-9A-F]+:[0-9A-F]{4}\\s+0A\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

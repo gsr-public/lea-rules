@@ -43,7 +43,8 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
     "expect": [
       {"system": ["Linux"], "distribution": [],
        "re": {"stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+no\\b"},
-       "not_re": {"stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+(?!no\\b)\\S"}}
+       "not_re": {"stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+(?!no\\b)\\S"},
+       "unknown_re": {"stderr": "Permission denied|Operation not permitted"}}
     ],
     "_remedy": [],
     "system": []
@@ -66,7 +67,7 @@ Platforms are `linux`, `macos`, `windows`, and `multi` for rules that cover more
 | `cycle` | Seconds between evaluations (3600 by default; 43200 for expensive filesystem scans and signature-age checks). |
 | `cmd_info_key` | Key under which LEA stores the output in the host's metadata (`cmd_info`, used by dynamic groups); `null` except for the built-in platform rules. |
 | `cmd.validation` | Commands the agent runs. Each block has a `command`, a `system` filter (`Linux`, `Darwin`, `Windows`, compared with the agent's `uname` system) and a `distribution` filter. Linux and macOS commands run through `sh -c`; Windows commands run through PowerShell. When several blocks apply, their outputs are concatenated with newlines. |
-| `cmd.expect` | Server-side checks on the raw output. `re` must match, `not_re` must not match (per stream: `stdout`, `stderr`), `returncode` must equal the exit code, `md5` must equal the stdout hash, and `function` calls a built-in LEA server check. All applicable blocks must pass. |
+| `cmd.expect` | Server-side checks on the raw output. `re` must match, `not_re` must not match (per stream: `stdout`, `stderr`), `returncode` must equal the exit code, `md5` must equal the stdout hash, and `function` calls a built-in LEA server check. All applicable blocks must pass. `unknown_re` (per stream) marks output that means the check could not run, for example `Permission denied`: the result is recorded as *Could not check*, neither a pass nor a failure. |
 | `cmd._remedy` | Remediation commands that correct the setting, shipped disabled (see [Remediation is disabled by default](#remediation-is-disabled-by-default)). Empty when no safe, idempotent, non-interactive fix exists. |
 | `parameters` | Rule parameters: `%name%` placeholders in commands with default values (`[{"name", "value", "type": "internal"}]`); sites tune the values per rule in LEA without forking the definition. |
 | `tags` | `std:` framework mappings, `cat:` category, `env:` operating systems, `risk:` `low`/`medium`/`high`, `priv:required` when the agent needs elevated rights, and `evidence:sample` / `evidence:simulated` for rules that do not read live system state (reports label their results as sample or simulated evidence). |
@@ -76,16 +77,18 @@ Conventions followed by every rule:
 - Commands only read raw state (`cat /proc/...`, `cat` of configuration files, `stat`, `reg query`). There is no client-side `grep`, `awk`, `sed` or `cut` filtering and no `sudo` in commands; all interpretation happens on the server.
 - Regular expressions are Python `re` syntax and use inline flags such as `(?m)`, `(?i)`, `(?s)`.
 - Checks for an optional service print `LEA_RULE_no_service` when the service is not present, and the expect pattern accepts that marker. For example, SSH configuration rules pass on Linux hosts where no `sshd` process runs.
-- Rules that only use `not_re` also require some output (`re: \S`), so an unreadable file fails instead of passing silently.
+- Rules that only use `not_re` also require some output (`re: \S`), so an empty output fails instead of passing silently.
+- Commands keep their stderr (no `2>/dev/null`, except in the service-presence guard) and every expect block carries `unknown_re`: `Permission denied|Operation not permitted` on Linux and macOS, the PowerShell access-denied messages on Windows. A file the agent cannot read is reported as *Could not check* instead of a failure.
 - Distribution filters use the exact `NAME` value from `/etc/os-release` (for example `Debian GNU/Linux`, `Red Hat Enterprise Linux`, `Rocky Linux`).
 
 ## How evaluation works
 
 1. On each cycle the agent runs the `validation` commands that match its operating system and distribution and sends stdout, stderr and the exit code to the server.
 2. The server selects the `expect` blocks for the same system and distribution. Blocks that name the host's distribution take precedence over blocks with an empty distribution list.
-3. Every applicable `re`, `not_re`, `returncode`, `md5` or `function` check must succeed for the result to be recorded as passing. Each result, including the raw output and any failed pattern, is stored and signed as evidence.
-4. If the result fails and the rule has an enabled `remedy` (see below), the server returns the remedy commands together with the validation commands. The agent runs the remedy, then the validation, and returns both outputs as one result (remedy output first), which the server evaluates with the same expect blocks. Remedies in this library therefore print nothing themselves (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null`); extra output would be checked together with the validation output and could fail anchored patterns.
-5. The next scheduled validation confirms the state independently.
+3. A block whose `re`, `not_re`, `returncode`, `md5` or `function` checks succeed passes, even when its `unknown_re` also matches. A block that does not pass, whose `unknown_re` matches and whose `not_re` finds no violation, is recorded as *Could not check* (unless another block fails): it never counts as a failure, never triggers a remedy and does not make the host non-compliant. A violation `not_re` does find still fails, even when part of the input was unreadable.
+4. Every applicable `re`, `not_re`, `returncode`, `md5` or `function` check must succeed for the result to be recorded as passing. Each result, including the raw output and any failed pattern, is stored and signed as evidence.
+5. If the result fails and the rule has an enabled `remedy` (see below), the server returns the remedy commands together with the validation commands. The agent runs the remedy, then the validation, and returns both outputs as one result (remedy output first), which the server evaluates with the same expect blocks. Remedies in this library therefore print nothing themselves (for example `sysctl -w kernel.kptr_restrict=1 >/dev/null`); extra output would be checked together with the validation output and could fail anchored patterns.
+6. The next scheduled validation confirms the state independently.
 
 Remedies are applied at runtime only (for example `sysctl -w` does not persist across reboots).
 

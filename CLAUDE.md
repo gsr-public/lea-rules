@@ -7,6 +7,11 @@
 - `schema/rule.schema.json` requires `_remedy` in `cmd`; keep schema, README ("Remediation is disabled by default") and CONTRIBUTING in sync with this convention
 - Enabling remediation = renaming `_remedy` to `remedy` at import time, done by the user, not in this repository
 
+## Could not check: `unknown_re`, keep stderr
+- Every expect block carries `unknown_re` (Linux/macOS `{"stderr": "Permission denied|Operation not permitted"}`, Windows the PowerShell access-denied pattern, see CONTRIBUTING); the LEA server records a match as *Could not check*, never a failure (`server/routes_client.py`)
+- Commands keep stderr: no `2>/dev/null` except in the `cat /proc/*/comm 2>/dev/null | grep -q` service guard
+- Never put an access marker (`Permission denied`, `LEA_RULE_no_access`) in `not_re`: a `not_re` match is a proven violation and wins over `unknown_re`
+
 ## Rule identity: `uid`
 - Every rule has a `uid` (UUID v4). Never change or reuse it; LEA deployments track rules and their versions by uid
 - New rule = new uid; renamed rule = same uid, old name appended to `former_names`; withdrawn rule = file deleted and an entry in `retired.json`

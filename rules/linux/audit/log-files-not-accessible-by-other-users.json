@@ -1,7 +1,7 @@
 {
   "uid": "0ed2915f-403c-4437-a9f3-0daedc721270",
   "name": "Log Files Not Accessible by Other Users",
-  "description": "Ensures files under /var/log are not writable by others and not readable by others, except the login accounting files lastlog, wtmp and btmp (and their rotations). Without root, unreadable directories are skipped.",
+  "description": "Ensures files under /var/log are not writable by others and not readable by others, except the login accounting files lastlog, wtmp and btmp (and their rotations). Without root, unreadable directories report Could not check.",
   "active": true,
   "category": "audit",
   "cycle": 43200,
@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "find /var/log -type f \\( -perm -o+w -o \\( -perm -o+r ! -name 'lastlog*' ! -name 'wtmp*' ! -name 'btmp*' ! -name README \\) \\) 2>/dev/null",
+        "command": "find /var/log -type f \\( -perm -o+w -o \\( -perm -o+r ! -name 'lastlog*' ! -name 'wtmp*' ! -name 'btmp*' ! -name README \\) \\)",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

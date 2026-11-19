@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^(?=flags:(?:[^\\n]*,)?lo(?:,|$))(?=flags:(?:[^\\n]*,)?ad(?:,|$))(?=flags:(?:[^\\n]*,)?aa(?:,|$))flags:"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

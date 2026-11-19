@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/etc/crontab/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/etc/crontab/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/etc/cron\\.d/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/etc/cron\\.d/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:(?:-w[ \\t]+/var/spool/cron/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/spool/cron/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w)|(?:-w[ \\t]+/var/spool/cron/crontabs/?(?=[ \\t])[^\\n]*-p[ \\t]*[rwxa]*w|-a[ \\t][^\\n]*-F[ \\t]*(?:path|dir)=/var/spool/cron/crontabs/?(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwxa]*w))"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

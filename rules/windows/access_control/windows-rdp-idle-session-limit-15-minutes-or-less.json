@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+MaxIdleTime[ \\t]+REG_DWORD[ \\t]+0x(?:[1-9a-f]|[1-9a-f][0-9a-f]|[1-9a-f][0-9a-f]{2}|[1-9a-f][0-9a-f]{3}|[1-9a-c][0-9a-f]{4}|d[0-9a][0-9a-f]{3}|db[0-9a][0-9a-f]{2}|dbb[0-9][0-9a-f]|dbba0)\\b"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

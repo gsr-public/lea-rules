@@ -48,6 +48,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^(?!00:00:00:00:00:00)[0-9a-f]{2}(?::[0-9a-f]{2}){5}$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -57,6 +60,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)\\bether\\s+[0-9a-f]{2}(?::[0-9a-f]{2}){5}\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -66,6 +72,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)[0-9A-F]{2}(?:-[0-9A-F]{2}){5}"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

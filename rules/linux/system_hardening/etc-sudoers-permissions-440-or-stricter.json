@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%a %U %G' /etc/sudoers 2>/dev/null || echo 'LEA_RULE_no_service'",
+        "command": "stat -c '%a %U %G' /etc/sudoers || echo 'LEA_RULE_no_service'",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A(?:440|400) root root\\s*\\Z|LEA_RULE_no_service"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

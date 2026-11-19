@@ -28,6 +28,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)\\b(/usr/bin/aide|/usr/sbin/aide)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

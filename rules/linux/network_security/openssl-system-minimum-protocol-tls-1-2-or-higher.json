@@ -12,7 +12,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/ssl/openssl.cnf /etc/pki/tls/openssl.cnf /etc/crypto-policies/back-ends/opensslcnf.config 2>/dev/null",
+        "command": "cat /etc/ssl/openssl.cnf /etc/pki/tls/openssl.cnf /etc/crypto-policies/back-ends/opensslcnf.config",
         "system": [
           "Linux"
         ],
@@ -30,6 +30,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*MinProtocol[ \\t]*=[ \\t]*(?:SSLv3|TLSv1(?:\\.[01])?)[ \\t]*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

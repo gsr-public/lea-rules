@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?:^|\\s)(?:selinux=0|enforcing=0|apparmor=0|security=none)(?=\\s|$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/motd 2>/dev/null",
+        "command": "cat /etc/motd",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?i)\\\\[mrsv]|\\b(?:ubuntu|debian|red hat|centos|rocky|almalinux|fedora|suse|oracle linux|amazon linux|kernel)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

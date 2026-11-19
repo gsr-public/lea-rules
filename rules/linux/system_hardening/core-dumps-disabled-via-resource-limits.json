@@ -12,7 +12,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/security/limits.conf /etc/security/limits.d/*.conf 2>/dev/null",
+        "command": "cat /etc/security/limits.conf /etc/security/limits.d/*.conf",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*\\*[ \\t]+hard[ \\t]+core[ \\t]+0\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

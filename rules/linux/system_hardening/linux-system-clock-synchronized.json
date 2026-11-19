@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "System clock synchronized:\\s+yes"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted|System has not been booted with systemd|Failed to connect to bus"
         }
       }
     ],

@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "ls /etc/cron.daily /etc/systemd/system/timers.target.wants /etc/systemd/system/multi-user.target.wants 2>/dev/null; cat /etc/crontab /etc/cron.d/* 2>/dev/null",
+        "command": "ls /etc/cron.daily /etc/systemd/system/timers.target.wants /etc/systemd/system/multi-user.target.wants; cat /etc/crontab /etc/cron.d/*",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^(?:aide|dailyaidecheck\\.timer|aidecheck\\.timer)$|^[^#\\n]*\\baide\\b[^\\n]*--check\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

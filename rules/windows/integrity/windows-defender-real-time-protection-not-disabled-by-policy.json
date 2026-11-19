@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "(?mi)^[ \\t]+DisableRealtimeMonitoring[ \\t]+REG_DWORD[ \\t]+(?!0x(?:0)\\b)0x[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

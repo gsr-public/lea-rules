@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^Source:[ \\t]*(?!Local CMOS Clock|Free-running System Clock|VM IC Time Synchronization Provider)\\S"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

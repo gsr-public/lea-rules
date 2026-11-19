@@ -30,6 +30,9 @@
         ],
         "re": {
           "stdout": "(?m)^[ \\t]*DEFAULT_INPUT_POLICY[ \\t]*=[ \\t]*\"?(?:DROP|REJECT)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

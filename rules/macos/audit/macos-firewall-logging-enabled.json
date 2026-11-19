@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?i)\\blog(?:ging)? mode is on\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

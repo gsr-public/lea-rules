@@ -24,6 +24,9 @@
         "distribution": [],
         "not_re": {
           "stdout": "Ciphers\\\\(?:NULL|DES [^\\r\\n]*|RC2 [^\\r\\n]*)\\r?\\n(?:[ \\t]+[^\\r\\n]*\\r?\\n)*?[ \\t]+Enabled[ \\t]+REG_DWORD[ \\t]+0x(?!0\\b)[0-9a-f]+"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

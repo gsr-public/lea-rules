@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\"org\\.apache\\.httpd\"[ \\t]*=>[ \\t]*(?:disabled|true)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

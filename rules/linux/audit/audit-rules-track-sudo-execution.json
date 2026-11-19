@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules 2>/dev/null",
+        "command": "cat /etc/audit/audit.rules /etc/audit/rules.d/*.rules",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*(?:-a[ \\t]+(?:always,exit|exit,always)[^\\n]*-F[ \\t]*path=/usr/bin/sudo(?=[ \\t])[^\\n]*-F[ \\t]*perm=[rwa]*x|-w[ \\t]+/usr/bin/sudo(?=[ \\t])[^\\n]*-p[ \\t]*[rwa]*x)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

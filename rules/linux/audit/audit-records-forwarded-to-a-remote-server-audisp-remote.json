@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/audit/plugins.d/au-remote.conf /etc/audisp/plugins.d/au-remote.conf 2>/dev/null",
+        "command": "cat /etc/audit/plugins.d/au-remote.conf /etc/audisp/plugins.d/au-remote.conf",
         "system": [
           "Linux"
         ],
@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^[ \\t]*active[ \\t]*=[ \\t]*yes\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

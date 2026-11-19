@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?:Xorg|X|Xwayland)$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

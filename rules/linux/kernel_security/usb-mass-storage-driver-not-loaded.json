@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^usb_storage[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

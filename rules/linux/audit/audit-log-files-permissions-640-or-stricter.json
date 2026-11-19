@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "stat -c '%n %a %U %G' /var/log/audit/* 2>/dev/null",
+        "command": "stat -c '%n %a %U %G' /var/log/audit/*",
         "system": [
           "Linux"
         ],
@@ -27,6 +27,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?!LEA_RULE_no_service)\\S+ (?!(?:[46][04]0 root (?:root|adm))$)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

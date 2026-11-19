@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^expire-after:[ \\t]*(?:(?:[6-9]\\d|[1-9]\\d{2,})d|(?:[5-9]|[1-9]\\d{1,})G)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+\\\\\\\\\\*\\\\NETLOGON[ \\t]+REG_SZ[ \\t]+(?=[^\\r\\n]*RequireMutualAuthentication=1)(?=[^\\r\\n]*RequireIntegrity=1)"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       },
       {
@@ -33,6 +36,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?mi)^[ \\t]+\\\\\\\\\\*\\\\SYSVOL[ \\t]+REG_SZ[ \\t]+(?=[^\\r\\n]*RequireMutualAuthentication=1)(?=[^\\r\\n]*RequireIntegrity=1)"
+        },
+        "unknown_re": {
+          "stderr": "(?i)Access is denied|Access to the path .* is denied|Requested registry access is not allowed|UnauthorizedAccess|PermissionDenied"
         }
       }
     ],

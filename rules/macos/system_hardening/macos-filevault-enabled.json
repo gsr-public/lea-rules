@@ -27,6 +27,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^FileVault\\s+is\\s+On\\."
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

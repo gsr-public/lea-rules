@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "->[ \\t]*/dev/null"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

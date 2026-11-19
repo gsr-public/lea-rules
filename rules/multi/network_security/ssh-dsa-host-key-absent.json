@@ -34,6 +34,9 @@
         },
         "not_re": {
           "stdout": "\\bssh_host_dsa_key\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -46,6 +49,9 @@
         },
         "not_re": {
           "stdout": "\\bssh_host_dsa_key\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "\\A\\s*(?:(?!undefined\\s*\\Z)[^\\n]*[A-Za-z]{3,}[^\\n]*)\\s*\\Z"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

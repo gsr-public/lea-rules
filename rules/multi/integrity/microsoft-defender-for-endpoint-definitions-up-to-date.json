@@ -34,6 +34,9 @@
         "distribution": [],
         "re": {
           "stdout": "definitions_status\\s*:\\s*\"?up_to_date\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -43,6 +46,9 @@
         "distribution": [],
         "re": {
           "stdout": "definitions_status\\s*:\\s*\"?up_to_date\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

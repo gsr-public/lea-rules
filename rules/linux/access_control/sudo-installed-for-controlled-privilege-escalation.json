@@ -28,6 +28,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)\\b(/usr/bin/sudo|/bin/sudo)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

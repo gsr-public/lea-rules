@@ -30,6 +30,9 @@
         },
         "not_re": {
           "stdout": "(?m)^(?!root:)[^:\\n]+:[^:\\n]*:0:"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

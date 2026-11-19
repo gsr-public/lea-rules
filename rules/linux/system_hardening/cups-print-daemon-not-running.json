@@ -31,6 +31,9 @@
         },
         "not_re": {
           "stdout": "\\bcupsd\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

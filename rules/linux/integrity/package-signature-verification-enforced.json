@@ -9,7 +9,7 @@
   "cmd": {
     "validation": [
       {
-        "command": "cat /etc/apt/sources.list /etc/apt/sources.list.d/* /etc/apt/apt.conf.d/* 2>/dev/null",
+        "command": "cat /etc/apt/sources.list /etc/apt/sources.list.d/* /etc/apt/apt.conf.d/*",
         "system": [
           "Linux"
         ],
@@ -19,7 +19,7 @@
         ]
       },
       {
-        "command": "cat /etc/dnf/dnf.conf /etc/yum.conf /etc/yum.repos.d/*.repo 2>/dev/null",
+        "command": "cat /etc/dnf/dnf.conf /etc/yum.conf /etc/yum.repos.d/*.repo",
         "system": [
           "Linux"
         ],
@@ -49,6 +49,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*(?:deb(?:-src)?[ \\t]+\\[[^\\]\\n]*\\btrusted=yes\\b|Trusted:[ \\t]*yes\\b|APT::Get::AllowUnauthenticated[ \\t]+\"?(?:true|yes|1)\\b)"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -70,6 +73,9 @@
         },
         "not_re": {
           "stdout": "(?mi)^[ \\t]*gpgcheck[ \\t]*=[ \\t]*(?:0|false|no)\\b"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

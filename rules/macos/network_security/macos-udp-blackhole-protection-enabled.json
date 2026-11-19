@@ -24,6 +24,9 @@
         "distribution": [],
         "re": {
           "stdout": "(?m)^net\\.inet\\.udp\\.blackhole:\\s*1\\s*$"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],
