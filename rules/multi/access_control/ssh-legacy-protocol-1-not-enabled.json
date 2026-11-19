@@ -1,7 +1,7 @@
 {
   "uid": "ba917f7c-0f57-463b-8b6b-9998fcb56528",
   "name": "SSH Legacy Protocol 1 Not Enabled",
-  "description": "Ensures no sshd configuration file enables the obsolete SSH protocol version 1. OpenSSH 7.4 and later ignore the Protocol keyword and only speak version 2, so a missing Protocol line passes; an explicit Protocol line that lists 1 fails.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable sshd_config reports Could not check instead of a result; an unreadable drop-in file is skipped). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
+  "description": "Ensures no sshd configuration file enables the obsolete SSH protocol version 1. OpenSSH 7.4 and later ignore the Protocol keyword and only speak version 2, so a missing Protocol line passes; an explicit Protocol line that lists 1 fails.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file reports Could not check instead of a result). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,
   "category": "access_control",
   "cycle": 3600,
@@ -36,7 +36,7 @@
           "stdout": "(?mi)^[ \\t]*Protocol[ \\t]+[^\\n]*\\b1\\b"
         },
         "unknown_re": {
-          "stderr": "/etc/ssh/sshd_config: (Permission denied|Operation not permitted)"
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -51,7 +51,7 @@
           "stdout": "(?mi)^[ \\t]*Protocol[ \\t]+[^\\n]*\\b1\\b"
         },
         "unknown_re": {
-          "stderr": "/etc/ssh/sshd_config: (Permission denied|Operation not permitted)"
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],

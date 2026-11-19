@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## v1.3.1 - 2026-11-19
+
+781 rules, distributed as a signed LEA rule pack.
+
+### Changed
+
+- SSH server rules (28): any `Permission denied|Operation not permitted` while reading `/etc/ssh/sshd_config` or its drop-in files now reports *Could not check*, not only an unreadable `sshd_config`. A rule whose readable configuration already passes still passes, and a forbidden value found in what could be read still fails.
+
 ## v1.3.0 - 2026-11-19
 
 781 rules, distributed as a signed LEA rule pack.

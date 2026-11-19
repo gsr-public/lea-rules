@@ -4,7 +4,7 @@
   "former_names": [
     "CIS - SSH Root Login Disabled"
   ],
-  "description": "Ensures direct SSH login as the root user is disabled (PermitRootLogin no) and that no sshd configuration file re-enables it. Administrators must log in with a named account and escalate, which keeps actions attributable.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable sshd_config reports Could not check instead of a result; an unreadable drop-in file is skipped). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
+  "description": "Ensures direct SSH login as the root user is disabled (PermitRootLogin no) and that no sshd configuration file re-enables it. Administrators must log in with a named account and escalate, which keeps actions attributable.\nPrivilege: reads /etc/ssh/sshd_config and its drop-in directory. Debian and Ubuntu ship these files world-readable; RHEL-family systems ship sshd_config as mode 0600, so the agent needs read access to it there (an unreadable file reports Could not check instead of a result). On Linux the rule passes with LEA_RULE_no_service when no sshd process is running.",
   "active": true,
   "category": "access_control",
   "cycle": 3600,
@@ -39,7 +39,7 @@
           "stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+(?!no\\b)\\S"
         },
         "unknown_re": {
-          "stderr": "/etc/ssh/sshd_config: (Permission denied|Operation not permitted)"
+          "stderr": "Permission denied|Operation not permitted"
         }
       },
       {
@@ -54,7 +54,7 @@
           "stdout": "(?mi)^[ \\t]*PermitRootLogin[ \\t]+(?!no\\b)\\S"
         },
         "unknown_re": {
-          "stderr": "/etc/ssh/sshd_config: (Permission denied|Operation not permitted)"
+          "stderr": "Permission denied|Operation not permitted"
         }
       }
     ],
