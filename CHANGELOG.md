@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-785 rules.
+## v1.4.0 - 2026-11-27
+
+785 rules, distributed as a signed LEA rule pack.
 
 ### Added
 
