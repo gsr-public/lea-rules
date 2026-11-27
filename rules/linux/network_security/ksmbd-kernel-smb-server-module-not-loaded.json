@@ -1,0 +1,66 @@
+{
+  "uid": "720be657-fe65-42fd-b61e-c203669c19aa",
+  "name": "ksmbd Kernel SMB Server Module Not Loaded",
+  "description": "Ensures the ksmbd in-kernel SMB3 file server module is not loaded (checked in /proc/modules). ksmbd parses SMB requests from the network inside the kernel; in November 2026 alone the Linux CNA published several use-after-free and out-of-bounds write flaws in it that an authenticated low-privileged SMB client can use to corrupt kernel memory (CVE-2026-99291, CVE-2026-99289, CVE-2026-99322, CVE-2026-99540, CVE-2026-99556 and CVE-2026-99792, CVSS 8.8 each). The Samba rules do not cover ksmbd, which runs without an smbd process. A driver compiled into the kernel is not detected. Hosts that deliberately serve SMB with ksmbd fail; exclude them, restrict SMB to trusted networks and install the patched kernel from the vendor errata.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r ksmbd",
+  "active": true,
+  "category": "network_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/modules",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?m)^ksmbd[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
+        }
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "modprobe -r ksmbd 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:network_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

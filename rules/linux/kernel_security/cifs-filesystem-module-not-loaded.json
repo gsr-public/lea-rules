@@ -1,7 +1,7 @@
 {
   "uid": "fb631c8b-3361-49ad-96a5-3d529b297130",
   "name": "CIFS Filesystem Module Not Loaded",
-  "description": "Ensures the CIFS/SMB network filesystem module (exclude hosts that mount Windows shares) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
+  "description": "Ensures the CIFS/SMB network filesystem module (exclude hosts that mount Windows shares) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected. Recent flaws in the SMB client include CVE-2026-99385 (CVSS 9.8, out-of-bounds write from an oversized UNC path at mount) and CVE-2026-99292 (CVSS 8.8, out-of-bounds write when changing ACL modes).",
   "active": true,
   "category": "kernel_security",
   "cycle": 3600,

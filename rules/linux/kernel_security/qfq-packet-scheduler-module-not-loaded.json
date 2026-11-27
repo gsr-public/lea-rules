@@ -1,0 +1,66 @@
+{
+  "uid": "dd6628e1-f491-4542-806b-e3f733903c13",
+  "name": "QFQ Packet Scheduler Module Not Loaded",
+  "description": "Ensures the QFQ (Quick Fair Queueing) traffic control scheduler module sch_qfq is not loaded (checked in /proc/modules). sch_qfq has a history of use-after-free flaws that a local user can use for privilege escalation, most recently CVE-2026-99688 (CVSS 7.8), and earlier CVE-2023-4921 and CVE-2025-38477; where unprivileged user namespaces are allowed, any local user can configure qdiscs and load the module. Red Hat recommends blocking the module as a mitigation: add 'install sch_qfq /bin/true' to a file in /etc/modprobe.d. A driver compiled into the kernel is not detected. Hosts whose traffic shaping uses QFQ fail; exclude them and install the patched kernel from the vendor errata.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r sch_qfq",
+  "active": true,
+  "category": "kernel_security",
+  "cycle": 3600,
+  "cmd_info_key": null,
+  "cmd": {
+    "validation": [
+      {
+        "command": "cat /proc/modules",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "expect": [
+      {
+        "system": [
+          "Linux"
+        ],
+        "distribution": [],
+        "re": {
+          "stdout": "\\S"
+        },
+        "not_re": {
+          "stdout": "(?m)^sch_qfq[ \\t]"
+        },
+        "unknown_re": {
+          "stderr": "Permission denied|Operation not permitted"
+        }
+      }
+    ],
+    "_remedy": [
+      {
+        "command": "modprobe -r sch_qfq 2>/dev/null",
+        "system": [
+          "Linux"
+        ],
+        "distribution": []
+      }
+    ],
+    "system": []
+  },
+  "parameters": [],
+  "tags": [
+    "std:CIS",
+    "std:CIS_Controls_v8:4.8",
+    "std:NIST_800-53:CM-7",
+    "std:ISO27001:A.8.9",
+    "std:SOC2:CC6.6",
+    "std:CMMC:CM.L2-3.4.6",
+    "std:CMMC:CM.L2-3.4.7",
+    "std:PCI_DSS_4:2.2.4",
+    "std:NIS2:Art21.2(e)",
+    "std:DORA:Art9",
+    "std:HIPAA:164.308(a)(1)(ii)(B)",
+    "std:NIST_CSF_2:PR.PS-01",
+    "cat:kernel_security",
+    "env:linux",
+    "env:host_level",
+    "risk:medium"
+  ]
+}

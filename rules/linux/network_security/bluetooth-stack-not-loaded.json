@@ -1,7 +1,7 @@
 {
   "uid": "247c6bfe-9424-48d5-bf1d-eb96b6278c86",
   "name": "Bluetooth Stack Not Loaded",
-  "description": "Ensures the Bluetooth protocol stack (servers and hosts without Bluetooth peripherals) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
+  "description": "Ensures the Bluetooth protocol stack (servers and hosts without Bluetooth peripherals) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected. Recent flaws in L2CAP let a nearby attacker bypass connection security requirements or manipulate channels: CVE-2026-99793 (CVSS 8.1) and CVE-2026-99794 (CVSS 8.3).",
   "active": true,
   "category": "network_security",
   "cycle": 3600,

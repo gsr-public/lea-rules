@@ -1,7 +1,7 @@
 {
   "uid": "b1fbe421-c4f3-430b-8a37-3e1ac2b45abb",
   "name": "NFS Server Kernel Module Not Loaded",
-  "description": "Ensures the in-kernel NFS server module (exclude NFS servers) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.",
+  "description": "Ensures the in-kernel NFS server module (exclude NFS servers) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected. The in-kernel NFS server parses requests from the network; recent flaws reachable by unauthenticated clients include CVE-2026-99310, CVE-2026-99362 and CVE-2026-99366 (CVSS 9.8 each, memory corruption in NFSv4 state handling).",
   "active": true,
   "category": "network_security",
   "cycle": 3600,
@@ -53,6 +53,6 @@
     "cat:network_security",
     "env:linux",
     "env:host_level",
-    "risk:low"
+    "risk:medium"
   ]
 }

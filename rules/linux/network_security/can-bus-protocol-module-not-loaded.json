@@ -1,7 +1,7 @@
 {
   "uid": "56423e57-01b7-4788-8506-628dd61b7281",
   "name": "CAN Bus Protocol Module Not Loaded",
-  "description": "Ensures the Controller Area Network (CAN) protocol module (exclude automotive and industrial hosts that use CAN) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r can",
+  "description": "Ensures the Controller Area Network (CAN) protocol module (exclude automotive and industrial hosts that use CAN) is not loaded (checked in the first column of /proc/modules). A driver compiled into the kernel is not detected. Recent examples: CVE-2026-99672 (CVSS 7.8, use-after-free when a CAN device moves between network namespaces) and CVE-2026-99674 (CVSS 7.8, CAN XL frame overflow).\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/modprobe -r can",
   "active": true,
   "category": "network_security",
   "cycle": 3600,

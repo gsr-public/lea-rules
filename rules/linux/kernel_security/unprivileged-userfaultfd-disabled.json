@@ -1,7 +1,7 @@
 {
   "uid": "1f4dfbb1-a3e6-4c21-917e-bb21dafd09d3",
   "name": "Unprivileged userfaultfd Disabled",
-  "description": "Ensures vm.unprivileged_userfaultfd is 0, so unprivileged processes cannot use userfaultfd to stall kernel memory accesses, a primitive used to win race conditions in kernel exploits.\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w vm.unprivileged_userfaultfd=0",
+  "description": "Ensures vm.unprivileged_userfaultfd is 0, so unprivileged processes cannot use userfaultfd to stall kernel memory accesses, a primitive used to win race conditions in kernel exploits. Recent flaws in userfaultfd itself include CVE-2026-99580 (CVSS 7.8, incorrect anon_vma allocation, local privilege escalation).\nRequired sudo rule (remedy only): allow user lea to run ONLY this exact command without a password: lea ALL=(root) NOPASSWD: /sbin/sysctl -w vm.unprivileged_userfaultfd=0",
   "active": true,
   "category": "kernel_security",
   "cycle": 3600,

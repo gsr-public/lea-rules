@@ -1,6 +1,6 @@
 # LEA Open Rules
 
-An open library of 781 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
+An open library of 785 host security and compliance checks for Linux, macOS and Windows, in the rule format used by the LEA Platform.
 
 - Website: https://gsr-lea.com
 - Repository: https://github.com/gsr-public/lea-rules
@@ -140,52 +140,52 @@ Rules by platform folder:
 
 | Platform | Rules |
 |---|---|
-| linux | 356 |
+| linux | 360 |
 | macos | 78 |
 | windows | 299 |
 | multi | 48 |
-| **Total** | **781** |
+| **Total** | **785** |
 
-Rules that run on each operating system (multi-platform rules counted once per system): Linux 403, macOS 121, Windows 311.
+Rules that run on each operating system (multi-platform rules counted once per system): Linux 407, macOS 121, Windows 311.
 
 Rules by category:
 
 | Category | linux | macos | windows | multi | Total |
 |---|---|---|---|---|---|
 | access_control | 23 | 14 | 69 | 15 | 121 |
-| application_security | 4 | 0 | 0 | 0 | 4 |
+| application_security | 5 | 0 | 0 | 0 | 5 |
 | audit | 54 | 5 | 49 | 2 | 110 |
 | authentication | 6 | 6 | 27 | 10 | 49 |
 | container_security | 15 | 0 | 0 | 0 | 15 |
 | identity_management | 16 | 5 | 3 | 0 | 24 |
 | integrity | 8 | 7 | 39 | 3 | 57 |
 | inventory | 0 | 0 | 0 | 1 | 1 |
-| kernel_security | 49 | 1 | 6 | 0 | 56 |
+| kernel_security | 50 | 1 | 6 | 0 | 57 |
 | metadata | 0 | 0 | 0 | 2 | 2 |
-| network_security | 87 | 22 | 54 | 8 | 171 |
+| network_security | 89 | 22 | 54 | 8 | 173 |
 | password_policy | 17 | 5 | 7 | 4 | 33 |
 | system_hardening | 77 | 13 | 45 | 3 | 138 |
-| **Total** | **356** | **78** | **299** | **48** | **781** |
+| **Total** | **360** | **78** | **299** | **48** | **785** |
 
 Rules by framework (a rule is counted once per framework, however many controls it maps to):
 
 | Framework | Tag prefix | Rules | Distinct controls |
 |---|---|---|---|
-| CIS Controls v8 | `std:CIS_Controls_v8:` | 697 | 35 safeguards |
-| CIS (product report tag) | `std:CIS` | 697 | - |
-| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 778 | 46 |
-| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 776 | 22 (2022 IDs) |
-| SOC 2 | `std:SOC2:` | 768 | 10 |
-| CMMC 2.0 Level 2 | `std:CMMC:` | 764 | 39 |
-| PCI DSS 4.0 | `std:PCI_DSS_4:` | 730 | 39 |
-| NIS2 Art. 21(2) | `std:NIS2:` | 758 | 7 |
-| DORA | `std:DORA:` | 761 | 2 |
-| HIPAA Security Rule | `std:HIPAA:` | 768 | 16 |
-| NIST CSF 2.0 | `std:NIST_CSF_2:` | 772 | 16 |
-| ASD Essential Eight | `std:ASD_E8:` | 59 | 6 |
+| CIS Controls v8 | `std:CIS_Controls_v8:` | 701 | 35 safeguards |
+| CIS (product report tag) | `std:CIS` | 701 | - |
+| NIST SP 800-53 Rev. 5 | `std:NIST_800-53:` | 782 | 46 |
+| ISO/IEC 27001:2022 Annex A | `std:ISO27001:` | 780 | 22 (2022 IDs) |
+| SOC 2 | `std:SOC2:` | 772 | 10 |
+| CMMC 2.0 Level 2 | `std:CMMC:` | 768 | 39 |
+| PCI DSS 4.0 | `std:PCI_DSS_4:` | 734 | 39 |
+| NIS2 Art. 21(2) | `std:NIS2:` | 762 | 7 |
+| DORA | `std:DORA:` | 765 | 2 |
+| HIPAA Security Rule | `std:HIPAA:` | 772 | 16 |
+| NIST CSF 2.0 | `std:NIST_CSF_2:` | 776 | 16 |
+| ASD Essential Eight | `std:ASD_E8:` | 60 | 6 |
 | Post-quantum readiness | `std:NIST_PQC:` | 31 | - |
 
-Other facts: 109 rules include a remedy under `_remedy`; 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated); 3 rules are built-in platform rules (`builtin`).
+Other facts: 112 rules include a remedy under `_remedy`; 157 rules are tagged `priv:required`; 1 rule is inactive (deprecated); 3 rules are built-in platform rules (`builtin`).
 
 See [MAPPINGS.md](MAPPINGS.md) for the full control-to-rule mapping.
 

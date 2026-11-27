@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+785 rules.
+
+### Added
+
+- Multipath TCP Disabled (CVE-2026-99634): `net.mptcp.enabled` must be `0`; covers the remote MPTCP use-after-free CVE-2026-99634 (CVSS 9.8) plus CVE-2026-99460 and CVE-2026-99603, and the MPTCP-listener attack path of the published CVE-2026-98432 exploit. Kernels without MPTCP pass with `LEA_RULE_no_service`. Risk high.
+- Drupal Core Version Fixes CVE-2026-132165 and CVE-2026-136716: every Drupal site found below `/var/www`, `/srv`, `/opt` or in `/usr/share/drupal*` must run 10.6.23, 11.3.23, 11.4.14 or later (SA-CORE-2026-017/-018/-019, installer takeover exploited in the wild, CISA KEV). End-of-life branches fail. Risk high.
+- ksmbd Kernel SMB Server Module Not Loaded: covers the in-kernel SMB server, which the Samba rules do not see (CVE-2026-99289, -99291, -99322, -99540, -99556, -99792). Risk medium.
+- QFQ Packet Scheduler Module Not Loaded: `sch_qfq` (CVE-2026-99688, earlier CVE-2023-4921, CVE-2025-38477). Risk medium.
+
+### Changed
+
+- Descriptions of existing module and sysctl rules now name the November 2026 kernel CVEs they mitigate: CIFS, NFS server module, Ceph, SCTP, Bluetooth stack, UDF, CAN, io_uring, unprivileged userfaultfd and vhost. Checks are unchanged.
+- NFS Server Kernel Module Not Loaded: risk raised from low to medium (unauthenticated remote nfsd flaws CVE-2026-99310, -99362, -99366, CVSS 9.8).
+
 ## v1.3.1 - 2026-11-19
 
 781 rules, distributed as a signed LEA rule pack.
